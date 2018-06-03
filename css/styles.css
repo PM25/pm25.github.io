@@ -1,0 +1,23 @@
+#header 
+{
+    background-color: cadetblue;
+    position: fixed;
+    
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+}
+
+#header h1
+{
+    text-align: center;
+
+    margin: 0;
+}
+
+#header a
+{
+    color: white;
+    text-decoration: none;
+}
