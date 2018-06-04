@@ -15,15 +15,15 @@ header
     position: absolute;
     display: block;
 
-    right: 70px;  
+    left: 50px;  
     line-height: 50px;
+    font-size: 24px;
 }
 
-#home-nav a
+#home-nav a, i
 {
     color: black;
     text-decoration: none;
 
     padding: 0 20px;
-    font-size: 24px;
 }
