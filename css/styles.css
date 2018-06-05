@@ -15,7 +15,7 @@ header
     position: absolute;
     display: block;
 
-    left: 50px;  
+    left: 20px;  
     line-height: 50px;
     font-size: 24px;
 }
@@ -24,6 +24,77 @@ header
 {
     color: black;
     text-decoration: none;
+    display: block;
+    cursor: pointer;
 
     padding: 0 20px;
+}
+
+#home-nav a:hover
+{
+    background-color: khaki;    
+}
+
+#home-nav ul
+{
+    list-style-type: none;
+    
+    margin: 0;
+    padding: 0;
+}
+
+#home-nav li
+{
+    float: left;
+}
+
+sidebar
+{
+    background-color: cornsilk;
+    position: fixed;
+
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    -webkit-transform: translate3d(-250px, 0, 0);
+    transform: translate3d(-250px, 0, 0);
+    transition: transform .2s;
+}
+
+.show-sidenav
+{
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    transition: transform .3s;
+    opacity: 0.8;
+}
+
+#side-nav
+{
+    font-size: 24px;
+}
+
+#side-nav a
+{
+    display: block;
+    position: relative;
+    text-align: center;
+
+    top: 30px;
+    left: 0;
+}
+
+#side-nav i
+{
+    position: relative;
+    cursor: pointer;
+    
+    left: 20px;
+    top: 10px;
+}
+
+#side-nav a:hover
+{
+    background-color: goldenrod;
 }
