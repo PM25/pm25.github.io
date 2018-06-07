@@ -67,7 +67,6 @@ sidebar
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     transition: transform .3s;
-    opacity: 0.8;
 }
 
 #side-nav
@@ -79,13 +78,15 @@ sidebar
 {
     display: block;
     position: relative;
-    text-align: center;
+    text-decoration: none;
+    color: black;
+    text-align: left;
 
-    top: 30px;
+    top: 32px;
     left: 0;
 }
 
-#side-nav i
+#hide-sidenav-btn
 {
     position: relative;
     cursor: pointer;
@@ -97,4 +98,17 @@ sidebar
 #side-nav a:hover
 {
     background-color: goldenrod;
+}
+
+#side-nav ul
+{
+    list-style-type: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+.icons
+{
+    width: 50px;
 }
