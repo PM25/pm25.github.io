@@ -72,6 +72,7 @@ sidebar
 #side-nav
 {
     font-size: 24px;
+    border-right: 1px solid gainsboro;
 }
 
 #side-nav a
@@ -82,14 +83,16 @@ sidebar
     color: black;
     text-align: left;
 
-    top: 32px;
+    top: 24px;
     left: 0;
+    margin-top: 8px;
 }
 
 #hide-sidenav-btn
 {
     position: relative;
     cursor: pointer;
+    color: white;
     
     left: 20px;
     top: 10px;
@@ -110,5 +113,35 @@ sidebar
 
 .icons
 {
-    width: 50px;
+    width: 30px;
+}
+
+.profile
+{
+    position: relative;
+    display: block;
+    background-size: cover;
+    
+    height: 215px;
+    width: 250px;
+    background-image: url("https://cdn.pixabay.com/photo/2016/02/21/14/16/wallpaper-1213635_1280.png");
+}
+
+.profile img
+{
+    display: block;
+    position: relative;
+    margin: auto;
+
+    margin-top: 8px;
+    width: 50%;
+    border-radius: 50%;
+}
+
+.profile span
+{
+    text-align: center;
+    position: relative;
+    display: block;
+    color: white;
 }
