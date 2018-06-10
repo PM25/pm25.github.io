@@ -70,6 +70,7 @@ sidebar
 {
     background-color: cornsilk;
     position: fixed;
+    overflow: auto;
 
     left: 0;
     top: 0;
@@ -119,7 +120,6 @@ sidebar a:hover
 sidebar ul
 {
     list-style-type: none;
-    overflow: auto;
 
     margin: 0;
     padding: 0;
