@@ -1,6 +1,24 @@
+html, body
+{
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body
+{
+    background: #fdfcfb;
+    background-image: -webkit-linear-gradient(315deg, #fdfcfb 0%, #e2d1c3 100%);
+    background-image: linear-gradient(to bottom right, #fdfcfb 0%, #e2d1c3 100%);
+}
+
 header 
 {
-    background-color: goldenrod;
+    background-color: #F17F42;
     position: fixed;
     
     top: 0;
@@ -32,7 +50,7 @@ header
 
 #home-nav a:hover
 {
-    background-color: khaki;    
+    background-color: bisque;  
 }
 
 #home-nav ul
@@ -57,6 +75,8 @@ sidebar
     top: 0;
     width: 250px;
     height: 100%;
+    font-size: 24px;
+    border-right: 1px solid gainsboro;
     -webkit-transform: translate3d(-250px, 0, 0);
     transform: translate3d(-250px, 0, 0);
     transition: transform .2s;
@@ -69,13 +89,7 @@ sidebar
     transition: transform .3s;
 }
 
-#side-nav
-{
-    font-size: 24px;
-    border-right: 1px solid gainsboro;
-}
-
-#side-nav a
+sidebar a
 {
     display: block;
     position: relative;
@@ -98,12 +112,12 @@ sidebar
     top: 10px;
 }
 
-#side-nav a:hover
+sidebar a:hover
 {
-    background-color: goldenrod;
+    background-color: bisque;
 }
 
-#side-nav ul
+sidebar ul
 {
     list-style-type: none;
 
@@ -113,7 +127,7 @@ sidebar
 
 .icons
 {
-    width: 30px;
+    width: 32px;
 }
 
 .profile
