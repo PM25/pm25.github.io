@@ -97,7 +97,6 @@ sidebar a
     color: black;
     text-align: left;
 
-    top: 24px;
     left: 0;
     margin-top: 8px;
 }
@@ -120,6 +119,7 @@ sidebar a:hover
 sidebar ul
 {
     list-style-type: none;
+    overflow: auto;
 
     margin: 0;
     padding: 0;
