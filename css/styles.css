@@ -119,10 +119,15 @@ sidebar a:hover
 sidebar ul
 {
     list-style-type: none;
-    overflow: auto;
 
     margin: 0;
     padding: 0;
+}
+
+.category
+{
+    overflow: auto;
+
     width: 100%;
     height: calc(100% - 215px);
 }
