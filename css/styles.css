@@ -11,21 +11,21 @@ html, body
 
 body
 {
-    background: #fdfcfb;
-    background-image: -webkit-linear-gradient(315deg, #fdfcfb 0%, #e2d1c3 100%);
-    background-image: linear-gradient(to bottom right, #fdfcfb 0%, #e2d1c3 100%);
+    background: #89f7fe;
+    background-image: -webkit-linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+    background-image: linear-gradient(to top left, #89f7fe 0%, #66a6ff 100%);
 }
 
 header 
 {
-    background-color: #F17F42;
+    background-color: white;
     position: fixed;
     
     top: 0;
     left: 0;
     width: 100%;
     height: 50px;
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 #home-nav
@@ -50,7 +50,7 @@ header
 
 #home-nav a:hover
 {
-    background-color: bisque;  
+    background-color: #c2e59c;  
 }
 
 #home-nav ul
@@ -119,7 +119,7 @@ sidebar a:hover
 sidebar ul
 {
     list-style-type: none;
-
+    
     margin: 0;
     padding: 0;
 }
@@ -144,7 +144,7 @@ sidebar ul
     background-size: cover;
     
     height: 215px;
-    width: 250px;
+    width: 100%;
     background-image: url("https://cdn.pixabay.com/photo/2016/02/21/14/16/wallpaper-1213635_1280.png");
 }
 
