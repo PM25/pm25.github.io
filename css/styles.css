@@ -151,7 +151,9 @@ sidebar .icons
     position: relative;
     display: block;
     background-size: cover;
-    background: #1c9bbb;
+    background: #2ca8c7;
+    background-image: -webkit-radial-gradient(circle, #5fd4f1, #1c9bbb);
+    background-image: radial-gradient(circle, #5fd4f1, #1c9bbb);
     
     height: 215px;
     width: 100%;
