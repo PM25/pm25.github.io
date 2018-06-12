@@ -68,7 +68,7 @@ header
 
 sidebar
 {
-    background-color: cornsilk;
+    background-color: #18a5a5;
     position: fixed;
 
     left: 0;
@@ -76,7 +76,6 @@ sidebar
     width: 250px;
     height: 100%;
     font-size: 24px;
-    border-right: 1px solid gainsboro;
     -webkit-transform: translate3d(-250px, 0, 0);
     transform: translate3d(-250px, 0, 0);
     transition: transform .2s;
@@ -94,7 +93,7 @@ sidebar a
     display: block;
     position: relative;
     text-decoration: none;
-    color: black;
+    color: white;
     text-align: left;
 
     left: 0;
@@ -130,6 +129,7 @@ sidebar ul
 
     width: 100%;
     height: calc(100% - 215px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 .icons
@@ -137,15 +137,21 @@ sidebar ul
     width: 32px;
 }
 
+sidebar .icons
+{
+    color: white;
+}
+
 .profile
 {
     position: relative;
     display: block;
     background-size: cover;
+    background: #1c9bbb;
     
     height: 215px;
     width: 100%;
-    background-image: url("https://cdn.pixabay.com/photo/2016/02/21/14/16/wallpaper-1213635_1280.png");
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 .profile img
