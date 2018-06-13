@@ -1,10 +1,12 @@
 $(document).ready(function()
 {
-    $("#show-sidenav-btn").click(function(){
-        $("#side-nav").addClass("show-sidenav");
+    $(".sidenav-btn").click(function(){
+        $("#side-nav").toggleClass("show-sidenav");
     });
 
-    $("#hide-sidenav-btn").click(function(){
-        $("#side-nav").removeClass("show-sidenav");
+    $("main").click(function(){
+        if($("#side-nav").hasClass("show-sidenav")){
+            $("#side-nav").removeClass("show-sidenav");
+        }
     });
 });
