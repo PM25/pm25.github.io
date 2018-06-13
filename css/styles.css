@@ -110,7 +110,12 @@ sidebar a
     color: white;
     
     left: 20px;
-    top: 10px;
+    top: 9px;
+}
+
+#show-sidenav-btn
+{
+    margin-right: 20px;
 }
 
 sidebar a:hover
@@ -139,6 +144,10 @@ sidebar ul
 
 .icons
 {
+    text-align: center;
+    
+    margin: 0;
+    padding: 0;
     width: 32px;
 }
 
