@@ -182,8 +182,7 @@ sidebar .icons
     position: relative;
     margin: auto;
 
-    margin-top: 8px;
-    width: 50%;
+    width: 45%;
     border-radius: 50%;
 }
 
@@ -193,4 +192,14 @@ sidebar .icons
     position: relative;
     display: block;
     color: white;
+}
+
+#profile-quote
+{
+    font-size: 13px;
+}
+
+#profile-name
+{
+    font-size: 30px;
 }
