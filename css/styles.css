@@ -85,14 +85,14 @@ sidebar
     width: 250px;
     height: 100%;
     font-size: 24px;
-    transition: transform .3s;
+    transition: transform .15s;
 }
 
 .show-sidenav
 {
     -webkit-transform: translate3d(250px, 0, 0);
     transform: translate3d(250px, 0, 0);
-    transition: transform .3s;
+    transition: transform .15s;
 }
 
 sidebar a
@@ -202,4 +202,32 @@ sidebar .icons
 #profile-name
 {
     font-size: 30px;
+}
+
+.ripple
+{
+    position: relative;
+}
+
+.ripple-effect
+{
+    position: absolute;
+    overflow: hidden;
+    
+    top: -4px;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    opacity: 1;
+    border-radius: 50%;
+    transform: scale(0);
+    background: rgba(0,0,0,0.15);
+    animation: ripple .15s ease-out forwards;
+}
+
+@keyframes ripple
+{
+    to{
+        transform: scale(1.2);
+    }
 }
