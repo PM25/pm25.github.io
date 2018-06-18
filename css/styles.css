@@ -39,7 +39,7 @@ header
     position: absolute;
     display: block;
 
-    left: 20px;  
+    left: 12px;  
     line-height: 50px;
     font-size: 24px;
 }
@@ -52,6 +52,7 @@ header
     cursor: pointer;
 
     padding: 0 20px;
+    margin: 0;
 }
 
 #home-nav a:hover
@@ -109,18 +110,13 @@ sidebar a
     line-height: 40px;
 }
 
-header .sidenav-btn
-{
-    margin-right: 20px;
-}
-
 sidebar .sidenav-btn
 {
     position: relative;
     cursor: pointer;
     color: white;
 
-    left: 20px;
+    left: 12px;
     top: 9px;
 }
 
@@ -152,7 +148,7 @@ sidebar ul
 {
     text-align: center;
     
-    margin: 0;
+    margin: 0 8px;
     padding: 0;
     width: 32px;
 }
