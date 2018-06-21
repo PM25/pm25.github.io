@@ -26,14 +26,13 @@ body
 {
     position: fixed;
     display: block;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.7);
     
     top: 0;
     left: 12px;
     height: 50px;      
     line-height: 50px;
     font-size: 24px;
-    opacity: 0.6;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
@@ -219,6 +218,42 @@ sidebar .icons
     transform: scale(0);
     background: rgba(0,0,0,0.15);
     animation: ripple .15s ease-out forwards;
+}
+
+.search-container
+{
+    position: relative;
+    overflow: hidden;
+
+    margin: 3px 10px;
+    border: solid 2px;
+    border-radius: 40px;
+    height: 40px;
+    line-height: 36px;
+}
+
+.search-input
+{
+    border: none;
+    outline: none;
+
+    font-size: 24px;
+    width: 200px;
+    margin: 0 0 0 15px;
+    background: rgba(0, 0, 0, 0);
+}
+
+.search-btn
+{
+    border: none;
+    cursor: pointer;
+    outline: none;
+
+    height: 100%;
+    padding: 0;
+    line-height: 24px;
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0);
 }
 
 @keyframes ripple
