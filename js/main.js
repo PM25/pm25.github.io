@@ -16,6 +16,21 @@ $(document).ready(function()
         }
     });
 
+    $(".search-btn").click(function () {
+        if ($(this).closest("#home-nav").length) {
+            $search_input = $(this).prev(".search-input");
+            $search_container = $(this).parent(".search-container");
+            
+            if($search_input.length){
+                $search_input.remove();
+                $search_container.css({"border-color": "transparent"});
+            } else {
+                $search_container.css({ "border-color": "black" });
+                $(this).before("<input class='search-input' type='text' placeholder='Search..'>");
+            }            
+        }
+    });
+
     $("main").click(function(){
         if($("#side-nav").hasClass("show-sidenav")){
             $("#side-nav").removeClass("show-sidenav");
