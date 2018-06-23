@@ -226,6 +226,7 @@ sidebar .icons
     border-radius: 40px;
     height: 40px;
     line-height: 36px;
+    transition: .5s;
 }
 
 .search-input
@@ -237,6 +238,7 @@ sidebar .icons
     font-size: 24px;
     width: 200px;
     margin: 0 0 0 15px;
+    animation: stretch .3s ease-out forwards;
 }
 
 .search-btn
@@ -250,6 +252,11 @@ sidebar .icons
     padding: 0;
     line-height: 24px;
     font-size: 24px;
+}
+
+.spin-effect
+{
+    animation: spin .5s ease-out forwards;
 }
 
 @keyframes ripple
@@ -277,5 +284,25 @@ sidebar .icons
         -webkit-transform: scale(1);
         -ms-transform: scale(1);
         transform: scale(1);   
+    }
+}
+
+@keyframes stretch
+{
+    from{
+        width: 0;
+    }
+    to{
+        width: 200px;
+    }
+}
+
+@keyframes spin
+{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
     }
 }

@@ -24,9 +24,11 @@ $(document).ready(function()
             if($search_input.length){
                 $search_input.remove();
                 $search_container.css({"border-color": "transparent"});
+                $(this).removeClass("spin-effect");
             } else {
                 $search_container.css({ "border-color": "black" });
                 $(this).before("<input class='search-input' type='text' placeholder='Search..'>");
+                $(this).addClass("spin-effect");
             }            
         }
     });
