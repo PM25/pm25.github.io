@@ -32,7 +32,7 @@ main
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
-#home-nav a, i
+#home-nav a
 {
     color: black;
     text-decoration: none;
@@ -98,10 +98,14 @@ sidebar a
     line-height: 40px;
 }
 
+.sidenav-btn
+{
+    cursor: pointer;
+}
+
 sidebar .sidenav-btn
 {
     position: relative;
-    cursor: pointer;
     color: white;
 
     left: 12px;
