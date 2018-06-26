@@ -263,6 +263,13 @@ sidebar .icons
     animation: spin .5s ease-out forwards;
 }
 
+@media only screen and (max-width: 700px)
+{
+    #home-nav a, .search-container{
+        display: none;
+    }
+}
+
 @keyframes ripple
 {
     to{
