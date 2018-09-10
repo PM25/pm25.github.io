@@ -34,7 +34,6 @@ main
     height: 100%;
     min-width: 100%;
     background-size: auto 50%;
-    opacity: 0.8;
     filter: blur(2px);
 }
 
@@ -55,7 +54,7 @@ main
     line-height: 60px;
     min-width: 180px;
     max-width: 30%;
-    opacity: 0.75;
+    opacity: 0.85;
     top: calc(50% - 30px);
     left: calc(50% - 90px);
 }
