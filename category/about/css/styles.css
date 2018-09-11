@@ -19,67 +19,48 @@ main
 {
     position: relative;
 
-    height: 25%;
-    min-width: 100%;
+    height: 160px;
     z-index: -1;
-    margin-bottom: -1px;
+    background-color: #0c2233;
 }
 
-.header-bg
-{
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    position: absolute;
-
-    height: 100%;
-    min-width: 100%;
-    background-size: auto 50%;
-    filter: blur(2px);
-}
-
-#header-img1
-{
-    background-image: url("https://cdn.discordapp.com/attachments/371122008018386944/487664454885048343/lumber-84678_1920.jpg");
-}
-
-.title-box
+#title-box
 {
     position: absolute;
-    background-color: #5c2626;
-    color: white;
+    background-color: #4EB1BA;
+    color: #222930;
     text-align: center;
 
-    font-size: 30px;    
+    font-size: 36px;    
     min-height: 60px;
     line-height: 60px;
     min-width: 180px;
     max-width: 30%;
-    opacity: 0.85;
     top: calc(50% - 30px);
     left: calc(50% - 90px);
 }
 
 #bio
 {
-    height: 50%;
-    background-color: #ffd6b6;
+    height: 450px;
+    background-color: #065471;
 }
 
 #my-skills
 {
-    height: 25%;
-    background-color: #ea7362;
+    height: 200px;
+    background-color: #0a91ab;
 }
 
 #site-statics
 {
-    height: 75%;
-    background-color: #b74242;
+    height: 600px;
+    background-color: #ffc045;
 }
 
 .footer
 {
-    height: 25%;
+    height: 120px;
     background-color: #5c2626;
 }
 
