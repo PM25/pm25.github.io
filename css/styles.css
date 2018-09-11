@@ -1,6 +1,7 @@
 html, body
 {
     position: fixed;
+    font-family: "Noto Sans TC", sans-serif;
 
     top: 0;
     left: 0;

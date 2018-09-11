@@ -1,6 +1,7 @@
 html, body
 {
     position: absolute;
+    font-family: "Noto Sans TC", sans-serif;
 
     top: 0;
     left: 0;
@@ -55,6 +56,7 @@ main
     height: 100%;
     width: 150px;
     border-left: solid 5px white;
+    font-size: 28px;
 }
 
 #edu-timeline .container
@@ -76,17 +78,29 @@ main
     height: 25px;
     z-index: 1;
     border-radius: 50%;
-    border: 4px solid goldenrod;
-    left: -19px;
     top: 0;
+}
+
+#edu-timeline .before::after
+{
+    left: -15px;
+}
+
+#edu-timeline .current::after
+{
+    left: -19px;
+    border: 4px solid goldenrod;
 }
 
 #edu-timeline .content
 {
     position: relative;
+    text-align: center;
     background-color: white;
 
     border-radius: 8px;
+    min-height: 42px;
+    line-height: 42px;
 }
 
 #my-skills
@@ -119,7 +133,7 @@ main
     line-height: 50px;
     font-size: 24px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    z-index: 10;
+    z-index: 5;
 }
 
 #home-nav a
@@ -165,6 +179,7 @@ sidebar
     height: 100%;
     font-size: 24px;
     transition: transform .15s;
+    z-index: 10;
 }
 
 .show-sidenav
