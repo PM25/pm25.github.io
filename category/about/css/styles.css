@@ -53,19 +53,32 @@ main
     position: absolute;
 
     left: 50px;
-    height: 100%;
-    width: 150px;
-    border-left: solid 5px white;
-    font-size: 28px;
+    height: 80%;
+    width: 250px;
+    top: 10%;
+}
+
+#edu-timeline::after
+{
+    content: '';
+    position: absolute;
+    width: 5px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 15%;
+    margin-left: -5px;
 }
 
 #edu-timeline .container
 {
     position: relative;
 
-    width: 100%;
-    padding: 25px;
-    top: 30px;
+    width: 60%;
+    padding: 0 25px;
+    margin: 50px 0;
+    bottom: 10px;
+    left: 15%;
 }
 
 #edu-timeline .container::after
@@ -101,6 +114,7 @@ main
     border-radius: 8px;
     min-height: 42px;
     line-height: 42px;
+    font-size: 28px;
 }
 
 #my-skills
