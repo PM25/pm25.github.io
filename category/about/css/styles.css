@@ -52,7 +52,6 @@ main
 {
     position: absolute;
 
-    left: 50px;
     height: 80%;
     width: 250px;
     top: 10%;
@@ -76,7 +75,7 @@ main
 
     width: 60%;
     padding: 0 25px;
-    margin: 50px 0;
+    margin: 30px 0;
     bottom: 10px;
     left: 15%;
 }
@@ -113,8 +112,21 @@ main
 
     border-radius: 8px;
     min-height: 42px;
-    line-height: 42px;
+}
+
+#edu-timeline .school
+{
+    color: black;
+
     font-size: 28px;
+}
+
+#edu-timeline .major
+{
+    display: block;
+    color: gray;
+
+    font-size: 16px;
 }
 
 #my-skills
