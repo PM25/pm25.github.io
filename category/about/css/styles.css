@@ -53,7 +53,7 @@ main
     position: absolute;
 
     height: 80%;
-    width: 250px;
+    width: 30%;
     top: 10%;
 }
 
@@ -125,8 +125,28 @@ main
 {
     display: block;
     color: gray;
+    display: none;
 
     font-size: 16px;
+}
+
+#edu-timeline .school:hover + .major
+{
+    display: block !important;
+}
+
+#intro
+{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    height: 100%;
+    width: 40%;
+    left: 30%;
+    font-size: 22px;
 }
 
 #my-skills
