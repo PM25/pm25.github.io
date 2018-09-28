@@ -18,7 +18,7 @@ main
 
 #bio
 {
-    height: 700px;
+    
 }
 
 #header
@@ -146,6 +146,7 @@ main
     float: left;
 
     top: 150px;
+    left: 5px;
     max-width: calc(100% - 500px);
 }
 
@@ -159,7 +160,7 @@ main
     padding: 15px;
     margin-top: 15px;
     font-size: 24px;
-    border-radius: 0 15px 15px 0;
+    border-radius: 0 20px 20px 20px;
 }
 
 #contact
@@ -172,6 +173,60 @@ main
     padding: 0 50px;
     height: 150px;
     width: calc(100% - 250px);
+}
+
+#contact a
+{
+    display: flex;
+    text-decoration: none;
+
+    border-radius: 60px;
+    width: 60px;
+    height: 60px;
+}
+
+#contact a:hover
+{
+    animation: spin .5s forwards;
+}
+
+#contact i
+{
+    margin: auto;
+    color: white;
+}
+
+.discord
+{
+    background-color: #7289DA;
+}
+
+.facebook
+{
+    background-color: #4267B2;
+}
+
+.mail
+{
+    background-color: #002060;
+}
+
+.github
+{
+    background-color: #6B2B87;
+}
+
+.google-plus
+{
+    background-color: #DE4F42;
+}
+
+.instagram
+{
+    background: #f09433; 
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
 }
 
 #my-skills
