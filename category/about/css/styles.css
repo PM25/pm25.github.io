@@ -16,43 +16,43 @@ main
     height: 100%;
 }
 
-.header
+#bio
 {
-    position: relative;
-
-    height: 100px;
-    z-index: -1;
+    height: 700px;
 }
 
-#title-box
+#header
 {
     position: absolute;
-    color: dodgerblue;
     text-align: center;
+    background-color: gold;
+    color: dodgerblue;
 
-    font-size: 64px;    
-    min-height: 60px;
-    line-height: 60px;
-    min-width: 180px;
-    top: calc(50% - 30px);
-    left: calc(50% - 90px);
+    font-size: 64px;
+    height: 150px;
+    line-height: 150px;
+    width: calc(100% - 470px);
 }
 
-#bio
+#timeline-container
 {
     position: relative;
     background-color: dodgerblue;
+    float: right;
+    overflow: hidden;
     
-    height: 450px;
+    height: 500px;
+    width: 500px;
+    border-radius: 0 0 0 500px;
 }
 
 #edu-timeline
 {
     position: absolute;
 
-    height: 80%;
-    width: 30%;
-    top: 10%;
+    height: 100%;
+    width: 70%;
+    right: 0;
 }
 
 #edu-timeline::after
@@ -73,7 +73,7 @@ main
 
     width: 60%;
     padding: 0 25px;
-    margin: 30px 0;
+    margin: 40px 0;
     bottom: 10px;
     left: 15%;
 }
@@ -142,20 +142,41 @@ main
 
 #intro
 {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
+    position: relative;
+    float: left;
 
-    height: 100%;
-    width: 40%;
-    left: 30%;
-    font-size: 22px;
+    top: 150px;
+    max-width: calc(100% - 500px);
+}
+
+#intro .message
+{
+    float: left;
+    clear: both;
+    background-color: dodgerblue;
+    color: white;
+    
+    padding: 15px;
+    margin-top: 15px;
+    font-size: 24px;
+    border-radius: 0 15px 15px 0;
+}
+
+#contact
+{
+    display: flex;
+    clear: both;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 150px;
+    width: calc(100% - 300px);
 }
 
 #my-skills
 {
+    clear: both;
+
     height: 200px;
 }
 
