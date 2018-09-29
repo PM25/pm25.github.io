@@ -18,7 +18,7 @@ main
 
 #bio
 {
-    
+    background-image: linear-gradient(gold , dodgerblue);
 }
 
 #header
@@ -32,6 +32,7 @@ main
     height: 150px;
     line-height: 150px;
     width: calc(100% - 470px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 #timeline-container
@@ -44,6 +45,7 @@ main
     height: 500px;
     width: 500px;
     border-radius: 0 0 0 500px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 #edu-timeline
@@ -89,6 +91,7 @@ main
     z-index: 1;
     border-radius: 50%;
     top: 0;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 #edu-timeline .before::after
@@ -110,6 +113,7 @@ main
 
     border-radius: 8px;
     min-height: 42px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 #edu-timeline .school
@@ -161,6 +165,7 @@ main
     margin-top: 15px;
     font-size: 24px;
     border-radius: 0 20px 20px 20px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 #contact
@@ -183,6 +188,7 @@ main
     border-radius: 60px;
     width: 60px;
     height: 60px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 #contact a:hover
