@@ -18,15 +18,15 @@ main
 
 #bio
 {
-    background-image: linear-gradient(gold , dodgerblue);
+    background-color: #e62a76;
 }
 
 #header
 {
     position: absolute;
     text-align: center;
-    background-color: gold;
-    color: dodgerblue;
+    background-color: #00a8b5;
+    color: white;
 
     font-size: 64px;
     height: 150px;
@@ -38,7 +38,7 @@ main
 #timeline-container
 {
     position: relative;
-    background-color: dodgerblue;
+    background-color: #774898;
     float: right;
     overflow: hidden;
     
@@ -158,7 +158,7 @@ main
 {
     float: left;
     clear: both;
-    background-color: dodgerblue;
+    background-color: #00a8b5;
     color: white;
     
     padding: 15px;
@@ -238,6 +238,7 @@ main
 #my-skills
 {
     clear: both;
+    background-color: #fbb901;
 
     height: 200px;
 }
