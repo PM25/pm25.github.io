@@ -282,7 +282,7 @@ main
     padding: 50px;
 }
 
-#my-skills .skill-box
+#my-skills .content .skill-box
 {
     text-align: center;
     color: #343434;
