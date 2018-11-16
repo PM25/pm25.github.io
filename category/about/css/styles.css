@@ -176,7 +176,7 @@ main
     align-items: center;
 
     padding: 0 50px;
-    height: 150px;
+    height: 120px;
     width: calc(100% - 250px);
 }
 
@@ -237,11 +237,57 @@ main
 
 #my-skills
 {
-    clear: both;
+    display: flex;
     background-color: #fbb901;
 
     height: 200px;
 }
+
+#my-skills .header
+{
+    display: flex;
+}
+
+#my-skills .header .title
+{
+    text-align: center;
+    writing-mode: vertical-rl;
+    background: #343434;
+    color: #fbb901;
+
+    font-size: 64px;
+    width: 100px;
+    height: 100%;
+}
+
+#my-skills .header .slash
+{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-style: solid;
+    
+    border-width: 100px 0 100px 50px;
+    border-color: transparent transparent transparent #343434;
+}
+
+#my-skills .content
+{
+    display: flex;
+    clear: both;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 50px;
+}
+
+#my-skills .skill-box
+{
+    text-align: center;
+    color: #343434;
+}
+
 
 #site-statics
 {
