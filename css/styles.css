@@ -49,6 +49,7 @@ main
     border-style: hidden solid;
     color: #66a6ff;
     
+    border-width: 1px;
     transition: .3s;  
 }
 

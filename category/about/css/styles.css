@@ -10,10 +10,6 @@ html, body
     width: 100%;
 }
 
-main
-{
-}
-
 #bio
 {
     background-color: darkslategray;
@@ -297,8 +293,11 @@ main
 .footer
 {
     background: midnightblue;
+    text-align: center;
+    color: grey;
 
-    height: 120px;
+    height: 50px;
+    line-height: 50PX;
 }
 
 #home-nav
@@ -330,7 +329,8 @@ main
 #home-nav a:hover
 {
     border-style: hidden solid;
-    color: #5c2626;
+    border-width: 1px;
+    color: lightseagreen;
     
     transition: .3s;  
 }
