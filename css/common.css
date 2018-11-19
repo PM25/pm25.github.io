@@ -1,3 +1,4 @@
+/* Home-nav */
 #home-nav
 {
     position: fixed;
@@ -46,7 +47,169 @@
     float: left;
 }
 
-.footer
+#home-nav .search-container
+{
+    position: relative;
+    overflow: hidden;
+
+    margin: 3px;
+    border: solid 2px;
+    border-radius: 40px;
+    height: 40px;
+    line-height: 36px;
+    transition: .5s;
+}
+
+#home-nav .search-input
+{
+    border: none;
+    outline: none;
+    background: transparent;
+
+    font-size: 24px;
+    width: 200px;
+    margin: 0 0 0 15px;
+    animation: stretch .3s ease-out forwards;
+}
+
+#home-nav .search-btn
+{
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background: transparent;
+
+    height: 100%;
+    padding: 0;
+    line-height: 24px;
+    font-size: 24px;
+}
+
+
+/* Side-nav */
+#side-nav
+{
+    background-color: #18a5a5;
+    position: fixed;
+
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    font-size: 24px;
+    transition: transform .15s;
+    z-index: 10;
+}
+
+.show-sidenav
+{
+    -webkit-transform: translate3d(250px, 0, 0);
+    transform: translate3d(250px, 0, 0);
+    transition: transform .15s;
+}
+
+#side-nav a
+{
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: white;
+    text-align: left;
+
+    left: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+}
+
+#side-nav .sidenav-btn
+{
+    position: relative;
+    color: white;
+
+    left: 12px;
+    top: 9px;
+}
+
+#side-nav a:hover
+{
+    background-color: #89c9c96c;
+    box-shadow: 0 0 28px rgba(0,0,0,0.25), 0 0 10px rgba(0,0,0,0.22);
+    transition: 0.1s;
+}
+
+#side-nav ul
+{
+    list-style-type: none;
+    
+    margin: 0;
+    padding: 10px;
+}
+
+#side-nav .category
+{
+    overflow: auto;
+
+    width: 100%;
+    height: calc(100% - 215px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+#side-nav .icons
+{
+    color: white;
+}
+
+#side-nav .profile
+{
+    position: relative;
+    display: block;
+    background-size: cover;
+    background: #2ca8c7;
+    background-image: -webkit-radial-gradient(circle, #5fd4f1, #1c9bbb);
+    background-image: radial-gradient(circle, #5fd4f1, #1c9bbb);
+    
+    height: 215px;
+    width: 100%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+#side-nav .profile img
+{
+    display: block;
+    position: relative;
+    margin: auto;
+
+    width: 45%;
+    border-radius: 50%;
+}
+
+#side-nav .profile span
+{
+    text-align: center;
+    position: relative;
+    display: block;
+    color: white;
+}
+
+#side-nav #profile-img:hover
+{
+    animation: heartbeat .5s forwards;
+}
+
+#side-nav #profile-quote
+{
+    font-size: 13px;
+}
+
+#side-nav #profile-name
+{
+    font-size: 30px;
+}
+
+
+/* Footer */
+#footer
 {
     background: midnightblue;
     text-align: center;
@@ -54,4 +217,105 @@
 
     height: 50px;
     line-height: 50PX;
+}
+
+
+/* Others */
+.icons
+{
+    text-align: center;
+    
+    margin: 0 8px;
+    padding: 0;
+    width: 32px;
+}
+
+.sidenav-btn
+{
+    cursor: pointer;
+}
+
+.ripple
+{
+    position: relative;
+}
+
+
+/* Animation effect */
+.spin-effect
+{
+    animation: spin .5s ease-out forwards;
+}
+
+.ripple-effect
+{
+    position: absolute;
+    overflow: hidden;
+    
+    top: -4px;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    opacity: 1;
+    border-radius: 50%;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    background: rgba(0,0,0,0.15);
+    animation: ripple .15s ease-out forwards;
+}
+
+@media only screen and (max-width: 700px)
+{
+    #home-nav a, .search-container{
+        display: none;
+    }
+}
+
+@keyframes ripple
+{
+    to{
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+}
+
+@keyframes heartbeat
+{
+    50%{
+        -webkit-transform: scale(0.7);
+        -ms-transform: scale(0.7);
+        transform: scale(0.7);
+    }
+    75%{
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+    0%, 100%{
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);   
+    }
+}
+
+@keyframes stretch
+{
+    from{
+        width: 0;
+    }
+    to{
+        width: 200px;
+    }
+}
+
+@keyframes spin
+{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
 }
