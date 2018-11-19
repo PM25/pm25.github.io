@@ -329,9 +329,9 @@ html, body
 #home-nav a:hover
 {
     border-style: hidden solid;
-    border-width: 1px;
     color: lightseagreen;
     
+    border-width: 1px;
     transition: .3s;  
 }
 
