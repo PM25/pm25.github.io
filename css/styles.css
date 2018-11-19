@@ -1,20 +1,16 @@
-html, body
-{
-    position: fixed;
-    font-family: "Noto Sans TC", sans-serif;
-
-    top: 0;
-    left: 0;
-    margin: 0;
-    height: 100%;
-    width: 100%;
-}
-
 main
 {
-    width: 100%;
-    height: 100%;
     background: #89f7fe;
+    position: absolute;
+
+    width: 100%;
+    min-height: 100%;
     background-image: -webkit-linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
     background-image: linear-gradient(to top left, #89f7fe 0%, #66a6ff 100%);
+}
+
+#status
+{
+    position: relative;
+    margin: 100px;
 }
