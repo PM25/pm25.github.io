@@ -13,7 +13,7 @@
     font-size: 64px;
     height: 150px;
     line-height: 150px;
-    width: 75vw;
+    width: calc(100vw - 470px);
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
@@ -26,9 +26,9 @@
     
     top: 0;
     right: 0;
-    height: 30vw;
-    width: 30vw;
-    border-radius: 0 0 0 30vw;
+    height: 500px;
+    width: 500px;
+    border-radius: 0 0 0 500px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
@@ -134,7 +134,7 @@
     float: left;
 
     left: 5px;
-    max-width: 70vw;
+    max-width: calc(100vw - 470px);
 }
 
 #intro .message
@@ -158,9 +158,8 @@
     justify-content: space-between;
     align-items: center;
 
-    padding: 0 50px;
+    padding: 10px 50px;
     height: 120px;
-    width: calc(100% - 250px);
 }
 
 #contact a
