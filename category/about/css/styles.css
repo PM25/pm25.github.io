@@ -290,16 +290,6 @@ html, body
     background-color: dodgerblue;
 }
 
-.footer
-{
-    background: midnightblue;
-    text-align: center;
-    color: grey;
-
-    height: 50px;
-    line-height: 50PX;
-}
-
 #home-nav
 {
     position: fixed;
