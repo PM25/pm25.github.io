@@ -1,11 +1,7 @@
 $(document).ready(function()
 {
     function checkFinish(left){
-        if(!left){
-            $.getScript("main.js", function(){
-                alert("Finish load main.js!");
-            });
-        }
+        if(!left) $.getScript("https://pm25.github.io/js/main.js");
     }
 
     var includes = $("[data-include]");
