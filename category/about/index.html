@@ -21,6 +21,7 @@
 <body>
     <div data-include="home-nav"></div>
     <div data-include="side-nav"></div>
+    <img src="https://plusmore-view-counter.herokuapp.com/" style="display: none">
 
     <main>
         <div id="bio">
@@ -32,7 +33,13 @@
                     嗨! 我叫黃品硯(Jason Huang)
                 </div>
                 <div class="message">
-                    目前是政大資科系三年級的學生
+                    下面這位帥哥是我 =w=
+                </div>
+                <div class="message-img">
+                    <img src="img/pm.png" width="450px">
+                </div>
+                <div class="message">
+                    我目前是政大資科系三年級的學生
                 </div>
                 <div class="message">
                     畢業後想要去美國念博士班
@@ -92,6 +99,7 @@
                 </a>
             </div>
         </div>
+
         <div id="my-skills">
             <div class="header">
                 <div class="title">
@@ -131,7 +139,46 @@
                 </div>
             </div>
         </div>
-        <div id="site-statics"></div>
+
+        <div id="site-statics">
+            <div class="self-data">
+                <ul>
+                    <li> 
+                        您的 IP: 
+                        <span class="ip"> 127.0.0.1 </span> 
+                    </li>
+                    <li> 
+                        地區: 
+                        <span class="region"> 無 </span>
+                    </li>
+                    <li> 
+                        造訪次數: 
+                        <span class="view"> 0 </span>
+                    </li>
+                    <li> 
+                        上次造訪時間: 
+                        <span class="last-time"> 無 </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="other-data">
+                <ul>
+                    <li> 
+                        網站已持續運行: 
+                        <span class="running-time"> 0 </span>
+                    </li>
+                    <li> 
+                        總造訪人數:
+                        <span class="total-ip"> 0 </span> 
+                    </li>
+                    <li> 
+                        總造訪次數:
+                        <span class="total-view"> 0 </span> 
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
         <div data-include="footer"></div>
     </main>
 </body>

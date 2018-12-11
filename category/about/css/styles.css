@@ -151,6 +151,22 @@
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
+#intro .message-img
+{
+    float: left;
+    clear: both;
+
+    margin-top: 15px; 
+}
+
+#intro img
+{
+    border-radius: 20px;
+
+    -webkit-filter: drop-shadow(0 3px 6px rgba(0,0,0,0.23));
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.23));
+}
+
 #contact
 {
     display: flex;
@@ -273,6 +289,37 @@
 
 #site-statics
 {
-    height: 600px;
     background-color: dodgerblue;
+    color: ghostwhite;
+    text-align: center;
+
+    height: 600px;
+    font-size: 24px;
+    padding: 5px;
+}
+
+#site-statics ul
+{
+    list-style-type: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+#site-statics .self-data
+{
+    position: relative;
+    float: left;
+    background: #4fb783;
+
+    border-radius: 20px;
+    padding: 25px;
+    margin: 10px;
+}
+
+#site-statics .other-data
+{
+    display: inline-block;
+
+    margin: 35px;
 }

@@ -2,7 +2,14 @@ $(document).ready(function()
 {
     function checkFinish(left){
         if(!left) $.getScript("https://pm25.github.io/js/main.js")
-            .fail(function(){ checkFinish(0); }); // If fail loading the script, then try again!
+            .fail(function(){ // If fail loading the script, then try again! 
+                setTimeout(function(){
+                    if(window.console) console.log("*Error: Failed loading main.js");
+                    checkFinish(0);
+                }, 100); 
+            }).done(function(){
+                if(window.console) console.log("main.js loaded!");
+            }); 
     }
 
     var includes = $("[data-include]");
