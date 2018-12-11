@@ -1,14 +1,14 @@
 $(document).ready(function()
 {
     function checkFinish(left){
-        if(!left) $.getScript("https://pm25.github.io/js/main.js")
+        if(!left) $.getScript("https://pm25.github.io/js/common-main.js")
             .fail(function(){ // If fail loading the script, then try again! 
                 setTimeout(function(){
-                    if(window.console) console.log("*Error: Failed loading main.js");
+                    if(window.console) console.log("*Error: Failed loading common-main.js");
                     checkFinish(0);
                 }, 100); 
             }).done(function(){
-                if(window.console) console.log("main.js loaded!");
+                if(window.console) console.log("common-main.js loaded!");
             }); 
     }
 
