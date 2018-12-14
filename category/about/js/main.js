@@ -7,9 +7,6 @@ $(document).ready(function()
         $("#site-statics").find(".total-ip").text(snapshot.val()["ip"]);
         $("#site-statics").find(".total-view").text(snapshot.val()["view"]);
     });
-    $.getJSON("https://plusmore-view-counter.herokuapp.com/", function(data) {
-        console.log(JSON.stringify(data, null, 2));
-    });
 
     $("#site-statics").find(".running-time").text(msToTime(new Date - createdTime));
     setInterval(function(){
