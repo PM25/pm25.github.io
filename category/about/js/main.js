@@ -3,9 +3,18 @@ $(document).ready(function()
     var db = firebase.database();
     var createdTime = new Date(2018, 5, 24);
 
-    db.ref("/ipData/ip/total").on("value", (snapshot)=>{
+    db.ref("/ipData/ip/total").on("value", (snapshot) => {
         $("#site-statics").find(".total-ip").text(snapshot.val()["ip"]);
         $("#site-statics").find(".total-view").text(snapshot.val()["view"]);
+    });
+    $.getJSON("https://plusmore-view-counter.herokuapp.com/", function(data) {
+        clientIP = data["ip"].replace(/\./g, '-');
+        
+        $("#site-statics").find(".ip").text(data["ip"]);
+        $("#site-statics").find(".city").text(data["city"]);
+        db.ref("/ipData/ip/" + clientIP).once("value", (snapshot) => {
+            $("#site-statics").find(".view").text(snapshot.val()["count"]);
+        });
     });
 
     $("#site-statics").find(".running-time").text(msToTime(new Date - createdTime));
