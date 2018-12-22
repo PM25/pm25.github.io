@@ -1,0 +1,42 @@
+main
+{
+    position: absolute;
+    background-color: cornflowerblue;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+#header
+{
+    position: relative;
+    text-align: center;
+
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+}
+
+#game
+{
+    display: flex;
+    justify-content: center;
+
+    z-index: 1;
+}
+
+#game #game-canvas
+{
+    border-style: solid;
+
+    width: 60vw;
+    height: 80vh;
+}
+
+#game .control
+{
+    width: 30vw;
+    height: 80vh;
+}
