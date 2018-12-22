@@ -4,11 +4,11 @@ var images = {};
 window.onload = function()
 {
     var imgUrl = {
-        background: "category/project/flappy-bird/img/background.png",
-        bird: "category/project/flappy-bird/img/bird.png",
-        pipeHead: "category/project/flappy-bird/img/pipe-head.png",
-        pipeBody: "category/project/flappy-bird/img/pipe-body.png",
-        revPipeHead: "category/project/flappy-bird/img/rev-pipe-head.png"
+        background: "img/background.png",
+        bird: "img/bird.png",
+        pipeHead: "img/pipe-head.png",
+        pipeBody: "img/pipe-body.png",
+        revPipeHead: "img/rev-pipe-head.png"
     }
 
     var loadImg = function(callback) {
@@ -63,6 +63,8 @@ var Game = function()
     this.score = 0;
     this.unit = this.height / 15;
     this.gravity = this.height * 1.5;
+    this.interval = 0;
+    this.spawnInterval = 1;
 
     this.birds = [];
     this.pipes = [];
@@ -87,9 +89,28 @@ Game.prototype.mainloop = function()
 // Update objects
 Game.prototype.update = function(modifier)
 {
+    // Birds
     for(var idx in this.birds){
         this.birds[idx].update(modifier);
     }
+
+    // Pipes
+    var rmCount = 0;
+    for(var idx in this.pipes){
+        this.pipes[idx].update(modifier);
+        if(this.pipes[idx].x < -this.pipes[idx].width) ++rmCount;
+    } this.pipes.splice(0, rmCount);
+    
+
+    this.interval += modifier;
+    if(this.interval > this.spawnInterval){
+        this.interval = 0;
+
+        for(var y = 0; y < this.height; y += game.unit){
+            this.pipes.push(new Pipe(game, game.width, y));
+        }
+    }
+
 
     // Update FPS
     this.fps = 1000 / this.timeInterval;
@@ -107,6 +128,11 @@ Game.prototype.render = function()
         this.ctx.drawImage(images.bird, this.birds[idx].x, this.birds[idx].y, this.birds[idx].width, this.birds[idx].height);
     }
 
+    // Pipe
+    for(var idx in this.pipes){
+        this.ctx.drawImage(images.pipeBody, this.pipes[idx].x, this.pipes[idx].y, this.pipes[idx].width, this.pipes[idx].height);
+    }
+
     
     this.ctx.font = this.fontSize + "px Helvetica";
     // Show score
@@ -118,11 +144,24 @@ Game.prototype.render = function()
 // Start game
 Game.prototype.start = function()
 {
+    // Init bird
     this.birds.push(new Bird(this));
+
+    // Init pipes
+    for(var x = game.unit * 7; x < this.width; x += game.unit * 5){
+        for(var y = 0; y < this.height; y += game.unit){
+            this.pipes.push(new Pipe(this, x, y));
+        }
+    }
 }
 
 // Pause game
 Game.prototype.pause = function()
+{
+}
+
+// Restart game
+Game.prototype.restart = function()
 {
 }
 
@@ -153,4 +192,20 @@ Bird.prototype.update = function(modifier)
 Bird.prototype.jump = function()
 {
     this.speed = -(game.gravity * 0.7);
+}
+
+
+// Pipe object
+var Pipe = function(game, x, y)
+{
+    this.x = x;
+    this.y = y;
+    this.width = game.unit;
+    this.height = game.unit;
+    this.speed = game.gravity * 0.3;
+}
+
+Pipe.prototype.update = function(modifier)
+{
+    this.x -= this.speed * modifier;
 }
