@@ -1,6 +1,6 @@
 var images = {};
 
-// Start from here!
+// Main 
 window.onload = function()
 {
     var imgUrl = {
@@ -25,9 +25,10 @@ window.onload = function()
         }
     }
 
+    // Start from here !
     loadImg(function start() {
         game = new Game();
-        game.start();
+        game.start(); // Initialize 
 
         game.mainloop();
     });
@@ -58,16 +59,19 @@ var Game = function()
     
     this.width = this.canvas.width;
     this.height = this.canvas.height;
-    this.fontSize = 24;
+    this.fontSize = 28;
     this.fps = 0;
     this.score = 0;
     this.unit = this.height / 15;
-    this.gravity = this.height * 1.5;
-    this.interval = 0;
-    this.spawnInterval = 1;
+    this.gravity = this.height * 2;
 
     this.birds = [];
     this.pipes = [];
+    this.pipeWidth = this.unit * 2;
+    this.pipeHeight = this.unit * 2;
+    this.pipSpeed = this.pipeWidth * 3;
+    this.interval = 0;
+    this.spawnInterval = this.pipeWidth * 6;
 }
 
 
@@ -100,17 +104,22 @@ Game.prototype.update = function(modifier)
         this.pipes[idx].update(modifier);
         if(this.pipes[idx].x < -this.pipes[idx].width) ++rmCount;
     } this.pipes.splice(0, rmCount);
-    
 
-    this.interval += modifier;
+    this.interval += (this.pipSpeed * modifier);
     if(this.interval > this.spawnInterval){
         this.interval = 0;
 
-        for(var y = 0; y < this.height; y += game.unit){
-            this.pipes.push(new Pipe(game, game.width, y));
+        // for(var y = 0; y < this.height; y += this.pipeHeight){
+        //     this.pipes.push(new Pipe(game, this.width, y));
+        // }
+        var hole = Math.floor(Math.random() * (this.height / this.pipeHeight));
+        for(var y = 0; y < this.height / this.pipeHeight; ++y) {
+            if(y != hole) {
+                this.pipes.push(new Pipe(game, this.width, y * this.pipeHeight));
+            }
         }
-    }
 
+    }
 
     // Update FPS
     this.fps = 1000 / this.timeInterval;
@@ -146,13 +155,6 @@ Game.prototype.start = function()
 {
     // Init bird
     this.birds.push(new Bird(this));
-
-    // Init pipes
-    for(var x = game.unit * 7; x < this.width; x += game.unit * 5){
-        for(var y = 0; y < this.height; y += game.unit){
-            this.pipes.push(new Pipe(this, x, y));
-        }
-    }
 }
 
 // Pause game
@@ -191,7 +193,7 @@ Bird.prototype.update = function(modifier)
 
 Bird.prototype.jump = function()
 {
-    this.speed = -(game.gravity * 0.7);
+    this.speed = -(game.gravity * 0.5);
 }
 
 
@@ -200,9 +202,9 @@ var Pipe = function(game, x, y)
 {
     this.x = x;
     this.y = y;
-    this.width = game.unit;
-    this.height = game.unit;
-    this.speed = game.gravity * 0.3;
+    this.width = game.pipeWidth;
+    this.height = game.pipeHeight;
+    this.speed = game.pipSpeed;
 }
 
 Pipe.prototype.update = function(modifier)
