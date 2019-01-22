@@ -223,14 +223,21 @@ html, body
 /* Footer */
 #footer
 {
-    background: midnightblue;
+    position: absolute;
+    background: #45454545;
     text-align: center;
     color: grey;
 
     height: 50px;
+    bottom: -50px;
+    width: 100%;
     line-height: 50PX;
 }
 
+#footer:hover
+{
+    background: #454545;
+}
 
 /* Others */
 .icons
