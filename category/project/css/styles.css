@@ -70,11 +70,12 @@ body
 
 #projects a, #projects a:visited
 {
-    display: table;
+    display: flex;
     margin: 10px auto;
     text-decoration: none;
     background: #2b2b2b88;
     color: white;
+    align-items: center;
     
     border-radius: 10px;
     width: 60vw;
@@ -84,12 +85,28 @@ body
 
 #projects .project-date
 {
+    text-align: center;
     border-right: .1em solid;
+    
+    line-height: 1em;
+    width: 4em;
+}
+
+.project-date .year
+{
+    color: gray;
+
+    font-size: .8em;
+}
+
+.project-date .month-day
+{
+    font-size: 1em;
 }
 
 #projects .project-title
 {
-    margin: 0 5px;
+    margin: 0 10px;
 }
 
 @keyframes neon
