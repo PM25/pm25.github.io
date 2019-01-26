@@ -3,7 +3,9 @@ $(document).ready(function()
     var includes = $("[data-include]");
     var count = includes.length;
     jQuery.each(includes, function(){
+        // Load externel HTML files
         var file = "https://pm25.github.io/html/" + $(this).data("include") + ".html";
+        // Load common-main.js
         $(this).load(file, checkFinish(--count));
     });
 });

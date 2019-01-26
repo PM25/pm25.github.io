@@ -83,11 +83,19 @@ body
     padding: 10px;
 }
 
+#projects a:hover
+{
+    background: #2b2b2b;
+
+    font-size: 1.5em;
+}
+
 #projects .project-date
 {
     text-align: center;
     border-right: .1em solid;
     
+    font-size: .8em;
     line-height: 1em;
     width: 4em;
 }
@@ -96,7 +104,7 @@ body
 {
     color: gray;
 
-    font-size: .8em;
+    font-size: .7em;
 }
 
 .project-date .month-day

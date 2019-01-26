@@ -21,7 +21,7 @@ html, body
     left: 12px;
     height: 50px;      
     line-height: 50px;
-    font-size: 24px;
+    font-size: 1.3em;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     z-index: 5;
 }
@@ -78,7 +78,7 @@ html, body
     outline: none;
     background: transparent;
 
-    font-size: 24px;
+    font-size: 1em;
     width: 200px;
     margin: 0 0 0 15px;
     animation: stretch .3s ease-out forwards;
@@ -108,7 +108,7 @@ html, body
     top: 0;
     width: 250px;
     height: 100%;
-    font-size: 24px;
+    font-size: 1.3em;
     transition: transform .15s;
     z-index: 10;
 }
