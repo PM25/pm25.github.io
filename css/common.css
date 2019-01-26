@@ -10,6 +10,11 @@ html, body
     width: 100%;
 }
 
+main
+{
+    min-height: 100vh;
+}
+
 /* Home-nav */
 #home-nav
 {

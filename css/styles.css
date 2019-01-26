@@ -4,7 +4,6 @@ main
     position: absolute;
 
     width: 100%;
-    min-height: 100%;
     background-image: -webkit-linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
     background-image: linear-gradient(to top left, #89f7fe 0%, #66a6ff 100%);
 }

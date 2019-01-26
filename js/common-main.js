@@ -33,7 +33,7 @@ $(document).ready(function()
         }
     });
 
-    $("body").click(function(){
+    $("main").click(function(){
         if($("#side-nav").hasClass("show-sidenav")){
             $("#side-nav").removeClass("show-sidenav");
         }
