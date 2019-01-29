@@ -121,7 +121,7 @@ body
 
 #projects .project-labels span
 {
-    border: groove;
+    border: 1px groove;
 
     padding: 2px;
     margin: 0 2px;

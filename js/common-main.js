@@ -24,23 +24,29 @@ $(document).ready(function()
         }
     }, 500);
         
+    timer = setTimeout(function() {
+        if($(".search-btn").is(":visible")) {
+            $(".search-btn").click(function () {
+                if ($(this).closest("#home-nav").length) {
+                    $search_input = $(this).prev(".search-input");
+                    $search_container = $(this).parent(".search-container");
+                    
+                    if($search_input.length){
+                        $search_input.remove();
+                        $search_container.css({"border-color": "transparent"});
+                        $(this).removeClass("spin-effect");
+                    } else {
+                        $search_container.css({ "border-color": "black" });
+                        $(this).before("<input class='search-input' type='text' placeholder='Search..'>");
+                        $(this).addClass("spin-effect");
+                    }            
+                }
+            });
 
-    $(".search-btn").click(function () {
-        if ($(this).closest("#home-nav").length) {
-            $search_input = $(this).prev(".search-input");
-            $search_container = $(this).parent(".search-container");
-            
-            if($search_input.length){
-                $search_input.remove();
-                $search_container.css({"border-color": "transparent"});
-                $(this).removeClass("spin-effect");
-            } else {
-                $search_container.css({ "border-color": "black" });
-                $(this).before("<input class='search-input' type='text' placeholder='Search..'>");
-                $(this).addClass("spin-effect");
-            }            
+            clearInterval(timer);
+            if(window.console) console.log("search-btn loaded!");
         }
-    });
+    }, 700);
 
     $("main").click(function(){
         if($("#side-nav").hasClass("show-sidenav")){
