@@ -42,14 +42,11 @@ body
 {
     color: white;
     text-decoration: none;
-    animation: neon 1.5s ease-in-out infinite alternate;
-    -webkit-animation: neon 1.5s ease-in-out infinite alternate;
-    -o-animation: neon 1.5s ease-in-out infinite alternate;
-    -moz-animation: neon 1.5s ease-in-out infinite alternate;
-    transition: all .6s;
-    -webkit-transition: all .6s;
-    -moz-transition: all .6s;
-    -o-transition: all .6s;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
 
     font-size: 6em;
 }
@@ -57,10 +54,7 @@ body
 #header a:hover
 {
     color: #FF1177;
-    animation: none;
-    -webkit-animation: none;
-    -o-animation: none;
-    -moz-animation: none;
+    text-shadow: none;
 }
 
 #projects
@@ -98,6 +92,7 @@ body
     font-size: .8em;
     line-height: 1em;
     width: 4em;
+    opacity: .8;
 }
 
 .project-date .year
@@ -117,11 +112,19 @@ body
     margin: 0 10px;
 }
 
-@keyframes neon
+#projects .project-labels
 {
-    from {
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
-    } to {
-        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
-    }
+    margin-left: auto;
+
+    font-size: .6em;
+}
+
+#projects .project-labels span
+{
+    border: groove;
+
+    padding: 2px;
+    margin: 0 2px;
+    border-radius: 10px;
+    opacity: .5;
 }

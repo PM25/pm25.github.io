@@ -18,7 +18,9 @@ $(document).ready(function()
                     }, 100);
                 }
             });
+
             clearInterval(timer);
+            if(window.console) console.log("sidenav-btn loaded!");
         }
     }, 500);
         
