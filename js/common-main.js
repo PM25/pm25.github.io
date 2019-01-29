@@ -1,20 +1,27 @@
 $(document).ready(function()
 {
-    $(".sidenav-btn").mousedown(function (event) {
-        if(event.which === 1){
-            $ripple_div = $("<div></div>");
-            $ripple_div.addClass("ripple-effect");
-            $(this).append($ripple_div);
+
+    timer = setTimeout(function() {
+        if($(".sidenav-btn").is(":visible")) {
+            $(".sidenav-btn").mousedown(function (event) {
+                if(event.which === 1){
+                    $ripple_div = $("<div></div>");
+                    $ripple_div.addClass("ripple-effect");
+                    $(this).append($ripple_div);
+                }
+            });
+            $(".sidenav-btn").mouseup(function(event){
+                if(event.which === 1){
+                    window.setTimeout(function(){
+                        $(".sidenav-btn").children(".ripple-effect").remove();
+                        $("#side-nav").toggleClass("show-sidenav");
+                    }, 100);
+                }
+            });
+            clearInterval(timer);
         }
-    });
-    $(".sidenav-btn").mouseup(function(event){
-        if(event.which === 1){
-            window.setTimeout(function(){
-                $(".sidenav-btn").children(".ripple-effect").remove();
-                $("#side-nav").toggleClass("show-sidenav");
-            }, 100);
-        }
-    });
+    }, 500);
+        
 
     $(".search-btn").click(function () {
         if ($(this).closest("#home-nav").length) {
