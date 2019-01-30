@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:900');
+
 #header
 {
     position: relative;
+    display: flex;
     overflow: hidden;
+    justify-content: center;
+    align-items: center;
     background: #74ebd5;
     background: linear-gradient(to bottom right, #74ebd5, #ACB6E5);
 	
@@ -118,12 +123,50 @@
     animation-delay: 10s;
 }
 
+#title-box
+{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    color: #333b;
+
+    font-size: 3.5em;
+    z-index: 1;
+}
+
+#title-box span:nth-child(2)
+{
+    font-size: .5em;
+    line-height: .5em;
+
+    animation: zoom ease-out 2s;
+}
+
+.flip-list
+{
+    overflow: hidden;
+
+    height: 1em;
+}
+
+.flip-list ul
+{
+    list-style: none;
+    animation: swipe-up 50s linear infinite;
+
+    line-height: 200%;
+    margin: 0;
+    padding: 0;
+}
+
+
 #status
 {
     position: relative;
-    padding: 100px;
+    padding: 50px;
 }
 
+/* Animation */
 @keyframes bubble 
 {
     from { 
@@ -132,6 +175,33 @@
     }
     to { 
         opacity: 0;
-        transform: translateY(-700px) rotate(360deg); 
+        transform: translateY(-100vh) rotate(360deg); 
+    }
+}
+
+@keyframes swipe-up
+{
+    0%, 9%,  50%, 59% {
+        transform: translateY(-.5em);
+    } 10%, 19%,  60%, 69% {
+        transform: translateY(-2.5em);
+    } 20%, 29%,  70%, 79% {
+        transform: translateY(-4.5em);
+    } 30%, 39%,  80%, 89% {
+        transform: translateY(-6.5em);
+    } 40%, 49%,  90%, 99% {
+        transform: translateY(-8.5em);
+    } 
+}
+
+@keyframes zoom
+{
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }
