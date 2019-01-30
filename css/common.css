@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/earlyaccess/notosanstc.css');
+
 html, body
 {
     position: absolute;
@@ -12,7 +14,7 @@ html, body
 
 main
 {
-    min-height: 100vh;
+    min-height: 100%;
 }
 
 /* Home-nav */
@@ -122,7 +124,6 @@ main
 {
     -webkit-transform: translate3d(250px, 0, 0);
     transform: translate3d(250px, 0, 0);
-    transition: transform .15s;
 }
 
 #side-nav a
@@ -289,16 +290,19 @@ main
     animation: ripple .15s ease-out forwards;
 }
 
+
 @media only screen and (max-width: 700px)
 {
-    #home-nav a, .search-container{
+    #home-nav a, .search-container {
         display: none;
     }
 }
 
+
+/* Animation */
 @keyframes ripple
 {
-    to{
+    to {
         -webkit-transform: scale(1.2);
         -ms-transform: scale(1.2);
         transform: scale(1.2);
@@ -307,17 +311,17 @@ main
 
 @keyframes heartbeat
 {
-    50%{
+    50% {
         -webkit-transform: scale(0.7);
         -ms-transform: scale(0.7);
         transform: scale(0.7);
     }
-    75%{
+    75% {
         -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
         transform: scale(1.1);
     }
-    0%, 100%{
+    0%, 100% {
         -webkit-transform: scale(1);
         -ms-transform: scale(1);
         transform: scale(1);   
@@ -326,20 +330,20 @@ main
 
 @keyframes stretch
 {
-    from{
+    from {
         width: 0;
     }
-    to{
+    to {
         width: 200px;
     }
 }
 
 @keyframes spin
 {
-    from{
+    from {
         transform: rotate(0deg);
     }
-    to{
+    to {
         transform: rotate(360deg);
     }
 }

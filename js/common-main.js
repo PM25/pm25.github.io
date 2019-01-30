@@ -1,7 +1,7 @@
 $(document).ready(function()
 {
-
-    timer = setTimeout(function() {
+    // Constantly check whether "sidenav-btn" is ready.
+    timer_sidenavbtn = setTimeout(function() {
         if($(".sidenav-btn").is(":visible")) {
             $(".sidenav-btn").mousedown(function (event) {
                 if(event.which === 1){
@@ -19,14 +19,15 @@ $(document).ready(function()
                 }
             });
 
-            clearInterval(timer);
+            clearInterval(timer_sidenavbtn);
             if(window.console) console.log("sidenav-btn loaded!");
         }
     }, 500);
         
-    timer = setTimeout(function() {
+    // Constantly check whether "search-btn" is ready.
+    timer_searchbtn = setTimeout(function() {
         if($(".search-btn").is(":visible")) {
-            $(".search-btn").click(function () {
+            $(".search-btn").click(function() {
                 if ($(this).closest("#home-nav").length) {
                     $search_input = $(this).prev(".search-input");
                     $search_container = $(this).parent(".search-container");
@@ -43,7 +44,7 @@ $(document).ready(function()
                 }
             });
 
-            clearInterval(timer);
+            clearInterval(timer_searchbtn);
             if(window.console) console.log("search-btn loaded!");
         }
     }, 700);

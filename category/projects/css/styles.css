@@ -7,21 +7,6 @@ body
         ), linear-gradient(
             to bottom, #355c7d 50%, #6c5b7b, #c06c84
         );
-    background: -moz-repeating-linear-gradient(
-            45deg, #2b2b2b2b, #2b2b2b2b 1px, transparent 1px, transparent 7px
-        ), linear-gradient(
-            to bottom, #355c7d 50%, #6c5b7b, #c06c84
-        );
-    background: -o-repeating-linear-gradient(
-            45deg, #2b2b2b2b, #2b2b2b2b 1px, transparent 1px, transparent 7px
-        ), linear-gradient(
-            to bottom, #355c7d 50%, #6c5b7b, #c06c84
-        );
-    background: -webkit-repeating-linear-gradient(
-            45deg, #2b2b2b2b, #2b2b2b2b 1px, transparent 1px, transparent 7px
-        ), linear-gradient(
-            to bottom, #355c7d 50%, #6c5b7b, #c06c84
-        );
 
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -44,9 +29,6 @@ body
     text-decoration: none;
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
     transition: all .5s;
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    -o-transition: all .5s;
 
     font-size: 6em;
 }
