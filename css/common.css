@@ -22,6 +22,7 @@ main
 {
     position: fixed;
     display: block;
+    user-select: none;
     background-color: rgba(255, 255, 255, 0.7);
     
     top: 0;
@@ -87,6 +88,7 @@ main
     font-size: 1em;
     width: 200px;
     margin: 0 0 0 15px;
+
     animation: stretch .3s ease-out forwards;
 }
 
@@ -109,6 +111,7 @@ main
 {
     background-color: #18a5a5;
     position: fixed;
+    user-select: none;
 
     left: -250px;
     top: 0;
@@ -204,6 +207,7 @@ main
     text-align: center;
     position: relative;
     display: block;
+    user-select: text;
     color: white;
 }
 

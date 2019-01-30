@@ -13,7 +13,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 50vh;
+	min-height: 50vh;
 }
 
 #header .bg-bubbles
@@ -128,10 +128,22 @@
     display: flex;
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
+    align-items: center;
     color: #333b;
 
     font-size: 3.5em;
     z-index: 1;
+}
+
+#title-box .title
+{
+    display: flex;
+    flex-direction: column;
+    background: #fffc;
+
+    padding: 0 .2em;
+    margin: .2em;
+    border-radius: 5%;
 }
 
 #title-box span:nth-child(2)
@@ -152,11 +164,14 @@
 .flip-list ul
 {
     list-style: none;
-    animation: swipe-up 50s linear infinite;
+    text-align: center;
 
     line-height: 200%;
     margin: 0;
     padding: 0;
+    transform: translateY(.5em);
+
+    animation: swipe-up 50s linear 2s infinite;
 }
 
 
@@ -181,15 +196,17 @@
 
 @keyframes swipe-up
 {
-    0%, 9%,  50%, 59% {
+    0% {
+        transform: translateY(.5em);
+    } 1%, 10%,  51%, 60% {
         transform: translateY(-.5em);
-    } 10%, 19%,  60%, 69% {
+    } 11%, 20%,  61%, 70% {
         transform: translateY(-2.5em);
-    } 20%, 29%,  70%, 79% {
+    } 21%, 30%,  71%, 80% {
         transform: translateY(-4.5em);
-    } 30%, 39%,  80%, 89% {
+    } 31%, 40%,  81%, 90% {
         transform: translateY(-6.5em);
-    } 40%, 49%,  90%, 99% {
+    } 41%, 50%,  91%, 100% {
         transform: translateY(-8.5em);
     } 
 }
