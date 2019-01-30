@@ -1,15 +1,137 @@
-main
+#header
 {
-    background: #89f7fe;
-    position: absolute;
+    position: relative;
+    overflow: hidden;
+    background: #74ebd5;
+    background: linear-gradient(to bottom right, #74ebd5, #ACB6E5);
+	
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50vh;
+}
 
-    width: 100%;
-    background-image: -webkit-linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
-    background-image: linear-gradient(to top left, #89f7fe 0%, #66a6ff 100%);
+#header .bg-bubbles
+{
+	position: absolute;
+    
+    top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.bg-bubbles li 
+{
+    position: absolute;
+    list-style: none;
+    display: flex;
+    background: white;
+
+    width: 50px;
+    height: 50px;
+    bottom: -200px;
+    
+    animation: bubble 25s linear infinite;
+}
+
+.bg-bubbles li:nth-child(1)
+{
+    left: 5%;
+}
+
+.bg-bubbles li:nth-child(2)
+{
+    left: 10%;
+    
+    width: 100px;
+    height: 100px;
+    
+    animation-delay: 2s;
+    animation-duration: 17s;
+}
+
+.bg-bubbles li:nth-child(3)
+{
+    left: 20%;
+    animation-delay: 3s;
+}
+
+.bg-bubbles li:nth-child(4)
+{
+    left: 25%;
+    width: 15px;
+    height: 15px;
+    
+    animation-delay: 2s;
+    animation-duration: 40s;
+}
+
+.bg-bubbles li:nth-child(5)
+{
+    left: 30%;
+    width: 200px;
+    height: 200px;
+    
+    animation-delay: 5s;
+}
+
+.bg-bubbles li:nth-child(6)
+{
+    left: 40%;
+    width: 70px;
+    height: 70px;
+    
+    animation-duration: 15s;
+}
+
+.bg-bubbles li:nth-child(7)
+{
+    left: 60%;
+    width: 30px;
+    height: 30px;
+    
+    animation-delay: 15s;
+    animation-duration: 40s;
+}
+
+.bg-bubbles li:nth-child(8)
+{
+    left: 70%;
+}
+
+.bg-bubbles li:nth-child(9)
+{
+    left: 80%;
+    width: 120px;
+    height: 120px;
+    
+    animation-delay: 3s;
+}
+
+.bg-bubbles li:nth-child(10)
+{
+    left: 90%;
+    width: 150px;
+    height: 150px;
+    
+    animation-delay: 10s;
 }
 
 #status
 {
     position: relative;
-    margin: 100px;
+    padding: 100px;
+}
+
+@keyframes bubble 
+{
+    from { 
+        opacity: .3;
+        transform: translateY(0) rotate(0); 
+    }
+    to { 
+        opacity: 0;
+        transform: translateY(-700px) rotate(360deg); 
+    }
 }
