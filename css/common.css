@@ -14,7 +14,7 @@ html, body
 
 main
 {
-    min-height: 100%;
+    min-height: 100vh;
 }
 
 /* Home-nav */
@@ -38,7 +38,6 @@ main
     color: black;
     text-decoration: none;
     display: block;
-    cursor: pointer;
 
     padding: 0 20px;
     margin: 0;
@@ -122,7 +121,6 @@ main
 
 .show-sidenav
 {
-    -webkit-transform: translate3d(250px, 0, 0);
     transform: translate3d(250px, 0, 0);
 }
 
@@ -184,7 +182,6 @@ main
     display: block;
     background-size: cover;
     background: #2ca8c7;
-    background-image: -webkit-radial-gradient(circle, #5fd4f1, #1c9bbb);
     background-image: radial-gradient(circle, #5fd4f1, #1c9bbb);
     
     height: 215px;
@@ -283,8 +280,6 @@ main
     height: 32px;
     opacity: 1;
     border-radius: 50%;
-    -webkit-transform: scale(0);
-    -ms-transform: scale(0);
     transform: scale(0);
     background: rgba(0,0,0,0.15);
     animation: ripple .15s ease-out forwards;
@@ -303,8 +298,6 @@ main
 @keyframes ripple
 {
     to {
-        -webkit-transform: scale(1.2);
-        -ms-transform: scale(1.2);
         transform: scale(1.2);
     }
 }
@@ -312,18 +305,12 @@ main
 @keyframes heartbeat
 {
     50% {
-        -webkit-transform: scale(0.7);
-        -ms-transform: scale(0.7);
         transform: scale(0.7);
     }
     75% {
-        -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
         transform: scale(1.1);
     }
     0%, 100% {
-        -webkit-transform: scale(1);
-        -ms-transform: scale(1);
         transform: scale(1);   
     }
 }

@@ -1,10 +1,11 @@
 $(document).ready(function()
 {
     // Constantly check whether "sidenav-btn" is ready.
-    timer_sidenavbtn = setTimeout(function() {
+    timer_sidenavbtn = setInterval(function() {
         if($(".sidenav-btn").is(":visible")) {
-            $(".sidenav-btn").mousedown(function (event) {
+            $(".sidenav-btn").mousedown(function(event){
                 if(event.which === 1){
+                    // Show the ripple effect.
                     $ripple_div = $("<div></div>");
                     $ripple_div.addClass("ripple-effect");
                     $(this).append($ripple_div);
@@ -13,9 +14,17 @@ $(document).ready(function()
             $(".sidenav-btn").mouseup(function(event){
                 if(event.which === 1){
                     window.setTimeout(function(){
+                        //  Remove the ripple effect.
                         $(".sidenav-btn").children(".ripple-effect").remove();
+                        // Show or Hide side navigator menu
                         $("#side-nav").toggleClass("show-sidenav");
                     }, 100);
+
+                    // Fixed problem that cursor will change to default after sidenav-btn clicked.
+                    $("#side-nav").addClass("sidenav-btn");
+                    window.setTimeout(function(){
+                        $("#side-nav").removeClass("sidenav-btn");
+                    }, 1000);
                 }
             });
 
@@ -25,7 +34,7 @@ $(document).ready(function()
     }, 500);
         
     // Constantly check whether "search-btn" is ready.
-    timer_searchbtn = setTimeout(function() {
+    timer_searchbtn = setInterval(function() {
         if($(".search-btn").is(":visible")) {
             $(".search-btn").click(function() {
                 if ($(this).closest("#home-nav").length) {
@@ -47,7 +56,7 @@ $(document).ready(function()
             clearInterval(timer_searchbtn);
             if(window.console) console.log("search-btn loaded!");
         }
-    }, 700);
+    }, 500);
 
     $("main").click(function(){
         if($("#side-nav").hasClass("show-sidenav")){
