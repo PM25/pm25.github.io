@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:900');
 
+/* header */
 #header
 {
     position: relative;
@@ -13,7 +14,8 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	min-height: 50vh;
+    min-height: 85vh;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .15);
 }
 
 .bg-bubbles
@@ -125,6 +127,7 @@
     animation-delay: 10s;
 }
 
+/* title-box */
 #title-box
 {
     display: flex;
@@ -133,7 +136,7 @@
     align-items: center;
     color: #333b;
 
-    font-size: 3.5em;
+    font-size: 4.5em;
     z-index: 1;
 }
 
@@ -190,6 +193,69 @@
     animation: swipe-up 50s linear 2s infinite;
 }
 
+
+/* quick-nav */
+#quick-nav
+{
+    display: flex;
+    flex-direction: row;
+    color: #eee;
+    font-weight: bold;
+
+    font-size: 1.7em;
+    height: 15vh;
+}
+
+#quick-nav > a
+{
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+
+    width: 25vw;
+}
+
+#quick-nav > a:visited
+{
+    color: inherit;
+}
+
+#quick-nav > a:hover
+{
+    transition: .3s;
+    font-size: 1.5em;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+#quick-nav > a:hover ~ a
+{
+    opacity: .5;
+}
+
+#quick-nav > a:nth-child(1)
+{
+    background: #65c6c4;
+}
+
+#quick-nav > a:nth-child(2)
+{
+    background: #408ab4;
+}
+
+#quick-nav > a:nth-child(3)
+{
+    background: #34699a;
+}
+
+#quick-nav > a:nth-child(4)
+{
+    background: #113f67;
+}
+
+
+/* news */
 #news
 {
     position: relative;
@@ -201,8 +267,8 @@
     text-align: center;
     box-sizing: border-box;
 
-    height: 50vh;
-    width: 50vh;
+    min-height: 75vh;
+    width: 60vh;
     padding: 20px;
 
     transform: scale(0);
@@ -244,7 +310,6 @@
 #news .info
 {
     z-index: 1;
-    font-size: .9em;
 }
 
 #news .bg-bubbles li
