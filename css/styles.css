@@ -270,9 +270,6 @@
     min-height: 75vh;
     width: 60vh;
     padding: 20px;
-
-    transform: scale(0);
-    animation: zoom 1s linear 3s forwards;
 }
 
 #news .title
