@@ -239,6 +239,7 @@ main
     bottom: -50px;
     width: 100%;
     line-height: 50PX;
+    transition: .3s;
 }
 
 #footer:hover
@@ -294,6 +295,10 @@ main
 {
     #home-nav a, .search-container {
         display: none;
+    }
+
+    #footer {
+        font-size: .7em;
     }
 }
 
