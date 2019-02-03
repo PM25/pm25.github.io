@@ -283,9 +283,10 @@
     border-radius: 0 0 10px 10px;
 }
 
-.beverage .title
+.beverage .ice
 {
     position: relative;
+    display: block;
     background: #bbbb;
     color: #333;
 
@@ -308,7 +309,7 @@
     color: white;
     overflow: hidden;
     z-index: 1;
-    background: linear-gradient(#944632cc, #230e0dee);
+    background: linear-gradient(#944632aa, #230e0dee);
 
     width: 100%;
     padding: 1em 0 0 0;
