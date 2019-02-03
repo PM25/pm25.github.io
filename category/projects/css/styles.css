@@ -12,23 +12,24 @@ body
     background-attachment: fixed;
 }
 
+/* Header */
 #header
 {
     position: relative;
     text-align: center;
     font-family: "Monoton", cursive;
+    color: white;
 
     height: 150px;
     line-height: 150px;
     width: 100%;
 }
 
-#header a, #header a:visited
+#header a
 {
     color: white;
     text-decoration: none;
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
-    transition: all .5s;
 
     font-size: 6em;
 }
@@ -39,6 +40,7 @@ body
     text-shadow: none;
 }
 
+/* Project Articles */
 #projects
 {
     margin: 40px 0;
@@ -109,4 +111,24 @@ body
     margin: 0 2px;
     border-radius: 10px;
     opacity: .5;
+}
+
+
+/* Resposive Web Design */
+@media screen and (max-width: 700px)
+{
+    #header a {
+        font-size: 4.5em;
+    }
+}
+
+@media screen and (max-width: 500px)
+{
+    #header a {
+        font-size: 3em;
+    }
+
+    #projects a {
+        width: 80vw;
+    }
 }
