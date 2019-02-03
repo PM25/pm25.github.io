@@ -391,7 +391,7 @@
 
 
 /* Resposive Web Design */
-@media screen and (max-width: 900px)
+@media screen and (max-width: 800px)
 {
     #header {
         height: 90vh;
