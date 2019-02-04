@@ -219,11 +219,6 @@
     flex-grow: 1;
 }
 
-#quick-nav > a:visited
-{
-    color: inherit;
-}
-
 #quick-nav > a:hover
 {
     transition: .3s;
