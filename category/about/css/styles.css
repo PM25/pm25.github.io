@@ -183,10 +183,16 @@
     text-decoration: none;
     color: white;
 
-    border-radius: 60px;
+    border-radius: 100%;
     width: 60px;
     height: 60px;
+    transition: .5s;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+#contact a:hover
+{
+    transform: scale(1.2);
 }
 
 #contact i
@@ -198,11 +204,12 @@
     width: 100%;
     height: 100%;
     border-radius: 100%;
+    transition: .5s;
 }
 
 #contact i:hover
 {
-    animation: spin .5s forwards;
+    transform: rotate(360deg);
 }
 
 .discord

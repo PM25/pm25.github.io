@@ -56,6 +56,7 @@ body
 {
     cursor: pointer;
     color: white;
+    user-select: none;
     
     padding: 5px;
     margin: 5px;
@@ -94,6 +95,11 @@ body
     margin: 10px;
     border: #fff3 2px solid;
     box-shadow: 0 3px 5px #5551, 0 3px 5px #5552;
+}
+
+#articles > div:hover
+{
+    border-color: #fff7;
 }
 
 #articles > div > a
