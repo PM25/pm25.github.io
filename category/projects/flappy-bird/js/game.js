@@ -3,6 +3,7 @@ var images = {};
 // Main 
 window.onload = function()
 {
+    // Resource
     var imgUrl = {
         background: "img/background.png",
         bird: "img/bird.png",
@@ -10,7 +11,7 @@ window.onload = function()
         pipeBody: "img/pipe-body.png",
         revPipeHead: "img/rev-pipe-head.png"
     }
-
+ 
     var loadImg = function(callback) {
         var loaded = 0;
         var total = Object.keys(imgUrl).length;
@@ -18,6 +19,7 @@ window.onload = function()
             images[key] = new Image();
             images[key].src = imgUrl[key];
             images[key].onload = function(){
+                // All images loaded and start main function.
                 if(++loaded == total){
                     callback();
                 }
@@ -48,6 +50,8 @@ function setupCanvas(canvas)
     return ctx;
 }
 
+
+// Game object
 var Game = function()
 {
     this.canvas = document.querySelector("#game-canvas");
@@ -72,8 +76,24 @@ var Game = function()
     this.pipSpeed = this.pipeWidth * 3;
     this.interval = 0;
     this.spawnInterval = this.pipeWidth * 6;
-}
 
+    // Events
+    addEventListener('keyup', function(e){
+        var keycode = (e.keyCode || e.which);
+        switch (keycode){
+            case 82: game.restart(); break;
+            case 80: game.pause(); break;
+            case 192: game.showInfo(); break;
+        }
+    }, false);
+
+    addEventListener('keydown', function (e) {
+        var keycode = (e.keyCode || e.which);
+        switch (keycode){
+            case 32: game.birds[0].jump(); break;
+        }
+    }, false);
+}
 
 Game.prototype.mainloop = function()
 {
@@ -109,12 +129,9 @@ Game.prototype.update = function(modifier)
     if(this.interval > this.spawnInterval){
         this.interval = 0;
 
-        // for(var y = 0; y < this.height; y += this.pipeHeight){
-        //     this.pipes.push(new Pipe(game, this.width, y));
-        // }
         var hole = Math.floor(Math.random() * (this.height / this.pipeHeight));
         for(var y = 0; y < this.height / this.pipeHeight; ++y) {
-            if(y != hole) {
+            if(y != hole && y != hole-1) {
                 this.pipes.push(new Pipe(game, this.width, y * this.pipeHeight));
             }
         }
@@ -147,7 +164,7 @@ Game.prototype.render = function()
     // Show score
     this.ctx.fillText("Score: " + this.score, 5, this.fontSize);
     // Show FPS
-    this.ctx.fillText("FPS: " + this.fps.toFixed(0), 5, this.fontSize * 2);
+    // this.ctx.fillText("FPS: " + this.fps.toFixed(0), 5, this.fontSize * 2);
 }
 
 // Start game
@@ -165,10 +182,18 @@ Game.prototype.pause = function()
 // Restart game
 Game.prototype.restart = function()
 {
+    for(var idx in this.birds){
+        this.birds.splice(0, this.birds.length);
+    } this.birds.push(new Bird(this));
 }
 
 // Game lose
 Game.prototype.lose = function()
+{
+}
+
+// Show information
+Game.prototype.showInfo = function()
 {
 }
 
