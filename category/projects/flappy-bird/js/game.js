@@ -66,7 +66,7 @@ var Game = function()
     this.fontSize = this.height / 25;
     this.fps = 0;
     this.score = 0;
-    this.isPause = false;
+    this.isPause = true;
     this.isLose = false;
     this.isStart = false;
     this.isShowInfo = false;
@@ -207,12 +207,20 @@ Game.prototype.render = function()
         this.ctx.textAlign = "center";
         this.ctx.fillText("Press R to restart!", this.width / 2, this.height / 2);
     }
+    // Pause message
+    else if(this.isPause) {
+        this.ctx.fillStyle = "#333";
+        this.ctx.font = this.fontSize*3 + "px Helvetica";
+        this.ctx.textBaseline = "middle";
+        this.ctx.textAlign = "center";
+        this.ctx.fillText("Press P to Start!", this.width / 2, this.height / 2);
+    }
 }
 
 // Start game
 Game.prototype.start = function()
 {
-    this.restart();
+    this.birds.push(new Bird(this));
 }
 
 // Pause or Unpause game
