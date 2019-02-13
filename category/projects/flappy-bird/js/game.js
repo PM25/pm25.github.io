@@ -63,23 +63,26 @@ var Game = function()
     
     this.width = this.canvas.width;
     this.height = this.canvas.height;
-    this.fontSize = 36;
+    this.fontSize = this.height / 25;
     this.fps = 0;
     this.score = 0;
     this.isPause = false;
     this.isLose = false;
-    this.isShowInfo = true;
+    this.isStart = false;
+    this.isShowInfo = false;
     this.unit = this.height / 15;
     this.gravity = this.height * 2;
+    this.bgPosX = 0;
+    this.bgScrollSpeed = 1;
 
     this.birds = [];
     this.pipes = [];
     this.pipesPerCol = []; // Store one of the pipe in every col
     this.pipeWidth = this.unit * 2;
     this.pipeHeight = this.unit * 2;
-    this.pipSpeed = this.pipeWidth * 5;
+    this.pipSpeed = this.pipeWidth * 7;
     this.interval = 0;
-    this.spawnInterval = this.pipeWidth * 6;
+    this.spawnInterval = this.pipeWidth * 9;
     this.prevPipeHolePos = 0;
 
     // Events
@@ -118,6 +121,10 @@ Game.prototype.mainloop = function()
 // Update objects
 Game.prototype.update = function(modifier)
 {
+    // Background 
+    this.bgPosX -= this.bgScrollSpeed;
+    if(this.bgPosX <= -this.width) this.bgPosX = 0;
+
     // Birds
     for(var idx in this.birds){
         this.birds[idx].update(modifier);
@@ -138,7 +145,11 @@ Game.prototype.update = function(modifier)
         hole = Math.ceil(0.25 * this.prevPipeHolePos + 0.75 * hole);
         this.prevPipeHolePos = hole;
         for(var y = 0; y < this.height / this.pipeHeight; ++y) {
-            if(y != hole && y != hole-1) {
+            if(y == hole+1) { // Reverse Pipe Head
+                this.pipes.push(new Pipe(game, this.width, y * this.pipeHeight, 1));
+            } else if(y == hole - 2) { // Pipe Head
+                this.pipes.push(new Pipe(game, this.width, y * this.pipeHeight, 2));
+            } else if(y != hole && y != hole-1) { // Pipe Body
                 this.pipes.push(new Pipe(game, this.width, y * this.pipeHeight));
             }
         } this.pipesPerCol.push(this.pipes[this.pipes.length-1]);
@@ -159,7 +170,8 @@ Game.prototype.render = function()
 {
     this.ctx.clearRect(0, 0, this.width, this.height);
     // Background
-    this.ctx.drawImage(images.background, 0, 0, this.width, this.height);
+    this.ctx.drawImage(images.background, this.bgPosX, 0, this.width, this.height);
+    this.ctx.drawImage(images.background, this.bgPosX + this.width, 0, this.width, this.height);
 
     // Bird
     for(var idx in this.birds){
@@ -168,7 +180,13 @@ Game.prototype.render = function()
 
     // Pipe
     for(var idx in this.pipes){
-        this.ctx.drawImage(images.pipeBody, this.pipes[idx].x, this.pipes[idx].y, this.pipes[idx].width, this.pipes[idx].height);
+        if(this.pipes[idx].type == 0) {
+            this.ctx.drawImage(images.pipeBody, this.pipes[idx].x, this.pipes[idx].y, this.pipes[idx].width, this.pipes[idx].height);   
+        } else if(this.pipes[idx].type == 1) {
+            this.ctx.drawImage(images.pipeHead, this.pipes[idx].x, this.pipes[idx].y, this.pipes[idx].width, this.pipes[idx].height);
+        } else if(this.pipes[idx].type == 2) {
+            this.ctx.drawImage(images.revPipeHead, this.pipes[idx].x, this.pipes[idx].y, this.pipes[idx].width, this.pipes[idx].height);
+        }
     }
 
     this.ctx.fillStyle = "#000";
@@ -184,7 +202,7 @@ Game.prototype.render = function()
     // Lose message
     if(this.isLose) {
         this.ctx.fillStyle = "#aa1155";
-        this.ctx.font = this.fontSize*5 + "px Helvetica";
+        this.ctx.font = this.fontSize*3 + "px Helvetica";
         this.ctx.textBaseline = "middle";
         this.ctx.textAlign = "center";
         this.ctx.fillText("Press R to restart!", this.width / 2, this.height / 2);
@@ -285,10 +303,11 @@ Bird.prototype.jump = function()
 
 
 // Pipe object
-var Pipe = function(game, x, y)
+var Pipe = function(game, x, y, type=0)
 {
     this.x = x;
     this.y = y;
+    this.type = type; // 0:Pipe Body, 1: Pipe Up Head, 2: Pipe Down Head
     this.width = game.pipeWidth;
     this.height = game.pipeHeight;
     this.speed = game.pipSpeed;
