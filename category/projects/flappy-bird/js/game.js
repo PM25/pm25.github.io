@@ -277,6 +277,12 @@ Game.prototype.checkCollision = function()
             this.birds[0].y < this.pipes[idx].y + this.pipes[idx].height &&
             this.birds[0].height + this.birds[0].y > this.pipes[idx].y) {
                 return true;
+        } 
+        // Check if went out of border
+        else if ((this.birds[0].y > this.height || this.birds[0].y < 0) &&
+            this.birds[0].x < this.pipes[idx].x + this.pipes[idx].width &&
+            this.birds[0].x + this.birds[0].width > this.pipes[idx].x) {
+                return true;
         }
     } return false;
 }
