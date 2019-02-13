@@ -80,6 +80,7 @@ var Game = function()
     this.pipSpeed = this.pipeWidth * 5;
     this.interval = 0;
     this.spawnInterval = this.pipeWidth * 6;
+    this.prevPipeHolePos = 0;
 
     // Events
     addEventListener('keyup', function(e){
@@ -134,6 +135,8 @@ Game.prototype.update = function(modifier)
         this.interval = 0;
 
         var hole = Math.floor(Math.random() * (this.height / this.pipeHeight));
+        hole = Math.ceil(0.25 * this.prevPipeHolePos + 0.75 * hole);
+        this.prevPipeHolePos = hole;
         for(var y = 0; y < this.height / this.pipeHeight; ++y) {
             if(y != hole && y != hole-1) {
                 this.pipes.push(new Pipe(game, this.width, y * this.pipeHeight));
@@ -191,8 +194,7 @@ Game.prototype.render = function()
 // Start game
 Game.prototype.start = function()
 {
-    // Init bird
-    this.birds.push(new Bird(this));
+    this.restart();
 }
 
 // Pause or Unpause game
