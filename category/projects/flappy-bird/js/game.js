@@ -63,17 +63,21 @@ var Game = function()
     
     this.width = this.canvas.width;
     this.height = this.canvas.height;
-    this.fontSize = 28;
+    this.fontSize = 36;
     this.fps = 0;
     this.score = 0;
+    this.isPause = false;
+    this.isLose = false;
+    this.isShowInfo = true;
     this.unit = this.height / 15;
     this.gravity = this.height * 2;
 
     this.birds = [];
     this.pipes = [];
+    this.pipesPerCol = []; // Store one of the pipe in every col
     this.pipeWidth = this.unit * 2;
     this.pipeHeight = this.unit * 2;
-    this.pipSpeed = this.pipeWidth * 3;
+    this.pipSpeed = this.pipeWidth * 5;
     this.interval = 0;
     this.spawnInterval = this.pipeWidth * 6;
 
@@ -83,7 +87,7 @@ var Game = function()
         switch (keycode){
             case 82: game.restart(); break;
             case 80: game.pause(); break;
-            case 192: game.showInfo(); break;
+            case 73: game.showInfo(); break;
         }
     }, false);
 
@@ -101,7 +105,7 @@ Game.prototype.mainloop = function()
     this.timeInterval = this.now - this.past;
     this.past = this.now;
 
-    this.update(this.timeInterval / 1000);
+    if(!this.isPause) this.update(this.timeInterval / 1000);
     this.render();
 
     var self = this;
@@ -134,12 +138,17 @@ Game.prototype.update = function(modifier)
             if(y != hole && y != hole-1) {
                 this.pipes.push(new Pipe(game, this.width, y * this.pipeHeight));
             }
-        }
-
+        } this.pipesPerCol.push(this.pipes[this.pipes.length-1]);
     }
 
+    // Check if any collision happened
+    if(this.checkCollision()) this.lose();
+
+    // Update score
+    this.updateScore();
+
     // Update FPS
-    this.fps = 1000 / this.timeInterval;
+    this.fps = Math.ceil(1000 / this.timeInterval);
 }
 
 // Draw game
@@ -159,12 +168,24 @@ Game.prototype.render = function()
         this.ctx.drawImage(images.pipeBody, this.pipes[idx].x, this.pipes[idx].y, this.pipes[idx].width, this.pipes[idx].height);
     }
 
-    
+    this.ctx.fillStyle = "#000";
     this.ctx.font = this.fontSize + "px Helvetica";
+    this.ctx.textBaseline = "top";
+    this.ctx.textAlign = "left";
     // Show score
     this.ctx.fillText("Score: " + this.score, 5, this.fontSize);
     // Show FPS
-    // this.ctx.fillText("FPS: " + this.fps.toFixed(0), 5, this.fontSize * 2);
+    if(this.isShowInfo) {
+        this.ctx.fillText("FPS: " + this.fps, 5, this.fontSize * 2);
+    }
+    // Lose message
+    if(this.isLose) {
+        this.ctx.fillStyle = "#aa1155";
+        this.ctx.font = this.fontSize*5 + "px Helvetica";
+        this.ctx.textBaseline = "middle";
+        this.ctx.textAlign = "center";
+        this.ctx.fillText("Press R to restart!", this.width / 2, this.height / 2);
+    }
 }
 
 // Start game
@@ -174,27 +195,66 @@ Game.prototype.start = function()
     this.birds.push(new Bird(this));
 }
 
-// Pause game
+// Pause or Unpause game
 Game.prototype.pause = function()
 {
+    if(this.isPause) this.isPause = false;
+    else this.isPause = true;
 }
 
 // Restart game
 Game.prototype.restart = function()
 {
-    for(var idx in this.birds){
-        this.birds.splice(0, this.birds.length);
-    } this.birds.push(new Bird(this));
+    // Reset bird status
+    this.birds.splice(0, this.birds.length);
+    this.birds.push(new Bird(this));
+
+    // Reset pipe status
+    this.pipes.splice(0, this.pipes.length);
+    this.pipesPerCol.splice(0, this.pipesPerCol.length);
+
+    // Reset game status
+    this.score = 0;
+    this.isLose = false;
+    this.isPause = false;
 }
 
 // Game lose
 Game.prototype.lose = function()
 {
+    if(!this.isPause) this.pause();
+    this.isLose = true;
 }
 
 // Show information
 Game.prototype.showInfo = function()
 {
+    if(this.isShowInfo) this.isShowInfo = false;
+    else this.isShowInfo = true;
+}
+
+// Check if bird hit any pipe
+Game.prototype.checkCollision = function()
+{
+    for(var idx in this.pipes) {
+        // Check if collision happened.
+        if (this.birds[0].x < this.pipes[idx].x + this.pipes[idx].width &&
+            this.birds[0].x + this.birds[0].width > this.pipes[idx].x &&
+            this.birds[0].y < this.pipes[idx].y + this.pipes[idx].height &&
+            this.birds[0].height + this.birds[0].y > this.pipes[idx].y) {
+                return true;
+        }
+    } return false;
+}
+
+// Update game score
+Game.prototype.updateScore = function()
+{
+    if(this.pipesPerCol.length > 0 && 
+        this.pipesPerCol[0].x + this.pipesPerCol[0].width <  this.birds[0].x) {
+            ++this.score;
+            this.pipesPerCol.shift();
+    }
 }
 
 
