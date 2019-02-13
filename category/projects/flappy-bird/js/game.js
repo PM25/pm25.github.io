@@ -95,11 +95,17 @@ var Game = function()
         }
     }, false);
 
-    addEventListener('keydown', function (e) {
+    addEventListener('keydown', function(e) {
         var keycode = (e.keyCode || e.which);
         switch (keycode){
             case 32: game.birds[0].jump(); break;
         }
+    }, false);
+
+    addEventListener("click", function() {
+        if(game.isLose) game.restart();
+        else if(game.isPause) game.pause();
+        else game.birds[0].jump();
     }, false);
 }
 
@@ -294,8 +300,6 @@ var Bird = function(game)
     this.width = game.unit;
     this.height = game.unit;
     this.speed = -(game.gravity * 0.3);
-
-    addEventListener("click", this.jump.bind(this), false);
 }
 
 Bird.prototype.update = function(modifier)

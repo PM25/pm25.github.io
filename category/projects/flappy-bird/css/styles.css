@@ -37,11 +37,12 @@ main
 {
     display: flex;
     justify-content: center;
+    align-items: center;
 
     z-index: 1;
 }
 
-#game #game-canvas
+#game-canvas
 {
     border: 2px solid #0007;
 
@@ -49,7 +50,7 @@ main
     height: 80vh;
 }
 
-#game #game-canvas:hover
+#game-canvas:hover
 {
     border-color: #fff7;
 }
@@ -59,4 +60,15 @@ main
 {
     width: 20vw;
     height: 80vh;
+}
+
+@media screen and (max-width: 700px)
+{
+    #game {
+        flex-direction: column;
+    }
+
+    #game-canvas {
+        width: 95vw;
+    }
 }
