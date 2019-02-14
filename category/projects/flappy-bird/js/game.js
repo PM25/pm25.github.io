@@ -98,11 +98,11 @@ var Game = function()
     addEventListener('keydown', function(e) {
         var keycode = (e.keyCode || e.which);
         switch (keycode){
-            case 32: game.birds[0].jump(); break;
+            case 32: if(!game.isLose) game.birds[0].jump(); break;
         }
     }, false);
 
-    addEventListener("click", function() {
+    document.getElementById("game-canvas").addEventListener("click", function() {
         if(game.isLose) game.restart();
         else if(game.isPause) game.pause();
         else game.birds[0].jump();
@@ -116,6 +116,8 @@ Game.prototype.mainloop = function()
     this.past = this.now;
 
     if(!this.isPause) this.update(this.timeInterval / 1000);
+    // Pause everything except birds
+    else if(this.isLose) this.updateBirds(this.timeInterval / 1000);
     this.render();
 
     var self = this;
@@ -132,19 +134,17 @@ Game.prototype.update = function(modifier)
     if(this.bgPosX <= -this.width) this.bgPosX = 0;
 
     // Birds
-    for(var idx in this.birds){
-        this.birds[idx].update(modifier);
-    }
+    this.updateBirds(modifier);
 
     // Pipes
     var rmCount = 0;
-    for(var idx in this.pipes){
+    for(var idx in this.pipes) {
         this.pipes[idx].update(modifier);
         if(this.pipes[idx].x < -this.pipes[idx].width) ++rmCount;
     } this.pipes.splice(0, rmCount);
 
     this.interval += (this.pipSpeed * modifier);
-    if(this.interval > this.spawnInterval){
+    if(this.interval > this.spawnInterval) {
         this.interval = 0;
 
         var hole = Math.floor(Math.random() * (this.height / this.pipeHeight));
@@ -179,9 +179,9 @@ Game.prototype.render = function()
     this.ctx.drawImage(images.background, this.bgPosX, 0, this.width, this.height);
     this.ctx.drawImage(images.background, this.bgPosX + this.width, 0, this.width, this.height);
 
-    // Bird
+    // Birds
     for(var idx in this.birds){
-        this.ctx.drawImage(images.bird, this.birds[idx].x, this.birds[idx].y, this.birds[idx].width, this.birds[idx].height);
+        this.drawRotateObj(images.bird, this.birds[idx].x, this.birds[idx].y, this.birds[idx].width, this.birds[idx].height, this.birds[idx].rotation);
     }
 
     // Pipe
@@ -221,6 +221,17 @@ Game.prototype.render = function()
         this.ctx.textAlign = "center";
         this.ctx.fillText("Press P to Start!", this.width / 2, this.height / 2);
     }
+}
+
+// Draw rotate object
+Game.prototype.drawRotateObj = function(img, x, y, width, height, rotation)
+{
+    this.ctx.save();
+    this.ctx.translate(x + width / 2, y + height / 2);
+    this.ctx.rotate(rotation);
+    this.ctx.translate(-x - width / 2, -y - height / 2);
+    this.ctx.drawImage(img, x, y, width, height);
+    this.ctx.restore();
 }
 
 // Start game
@@ -287,6 +298,14 @@ Game.prototype.checkCollision = function()
     } return false;
 }
 
+// Update birds
+Game.prototype.updateBirds = function(modifier)
+{
+    for(var idx in this.birds) {
+        this.birds[idx].update(modifier);
+    }
+}
+
 // Update game score
 Game.prototype.updateScore = function()
 {
@@ -306,12 +325,19 @@ var Bird = function(game)
     this.width = game.unit;
     this.height = game.unit;
     this.speed = -(game.gravity * 0.3);
+    this.rotation = 0;
+    this.rotationMax = 0.7;
 }
 
 Bird.prototype.update = function(modifier)
 {
+    // Fall
     this.speed += game.gravity * modifier;
     this.y += this.speed * modifier;
+
+    // Rotate
+    this.rotation = this.speed * 0.0003;
+    if(this.rotation > this.rotationMax) this.rotation = this.rotationMax;  
 }
 
 Bird.prototype.jump = function()

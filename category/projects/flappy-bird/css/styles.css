@@ -12,6 +12,7 @@ main
     height: 100%;
 }
 
+
 #header
 {
     position: relative;
@@ -30,6 +31,11 @@ main
 {
     height: .8em;
     margin: 0 10px;
+}
+
+#header .version
+{
+    font-size: .6em;
 }
 
 
