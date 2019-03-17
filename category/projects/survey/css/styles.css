@@ -1,5 +1,12 @@
 main
 {
+    overflow: hidden;
+}
+
+
+#main-bg
+{
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -9,13 +16,12 @@ main
 {
     background: #cdeeaa;
 
-    width: 50vw;
     height: 100vh;
+    flex-grow: 1;
 }
 
 #bg-middle
 {
-    position: absolute;
     background: #96dae4;
     border-style: solid;
     border-color: transparent transparent #cdeeaa transparent;
@@ -27,21 +33,17 @@ main
 {
     background: #96dae4;
 
-    width: 50vw;
     height: 100vh;
+    flex-grow: 1;
 }
 
 
-#main-content
+.selection
 {
-    position: absolute;
     display: flex;
     justify-content: space-around;
     align-items: center;
     
-    left: 0;
-    top: 0;
-    width: 100vw;
     min-height: 100vh;
 }
 
