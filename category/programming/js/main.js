@@ -1,12 +1,27 @@
+baseLink = "https://pm25.github.io/category/programming/articles/"
+
 $(function(){
-    $.getJSON("https://pm25.github.io/category/programming/links.json", function(data){
+    $.getJSON(baseLink + "links.json", function(data){
         var $article_blocks = $("#articles").children("div")
-        for(var idx=0; idx < $article_blocks.length && data["links"].length; ++idx) {
+        var articles_data = data["articles"];
+        for(var idx=page; idx < $article_blocks.length && idx < articles_data.length; ++idx) {
             $article_blocks.eq(idx).css("display", "block");
-            $article_blocks.eq(idx).children(".article-title").attr("href", data["links"][idx])
-            $article_blocks.eq(idx).children(".article-title").html("Test-Title");
-            $article_blocks.eq(idx).children(".date").html("2019-03-16");
-            $article_blocks.eq(idx).children(".preview").html("bla bla bla ...");
+            $article_blocks.eq(idx).children(".article-title").attr("href", baseLink + articles_data[idx]["link"])
+            $article_blocks.eq(idx).children(".article-title").html(articles_data[idx]["title"]);
+            $article_blocks.eq(idx).children(".date").html(articles_data[idx]["date"]);
+            $article_blocks.eq(idx).children(".preview").html(articles_data[idx]["preview"]);
         }
     });
 });
+
+
+// Article Object
+var Article = function()
+{
+    this.page = 0;
+}
+
+Article.prototype.next_page = function()
+{
+
+}
