@@ -7,6 +7,8 @@ $(function(){
         var blog = new Blog($article_blocks, articles_data);
 
         blog.load_page();
+        blog.next_page();
+        blog.next_page();
     });
 });
 
@@ -16,14 +18,17 @@ var Blog = function(article_blocks, articles_data)
 {
     this.$article_blocks = article_blocks;
     this.articles_data = articles_data;
-    this.page = 0;
     this.base_idx = 0;
     this.per_page_count = this.$article_blocks.length;
     this.total_count = this.articles_data.length;
+    this.page_idx = 0;
+    this.max_page = Math.ceil(this.total_count / this.per_page_count);
 }
 
+// Load the page base on {base_idx}
 Blog.prototype.load_page = function()
 {
+    this.clear_page();
     for(var idx=0; idx < this.per_page_count; ++idx) {
         var curr_idx = this.base_idx + idx;
         if(curr_idx >= this.total_count) break;
@@ -37,14 +42,34 @@ Blog.prototype.load_page = function()
     }
 }
 
+// Change to next page
 Blog.prototype.next_page = function()
 {
-    this.page += 1;
-    this.base_idx = this.page * this.per_page_count;
+    this.page_idx += 1;
+    if(this.page_idx < this.max_page) {
+        this.base_idx = this.page_idx * this.per_page_count;
+        this.load_page();
+    } else {
+        this.page_idx = this.max_page - 1;
+    }
 }
 
+// Change to previous page
 Blog.prototype.prev_page = function()
 {
-    this.page -= 1;
-    this.base_idx = this.page * this.per_page_count;
+    this.page_idx -= 1;
+    if(this.page_idx >= 0) {
+        this.base_idx = this.page_idx * this.per_page_count;
+        this.load_page();
+    } else {
+        this.page_idx = this.max_page - 1;
+    }
+}
+
+// Clear the page
+Blog.prototype.clear_page = function()
+{
+    for(var idx=0; idx < this.per_page_count; ++idx) {
+        this.$article_blocks.eq(idx).css("display", "none");
+    }
 }
