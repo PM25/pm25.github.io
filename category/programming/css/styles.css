@@ -78,12 +78,58 @@ body
     flex-direction: column;
     align-items: center;
 
-    margin-left: 250px;
+    margin: 25px 0 25px 250px;
     width: auto;
-    padding: 15px 0;
 }
 
-#articles > div
+#articles .control
+{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 85%;
+}
+
+#articles .control .info
+{
+    font-size: 1.2em;
+}
+
+#articles .control .btn-panel
+{
+    display: flex;
+    flex-direction: row;
+}
+
+#articles .control .btn
+{
+    padding: 0 5px;
+    margin: 5px;
+    border: #fff3 2px solid;
+}
+
+#articles .control .btn:hover
+{
+    cursor: pointer;
+    border: #fff7 2px solid;
+}
+
+
+/* Article Blocks */
+#article-blocks
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+}
+
+#article-blocks > div
 {
     position: relative;
     box-sizing: border-box;
@@ -99,17 +145,17 @@ body
     box-shadow: 0 3px 5px #5551, 0 3px 5px #5552;
 }
 
-#articles > div:hover
+#article-blocks > div:hover
 {
     border-color: #fff7;
 }
 
-#articles > div > a
+#article-blocks > div > a
 {
     font-size: 1.5em;
 }
 
-#articles > div > .date
+#article-blocks > div > .date
 {
     position: absolute;
     color: #666;
