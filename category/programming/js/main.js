@@ -79,7 +79,7 @@ Blog.prototype.prev_page = function()
         this.base_idx = this.page_idx * this.per_page_count;
         this.load_page();
     } else {
-        this.page_idx = this.max_page - 1;
+        this.page_idx = 0;
     }
 
     this.update_page();
