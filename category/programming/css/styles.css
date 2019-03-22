@@ -102,6 +102,7 @@ body
 {
     display: flex;
     flex-direction: row;
+    user-select: none;
 }
 
 #articles .control .btn
