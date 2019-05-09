@@ -1,4 +1,4 @@
-baseLink = "https://pm25.github.io/category/programming/articles/"
+baseLink = "https://pm25.github.io/category/articles/"
 
 $(function(){
     $.getJSON(baseLink + "links.json", function(data){

@@ -1,3 +1,4 @@
+@import url("/css/master.css");
 @import url('https://fonts.googleapis.com/css?family=Roboto:900');
 
 /* header */
@@ -256,7 +257,7 @@
 #info-boards
 {
     display: flex;
-    background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb);;
+    background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb);
 
     padding: 20px;
 }
