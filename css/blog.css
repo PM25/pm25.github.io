@@ -1,0 +1,187 @@
+body
+{
+    background: #1B2B34;
+    color: #65737E;
+}
+
+#header
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background: #292b36;
+    color: #e7e8eb;
+
+    width: 100%;
+    height: 150px;
+    border-bottom: #666 1px solid;
+}
+
+#header .title
+{
+    display: flex;
+    font-family: 'Ubuntu Mono', monospace;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: auto;
+
+    width: 0;
+    font-size: 3.5em;
+    border-right: .1em solid #e7e8eb;
+
+    animation: typing 2s steps(22, end) 1.5s forwards,
+               blinking-cursor .5s step-end infinite;
+}
+
+
+/* Sidebar */
+#sidebar
+{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    border: #5555 2px solid;
+
+    min-height: 200px;
+    width: calc(250px - 40px);
+    margin: 20px;
+    font-size: 1.5em;
+    z-index: 1;
+}
+
+#sidebar .dropdown-list
+{
+    cursor: pointer;
+    color: white;
+    user-select: none;
+    
+    padding: 5px;
+    margin: 5px;
+    line-height: 100%;
+    border-bottom: #aaa3 1px solid;
+}
+
+#sidebar .dropdown-list:hover
+{
+    background: #fff1;
+}
+
+
+/* Articles */
+#articles
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 25px 0 25px 250px;
+    width: auto;
+}
+
+#articles .control
+{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 85%;
+}
+
+#articles .control .info
+{
+    font-size: 1.2em;
+}
+
+#articles .control .btn-panel
+{
+    display: flex;
+    flex-direction: row;
+    user-select: none;
+}
+
+#articles .control .btn
+{
+    padding: 0 5px;
+    margin: 5px;
+    border: #fff3 2px solid;
+}
+
+#articles .control .btn:hover
+{
+    cursor: pointer;
+    border: #fff7 2px solid;
+}
+
+
+/* Article Blocks */
+#article-blocks
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+}
+
+#article-blocks > div
+{
+    position: relative;
+    box-sizing: border-box;
+    background: #aaa1;
+    display: none;
+
+    display: none;
+    min-height: 150px;
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    border: #fff3 2px solid;
+    box-shadow: 0 3px 5px #5551, 0 3px 5px #5552;
+}
+
+#article-blocks > div:hover
+{
+    border-color: #fff7;
+}
+
+#article-blocks > div > a
+{
+    font-size: 1.5em;
+}
+
+#article-blocks > div > .date
+{
+    position: absolute;
+    color: #666;
+
+    font-size: 1em;
+    bottom: 0;
+    right: 10px;
+}
+
+
+/* Animation */
+@keyframes typing 
+{
+    from { 
+        width: 0; 
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blinking-cursor
+{
+    0% { 
+        border-color: transparent; 
+    }
+    50% { 
+        border-color: #e7e8eb;
+    }
+}
