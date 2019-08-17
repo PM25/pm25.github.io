@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
 
-body
+main
 {
-    background: #1B2B34;
-    color: #65737E;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Header */
 #header
 {
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,7 +19,6 @@ body
 
     width: 100%;
     height: 150px;
-    border-bottom: #666 1px solid;
 }
 
 #header .title
@@ -37,6 +38,19 @@ body
 }
 
 
+/* Blog */
+#blog
+{
+    position: relative;
+    background: #1B2B34;
+    color: #65737E;
+    border-top: #666 1px solid;
+    
+    z-index: 1;
+    top: 150px; /* header's height */
+    min-height: calc(100vh - 150px);
+}
+
 /* Sidebar */
 #sidebar
 {
@@ -48,8 +62,7 @@ body
     min-height: 200px;
     width: calc(250px - 40px);
     margin: 20px;
-    font-size: 1.5em;
-    z-index: 1;
+    font-size: 1.3em;
 }
 
 #sidebar .dropdown-list
