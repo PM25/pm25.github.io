@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
 
-main
+body
 {
-    display: flex;
-    flex-direction: column;
+    background: #292b36;
 }
 
 /* Header */
@@ -14,11 +13,10 @@ main
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    background: #292b36;
     color: #e7e8eb;
 
     width: 100%;
-    height: 150px;
+    height: 200px;
 }
 
 #header .title
@@ -42,13 +40,14 @@ main
 #blog
 {
     position: relative;
+    box-sizing: border-box;
     background: #1B2B34;
     color: #65737E;
     border-top: #666 1px solid;
     
     z-index: 1;
-    top: 150px; /* header's height */
-    min-height: calc(100vh - 150px);
+    top: 200px; /* header's height */
+    min-height: calc(100vh - 200px);
 }
 
 /* Sidebar */
