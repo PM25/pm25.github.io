@@ -5,8 +5,11 @@ require.config({
         "gtm" : "https://www.googletagmanager.com/gtag/js?id=UA-129342449-2"
     },
     shim: {
-        'common':{
-            deps:["jquery"]
+        'common': {
+            deps: ["jquery"]
+        },
+        'blog': {
+            deps: ["common"]
         }
     }
 });
