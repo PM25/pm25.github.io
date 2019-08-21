@@ -241,10 +241,8 @@ a:visited, a:link
     text-align: center;
     color: grey;
 
-    height: 50px;
-    bottom: -50px;
     width: 100%;
-    line-height: 50PX;
+    padding: 1em;
     transition: .3s;
 }
 
