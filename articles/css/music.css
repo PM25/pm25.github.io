@@ -1,2 +1,6 @@
 @import url("/css/master.css");
-@import url("/css/blog.css");
+
+#status
+{
+    margin: 100px;
+}
