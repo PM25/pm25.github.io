@@ -1,13 +1,16 @@
+@import url("../../css/blog.css");
+@import url("../../css/master.css");
 @import url("../../category/programming/css/styles.css");
 
+
 :root {
-    --header-height: 250px;
+    --header-height: 300px;
     --title-nword: 5;
 }
 
 
 /* Header */
-#header
+#header-container
 {
     height: var(--header-height);
 }
@@ -26,6 +29,5 @@
 
     padding: 2em;
     font-size:1.3em;
-    top: var(--header-height);
     min-height: calc(100vh - var(--header-height));
 }
