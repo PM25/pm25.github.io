@@ -4,6 +4,14 @@ body
 }
 
 /* Header */
+#header-container
+{
+    position: relative;
+
+    width: 100%;
+    height: 200px;
+}
+
 #header
 {
     position: fixed;
@@ -13,8 +21,8 @@ body
     box-sizing: border-box;
     color: #e7e8eb;
 
-    width: 100%;
-    height: 200px;
+    width: inherit;
+    height: inherit;
 }
 
 #header .title
@@ -36,8 +44,7 @@ body
     border-top: #666 1px solid;
     
     z-index: 1;
-    top: 200px; /* header's height */
-    min-height: calc(100vh - 200px);
+    min-height: calc(100vh - 200px); /* 200px is header's height */
 }
 
 /* Sidebar */
@@ -80,7 +87,7 @@ body
     flex-direction: column;
     align-items: center;
 
-    margin: 25px 0 25px 250px;
+    padding: 25px 0 25px 250px;
     width: auto;
 }
 
