@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
-
 body
 {
     background: #292b36;
@@ -22,17 +20,9 @@ body
 #header .title
 {
     display: flex;
-    font-family: 'Ubuntu Mono', monospace;
-    overflow: hidden;
-    white-space: nowrap;
     margin: auto;
 
-    width: 0;
     font-size: 3.5em;
-    border-right: .1em solid #e7e8eb;
-
-    animation: typing 2s steps(22, end) 1.5s forwards,
-               blinking-cursor .5s step-end infinite;
 }
 
 
@@ -56,6 +46,7 @@ body
     position: fixed;
     display: flex;
     flex-direction: column;
+    color: white;
     border: #5555 2px solid;
 
     min-height: 200px;
@@ -67,7 +58,6 @@ body
 #sidebar .dropdown-list
 {
     cursor: pointer;
-    color: white;
     user-select: none;
     
     padding: 5px;
