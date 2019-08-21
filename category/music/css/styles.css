@@ -1,6 +1,29 @@
 @import url("/css/master.css");
+@import url("/css/blog.css");
 
-#status
+/* Header */
+#header
 {
-    margin: 100px;
+    background: #9ad3de;
+}
+
+#header .title
+{
+    color: white;
+}
+
+
+/* Blog */
+#blog
+{
+    background: #89bdd3;
+    color: #65737E;
+    border-top: #666 1px solid;
+}
+
+/* Sidebar */
+#sidebar
+{
+    color: #65737E;
+    border: #5555 2px solid;
 }
