@@ -15,7 +15,7 @@
     font-size: 5em;
     height: 130px;
     line-height: 130px;
-    width: calc(100vw - 470px);
+    width: 65vw;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
@@ -28,9 +28,9 @@
     
     top: 0;
     right: 0;
-    height: 500px;
-    width: 500px;
-    border-radius: 0 0 0 500px;
+    height: 40vw;
+    width: 40vw;
+    border-radius: 0 0 0 40vw;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
@@ -38,6 +38,7 @@
 {
     position: absolute;
 
+    padding-top: 2em;
     height: 100%;
     width: 70%;
     right: 0;
@@ -47,11 +48,12 @@
 {
     content: '';
     position: absolute;
-    width: 5px;
     background-color: white;
+    
     top: 0;
-    bottom: 0;
     left: 15%;
+    bottom: 0;
+    width: 5px;
     margin-left: -5px;
 }
 
@@ -61,7 +63,7 @@
 
     width: 60%;
     padding: 0 25px;
-    margin: 40px 0;
+    margin-bottom: 4.5vw;
     bottom: 10px;
     left: 15%;
 }
@@ -97,8 +99,8 @@
     text-align: center;
     background-color: white;
 
+    padding: .1em;
     border-radius: 8px;
-    min-height: 42px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
@@ -106,7 +108,7 @@
 {
     color: #774898;
 
-    font-size: 28px;
+    font-size: 1.7em;
 }
 
 #edu-timeline .major
@@ -115,7 +117,7 @@
     color: gray;
     display: none;
 
-    font-size: 16px;
+    font-size: 1em;
 }
 
 #edu-timeline .school:hover + .major
@@ -127,7 +129,7 @@
 {
     color: purple !important;
     
-    font-size: 32px;
+    font-size: 2em;
 }
 
 #intro
@@ -135,8 +137,8 @@
     position: relative;
     float: left;
 
-    left: 5px;
-    max-width: calc(100vw - 470px);
+    left: 10px;
+    max-width: 60vw;
 }
 
 #intro .message
@@ -148,7 +150,7 @@
     
     padding: 15px;
     margin-top: 15px;
-    font-size: 24px;
+    font-size: 1.5em;
     border-radius: 0 20px 20px 20px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
@@ -158,7 +160,7 @@
     float: left;
     clear: both;
 
-    margin-top: 15px; 
+    margin-top: 1.5em; 
 }
 
 #intro img
@@ -186,8 +188,8 @@
     color: white;
 
     border-radius: 100%;
-    width: 60px;
-    height: 60px;
+    width: 4em;
+    height: 4em;
     transition: .5s;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
@@ -205,6 +207,7 @@
 
     width: 100%;
     height: 100%;
+    font-size: 2.5em;
     border-radius: 100%;
     transition: .5s;
 }
