@@ -4,7 +4,7 @@
 
 
 :root {
-    --header-height: 300px;
+    --header-height: 250px;
     --title-nword: 5;
 }
 
@@ -17,7 +17,7 @@
 
 #header .title
 {
-    animation: typing .5s steps(5, end) .5s forwards,
+    animation: typing forwards,
                blinking-cursor .5s step-end infinite;
 }
 
@@ -25,9 +25,12 @@
 /* Blog */
 #blog
 {
-    color: #fffb;
+    color: #000c;
+    background: white;
 
+    margin: 1em;
     padding: 2em;
     font-size:1.3em;
+    border-radius: 1em;
     min-height: calc(100vh - var(--header-height));
 }

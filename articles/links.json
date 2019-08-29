@@ -1,40 +1,11 @@
 {
     "articles":[
         {
-            "link":"test1.html",
-            "title":"test1",
-            "date":"2019.03.17",
-            "preview":"..."
-        },
-        {
-            "link":"test1.html",
-            "title":"test2",
-            "date":"2019.03.17",
-            "preview":"..."
-        }, 
-        {
-            "link":"test1.html",
-            "title":"test3",
-            "date":"2019.03.17",
-            "preview":"..."
-        },
-        {
-            "link":"test1.html",
-            "title":"test4",
-            "date":"2019.03.17",
-            "preview":"..."
-        },
-        {
-            "link":"test1.html",
-            "title":"test5",
-            "date":"2019.03.17",
-            "preview":"..."
-        },
-        {
-            "link":"test1.html",
-            "title":"test6",
-            "date":"2019.03.17",
-            "preview":"..."
+            "link":"1.html",
+            "title":"Deep Learning with Keras",
+            "date":"2019.08.27",
+            "preview":"...",
+            "category":"programming"
         }
     ]
 }
