@@ -1,2 +1,18 @@
 @import url("/css/master.css");
 @import url("/css/blog.css");
+
+body
+{
+    background: #ffc93c;
+}
+
+#header
+{
+    color: #155263;
+}
+
+#blog
+{
+    color: #ffc93c;
+    background: #155263;
+}
