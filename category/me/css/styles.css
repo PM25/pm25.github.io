@@ -1,0 +1,28 @@
+@import url("/css/master.css");
+main {
+  padding: 0 1.5em;
+}
+.intro {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 2.5em;
+  background-color: #fafafa;
+}
+
+.intro > * {
+  margin-right: 5em;
+}
+
+.intro img {
+  width: 15em;
+  height: auto;
+  border-radius: 50%;
+}
+
+.intro .title-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
