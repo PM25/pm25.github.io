@@ -4,20 +4,32 @@ main {
 }
 .intro {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
 
   margin-top: 2.5em;
+  padding: 1.5em;
   background-color: #fafafa;
 }
 
-.intro > * {
-  margin-right: 5em;
+.intro .profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 50vw;
 }
 
 .intro img {
   width: 15em;
-  height: auto;
+  height: 15em;
   border-radius: 50%;
+}
+
+.intro .basic-info {
+  display: flex;
+  /* justify-content: center; */
+
+  width: 50vw;
 }
 
 .intro .title-box {
@@ -25,4 +37,25 @@ main {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+}
+
+.intro .name {
+  font-size: 1.7em;
+}
+
+.intro .name :nth-child(1) {
+  font-size: 1.7em;
+}
+
+.intro .info a {
+  display: inline-block;
+  text-decoration: none;
+
+  padding: 0.3em;
+  font-size: 2.2em;
+  transition: 0.2s ease;
+}
+
+.intro .info a:hover {
+  transform: scale(1.7);
 }
