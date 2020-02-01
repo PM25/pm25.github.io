@@ -1,17 +1,18 @@
 @import url("/css/master.css");
-main {
-  padding: 0 1.5em;
-}
-.intro {
-  display: flex;
-  /* justify-content: center; */
 
-  margin-top: 2.5em;
-  padding: 1.5em;
+body {
   background-color: #fafafa;
 }
 
-.intro .profile {
+/* Header */
+#header {
+  display: flex;
+
+  margin-top: 50px;
+  padding: 1em;
+}
+
+#header .profile {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,43 +20,149 @@ main {
   width: 50vw;
 }
 
-.intro img {
+#header img {
   width: 15em;
   height: 15em;
   border-radius: 50%;
 }
 
-.intro .basic-info {
+#header .basic-info {
   display: flex;
-  /* justify-content: center; */
 
   width: 50vw;
 }
 
-.intro .title-box {
+#header .title-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
 }
 
-.intro .name {
+#header .name {
+  padding: 0.3em;
+  font-size: 1.8em;
+}
+
+#header .name :nth-child(1) {
   font-size: 1.7em;
 }
 
-.intro .name :nth-child(1) {
-  font-size: 1.7em;
-}
-
-.intro .info a {
+#header .info a {
   display: inline-block;
   text-decoration: none;
 
-  padding: 0.3em;
+  padding: 0.2em;
   font-size: 2.2em;
   transition: 0.2s ease;
 }
 
-.intro .info a:hover {
+#header .info a:hover {
   transform: scale(1.7);
+}
+
+/* Introduction */
+#intro {
+  display: flex;
+
+  padding: 1em;
+}
+
+#intro .bio {
+  width: 50vw;
+}
+
+#timeline-container {
+  display: flex;
+  float: right;
+  overflow: hidden;
+  box-sizing: border-box;
+  justify-content: center;
+
+  width: 50vw;
+  padding: 1.5em;
+  min-height: 20em;
+}
+
+#edu-timeline {
+  position: absolute;
+
+  width: 30vw;
+}
+
+#edu-timeline::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  margin-left: -5px;
+}
+
+#edu-timeline .container {
+  position: relative;
+
+  padding: 0 0 1em 1.7em;
+}
+
+#edu-timeline .container::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+
+  width: 1.7em;
+  height: 1.7em;
+  z-index: 1;
+  border-radius: 50%;
+  top: 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+#edu-timeline .before::after {
+  left: -15px;
+}
+
+#edu-timeline .current::after {
+  left: -19px;
+  border: 4px solid #ff5e5f;
+}
+
+#edu-timeline .content {
+  position: relative;
+  text-align: center;
+  background-color: white;
+
+  padding: 0.1em;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+#edu-timeline .school {
+  color: #1b262c;
+  font-size: 1.35em;
+}
+
+#edu-timeline .major {
+  display: block;
+  color: gray;
+  display: none;
+
+  font-size: 1em;
+}
+
+#edu-timeline .school:hover + .major {
+  display: block !important;
+}
+
+#edu-timeline .school:hover {
+  color: black !important;
+
+  font-size: 2em;
+}
+
+/* Experiences */
+#exp {
+  height: 10vh;
 }
