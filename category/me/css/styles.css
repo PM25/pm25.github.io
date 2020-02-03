@@ -178,6 +178,7 @@ body {
 
 #exp .title {
   cursor: pointer;
+  user-select: none;
 
   padding: 0.3em 1.5em;
   border-radius: 0.8em;
@@ -187,16 +188,65 @@ body {
   font-size: 1.35em;
 }
 #exp .info-list {
-  width: 60vw;
-  height: inherit;
-}
-
-#exp .info {
-  display: none;
   box-sizing: border-box;
   background: white;
 
-  height: 100%;
+  width: 60vw;
   padding: 1em;
+  height: inherit;
   border-radius: 0.8em;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px, rgba(0, 0, 0, 0.2) 0px 1px 2px;
+}
+
+/* My Skills */
+#skills {
+  display: flex;
+
+  padding: 1em;
+}
+
+#skills .details {
+  background: white;
+
+  height: 15em;
+  width: 50vw;
+  padding: 0 1.5em;
+  margin-right: 1em;
+  border-radius: 0.8em;
+}
+
+#skills ul {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin: 0;
+  padding: 1em;
+  width: 50vw;
+}
+
+#skills li {
+  display: flex;
+}
+
+#skills li span {
+  font-weight: 500;
+  width: 10vw;
+}
+
+.progress-bar {
+  width: 100%;
+  margin: 0 1em;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+}
+
+.progress-bar-fill {
+  display: block;
+  background-color: #364f6baa;
+
+  height: 100%;
+  border-radius: inherit;
+  transition: width 500ms ease-in-out;
 }

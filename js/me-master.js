@@ -19,13 +19,13 @@ require(["jquery", "simplebar", "common"], function($) {
 
 // Main function
 function main() {
-  show(0);
+  show_exp_info(0);
   $("#exp .title").mouseover(function() {
     var idx = $("#exp .title").index(this);
-    show(idx);
+    show_exp_info(idx);
   });
 
-  function show(idx) {
+  function show_exp_info(idx) {
     $("#exp .info").css("display", "none");
     $("#exp .info")
       .eq(idx)
