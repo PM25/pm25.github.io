@@ -21,8 +21,8 @@ body {
 }
 
 #header img {
-  width: 15em;
-  height: 15em;
+  width: 17em;
+  height: 17em;
   border-radius: 50%;
 }
 
@@ -74,14 +74,13 @@ body {
 
 #timeline-container {
   display: flex;
-  float: right;
   overflow: hidden;
   box-sizing: border-box;
   justify-content: center;
 
   width: 50vw;
   padding: 1.5em;
-  min-height: 20em;
+  min-height: 17em;
 }
 
 #edu-timeline {
@@ -141,7 +140,8 @@ body {
 
 #edu-timeline .school {
   color: #1b262c;
-  font-size: 1.35em;
+  font-size: 1.4em;
+  transition: 0.1s;
 }
 
 #edu-timeline .major {
@@ -160,9 +160,43 @@ body {
   color: black !important;
 
   font-size: 2em;
+  cursor: default;
 }
 
 /* Experiences */
 #exp {
-  height: 10vh;
+  display: flex;
+  box-sizing: border-box;
+
+  padding: 1.5em;
+}
+
+#exp .title-list {
+  width: 40vw;
+  margin-right: 1em;
+}
+
+#exp .title {
+  cursor: pointer;
+
+  padding: 0.3em 1.5em;
+  border-radius: 0.8em;
+}
+
+#exp .title span:nth-child(1) {
+  font-size: 1.35em;
+}
+#exp .info-list {
+  width: 60vw;
+  height: inherit;
+}
+
+#exp .info {
+  display: none;
+  box-sizing: border-box;
+  background: white;
+
+  height: 100%;
+  padding: 1em;
+  border-radius: 0.8em;
 }
