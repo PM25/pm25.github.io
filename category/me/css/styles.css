@@ -232,21 +232,58 @@ body {
 
 #skills li span {
   font-weight: 500;
-  width: 10vw;
+  width: 8em;
 }
 
-.progress-bar {
+#skills .progress-bar {
   width: 100%;
   margin: 0 1em;
   border: 1px solid #ccc;
   border-radius: 0.5em;
 }
 
-.progress-bar-fill {
+#skills .progress-bar-fill {
   display: block;
   background-color: #364f6baa;
 
   height: 100%;
   border-radius: inherit;
-  transition: width 500ms ease-in-out;
+  transition: width 0.5s ease-in-out;
+}
+
+/* My Activities */
+#activities {
+  padding: 1em;
+}
+
+#activities .item {
+  padding: 1em;
+  border-radius: 1em;
+}
+
+#activities .item:hover img {
+  display: block;
+}
+
+#activities .item:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#activities .title {
+  font-size: 1.35em;
+}
+
+#activities img {
+  display: none;
+
+  width: auto;
+  height: 20em;
+  margin-top: 1em;
+  border-radius: 0.5em;
+}
+
+#activities .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
