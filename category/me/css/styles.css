@@ -72,6 +72,31 @@ body {
   width: 50vw;
 }
 
+#intro .bio > .info {
+  display: flex;
+  flex-direction: column;
+
+  font-size: 1.1em;
+}
+
+#intro .bio > .info i {
+  text-align: center;
+
+  width: 1.5em;
+}
+
+#intro .bio a {
+  text-decoration: none;
+}
+
+#intro .bio a:hover {
+  color: #3fc1c9;
+}
+
+#intro .bio > .paragraph {
+  padding: 1em 0;
+}
+
 #timeline-container {
   display: flex;
   overflow: hidden;
