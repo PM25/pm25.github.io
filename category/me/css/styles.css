@@ -164,9 +164,19 @@ body {
 }
 
 #edu-timeline .school {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   color: #1b262c;
   font-size: 1.4em;
   transition: 0.1s;
+}
+
+#edu-timeline .school > img {
+  height: 0;
+  width: auto;
+  margin: 0.2em 0.2em 0.2em 0;
 }
 
 #edu-timeline .major {
@@ -188,6 +198,10 @@ body {
   cursor: default;
 }
 
+#edu-timeline .school:hover img {
+  height: 1.2em;
+}
+
 /* Experiences */
 #exp {
   display: flex;
@@ -196,17 +210,24 @@ body {
   padding: 1.5em;
 }
 
-#exp .title-list {
-  width: 40vw;
-  margin-right: 1em;
-}
-
-#exp .title {
-  cursor: pointer;
+#exp .item {
+  display: flex;
   user-select: none;
+  align-items: center;
 
   padding: 0.3em 1.5em;
   border-radius: 0.8em;
+}
+
+#exp .item > img {
+  height: 2.5em;
+  width: auto;
+  margin-right: 0.6em;
+}
+
+#exp .title-list {
+  width: 45vw;
+  margin-right: 1em;
 }
 
 #exp .title span:nth-child(1) {
@@ -216,7 +237,7 @@ body {
   box-sizing: border-box;
   background: white;
 
-  width: 60vw;
+  width: 55vw;
   padding: 1em;
   height: inherit;
   border-radius: 0.8em;
@@ -261,6 +282,23 @@ body {
 
 #skills li {
   display: flex;
+  align-items: center;
+
+  font-size: 1.2em;
+}
+
+#skills li .logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 2em;
+  margin-right: 0.2em;
+}
+
+#skills li img {
+  height: 1em;
+  width: auto;
 }
 
 #skills li span {
@@ -270,6 +308,7 @@ body {
 
 #skills .progress-bar {
   width: 100%;
+  height: 1em;
   margin: 0 1em;
   border: 1px solid #ccc;
   border-radius: 0.5em;
@@ -277,11 +316,13 @@ body {
 
 #skills .progress-bar-fill {
   display: block;
-  background-color: #364f6baa;
+  background-color: #3fc1c9dd;
 
   height: 100%;
   border-radius: inherit;
-  transition: width 0.5s ease-in-out;
+  transform-origin: 0;
+  transform: scaleX(0);
+  transition: 1s ease-in-out;
 }
 
 /* My Activities */
@@ -290,16 +331,14 @@ body {
 }
 
 #activities .item {
+  cursor: pointer;
+
   padding: 1em;
   border-radius: 1em;
 }
 
-#activities .item:hover img {
-  display: block;
-}
-
 #activities .item:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
 }
 
 #activities .title {
