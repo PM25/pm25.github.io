@@ -422,4 +422,11 @@ body {
   #skills ul {
     width: 100vw;
   }
+
+  /* Activities */
+  #activities img {
+    height: auto;
+    max-width: 90%;
+    max-height: 20em;
+  }
 }
