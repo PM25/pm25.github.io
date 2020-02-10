@@ -378,3 +378,48 @@ body {
   background: #0001;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px, rgba(0, 0, 0, 0.2) 0px 1px 2px;
 }
+
+@media only screen and (max-width: 900px) {
+  /* Header */
+  #header {
+    flex-wrap: wrap;
+  }
+  #header .profile {
+    width: 100vw;
+  }
+  #header .basic-info {
+    width: 100vw;
+    justify-content: center;
+  }
+
+  /* Introduction */
+  #intro {
+    flex-wrap: wrap;
+  }
+
+  #intro #timeline-container {
+    width: 100vw;
+  }
+
+  #intro #timeline-container #edu-timeline {
+    width: 60vw;
+  }
+
+  #intro .bio {
+    width: 100vw;
+    text-align: center;
+  }
+
+  /* Skills */
+  #skills {
+    flex-wrap: wrap-reverse;
+  }
+
+  #skills .details {
+    width: 100%;
+  }
+
+  #skills ul {
+    width: 100vw;
+  }
+}
