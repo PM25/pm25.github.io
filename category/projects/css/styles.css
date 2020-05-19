@@ -1,21 +1,22 @@
 @import url("/css/master.css");
-@import url('https://fonts.googleapis.com/css?family=Monoton');
+@import url("https://fonts.googleapis.com/css?family=Monoton");
 
-body
-{
+body {
     background: repeating-linear-gradient(
-            45deg, #2b2b2b2b, #2b2b2b2b 1px, transparent 1px, transparent 7px
-        ), linear-gradient(
-            to bottom, #355c7d 50%, #6c5b7b, #c06c84
-        );
+            45deg,
+            #2b2b2b2b,
+            #2b2b2b2b 1px,
+            transparent 1px,
+            transparent 7px
+        ),
+        linear-gradient(to bottom, #355c7d 50%, #6c5b7b, #c06c84);
 
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
 /* Header */
-#header
-{
+#header {
     position: relative;
     text-align: center;
     font-family: "Monoton", cursive;
@@ -26,107 +27,80 @@ body
     width: 100%;
 }
 
-#header a
-{
+#header a {
     color: white;
     text-decoration: none;
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177,
+        0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 75px #ff1177;
 
     font-size: 6em;
 }
 
-#header a:hover
-{
-    color: #FF1177;
+#header a:hover {
+    color: #ff1177;
     text-shadow: none;
 }
 
 /* Project Articles */
-#projects
-{
+#projects {
     margin: 40px 0;
 }
 
-#projects a, #projects a:visited
-{
+#projects a,
+#projects a:visited {
     display: flex;
     margin: 10px auto;
     text-decoration: none;
     background: #2b2b2b88;
     color: white;
     align-items: center;
-    
+
     border-radius: 10px;
     width: 60vw;
     font-size: 1.3em;
     padding: 10px;
 }
 
-#projects a:hover
-{
+#projects a:hover {
     background: #2b2b2b;
 
     font-size: 1.5em;
-    transition: .2s;
+    transition: 0.2s;
     border: solid 1px white;
 }
 
-#projects .project-date
-{
+#projects .project-date {
     text-align: center;
-    border-right: .1em solid;
-    
-    font-size: .8em;
+    border-right: 0.1em solid;
+
+    font-size: 0.8em;
     line-height: 1em;
     width: 4em;
-    opacity: .8;
+    opacity: 0.8;
 }
 
-.project-date .year
-{
+.project-date .year {
     color: gray;
 
-    font-size: .7em;
+    font-size: 0.7em;
 }
 
-.project-date .month-day
-{
+.project-date .month-day {
     font-size: 1em;
 }
 
-#projects .project-title
-{
+#projects .project-title {
     margin: 0 10px;
 }
 
-#projects .project-labels
-{
-    margin-left: auto;
-
-    font-size: .6em;
-}
-
-#projects .project-labels span
-{
-    border: 1px groove;
-
-    padding: 2px;
-    margin: 0 2px;
-    border-radius: 10px;
-    opacity: .5;
-}
-
-
 /* Resposive Web Design */
-@media screen and (max-width: 700px)
-{
+@media screen and (max-width: 700px) {
     #header a {
         font-size: 4.5em;
     }
 }
 
-@media screen and (max-width: 500px)
-{
+@media screen and (max-width: 500px) {
     #header a {
         font-size: 3em;
     }

@@ -1,63 +1,46 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+    <head>
+        <link rel="shortcut icon" type="image/png" href="/img/logo.png" />
+        <link rel="stylesheet" href="css/styles.css" />
+        <meta
+            charset="utf-8"
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1,maximum-scale=1,user-scalable=no"
+        />
+        <script src="/js/require.js" data-main="/js/master.js"></script>
+        <script src="js/script.js"></script>
+        <title>PlusMore - Projects</title>
+    </head>
 
-<head>
-    <link rel="shortcut icon" type="image/png" href="/img/logo.png">
-    <link rel="stylesheet" href="css/styles.css">
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1,maximum-scale=1,user-scalable=no">
-    <script src="/js/require.js" data-main="/js/master.js"></script>
-    <title> PlusMore - Projects </title>
-</head>
+    <body>
+        <div data-include="home-nav"></div>
+        <div data-include="side-nav"></div>
 
-<body>
-    <div data-include="home-nav"></div>
-    <div data-include="side-nav"></div>
-    <img src="https://plusmore-view-counter.herokuapp.com/" style="display: none">
+        <main>
+            <div id="header">
+                <a href=".">
+                    Projects
+                </a>
+            </div>
 
-    <main>
-        <div id="header">
-            <a href="."">
-                Projects
-            </a>
-        </div>
-    
-        <div id="projects">
-            <a href="flappy-bird/index.html">
-                <span class="project-date">
-                    <span class="month-day">
-                        Feb 13
+            <div id="projects">
+                <a href="genetic-algorithm/index.html">
+                    <div class="project-date">
+                        <span class="month-day">
+                            Nov 14
+                        </span>
+                        <span class="year">
+                            2018
+                        </span>
+                    </div>
+                    <span class="project-title">
+                        N-Queens
                     </span>
-                    <span class="year">
-                        2019
-                    </span>
-                </span>
-                <span class="project-title">
-                    Flappy Bird
-                </span>
-                <div class="project-labels">
-                    <span> Web </span>
-                </div>
-            </a>
-            <a href="genetic-algorithm/index.html"> 
-                <div class="project-date">
-                    <span class="month-day">
-                        Nov 14
-                    </span>
-                    <span class="year">
-                        2018
-                    </span>
-                </div>
-                <span class="project-title">
-                    N-Queens
-                </span>
-                <div class="project-labels">
-                    <span> Web </span>
-                </div>
-            </a>
-        </div>
-    </main>
+                </a>
+            </div>
+        </main>
 
-    <div data-include="footer"></div>
-</body>
-
+        <div data-include="footer"></div>
+    </body>
 </html>
