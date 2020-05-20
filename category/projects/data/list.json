@@ -8,5 +8,10 @@
         "github": "https://github.com/PM25/Flappy-Bird",
         "url": "https://pm25.github.io/Flappy-Bird",
         "date": "Feb 13-2019"
+    },
+    {
+        "github": "https://github.com/PM25/8Queens-Genetic-Algorithm",
+        "url": "https://pm25.github.io/8Queens-GeneticAlgorithm",
+        "date": "Nov 14-2018"
     }
 ]
