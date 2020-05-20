@@ -54,7 +54,7 @@ function main() {
         });
     });
 
-    document.querySelector("main").addEventListener("click", function () {
+    document.querySelector("body").addEventListener("click", function () {
         sidenav.classList.remove("show-sidenav");
     });
 }
