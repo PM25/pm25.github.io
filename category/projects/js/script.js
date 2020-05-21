@@ -1,4 +1,4 @@
-window.onload = main;
+window.addEventListener("load", main);
 
 function main() {
     read_file("data/list.json", function (content) {
@@ -48,7 +48,9 @@ function read_file(fpath, callback) {
 function get_title(github_url) {
     let paths = github_url.split("/");
     let title = paths[paths.length - 1];
+    title = title.replace(/---/g, " _ ");
     title = title.replace(/-/g, " ");
+    title = title.replace(/_/g, "-");
 
     return title;
 }
