@@ -1,4 +1,4 @@
-window.addEventListener("load", main);
+window.addEventListener("DOMContentLoaded", main);
 
 function main() {
     read_file("data/list.json", function (content) {
