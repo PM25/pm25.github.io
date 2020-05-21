@@ -38,12 +38,6 @@
           <priority> 0.5 </priority>
      </url>
      <url>
-          <loc> https://pm25.github.io/category/guide </loc>
-          <lastmod> 2019-02-03 </lastmod>
-          <changefreq> monthly </changefreq>
-          <priority> 0.5 </priority>
-     </url>
-     <url>
           <loc> https://pm25.github.io/category/projects </loc>
           <lastmod> 2019-02-03 </lastmod>
           <changefreq> monthly </changefreq>
