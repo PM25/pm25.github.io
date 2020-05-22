@@ -67,7 +67,7 @@ function main() {
         });
     });
 
-    document.querySelector("body").addEventListener("click", function () {
+    document.querySelector("main").addEventListener("click", function () {
         sidenav.classList.remove("show-sidenav");
     });
 }

@@ -1,23 +1,69 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+    <head>
+        <link rel="shortcut icon" type="image/png" href="/img/logo.png" />
+        <link rel="stylesheet" href="css/styles.css" />
+        <meta
+            charset="utf-8"
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1,maximum-scale=1,user-scalable=no"
+        />
+        <script src="/js/require.js" data-main="/js/master.js"></script>
+        <title>PlusMore - Comment</title>
+    </head>
 
-<head>
-    <link rel="shortcut icon" type="image/png" href="/img/logo.png">
-    <link rel="stylesheet" href="css/styles.css">
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1,maximum-scale=1,user-scalable=no">
-    <script src="/js/require.js" data-main="/js/master.js"></script>
-    <title>PlusMore - Comment</title>
-</head>
+    <body>
+        <div data-include="home-nav"></div>
+        <div data-include="side-nav"></div>
 
-<body>
-    <div data-include="home-nav"></div>
-    <div data-include="side-nav"></div>
-    <img src="https://plusmore-view-counter.herokuapp.com/" style="display: none">
+        <main>
+            <div id="info-boards">
+                <div class="beverage" id="news">
+                    <span class="ice"> News </span>
 
-    <div id="status">
-        <p>Sorry, this page is not finished yet.</p>
-        <a href="/">Home</a>
-    </div>
-</body>
+                    <div class="contents">
+                        <ul class="bg-bubbles">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
 
+                        <div class="info">
+                            <span>目前進度(子網站)</span>
+                            <ul>
+                                <li>
+                                    首頁 - <span style="color: red;">70%</span>
+                                </li>
+                                <li>
+                                    Project -
+                                    <span style="color: red;">70%</span>
+                                </li>
+                                <li>
+                                    程式 - <span style="color: red;">80%</span>
+                                </li>
+                                <li>
+                                    影評 - <span style="color: red;">80%</span>
+                                </li>
+                                <li>
+                                    關於我 -
+                                    <span style="color: red;">80%</span>
+                                </li>
+                                <li>留言 - 未開工</li>
+                                <li>錯誤回報 - 未開工</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div data-include="footer"></div>
+    </body>
 </html>
