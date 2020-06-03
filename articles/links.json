@@ -1,9 +1,6 @@
-{
-    "articles":[
-        {
-            "title":"Deep Learning with Keras",
-            "date":"2019.08.27",
-            "category":"programming"
-        }
-    ]
-}
+[
+    {
+        "title": "Deep Learning with Keras",
+        "date": "2019.08.27"
+    }
+]
