@@ -1,92 +1,72 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+    <head>
+        <link rel="shortcut icon" type="image/png" href="/img/logo.png" />
+        <link rel="stylesheet" href="css/styles.css" />
+        <meta
+            charset="utf-8"
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1,maximum-scale=1,user-scalable=no"
+        />
+        <script src="/js/require.js" data-main="/js/master.js"></script>
+        <script src="js/script.js"></script>
+        <title>PlusMore - Articles</title>
+    </head>
 
-<head>
-    <link rel="shortcut icon" type="image/png" href="/img/logo.png">
-    <link rel="stylesheet" href="css/styles.css">
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1,maximum-scale=1,user-scalable=no">
-    <script src="/js/require.js" data-main="/js/blog-master.js"></script>
-    <title> PlusMore - Articles </title>
-</head>
+    <body>
+        <div data-include="home-nav"></div>
+        <div data-include="side-nav"></div>
 
-<body>
-    <div data-include="home-nav"></div>
-    <div data-include="side-nav"></div>
-
-    <main>
-        <div id="header-container">
-            <div id="header">
-                <div class="title-box">
-                    <div class="title">
-                        <span> Articles </span>
+        <main>
+            <div id="header-container">
+                <div id="header">
+                    <div class="title-box">
+                        <div class="title">
+                            <span style="color: #31a09e;"> print </span>
+                            <span> ( </span>
+                            <span style="color: #db3c41;">
+                                "Hello, World!"
+                            </span>
+                            <span> ) </span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div id="blog">
-            <div id="sidebar">
-                <div class="dropdown-list">
-                    <i class="fas fa-sort-amount-down icons"></i>
-                    <span> Sort </span>
+            <div id="blog">
+                <div id="sidebar">
+                    <div class="dropdown-list">
+                        <i class="fas fa-sort-amount-down icons"></i>
+                        <span> Sort </span>
+                    </div>
+                    <div class="dropdown-list">
+                        <i class="fas fa-archive icons"></i>
+                        <span> Category </span>
+                    </div>
+                    <div class="dropdown-list">
+                        <i class="fas fa-tags icons"></i>
+                        <span> Labels </span>
+                    </div>
+                    <div class="dropdown-list">
+                        <i class="fas fa-folder icons"></i>
+                        <span> Archive </span>
+                    </div>
                 </div>
-                <div class="dropdown-list">
-                    <i class="fas fa-archive icons"></i>
-                    <span> Category </span>
-                </div>
-                <div class="dropdown-list">
-                    <i class="fas fa-tags icons"></i>
-                    <span> Labels </span>
-                </div>
-                <div class="dropdown-list">
-                    <i class="fas fa-folder icons"></i>
-                    <span> Archive </span>
+
+                <div id="articles">
+                    <div class="control">
+                        <div class="info">Page 0 of 0</div>
+                        <div class="btn-panel">
+                            <div class="btn prev">Previous</div>
+                            <div class="btn next">Next</div>
+                        </div>
+                    </div>
+
+                    <div id="article-blocks"></div>
                 </div>
             </div>
-    
-            <div id="articles">
-                <div class="control">
-                    <div class="info">
-                        <span> Page 0 of 0 </span>
-                    </div>
-                    <div class="btn-panel">
-                        <div class="btn prev"> Previous </div> 
-                        <div class="btn next"> Next </div>
-                    </div>
-                </div>
-    
-                <div id="article-blocks">
-                    <div>
-                        <a href="#" class="article-title"> Article1 </a>
-                        <span class="date"> 2019-02-04 </span>
-                        <p class="preview"> ... </p>
-                    </div>
-                    <div>
-                        <a href="#" class="article-title"> Article2 </a>
-                        <span class="date"> 2019-02-04 </span>
-                        <p class="preview"> ... </p>
-                    </div>
-                    <div>
-                        <a href="#" class="article-title"> Article3 </a>
-                        <span class="date"> 2019-02-04 </span>
-                        <p class="preview"> ... </p>
-                    </div>
-                    <div>
-                        <a href="#" class="article-title"> Article4 </a>
-                        <span class="date"> 2019-02-04 </span>
-                        <p class="preview"> ... </p>
-                    </div>
-                    <div>
-                        <a href="#" class="article-title"> Article5 </a>
-                        <span class="date"> 2019-02-04 </span>
-                        <p class="preview"> ... </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+        </main>
 
-    <div data-include="footer"></div>
-</body>
-
+        <div data-include="footer"></div>
+    </body>
 </html>
