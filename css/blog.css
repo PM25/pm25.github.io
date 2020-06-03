@@ -1,19 +1,16 @@
-body
-{
+body {
     background: #292b36;
 }
 
 /* Header */
-#header-container
-{
+#header-container {
     position: relative;
 
     width: 100%;
     height: 200px;
 }
 
-#header
-{
+#header {
     position: fixed;
     display: flex;
     align-items: center;
@@ -25,31 +22,27 @@ body
     height: inherit;
 }
 
-#header .title
-{
+#header .title {
     display: flex;
     margin: auto;
 
     font-size: 3.5em;
 }
 
-
 /* Blog */
-#blog
-{
+#blog {
     position: relative;
     box-sizing: border-box;
-    background: #1B2B34;
-    color: #65737E;
+    background: #1b2b34;
+    color: #65737e;
     border-top: #666 1px solid;
-    
+
     z-index: 1;
     min-height: calc(100vh - 200px); /* 200px is header's height */
 }
 
 /* Sidebar */
-#sidebar
-{
+#sidebar {
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -63,26 +56,22 @@ body
     z-index: 2;
 }
 
-#sidebar .dropdown-list
-{
+#sidebar .dropdown-list {
     cursor: pointer;
     user-select: none;
-    
+
     padding: 5px;
     margin: 5px;
     line-height: 100%;
     border-bottom: #aaa3 1px solid;
 }
 
-#sidebar .dropdown-list:hover
-{
+#sidebar .dropdown-list:hover {
     background: #fff1;
 }
 
-
 /* Articles */
-#articles
-{
+#articles {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -92,8 +81,7 @@ body
     width: auto;
 }
 
-#articles .control
-{
+#articles .control {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -103,35 +91,29 @@ body
     width: 85%;
 }
 
-#articles .control .info
-{
+#articles .control .info {
     font-size: 1.2em;
 }
 
-#articles .control .btn-panel
-{
+#articles .control .btn-panel {
     display: flex;
     flex-direction: row;
     user-select: none;
 }
 
-#articles .control .btn
-{
+#articles .control .btn {
     padding: 0 5px;
     margin: 5px;
     border: #fff3 2px solid;
 }
 
-#articles .control .btn:hover
-{
+#articles .control .btn:hover {
     cursor: pointer;
     border: #fff7 2px solid;
 }
 
-
 /* Article Blocks */
-#article-blocks
-{
+#article-blocks {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -140,14 +122,11 @@ body
     width: 100%;
 }
 
-#article-blocks > div
-{
+#article-blocks > div {
     position: relative;
     box-sizing: border-box;
     background: #aaa1;
-    display: none;
 
-    display: none;
     min-height: 150px;
     width: 80%;
     padding: 10px;
@@ -156,18 +135,15 @@ body
     box-shadow: 0 3px 5px #5551, 0 3px 5px #5552;
 }
 
-#article-blocks > div:hover
-{
+#article-blocks > div:hover {
     border-color: #fff7;
 }
 
-#article-blocks > div > a
-{
+#article-blocks > div > a {
     font-size: 1.5em;
 }
 
-#article-blocks > div > .date
-{
+#article-blocks > div > .date {
     position: absolute;
     color: #666;
 
@@ -176,24 +152,21 @@ body
     right: 10px;
 }
 
-
 /* Animation */
-@keyframes typing 
-{
-    from { 
-        width: 0; 
+@keyframes typing {
+    from {
+        width: 0;
     }
     to {
         width: 100%;
     }
 }
 
-@keyframes blinking-cursor
-{
-    0% { 
-        border-color: transparent; 
+@keyframes blinking-cursor {
+    0% {
+        border-color: transparent;
     }
-    50% { 
+    50% {
         border-color: #e7e8eb;
     }
 }
