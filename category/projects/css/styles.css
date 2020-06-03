@@ -34,6 +34,7 @@ body {
         0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 75px #ff1177;
 
     font-size: 6em;
+    transition-duration: 0.1s;
 }
 
 #header a:hover {
