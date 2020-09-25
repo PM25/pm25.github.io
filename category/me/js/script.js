@@ -1,6 +1,17 @@
 window.addEventListener("DOMContentLoaded", main);
 
 function main() {
+    read_file("/category/me/resource/info.json", function (content) {
+        let info = JSON.parse(content);
+
+        let header = document.querySelector("#header"),
+            main_name = header.querySelector(".name .main"),
+            alt_name = header.querySelector(".name .alt");
+
+        main_name.innerHTML = info.name;
+        alt_name.innerHTML = info.alt_name;
+    });
+
     // Show Experiences
     let experiences = document.querySelector("#exp"),
         exp_infos = experiences.querySelectorAll(".info"),
@@ -72,4 +83,15 @@ function main() {
         node.style.boxShadow =
             "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)";
     }
+}
+
+function read_file(fpath, callback) {
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", fpath, true);
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status == "200") {
+            callback(this.responseText);
+        }
+    };
+    xmlhttp.send();
 }
