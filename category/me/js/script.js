@@ -2,8 +2,17 @@ window.addEventListener("DOMContentLoaded", main);
 
 // start from here
 function main() {
-    // fill website content with info.json
-    fill_content("/category/me/resource/info_chi.json");
+    let url = new URL(window.location.href),
+        lang = url.searchParams.get("lang");
+
+    if (lang == "en") {
+        // fill website content with info.json
+        fill_content("/category/me/resource/info_eng.json");
+    } else if (lang == "ch") {
+        fill_content("/category/me/resource/info_chi.json");
+    } else {
+        fill_content("/category/me/resource/info_chi.json");
+    }
 
     // Show Experiences
     let experiences = document.querySelector("#exp"),

@@ -44,7 +44,7 @@ function read_file(fpath, callback) {
 
 function get_link(title) {
     let md_fname = title.replace(/ /g, "-"),
-        md_fpath = "/articles/?id=" + md_fname.toLowerCase();
+        md_fpath = "/articles/?id=" + md_fname;
 
     return md_fpath;
 }
