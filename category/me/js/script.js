@@ -1,16 +1,9 @@
 window.addEventListener("DOMContentLoaded", main);
 
+// start from here
 function main() {
-    read_file("/category/me/resource/info.json", function (content) {
-        let info = JSON.parse(content);
-
-        let header = document.querySelector("#header"),
-            main_name = header.querySelector(".name .main"),
-            alt_name = header.querySelector(".name .alt");
-
-        main_name.innerHTML = info.name;
-        alt_name.innerHTML = info.alt_name;
-    });
+    // fill website content with info.json
+    fill_content("/category/me/resource/info_chi.json");
 
     // Show Experiences
     let experiences = document.querySelector("#exp"),
@@ -85,6 +78,7 @@ function main() {
     }
 }
 
+// read external files
 function read_file(fpath, callback) {
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.open("GET", fpath, true);
@@ -94,4 +88,45 @@ function read_file(fpath, callback) {
         }
     };
     xmlhttp.send();
+}
+
+// fill website content with {fname.json} file
+function fill_content(fname) {
+    read_file(fname, function (content) {
+        let info = JSON.parse(content);
+
+        // fill name
+        let header = document.querySelector("#header"),
+            main_name = header.querySelector(".name .main"),
+            alt_name = header.querySelector(".name .alt");
+
+        main_name.innerHTML = info.name;
+        alt_name.innerHTML = info.alt_name;
+
+        // fill links
+        let linkedin_url = document.querySelector("#linkedin"),
+            googlescholar_url = document.querySelector("#googlescholar"),
+            cv_url = document.querySelector("#cv"),
+            github_url = document.querySelector("#github"),
+            facebook_url = document.querySelector("#facebook");
+
+        linkedin_url.href = info.url.linkedin;
+        googlescholar_url.href = info.url.googlescholar;
+        cv_url.href = info.url.cv;
+        github_url.href = info.url.github;
+        facebook_url.href = info.url.facebook;
+
+        // fill bio info
+        let residence = document.querySelector("#residence"),
+            hometown = document.querySelector("#hometown"),
+            birthplace = document.querySelector("#birthplace"),
+            email = document.querySelector("#email"),
+            email_url = document.querySelector("#email_url");
+
+        residence.innerHTML = info.residence;
+        hometown.innerHTML = info.hometown;
+        birthplace.innerHTML = info.birthplace;
+        email.innerHTML = info.email;
+        email_url.href = "mailto:" + info.email;
+    });
 }
