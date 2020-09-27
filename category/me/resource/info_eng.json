@@ -1,6 +1,6 @@
 {
-    "name": "Pin-Yen Huang",
-    "alt_name": "(a.k.a 黃品硯)",
+    "name": "黃品硯",
+    "alt_name": "Pin-Yen (Jason) Huang",
     "url": {
         "linkedin": "https://www.linkedin.com/in/PM-Huang",
         "googlescholar": "https://scholar.google.com.tw/citations?user=nQdpH2MAAAAJ",
@@ -11,5 +11,6 @@
     "residence": "Taipei, Taiwan",
     "hometown": "Taichung, Taiwan",
     "birthplace": "Auckland, New Zealand",
-    "email": "pyhuang97@gmail.com"
+    "email": "pyhuang97@gmail.com",
+    "introduction": "Hi! I am Pin-Yen, you can also call me Jason.<br>I love coding, making robots and doing research.<br>Currently I'm a M.S student in Computer Science and Engineering at the National Taiwan University (NTU), advised by Prof. <a href='https://www.csie.ntu.edu.tw/~htlin/'>Hsuan-Tien Lin</a>. My research focuses on <b>machine learning</b> and <b>cybersecurity</b>."
 }

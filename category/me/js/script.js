@@ -130,12 +130,15 @@ function fill_content(fname) {
             hometown = document.querySelector("#hometown"),
             birthplace = document.querySelector("#birthplace"),
             email = document.querySelector("#email"),
-            email_url = document.querySelector("#email_url");
+            email_url = document.querySelector("#email_url"),
+            introduction = document.querySelector("#introduction");
 
         residence.innerHTML = info.residence;
         hometown.innerHTML = info.hometown;
         birthplace.innerHTML = info.birthplace;
         email.innerHTML = info.email;
         email_url.href = "mailto:" + info.email;
+        introduction.innerHTML = info.introduction;
+        console.log(info);
     });
 }
