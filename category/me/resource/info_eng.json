@@ -12,5 +12,70 @@
     "hometown": "Taichung, Taiwan",
     "birthplace": "Auckland, New Zealand",
     "email": "pyhuang97@gmail.com",
-    "introduction": "Hi! I am Pin-Yen, you can also call me Jason.<br>I love coding, making robots and doing research.<br>Currently I'm a M.S student in Computer Science and Engineering at the National Taiwan University (NTU), advised by Prof. <a href='https://www.csie.ntu.edu.tw/~htlin/'>Hsuan-Tien Lin</a>. My research focuses on <b>machine learning</b> and <b>cybersecurity</b>."
+    "introduction": "Hi! I am Pin-Yen, you can also call me Jason.<br>I love coding, making robots and doing research.<br>Currently I'm a M.S. student in Computer Science and Engineering at the National Taiwan University (NTU), advised by Prof. <a href='https://www.csie.ntu.edu.tw/~htlin/'>Hsuan-Tien Lin</a>. My research focuses on <b>machine learning</b> and <b>cybersecurity</b>.",
+    "education": [
+        {
+            "school": "National Taiwan University",
+            "degree": "Master of Science",
+            "department": "Computer Science and Information Engineering",
+            "period": "2020.9 -",
+            "logo": "imgs/ntu_logo.webp"
+        },
+        {
+            "school": "National Chengchi University",
+            "degree": "Bachelor of Science",
+            "department": "Computer Science",
+            "period": "2018.9 - 2020.6",
+            "logo": "imgs/nccu_logo.webp"
+        },
+        {
+            "school": "National Chi Nan University",
+            "degree": "Bachelor of Science",
+            "department": "Computer Science and Information Engineering",
+            "period": "2016.9 - 2018.6",
+            "logo": "imgs/ncnu_logo.webp"
+        },
+        {
+            "school": "Taichung Second Senior High School",
+            "degree": "Senior High School",
+            "department": "Regular",
+            "period": "2013.9 - 2016.6",
+            "logo": "imgs/tcssh_logo.webp"
+        }
+    ],
+    "experiences": [
+        {
+            "title": "Undergraduate Summer Research Internship",
+            "organization": "University of Illinois Urbana-Champaign (UIUC)",
+            "period": "July 2019 - Sep 2019",
+            "logo": "imgs/uiuc_logo.webp",
+            "description": [
+                "Developed onset & offset detection algorithms for specific type of audio signals by python.",
+                "Built a system to automate the process of trim and labeling audio data."
+            ]
+        },
+        {
+            "title": "Research Scholarship from Ministry of Science and Technology",
+            "organization": "National Chengchi University",
+            "period": "July 2019 - Feb 2020",
+            "logo": "imgs/nccu_logo.webp",
+            "description": [
+                "Developed a named-entity recognition (NER) system for Literary Chinese.",
+                "Improve the F1 score by 9% by applying machine learning technique(LSTM-CRF).",
+                "Built an optical character recognition (OCR) system for Literary Chinese with machine learning.",
+                "Applied self-organizing map & clustering aggregation to increase the speed of labeling data by human by 12x."
+            ]
+        },
+        {
+            "title": "Undergraduate Research Assistant",
+            "organization": "University of Taipei",
+            "period": "Sep 2017 - Present",
+            "logo": "imgs/ut_logo.webp",
+            "description": [
+                "Improved the performance of encryption algorithm in IoT devices.",
+                "Used greedy algorithm to get secured encryption even with poor computing resources.",
+                "Analysised and visualized the performance and published final results to journal."
+            ]
+        }
+    ]
 }

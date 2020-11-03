@@ -2,6 +2,7 @@ window.addEventListener("DOMContentLoaded", main);
 
 // start from here
 function main() {
+    // english page or chinese page
     let url = new URL(window.location.href),
         lang = url.searchParams.get("lang");
 
@@ -14,17 +15,17 @@ function main() {
         fill_content("/category/me/resource/info_chi.json");
     }
 
-    // Show Experiences
-    let experiences = document.querySelector("#exp"),
-        exp_infos = experiences.querySelectorAll(".info"),
-        exp_items = experiences.querySelectorAll(".item");
+    // // Show Experiences
+    // let experiences = document.querySelector("#exp"),
+    //     exp_infos = experiences.querySelectorAll(".info"),
+    //     exp_items = experiences.querySelectorAll(".item");
 
-    show_exp_info(0);
-    exp_items.forEach(function (item) {
-        item.addEventListener("mouseover", function () {
-            show_exp_info(getIndex(this));
-        });
-    });
+    // show_exp_info(0);
+    // exp_items.forEach(function (item) {
+    //     item.addEventListener("mouseover", function () {
+    //         show_exp_info(getIndex(this));
+    //     });
+    // });
 
     // Show Activities
     let activities = document.querySelector("#activities"),
@@ -99,12 +100,12 @@ function read_file(fpath, callback) {
     xmlhttp.send();
 }
 
-// fill website content with {fname.json} file
+// fill website content with information in {fname.json} file
 function fill_content(fname) {
     read_file(fname, function (content) {
         let info = JSON.parse(content);
 
-        // fill name
+        // my name
         let header = document.querySelector("#header"),
             main_name = header.querySelector(".name .main"),
             alt_name = header.querySelector(".name .alt");
@@ -112,7 +113,7 @@ function fill_content(fname) {
         main_name.innerHTML = info.name;
         alt_name.innerHTML = info.alt_name;
 
-        // fill links
+        // links
         let linkedin_url = document.querySelector("#linkedin"),
             googlescholar_url = document.querySelector("#googlescholar"),
             cv_url = document.querySelector("#cv"),
@@ -125,7 +126,7 @@ function fill_content(fname) {
         github_url.href = info.url.github;
         facebook_url.href = info.url.facebook;
 
-        // fill bio info
+        // bio info
         let residence = document.querySelector("#residence"),
             hometown = document.querySelector("#hometown"),
             birthplace = document.querySelector("#birthplace"),
@@ -139,6 +140,98 @@ function fill_content(fname) {
         email.innerHTML = info.email;
         email_url.href = "mailto:" + info.email;
         introduction.innerHTML = info.introduction;
-        console.log(info);
+
+        // create education-timeline blocks
+        let edu_timeline = document.querySelector("#edu-timeline");
+        info.education.forEach((item, idx) => {
+            let edu_container = document.createElement("div");
+            if (idx == 0) {
+                edu_container.classList = "container current";
+            } else {
+                edu_container.classList = "container before";
+            }
+            let content = document.createElement("div");
+            content.classList = "content";
+            edu_container.appendChild(content);
+
+            let school = document.createElement("div");
+            school.classList = "school";
+            let logo = document.createElement("img");
+            logo.src = item.logo;
+            let school_name = document.createElement("span");
+            school_name.innerHTML = item.school;
+            school.appendChild(logo);
+            school.appendChild(school_name);
+
+            content.appendChild(school);
+
+            let major = document.createElement("div");
+            major.classList = "major";
+            let department = document.createElement("span");
+            department.innerHTML = item.degree + ", " + item.department;
+            let period = document.createElement("span");
+            period.innerHTML = "<br>" + item.period;
+            major.appendChild(department);
+            major.appendChild(period);
+
+            content.appendChild(major);
+
+            edu_timeline.appendChild(edu_container);
+        });
+
+        // experiences
+        let exp_period = document.querySelector("#exp-period"),
+            exp_description = document.querySelector("#exp-description"),
+            exp_titles = document.querySelector("#exp > .title-list");
+        info.experiences.forEach((experience) => {
+            let exp_block = document.createElement("div");
+            exp_block.classList = "item";
+            
+            // logo
+            let logo = document.createElement("img");
+            logo.src = experience.logo;
+            // title & organization
+            let title = document.createElement("div");
+            title.classList = "title";
+            let job_title = document.createElement("span");
+            job_title.innerHTML = experience.title + "<br>";
+            let organization = document.createElement("span");
+            organization.innerHTML = experience.organization;
+            title.appendChild(job_title);
+            title.appendChild(organization);
+
+            // append title & logo to title-list
+            exp_block.appendChild(logo);
+            exp_block.appendChild(title);
+            exp_titles.appendChild(exp_block);
+
+            // show info when hover on experience blocks
+            exp_block.addEventListener("mouseenter", function () {
+                show_exp_bg(getIndex(this));
+                exp_block.style.background = "#364f6b33";
+                exp_period.innerHTML = "<i>" + experience.period + "</i>";
+                exp_description.innerHTML = '';
+                experience.description.forEach((item)=>{
+                    let li = document.createElement("li");
+                    li.innerHTML = item;
+                    exp_description.appendChild(li);
+                });
+            });
+        });
+
+        let exp_items = Array.from(exp_titles.children);
+
+        function show_exp_bg(idx) {
+            exp_items.forEach((item) => { 
+                item.style.background = "inherit";
+            });
+            exp_items[idx].style.background = "#364f6b33";
+        }
     });
+
+    // Functions
+    function getIndex(node) {
+        let idx = Array.from(node.parentNode.children).indexOf(node);
+        return idx;
+    }
 }

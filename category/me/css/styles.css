@@ -233,7 +233,7 @@ body {
 #exp .title span:nth-child(1) {
     font-size: 1.35em;
 }
-#exp .info-list {
+#exp .info {
     box-sizing: border-box;
     background: white;
 

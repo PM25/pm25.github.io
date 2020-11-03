@@ -12,5 +12,68 @@
     "hometown": "台中, 台灣",
     "birthplace": "奧克蘭, 紐西蘭",
     "email": "pyhuang97@gmail.com",
-    "introduction": "嗨你好! 我是黃品硯<br>我喜歡寫程式、研發機器人、做研究<br>現在就讀台大資工所，接受<a href='https://www.csie.ntu.edu.tw/~htlin/'>林軒田</a>老師的指導，研究領域專注於 <b>Machine Learning</b> 和 <b>Cybersecurity</b>。<br>2019年暑假到美國 University of Illinois Urbana-Champaign (UIUC) 的電子與計算機工程學系(ECE)做暑期研究，期間幫忙開發 Audio Signal Processing 相關的程式，並在 Prof. Stephen Boppart 實驗室主持 Deep Learning 工作坊。"
+    "introduction": "嗨你好! 我是黃品硯<br>我喜歡寫程式、研發機器人、做研究<br>現在就讀台大資工所，接受<a href='https://www.csie.ntu.edu.tw/~htlin/'>林軒田</a>老師的指導，研究領域專注於 <b>Machine Learning</b> 和 <b>Cybersecurity</b>。<br>2019年暑假到美國 University of Illinois Urbana-Champaign (UIUC) 的電子與計算機工程學系(ECE)做暑期研究，期間幫忙開發 Audio Signal Processing 相關的程式，並在 Prof. Stephen Boppart 實驗室主持 Deep Learning 工作坊。",
+    "education": [
+        {
+            "school": "國立臺灣大學",
+            "degree": "碩士",
+            "department": "資訊工程所(人工智慧組)",
+            "period": "2020.9 -",
+            "logo": "imgs/ntu_logo.webp"
+        },
+        {
+            "school": "國立政治大學",
+            "degree": "學士",
+            "department": "資訊科學系",
+            "period": "2018.9 - 2020.6",
+            "logo": "imgs/nccu_logo.webp"
+        },
+        {
+            "school": "國立暨南國際大學",
+            "degree": "學士",
+            "department": "資訊工程系",
+            "period": "2016.9 - 2018.6",
+            "logo": "imgs/ncnu_logo.webp"
+        },
+        {
+            "school": "國立台中二中",
+            "degree": "高中",
+            "department": "普通班",
+            "period": "2013.9 - 2016.6",
+            "logo": "imgs/tcssh_logo.webp"
+        }
+    ],
+    "experiences": [
+        {
+            "title": "暑期研究",
+            "organization": "University of Illinois Urbana-Champaign (UIUC)",
+            "period": "2019年7月 - 2019年9月",
+            "logo": "imgs/uiuc_logo.webp",
+            "description": [
+                "處理聲音類型的資料",
+                "寫演算法實作 Onset & Offset Detection",
+                "使用工具: Python、LibROSA"
+            ]
+        },
+        {
+            "title": "科技部大專生計畫",
+            "organization": "國立政治大學",
+            "period": "2019年7月 - 2020年2月",
+            "logo": "imgs/nccu_logo.webp",
+            "description": [
+                "針對文言文開發一套基礎資料識別(N.E.R) 系統",
+                "使用深度學習來提升準確率"
+            ]
+        },
+        {
+            "title": "研究助理",
+            "organization": "臺北市立大學",
+            "period": "2017年9月 - 現今",
+            "logo": "imgs/ut_logo.webp",
+            "description": [
+                "實作 Greedy Algorithm",
+                "協助以 C++ 開發程式 & 評估模型的成效"
+            ]
+        }
+    ]
 }
