@@ -15,27 +15,6 @@ function main() {
         fill_content("/category/me/resource/info_chi.json");
     }
 
-    // // Show Experiences
-    // let experiences = document.querySelector("#exp"),
-    //     exp_infos = experiences.querySelectorAll(".info"),
-    //     exp_items = experiences.querySelectorAll(".item");
-
-    // show_exp_info(0);
-    // exp_items.forEach(function (item) {
-    //     item.addEventListener("mouseover", function () {
-    //         show_exp_info(getIndex(this));
-    //     });
-    // });
-
-    // Show Activities
-    let activities = document.querySelector("#activities"),
-        activities_item = activities.querySelectorAll(".item");
-    activities_item.forEach(function (item) {
-        item.addEventListener("click", function () {
-            show_activities_info(this);
-        });
-    });
-
     // Show animation when scroll to skills section
     let win_height = window.innerHeight;
     window.addEventListener("scroll", function () {
@@ -58,34 +37,6 @@ function main() {
                 });
         }
     });
-
-    // Functions
-    function getIndex(node) {
-        let idx = Array.from(node.parentNode.children).indexOf(node);
-        return idx;
-    }
-
-    function show_exp_info(idx) {
-        exp_items.forEach((item) => {
-            item.style.background = "inherit";
-        });
-        exp_infos.forEach((info) => {
-            info.style.display = "none";
-        });
-
-        exp_items[idx].style.background = "#364f6b33";
-        exp_infos[idx].style.display = "block";
-    }
-
-    function show_activities_info(node) {
-        node.querySelector("img").style.display = "block";
-
-        activities_item.forEach((item) => {
-            item.style.boxShadow = "none";
-        });
-        node.style.boxShadow =
-            "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)";
-    }
 }
 
 // read external files
@@ -102,6 +53,7 @@ function read_file(fpath, callback) {
 
 // fill website content with information in {fname.json} file
 function fill_content(fname) {
+    const _ = undefined;
     read_file(fname, function (content) {
         let info = JSON.parse(content);
 
@@ -248,9 +200,63 @@ function fill_content(fname) {
         skills_others.append(
             info.skills.others
         );
+
+        // activities
+        let activities = document.querySelector("#activities");
+        info.activities.forEach(item => {
+            let title_block = create_element("div", "title", item.title);
+
+            let map_icon = create_element("span", "fa fa-map-marker-alt icons");
+            let location_block = create_element("div", _, _, [map_icon, item.location]),
+                time_block = create_element("i", _, item.time);
+            let info_block = create_element("div", "info", _, [location_block, time_block]);
+            
+            let img_block = create_element("img", _, _, _, ["div"], item.image);
+
+            let item_block = create_element("div", "item", _, [title_block, info_block, img_block]);
+            item_block.addEventListener("click", function () {
+                show_activities_info(this);
+            });
+            activities.append(item_block);
+        });
+
+        // show activities description & image
+        function show_activities_info(node) {
+            node.querySelector("img").style.display = "block";
+
+            Array.from(activities.children).forEach((item) => {
+                item.style.boxShadow = "none";
+            });
+            node.style.boxShadow =
+                "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)";
+        }
     });
 
-    // Functions
+
+    // create HTML element
+    function create_element(type, classlist=null, innerHTML=null, append=null, wrapped=null ,src=null) {
+        let element = document.createElement(type);
+        if(classlist != null) element.classList = classlist;
+        if(innerHTML != null) element.innerHTML = innerHTML;
+        if(src != null) element.src = src;
+        // append elements
+        if(append != null) { 
+            append.forEach(item => {
+                element.append(item);
+            })
+        }; 
+        // wrapped with elements
+        if(wrapped != null) {
+            wrapped.forEach(type => {
+                let container = document.createElement(type);
+                container.appendChild(element);
+                element = container;
+            });
+        }
+        return element;
+    }
+
+    // get current position among children
     function getIndex(node) {
         let idx = Array.from(node.parentNode.children).indexOf(node);
         return idx;

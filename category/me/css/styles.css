@@ -79,12 +79,6 @@ body {
     font-size: 1.1em;
 }
 
-#intro .bio > .info i {
-    text-align: center;
-
-    width: 1.5em;
-}
-
 #intro .bio a {
     text-decoration: none;
 }
@@ -257,7 +251,7 @@ body {
 
     height: 15em;
     width: 50vw;
-    padding: 0 1.5em;
+    padding: 1em 1.5em;
     margin-right: 1em;
     border-radius: 0.8em;
     border: 1px solid;

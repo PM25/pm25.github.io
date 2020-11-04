@@ -80,5 +80,14 @@
         "programming_languages": "<b>(proficient):</b> Python, C/C++, JavaScript, Lisp, Shell Script <br><b>(familiar):</b> R, Matlab",
         "tools": "VSCode, Vim, Emacs, Git, Github, Google Cloud", 
         "others": "Linux/Unix, Arduino, Raspberry Pi, PyTorch, Keras, HTML/CSS, Markdown, LaTeX"
-    }
+    },
+    "activities": [
+        {
+            "title": "[工作坊/演講] Deep Learning with Keras",
+            "location": "University of Illinois Urbana-Champaign (UIUC), Illinois, USA",
+            "time": "2019年9月4日",
+            "description": "",
+            "image": "imgs/2019-9-4-workshop.jpg"
+        }
+    ]
 }
