@@ -8,9 +8,9 @@
         "github": "https://github.com/PM25",
         "facebook": "https://www.facebook.com/pyhuang97"
     },
-    "residence": "台北, 台灣",
-    "hometown": "台中, 台灣",
-    "birthplace": "奧克蘭, 紐西蘭",
+    "residence": "現居: 台北, 台灣",
+    "hometown": "家鄉: 台中, 台灣",
+    "birthplace": "出生: 奧克蘭, 紐西蘭",
     "email": "pyhuang97@gmail.com",
     "introduction": "嗨你好! 我是黃品硯<br>我喜歡寫程式、研發機器人、做研究<br>現在就讀台大資工所，接受<a href='https://www.csie.ntu.edu.tw/~htlin/'>林軒田</a>老師的指導，研究領域專注於 <b>Machine Learning</b> 和 <b>Cybersecurity</b>。<br>2019年暑假到美國 University of Illinois Urbana-Champaign (UIUC) 的電子與計算機工程學系(ECE)做暑期研究，期間幫忙開發 Audio Signal Processing 相關的程式，並在 Prof. Stephen Boppart 實驗室主持 Deep Learning 工作坊。",
     "education": [
@@ -18,7 +18,7 @@
             "school": "國立臺灣大學",
             "degree": "碩士",
             "department": "資訊工程所(人工智慧組)",
-            "period": "2020.9 -",
+            "period": "2020.9 - 現今",
             "logo": "imgs/ntu_logo.webp"
         },
         {
@@ -75,5 +75,10 @@
                 "協助以 C++ 開發程式 & 評估模型的成效"
             ]
         }
-    ]
+    ],
+    "skills": {
+        "programming_languages": "<b>(proficient):</b> Python, C/C++, JavaScript, Lisp, Shell Script <br><b>(familiar):</b> R, Matlab",
+        "tools": "VSCode, Vim, Emacs, Git, Github, Google Cloud", 
+        "others": "Linux/Unix, Arduino, Raspberry Pi, PyTorch, Keras, HTML/CSS, Markdown, LaTeX"
+    }
 }

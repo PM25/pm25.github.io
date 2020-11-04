@@ -207,26 +207,47 @@ function fill_content(fname) {
 
             // show info when hover on experience blocks
             exp_block.addEventListener("mouseenter", function () {
-                show_exp_bg(getIndex(this));
-                exp_block.style.background = "#364f6b33";
-                exp_period.innerHTML = "<i>" + experience.period + "</i>";
-                exp_description.innerHTML = '';
-                experience.description.forEach((item)=>{
-                    let li = document.createElement("li");
-                    li.innerHTML = item;
-                    exp_description.appendChild(li);
-                });
+                show_exp_info(getIndex(this));
             });
         });
 
         let exp_items = Array.from(exp_titles.children);
+        show_exp_info(0);
 
-        function show_exp_bg(idx) {
+        function show_exp_info(idx) {
+            // show hover background
             exp_items.forEach((item) => { 
                 item.style.background = "inherit";
             });
             exp_items[idx].style.background = "#364f6b33";
+            
+            // show information
+            let experience = info.experiences[idx];
+            exp_period.innerHTML = "<i>" + experience.period + "</i>";
+            exp_description.innerHTML = '';
+            experience.description.forEach((item)=>{
+                let li = document.createElement("li");
+                li.innerHTML = item;
+                exp_description.appendChild(li);
+            });
         }
+
+        // skills
+        let skills_programming = document.querySelector("#skills-programming"),
+            skills_tools = document.querySelector("#skills-tools"),
+            skills_others = document.querySelector("#skills-others"); 
+        
+        let programming_skills = document.createElement("div");
+        programming_skills.innerHTML = info.skills.programming_languages;
+        skills_programming.append(
+            programming_skills    
+        );
+        skills_tools.append(
+            info.skills.tools
+        );
+        skills_others.append(
+            info.skills.others
+        );
     });
 
     // Functions
@@ -235,3 +256,12 @@ function fill_content(fname) {
         return idx;
     }
 }
+
+
+
+    
+
+
+
+
+

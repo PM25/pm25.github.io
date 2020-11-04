@@ -8,9 +8,9 @@
         "github": "https://github.com/PM25",
         "facebook": "https://www.facebook.com/pyhuang97"
     },
-    "residence": "Taipei, Taiwan",
-    "hometown": "Taichung, Taiwan",
-    "birthplace": "Auckland, New Zealand",
+    "residence": "Residence: Taipei, Taiwan",
+    "hometown": "Hometown: Taichung, Taiwan",
+    "birthplace": "Birthplace: Auckland, New Zealand",
     "email": "pyhuang97@gmail.com",
     "introduction": "Hi! I am Pin-Yen, you can also call me Jason.<br>I love coding, making robots and doing research.<br>Currently I'm a M.S. student in Computer Science and Engineering at the National Taiwan University (NTU), advised by Prof. <a href='https://www.csie.ntu.edu.tw/~htlin/'>Hsuan-Tien Lin</a>. My research focuses on <b>machine learning</b> and <b>cybersecurity</b>.",
     "education": [
@@ -18,7 +18,7 @@
             "school": "National Taiwan University",
             "degree": "Master of Science",
             "department": "Computer Science and Information Engineering",
-            "period": "2020.9 -",
+            "period": "2020.9 - Present",
             "logo": "imgs/ntu_logo.webp"
         },
         {
@@ -77,5 +77,10 @@
                 "Analysised and visualized the performance and published final results to journal."
             ]
         }
-    ]
+    ],
+    "skills": {
+        "programming_languages": "<b>(proficient):</b> Python, C/C++, JavaScript, Lisp, Shell Script <br><b>(familiar):</b> R, Matlab",
+        "tools": "VSCode, Vim, Emacs, Git, Github, Google Cloud", 
+        "others": "Linux/Unix, Arduino, Raspberry Pi, PyTorch, Keras, HTML/CSS, Markdown, LaTeX"
+    }
 }
