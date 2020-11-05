@@ -264,9 +264,11 @@ function fill_bibliography(fname) {
             let authors = []
             publication.author.split('and').forEach((author) => {
                 let name = author.split(',');
-                let first_name = name[1].trim(),
+                if(name.length > 1) {
+                    let first_name = name[1].trim(),
                     last_name = name[0].trim();
-                name = first_name + " " + last_name;
+                    name = first_name + " " + last_name;
+                }
                 if(name == "Pin-Yen Huang") name = "<b>" + name + "</b>";
                 authors.push(name);
             });

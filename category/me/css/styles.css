@@ -4,12 +4,19 @@ body {
     background-color: #fafafa;
 }
 
+.section {
+    padding: 0.6em 2.5em;
+}
+
+.section > h2 {
+    margin: 0.3em 0;
+}
+
 /* Header */
 #header {
     display: flex;
 
     margin-top: 50px;
-    padding: 1em;
 }
 
 #header .profile {
@@ -64,8 +71,6 @@ body {
 /* Introduction */
 #intro {
     display: flex;
-
-    padding: 1em;
 }
 
 #intro .bio {
@@ -200,8 +205,6 @@ body {
 #exp {
     display: flex;
     box-sizing: border-box;
-
-    padding: 1.5em;
 }
 
 #exp .item {
@@ -241,8 +244,6 @@ body {
 /* My Skills */
 #skills {
     display: flex;
-
-    padding: 1em;
 }
 
 #skills .details {
@@ -321,14 +322,14 @@ body {
 
 /* My Activities */
 #activities {
-    padding: 1em;
+    /* padding: 1em; */
 }
 
 #activities .item {
     cursor: pointer;
 
-    padding: 1em;
-    border-radius: 1em;
+    padding: 0.6em;
+    border-radius: 0.6em;
 }
 
 #activities .item:hover {
@@ -358,14 +359,12 @@ body {
 #publications {
     display: flex;
     flex-direction: column;
-
-    padding: 1em;
 }
 
 #publications > a {
     text-decoration: none;
 
-    padding: 0 1em;
+    padding: 0.1em 0.6em;
 }
 
 #publications > a:hover {
