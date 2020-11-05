@@ -316,7 +316,7 @@ body {
     border-radius: inherit;
     transform-origin: 0;
     transform: scaleX(0);
-    transition: 1s ease-in-out;
+    transition: 1.5s ease-in-out;
 }
 
 /* My Activities */

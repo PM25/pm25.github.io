@@ -1,19 +1,23 @@
 window.addEventListener("DOMContentLoaded", main);
 
+const _ = undefined;
+
 // start from here
 function main() {
+    console.log("*executing main()");
     // english page or chinese page
     let url = new URL(window.location.href),
         lang = url.searchParams.get("lang");
 
     if (lang == "en") {
         // fill website content with info.json
-        fill_content("/category/me/resource/info_eng.json");
+        fill_content("resource/info_eng.json");
     } else if (lang == "ch") {
-        fill_content("/category/me/resource/info_chi.json");
+        fill_content("resource/info_chi.json");
     } else {
-        fill_content("/category/me/resource/info_chi.json");
+        fill_content("resource/info_chi.json");
     }
+    fill_bibliography("resource/publications.bib");
 
     // Show animation when scroll to skills section
     let win_height = window.innerHeight;
@@ -232,30 +236,6 @@ function fill_content(fname) {
         }
     });
 
-
-    // create HTML element
-    function create_element(type, classlist=null, innerHTML=null, append=null, wrapped=null ,src=null) {
-        let element = document.createElement(type);
-        if(classlist != null) element.classList = classlist;
-        if(innerHTML != null) element.innerHTML = innerHTML;
-        if(src != null) element.src = src;
-        // append elements
-        if(append != null) { 
-            append.forEach(item => {
-                element.append(item);
-            })
-        }; 
-        // wrapped with elements
-        if(wrapped != null) {
-            wrapped.forEach(type => {
-                let container = document.createElement(type);
-                container.appendChild(element);
-                element = container;
-            });
-        }
-        return element;
-    }
-
     // get current position among children
     function getIndex(node) {
         let idx = Array.from(node.parentNode.children).indexOf(node);
@@ -263,11 +243,99 @@ function fill_content(fname) {
     }
 }
 
+// fill publications section with information in {fname.bib} file
+function fill_bibliography(fname) {
+    read_file(fname, (bibtex)=>{
+        // transform bibtex format to json 
+        let bibjson = bibtex.replace(/(\w+)\s*=\s*\{/g, "\"$1\": \"")
+          .replace(/\}(?=\s*[,\}])/g, "\"")
+          .replace(/@(\w+)\s*\{([^,]*)/g, ",{\"$1\": \"$2\"");
 
+        // remove first ',' and turn it into a list
+        bibjson = '[' + bibjson.substring(1) + ']';
+        let bibobj = JSON.parse(bibjson);
+        
+        let publications = document.querySelector("#publications");
+        let counter = 0
+        bibobj.forEach((publication) => {
+            counter += 1
 
-    
+            // preprocessing authors name and make my name bold
+            let authors = []
+            publication.author.split('and').forEach((author) => {
+                let name = author.split(',');
+                let first_name = name[1].trim(),
+                    last_name = name[0].trim();
+                name = first_name + " " + last_name;
+                if(name == "Pin-Yen Huang") name = "<b>" + name + "</b>";
+                authors.push(name);
+            });
+            if(authors.length >= 2) {
+                authors[authors.length - 2] = authors[authors.length - 2] + " and " + authors[authors.length - 1];
+                authors.pop();
+            } 
 
+            let citation = [];
+            if("inproceedings" in publication) {
+                ["author", "title", "booktitle", "year", "pages"].forEach((key)=>{
+                    if(key in publication) {
+                        if(key == "author") publication[key] = authors.join(', ');
+                        if(key == "title") publication[key] = '"' + publication.title + '"';
+                        if(key == "booktitle") publication[key] = "<i>" + publication.journal + "</i>";
+                        if(key == "volume") publication[key] = "vol. " + publication.volume;
+                        if(key == "number") publication[key] = "no. " + publication.number;
+                        if(key == "pages") publication[key] = "pp. " + publication.pages.replace("--", "-");
 
+                        citation.push(publication[key]);
+                    }
+                });
+            } else if("article" in publication) {
+                ["author", "title", "journal", "year", "volume", "number", "pages"].forEach((key)=>{
+                    if(key in publication) {
+                        if(key == "author") publication[key] = authors.join(', ');
+                        if(key == "title") publication[key] = '"' + publication.title + '"';
+                        if(key == "journal") publication[key] = "<i>" + publication.journal + "</i>";
+                        if(key == "volume") publication[key] = "vol. " + publication.volume;
+                        if(key == "number") publication[key] = "no. " + publication.number;
+                        if(key == "pages") publication[key] = "pp. " + publication.pages.replace("--", "-");
 
+                        citation.push(publication[key]);
+                    }
+                });
+            } else {
+                counter -= 1;
+                console.log('*Unsupported bibtex format.')
+                return;
+            }
+            citation = citation.join(", ");
+            citation = "[" + counter + "] " + citation;
+            
+            let publication_block = create_element("a", _, citation)
+            if("url" in publication) publication_block.href = publication.url;
+            publications.appendChild(publication_block);
+        });
+    });
+}
 
-
+// create HTML element
+function create_element(type, classlist=null, innerHTML=null, append=null, wrapped=null ,src=null) {
+    let element = document.createElement(type);
+    if(classlist != null) element.classList = classlist;
+    if(innerHTML != null) element.innerHTML = innerHTML;
+    if(src != null) element.src = src;
+    // append elements
+    if(append != null) { 
+        append.forEach(item => {
+            element.append(item);
+        })
+    }; 
+    // wrapped with elements
+    if(wrapped != null) {
+        wrapped.forEach(type => {
+            let container = document.createElement(type);
+            container.appendChild(element);
+            element = container;
+        });
+    }
+    return element;
+}
