@@ -281,7 +281,7 @@ function fill_bibliography(fname) {
                     if(key in publication) {
                         if(key == "author") publication[key] = authors.join(', ');
                         if(key == "title") publication[key] = '"' + publication.title + '"';
-                        if(key == "booktitle") publication[key] = "<i>" + publication.journal + "</i>";
+                        if(key == "booktitle") publication[key] = "<i>" + publication.booktitle + "</i>";
                         if(key == "volume") publication[key] = "vol. " + publication.volume;
                         if(key == "number") publication[key] = "no. " + publication.number;
                         if(key == "pages") publication[key] = "pp. " + publication.pages.replace("--", "-");
