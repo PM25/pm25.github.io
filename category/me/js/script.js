@@ -1,10 +1,38 @@
-window.addEventListener("DOMContentLoaded", main);
+doc_ready(main);
+
+function doc_ready(fn) {
+    // see if DOM is already available
+    if (
+        document.readyState === "complete" ||
+        document.readyState === "interactive"
+    ) {
+        // call on next available tick
+        setTimeout(fn, 1);
+    } else {
+        document.addEventListener("DOMContentLoaded", fn);
+    }
+}
 
 const _ = undefined;
 
+// require.config({
+//     paths: {
+//         // simplebar: "https://unpkg.com/simplebar@latest/dist/simplebar",
+//         // gtm: "https://www.googletagmanager.com/gtag/js?id=UA-129342449-2",
+//         // common: "/js/common",
+//         master: "/js/master",
+//         // ga: "/js/ga"
+//     },
+// });
+
+// require(["master"], function (data) {
+//     // main();
+// });
+
 // start from here
-function main() {
-    console.log("*executing main()");
+function main() { 
+    
+    console.log("*executing script.js: main()");
     // english page or chinese page
     let url = new URL(window.location.href),
         lang = url.searchParams.get("lang");
@@ -18,29 +46,6 @@ function main() {
         fill_content("resource/info_chi.json");
     }
     fill_bibliography("resource/publications.bib");
-
-    // Show animation when scroll to skills section
-    let win_height = window.innerHeight;
-    window.addEventListener("scroll", function () {
-        let current_pos = window.scrollY,
-            skills_section_pos =
-                document.querySelector("#skills").offsetTop - win_height;
-        if (current_pos > skills_section_pos) {
-            document
-                .querySelector("#skills")
-                .querySelectorAll(".progress-bar-fill")
-                .forEach((bar) => {
-                    bar.style.transform = "scaleX(1)";
-                });
-        } else {
-            document
-                .querySelector("#skills")
-                .querySelectorAll(".progress-bar-fill")
-                .forEach((bar) => {
-                    bar.style.transform = "scaleX(0)";
-                });
-        }
-    });
 }
 
 // read external files
@@ -57,7 +62,6 @@ function read_file(fpath, callback) {
 
 // fill website content with information in {fname.json} file
 function fill_content(fname) {
-    const _ = undefined;
     read_file(fname, function (content) {
         let info = JSON.parse(content);
 
@@ -188,52 +192,8 @@ function fill_content(fname) {
             });
         }
 
-        // skills
-        let skills_programming = document.querySelector("#skills-programming"),
-            skills_tools = document.querySelector("#skills-tools"),
-            skills_others = document.querySelector("#skills-others"); 
-        
-        let programming_skills = document.createElement("div");
-        programming_skills.innerHTML = info.skills.programming_languages;
-        skills_programming.append(
-            programming_skills    
-        );
-        skills_tools.append(
-            info.skills.tools
-        );
-        skills_others.append(
-            info.skills.others
-        );
-
-        // activities
-        let activities = document.querySelector("#activities");
-        info.activities.forEach(item => {
-            let title_block = create_element("div", "title", item.title);
-
-            let map_icon = create_element("span", "fa fa-map-marker-alt icons");
-            let location_block = create_element("div", _, _, [map_icon, item.location]),
-                time_block = create_element("i", _, item.time);
-            let info_block = create_element("div", "info", _, [location_block, time_block]);
-            
-            let img_block = create_element("img", _, _, _, ["div"], item.image);
-
-            let item_block = create_element("div", "item", _, [title_block, info_block, img_block]);
-            item_block.addEventListener("click", function () {
-                show_activities_info(this);
-            });
-            activities.append(item_block);
-        });
-
-        // show activities description & image
-        function show_activities_info(node) {
-            node.querySelector("img").style.display = "block";
-
-            Array.from(activities.children).forEach((item) => {
-                item.style.boxShadow = "none";
-            });
-            node.style.boxShadow =
-                "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)";
-        }
+        skills(info);
+        activities(info);
     });
 
     // get current position among children
@@ -243,19 +203,114 @@ function fill_content(fname) {
     }
 }
 
+// skills section
+function skills(info) {
+    let skills_header = create_element("h2", "header", "Skills"),
+        skills_content = create_element("div", "content");
+
+    let skills_details = create_element("div", "details");    
+    for(key in info.skills) {
+        if(key != "level") {
+            let header = key.replace('_', ' ');
+            let skills_details_content = create_element("h3", _, header, _, ["div"]),
+                myskills = create_element("div", _, info.skills[key]);
+            skills_details_content.appendChild(myskills);
+
+            skills_details.appendChild(skills_details_content);
+        }
+    }
+    skills_content.appendChild(skills_details);
+
+    // skills level progress bar
+    let progress_bar = create_element("ul");
+    info.skills.level.forEach(item => {
+        let logo = create_element("div", "logo-wrapper", _, [create_element("img", _, _, _, _, item.image)]);
+        let name = create_element("span", _, item.name);
+        let progess_bar = create_element("div", "progress-bar-fill")
+        progess_bar.style = "width: " + item.percentage + "%";
+        progess_bar = create_element("div", "progress-bar", _, [progess_bar]);
+        let li = create_element("li", _, _, [logo, name, progess_bar]);
+        progress_bar.appendChild(li);
+    });
+    skills_content.appendChild(progress_bar);
+
+    let skills = document.querySelector("#skills");
+    skills.innerHTML = "";
+    skills.appendChild(skills_header);
+    skills.appendChild(skills_content);
+
+    // Show animation when scroll to skills section
+    let win_height = window.innerHeight;
+    window.addEventListener("scroll", function () {
+        let current_pos = window.scrollY,
+            skills_section_pos =
+                document.querySelector("#skills").offsetTop - win_height;
+        if (current_pos > skills_section_pos) {
+            document
+                .querySelector("#skills .content")
+                .querySelectorAll(".progress-bar-fill")
+                .forEach((bar) => {
+                    bar.style.transform = "scaleX(1)";
+                });
+        } else {
+            document
+                .querySelector("#skills .content")
+                .querySelectorAll(".progress-bar-fill")
+                .forEach((bar) => {
+                    bar.style.transform = "scaleX(0)";
+                });
+        }
+    });
+}
+
+// activities section
+function activities(info) {    
+    let activities_header = create_element("h2", "header", "Activities"),
+        activities_content = create_element("div", "content");
+
+    info.activities.forEach(item => {
+        let title_block = create_element("div", "title", item.title);
+
+        let map_icon = create_element("span", "fa fa-map-marker-alt icons");
+        let location_block = create_element("div", _, _, [map_icon, item.location]),
+            time_block = create_element("i", _, item.time);
+        let info_block = create_element("div", "info", _, [location_block, time_block]);
+        
+        let img_block = create_element("img", _, _, _, ["div"], item.image);
+
+        let item_block = create_element("div", "item", _, [title_block, info_block, img_block]);
+        item_block.addEventListener("click", function () {
+            show_activities_info(this);
+        });
+
+        activities_content.append(item_block);
+    });
+
+    let activities = document.querySelector("#activities");
+    activities.innerHTML = "" // Clear
+    activities.appendChild(activities_header);
+    activities.appendChild(activities_content);
+
+    // show activities description & image
+    function show_activities_info(node) {
+        node.querySelector("img").style.display = "block";
+
+        Array.from(activities.children).forEach((item) => {
+            item.style.boxShadow = "none";
+        });
+        node.style.boxShadow =
+            "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)";
+    }
+}
+
 // fill publications section with information in {fname.bib} file
 function fill_bibliography(fname) {
     read_file(fname, (bibtex)=>{
-        // transform bibtex format to json 
-        let bibjson = bibtex.replace(/(\w+)\s*=\s*\{/g, "\"$1\": \"")
-          .replace(/\}(?=\s*[,\}])/g, "\"")
-          .replace(/@(\w+)\s*\{([^,]*)/g, ",{\"$1\": \"$2\"");
-
-        // remove first ',' and turn it into a list
-        bibjson = '[' + bibjson.substring(1) + ']';
-        let bibobj = JSON.parse(bibjson);
+        let bibobj = parse_latex(bibtex);
         
-        let publications = document.querySelector("#publications");
+        let publications_header = create_element("h2", "header", "Publications"),
+            publications_content = create_element("div", "content");
+        
         let counter = 0
         bibobj.forEach((publication) => {
             counter += 1
@@ -314,9 +369,27 @@ function fill_bibliography(fname) {
             
             let publication_block = create_element("a", _, citation)
             if("url" in publication) publication_block.href = publication.url;
-            publications.appendChild(publication_block);
+            publications_content.appendChild(publication_block);
         });
+
+        let publications = document.querySelector("#publications");
+        publications.innerHTML = "" // Clear
+        publications.appendChild(publications_header);
+        publications.appendChild(publications_content);
     });
+
+    // transform bibtex format to json 
+    function parse_latex(bibtex) {
+        let bibjson = bibtex.replace(/(\w+)\s*=\s*\{/g, "\"$1\": \"")
+          .replace(/\}(?=\s*[,\}])/g, "\"")
+          .replace(/@(\w+)\s*\{([^,]*)/g, ",{\"$1\": \"$2\"");
+
+        // remove first ',' and turn it into a list
+        bibjson = '[' + bibjson.substring(1) + ']';
+        let bibobj = JSON.parse(bibjson);
+
+        return bibobj;
+    }
 }
 
 // create HTML element

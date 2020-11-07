@@ -79,7 +79,14 @@
     "skills": {
         "programming_languages": "<b>(proficient):</b> Python, C/C++, JavaScript, Lisp, Shell Script <br><b>(familiar):</b> R, Matlab",
         "tools": "VSCode, Vim, Emacs, Git, Github, Google Cloud", 
-        "others": "Linux/Unix, Arduino, Raspberry Pi, PyTorch, Keras, HTML/CSS, Markdown, LaTeX"
+        "others": "Linux/Unix, Arduino, Raspberry Pi, PyTorch, Keras, HTML/CSS, Markdown, LaTeX",
+        "level": [
+            {"name": "Python", "percentage": 95, "image": "imgs/python_logo.webp"}, 
+            {"name": "C/C++", "percentage": 95, "image": "imgs/cpp_logo.webp"},
+            {"name": "Javascript", "percentage": 93, "image": "imgs/javascript_logo.webp"},
+            {"name": "Lisp", "percentage": 85, "image": "imgs/lisp_logo.webp"},
+            {"name": "PyTorch", "percentage": 90, "image": "imgs/pytorch_logo.webp"}
+        ]
     },
     "activities": [
         {

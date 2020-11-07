@@ -43,6 +43,12 @@ function get_file(fpath, callback) {
 }
 
 function main() {
+    sidenav();
+    toolbar();
+    language();
+}
+
+function sidenav() {
     let sidenav = document.querySelector("#side-nav");
     let sidenav_btns = document.querySelectorAll(".sidenav-btn");
 
@@ -69,5 +75,26 @@ function main() {
 
     document.querySelector("main").addEventListener("click", function () {
         sidenav.classList.remove("show-sidenav");
+    });
+}
+
+function toolbar() {
+    let toolbar_btn = document.querySelector("#toolbar-btn");
+    let toolbar = document.querySelector(".toolbar");
+    toolbar_btn.addEventListener("click", function() {
+        toolbar.classList.toggle("toolbar");
+    });
+}
+
+function language() {
+    let language_btn = document.querySelector("#language-btn");
+    language_btn.addEventListener("click", function() {
+        if (typeof fill_content === "function") {
+            window.location.replace('?lang=en');
+            console.log(window.location.href);
+            fill_content("resource/info_eng.json");
+        } else if (typeof fill_content === "undefined") {
+            console.log("*function: fill_content() has not loaded yet.");
+        }
     });
 }
