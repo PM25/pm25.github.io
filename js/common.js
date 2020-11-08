@@ -90,8 +90,7 @@ function language() {
     let language_btn = document.querySelector("#language-btn");
     language_btn.addEventListener("click", function() {
         if (typeof fill_content === "function") {
-            window.location.replace('?lang=en');
-            console.log(window.location.href);
+            // window.location.replace('?lang=en');
             fill_content("resource/info_eng.json");
         } else if (typeof fill_content === "undefined") {
             console.log("*function: fill_content() has not loaded yet.");

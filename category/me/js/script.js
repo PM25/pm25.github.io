@@ -139,72 +139,71 @@ function fill_content(fname) {
             edu_timeline.appendChild(edu_container);
         });
 
-        // experiences
-        let exp_period = document.querySelector("#exp-period"),
-            exp_description = document.querySelector("#exp-description"),
-            exp_titles = document.querySelector("#exp > .title-list");
-        info.experiences.forEach((experience) => {
-            let exp_block = document.createElement("div");
-            exp_block.classList = "item";
-            
-            // logo
-            let logo = document.createElement("img");
-            logo.src = experience.logo;
-            // title & organization
-            let title = document.createElement("div");
-            title.classList = "title";
-            let job_title = document.createElement("span");
-            job_title.innerHTML = experience.title + "<br>";
-            let organization = document.createElement("span");
-            organization.innerHTML = experience.organization;
-            title.appendChild(job_title);
-            title.appendChild(organization);
-
-            // append title & logo to title-list
-            exp_block.appendChild(logo);
-            exp_block.appendChild(title);
-            exp_titles.appendChild(exp_block);
-
-            // show info when hover on experience blocks
-            exp_block.addEventListener("mouseenter", function () {
-                show_exp_info(getIndex(this));
-            });
-        });
-
-        let exp_items = Array.from(exp_titles.children);
-        show_exp_info(0);
-
-        function show_exp_info(idx) {
-            // show hover background
-            exp_items.forEach((item) => { 
-                item.style.background = "inherit";
-            });
-            exp_items[idx].style.background = "#364f6b33";
-            
-            // show information
-            let experience = info.experiences[idx];
-            exp_period.innerHTML = "<i>" + experience.period + "</i>";
-            exp_description.innerHTML = '';
-            experience.description.forEach((item)=>{
-                let li = document.createElement("li");
-                li.innerHTML = item;
-                exp_description.appendChild(li);
-            });
-        }
-
-        skills(info);
-        activities(info);
+        experiences_section(info);
+        skills_section(info);
+        activities_section(info);
     });
+}
 
-    // get current position among children
-    function getIndex(node) {
-        let idx = Array.from(node.parentNode.children).indexOf(node);
-        return idx;
+// experiences section
+function experiences_section(info) {
+    let exp_header = create_element("h2", "header", "Experiences"),
+        exp_content = create_element("div", "content");
+
+    let exp_period = create_element("div", "period"),
+        exp_description = create_element("ul", "description");
+    let exp_info = create_element("div", "info", _, [exp_period, exp_description]);
+
+    let exp_titles = create_element("div", "title-list")
+    info.experiences.forEach((experience) => {
+        // logo
+        let logo = create_element("img", _, _, _, _, experience.logo);
+        // title & organization
+        let job_title = create_element("span", _, experience.title + "<br>");
+        let organization = create_element("span", _, experience.organization);
+        let title = create_element("div", "title", _, [job_title, organization]);
+        // append title & logo to title-list
+        let exp_block = create_element("div", "item", _, [logo, title]);
+        exp_titles.appendChild(exp_block);
+
+        // show info when hover on experience blocks
+        exp_block.addEventListener("mouseenter", function () {
+            show_exp_info(getIndex(this));
+        });
+    });
+    let exp_items = Array.from(exp_titles.children);
+    show_exp_info(0);
+
+    exp_content.appendChild(exp_titles); // left part in experiences section
+    exp_content.appendChild(exp_info); // right part in experiences section
+
+    let exp = document.querySelector("#exp");
+    exp.innerHTML = "" // Clear
+    exp.appendChild(exp_header);
+    exp.appendChild(exp_content);
+    
+
+    function show_exp_info(idx) {
+        // show hover background
+        exp_items.forEach((item) => { 
+            item.style.background = "inherit";
+        });
+        exp_items[idx].style.background = "#364f6b33";
+
+        // show information
+        let experience = info.experiences[idx];
+        exp_period.innerHTML = "<i>" + experience.period + "</i>";
+        exp_description.innerHTML = '';
+        experience.description.forEach((item)=>{
+            let li = document.createElement("li");
+            li.innerHTML = item;
+            exp_description.appendChild(li);
+        });
     }
 }
 
 // skills section
-function skills(info) {
+function skills_section(info) {
     let skills_header = create_element("h2", "header", "Skills"),
         skills_content = create_element("div", "content");
 
@@ -264,7 +263,7 @@ function skills(info) {
 }
 
 // activities section
-function activities(info) {    
+function activities_section(info) {    
     let activities_header = create_element("h2", "header", "Activities"),
         activities_content = create_element("div", "content");
 
@@ -413,4 +412,10 @@ function create_element(type, classlist=null, innerHTML=null, append=null, wrapp
         });
     }
     return element;
+}
+
+// get current position among children
+function getIndex(node) {
+    let idx = Array.from(node.parentNode.children).indexOf(node);
+    return idx;
 }

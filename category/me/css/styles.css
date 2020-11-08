@@ -202,12 +202,12 @@ body {
 }
 
 /* Experiences */
-#exp {
+#exp > .content {
     display: flex;
     box-sizing: border-box;
 }
 
-#exp .item {
+#exp > .content .item {
     display: flex;
     user-select: none;
     align-items: center;
@@ -216,21 +216,21 @@ body {
     border-radius: 0.8em;
 }
 
-#exp .item > img {
+#exp > .content .item > img {
     height: 2.5em;
     width: auto;
     margin-right: 0.6em;
 }
 
-#exp .title-list {
+#exp > .content .title-list {
     width: 45vw;
     margin-right: 1em;
 }
 
-#exp .title span:nth-child(1) {
+#exp > .content .title span:nth-child(1) {
     font-size: 1.35em;
 }
-#exp .info {
+#exp > .content .info {
     box-sizing: border-box;
     background: white;
 
