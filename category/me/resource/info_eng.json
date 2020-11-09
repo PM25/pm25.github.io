@@ -1,17 +1,20 @@
 {
     "name": "黃品硯",
     "alt_name": "Pin-Yen (Jason) Huang",
-    "url": {
-        "linkedin": "https://www.linkedin.com/in/PM-Huang",
-        "googlescholar": "https://scholar.google.com.tw/citations?user=nQdpH2MAAAAJ",
-        "cv": "resource/cv_v3.pdf",
-        "github": "https://github.com/PM25",
-        "facebook": "https://www.facebook.com/pyhuang97"
-    },
-    "residence": "Residence: Taipei, Taiwan",
-    "hometown": "Hometown: Taichung, Taiwan",
-    "birthplace": "Birthplace: Auckland, New Zealand",
-    "email": "pyhuang97@gmail.com",
+    "profile": "/img/pm2.jpeg",
+    "urls": [
+        {"icon": "fab fa-linkedin", "url": "https://www.linkedin.com/in/PM-Huang"},
+        {"icon": "fas fa-graduation-cap", "url": "https://scholar.google.com.tw/citations?user=nQdpH2MAAAAJ"},
+        {"icon": "far fa-id-badge", "url": "resource/cv_v3.pdf"},
+        {"icon": "fab fa-github", "url": "https://github.com/PM25"},
+        {"icon": "fab fa-facebook-square", "url": "https://www.facebook.com/pyhuang97"}
+    ],
+    "bio": [
+        {"icon": "fas fa-thumbtack icons", "content": "Residence: Taipei, Taiwan"},
+        {"icon": "fas fa-search-location icons", "content": "Hometown: Taichung, Taiwan"},
+        {"icon": "fas fa-map-marked-alt icons", "content": "Birthplace: Auckland, New Zealand"},
+        {"icon": "far fa-envelope icons", "content": "<a href='mailto:pyhuang97@gmail.com'>pyhuang97@gmail.com</a>"}
+    ],
     "introduction": "Hi! I am Pin-Yen, you can also call me Jason.<br>I love coding, making robots and doing research.<br>Currently I'm a M.S. student in Computer Science and Engineering at the National Taiwan University (NTU), advised by Prof. <a href='https://www.csie.ntu.edu.tw/~htlin/'>Hsuan-Tien Lin</a>. My research focuses on <b>machine learning</b> and <b>cybersecurity</b>.",
     "education": [
         {
@@ -79,15 +82,15 @@
         }
     ],
     "skills": {
-        "programming_languages": "<b>(proficient):</b> Python, C/C++, JavaScript, Lisp, Shell Script <br><b>(familiar):</b> R, Matlab",
-        "tools": "VSCode, Vim, Emacs, Git, Github, Google Cloud", 
-        "others": "Linux/Unix, Arduino, Raspberry Pi, PyTorch, Keras, HTML/CSS, Markdown, LaTeX",
+        "programming_languages": {"icon": "fas fa-code", "content": "<b>(proficient):</b> Python, C/C++, JavaScript, Lisp, Shell Script <br><b>(familiar):</b> R, Matlab"},
+        "tools": {"icon": "fas fa-wrench", "content": "VSCode, Vim, Emacs, Git, Github, Google Cloud"}, 
+        "others": {"icon": "fas fa-server", "content": "Linux/Unix, Arduino, Raspberry Pi, PyTorch, Keras, HTML/CSS, Markdown, LaTeX"},
         "level": [
-            {"name": "Python", "percentage": 95, "image": "imgs/python_logo.webp"}, 
-            {"name": "C/C++", "percentage": 95, "image": "imgs/cpp_logo.webp"},
-            {"name": "Javascript", "percentage": 93, "image": "imgs/javascript_logo.webp"},
-            {"name": "Lisp", "percentage": 85, "image": "imgs/lisp_logo.webp"},
-            {"name": "PyTorch", "percentage": 90, "image": "imgs/pytorch_logo.webp"}
+            {"name": "Python", "percentage": 92, "image": "imgs/python_logo.webp"}, 
+            {"name": "C/C++", "percentage": 93, "image": "imgs/cpp_logo.webp"},
+            {"name": "Javascript", "percentage": 90, "image": "imgs/javascript_logo.webp"},
+            {"name": "Lisp", "percentage": 88, "image": "imgs/lisp_logo.webp"},
+            {"name": "PyTorch", "percentage": 91, "image": "imgs/pytorch_logo.webp"}
         ]
     },
     "activities": [

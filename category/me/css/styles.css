@@ -13,13 +13,13 @@ body {
 }
 
 /* Header */
-#header {
+#intro > .header {
     display: flex;
 
     margin-top: 50px;
 }
 
-#header .profile {
+#intro > .header .profile {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,76 +27,76 @@ body {
     width: 50vw;
 }
 
-#header img {
+#intro > .header img {
     width: 17em;
     height: 17em;
     border-radius: 50%;
 }
 
-#header .basic-info {
+#intro > .header .basic-info {
     display: flex;
 
     width: 50vw;
 }
 
-#header .title-box {
+#intro > .header .title-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
 }
 
-#header .name {
+#intro > .header .name {
     padding: 0.3em;
     font-size: 1.8em;
 }
 
-#header .name :nth-child(1) {
+#intro > .header .name :nth-child(1) {
     font-size: 1.7em;
 }
 
-#header .info a {
+#intro > .header .info a {
     display: inline-block;
     text-decoration: none;
 
-    padding: 0.2em;
+    padding: 0.2em 0.3em;
     font-size: 2.2em;
     transition: 0.2s ease;
 }
 
-#header .info a:hover {
+#intro > .header .info a:hover {
     transform: scale(1.7);
 }
 
 /* Introduction */
-#intro {
+#intro > .content {
     display: flex;
 }
 
-#intro .bio {
+#intro > .content .bio {
     width: 50vw;
 }
 
-#intro .bio > .info {
+#intro > .content .bio > .info {
     display: flex;
     flex-direction: column;
 
     font-size: 1.1em;
 }
 
-#intro .bio a {
+#intro > .content .bio a {
     text-decoration: none;
 }
 
-#intro .bio a:hover {
+#intro > .content .bio a:hover {
     color: #3fc1c9;
 }
 
-#intro .bio > .paragraph {
+#intro > .content .bio > .paragraph {
     padding: 1em 0;
 }
 
-#timeline-container {
+#intro .timeline-container {
     display: flex;
     overflow: hidden;
     box-sizing: border-box;
@@ -107,13 +107,13 @@ body {
     min-height: 17em;
 }
 
-#edu-timeline {
+#intro .edu-timeline {
     position: absolute;
 
     width: 30vw;
 }
 
-#edu-timeline::after {
+#intro .edu-timeline::after {
     content: "";
     position: absolute;
     background-color: white;
@@ -124,13 +124,13 @@ body {
     margin-left: -5px;
 }
 
-#edu-timeline .container {
+#intro .edu-timeline .container {
     position: relative;
 
     padding: 0 0 1em 1.7em;
 }
 
-#edu-timeline .container::after {
+#intro .edu-timeline .container::after {
     content: "";
     position: absolute;
     background-color: white;
@@ -143,16 +143,16 @@ body {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-#edu-timeline .before::after {
+#intro .edu-timeline .before::after {
     left: -15px;
 }
 
-#edu-timeline .current::after {
+#intro .edu-timeline .current::after {
     left: -19px;
     border: 4px solid #ff5e5f;
 }
 
-#edu-timeline .content {
+#intro .edu-timeline .content {
     position: relative;
     text-align: center;
     background-color: white;
@@ -162,7 +162,7 @@ body {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-#edu-timeline .school {
+#intro .edu-timeline .school {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -172,13 +172,13 @@ body {
     transition: 0.1s;
 }
 
-#edu-timeline .school > img {
+#intro .edu-timeline .school > img {
     height: 0;
     width: auto;
     margin: 0.2em 0.2em 0.2em 0;
 }
 
-#edu-timeline .major {
+#intro .edu-timeline .major {
     display: block;
     color: gray;
     display: none;
@@ -186,18 +186,18 @@ body {
     font-size: 1em;
 }
 
-#edu-timeline .school:hover + .major {
+#intro .edu-timeline .school:hover + .major {
     display: block !important;
 }
 
-#edu-timeline .school:hover {
+#intro .edu-timeline .school:hover {
     color: black !important;
 
     font-size: 2em;
     cursor: default;
 }
 
-#edu-timeline .school:hover img {
+#intro .edu-timeline .school:hover img {
     height: 1.2em;
 }
 
@@ -371,31 +371,31 @@ body {
 
 @media only screen and (max-width: 900px) {
     /* Header */
-    #header {
+    #intro > .header {
         flex-wrap: wrap;
     }
-    #header .profile {
+    #intro > .header .profile {
         width: 100vw;
     }
-    #header .basic-info {
+    #intro > .header .basic-info {
         width: 100vw;
         justify-content: center;
     }
 
     /* Introduction */
-    #intro {
+    #intro > .content {
         flex-wrap: wrap;
     }
 
-    #intro #timeline-container {
+    #intro .timeline-container {
         width: 100vw;
     }
 
-    #intro #timeline-container #edu-timeline {
+    #intro .timeline-container .edu-timeline {
         width: 60vw;
     }
 
-    #intro .bio {
+    #intro > .content .bio {
         width: 100vw;
         text-align: center;
     }

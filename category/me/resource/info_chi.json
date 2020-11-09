@@ -1,17 +1,20 @@
 {
     "name": "黃品硯",
     "alt_name": "Pin-Yen Huang",
-    "url": {
-        "linkedin": "https://www.linkedin.com/in/PM-Huang",
-        "googlescholar": "https://scholar.google.com.tw/citations?user=nQdpH2MAAAAJ",
-        "cv": "resource/cv_v2.pdf",
-        "github": "https://github.com/PM25",
-        "facebook": "https://www.facebook.com/pyhuang97"
-    },
-    "residence": "現居: 台北, 台灣",
-    "hometown": "家鄉: 台中, 台灣",
-    "birthplace": "出生: 奧克蘭, 紐西蘭",
-    "email": "pyhuang97@gmail.com",
+    "profile": "/img/pm2.jpeg",
+    "urls": [
+        {"icon": "fab fa-linkedin", "url": "https://www.linkedin.com/in/PM-Huang"},
+        {"icon": "fas fa-graduation-cap", "url": "https://scholar.google.com.tw/citations?user=nQdpH2MAAAAJ"},
+        {"icon": "far fa-id-badge", "url": "resource/cv_v2.pdf"},
+        {"icon": "fab fa-github", "url": "https://github.com/PM25"},
+        {"icon": "fab fa-facebook-square", "url": "https://www.facebook.com/pyhuang97"}
+    ],
+    "bio": [
+        {"icon": "fas fa-thumbtack icons", "content": "現居: 台北, 台灣"},
+        {"icon": "fas fa-search-location icons", "content": "家鄉: 台中, 台灣"},
+        {"icon": "fas fa-map-marked-alt icons", "content": "出生: 奧克蘭, 紐西蘭"},
+        {"icon": "far fa-envelope icons", "content": "<a href='mailto:pyhuang97@gmail.com'>pyhuang97@gmail.com</a>"}
+    ],
     "introduction": "嗨你好! 我是黃品硯<br>我喜歡寫程式、研發機器人、做研究<br>現在就讀台大資工所，接受<a href='https://www.csie.ntu.edu.tw/~htlin/'>林軒田</a>老師的指導，研究領域專注於 <b>Machine Learning</b> 和 <b>Cybersecurity</b>。<br>2019年暑假到美國 University of Illinois Urbana-Champaign (UIUC) 的電子與計算機工程學系(ECE)做暑期研究，期間幫忙開發 Audio Signal Processing 相關的程式，並在 Prof. Stephen Boppart 實驗室主持 Deep Learning 工作坊。",
     "education": [
         {
@@ -77,15 +80,15 @@
         }
     ],
     "skills": {
-        "programming_languages": "<b>(proficient):</b> Python, C/C++, JavaScript, Lisp, Shell Script <br><b>(familiar):</b> R, Matlab",
-        "tools": "VSCode, Vim, Emacs, Git, Github, Google Cloud", 
-        "others": "Linux/Unix, Arduino, Raspberry Pi, PyTorch, Keras, HTML/CSS, Markdown, LaTeX",
+        "programming_languages": {"icon": "fas fa-code", "content": "<b>(proficient):</b> Python, C/C++, JavaScript, Lisp, Shell Script <br><b>(familiar):</b> R, Matlab"},
+        "tools": {"icon": "fas fa-wrench", "content": "VSCode, Vim, Emacs, Git, Github, Google Cloud"}, 
+        "others": {"icon": "fas fa-server", "content": "Linux/Unix, Arduino, Raspberry Pi, PyTorch, Keras, HTML/CSS, Markdown, LaTeX"},
         "level": [
-            {"name": "Python", "percentage": 95, "image": "imgs/python_logo.webp"}, 
-            {"name": "C/C++", "percentage": 95, "image": "imgs/cpp_logo.webp"},
-            {"name": "Javascript", "percentage": 93, "image": "imgs/javascript_logo.webp"},
-            {"name": "Lisp", "percentage": 85, "image": "imgs/lisp_logo.webp"},
-            {"name": "PyTorch", "percentage": 90, "image": "imgs/pytorch_logo.webp"}
+            {"name": "Python", "percentage": 92, "image": "imgs/python_logo.webp"}, 
+            {"name": "C/C++", "percentage": 93, "image": "imgs/cpp_logo.webp"},
+            {"name": "Javascript", "percentage": 90, "image": "imgs/javascript_logo.webp"},
+            {"name": "Lisp", "percentage": 88, "image": "imgs/lisp_logo.webp"},
+            {"name": "PyTorch", "percentage": 91, "image": "imgs/pytorch_logo.webp"}
         ]
     },
     "activities": [

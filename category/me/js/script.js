@@ -43,7 +43,7 @@ function main() {
     } else if (lang == "ch") {
         fill_content("resource/info_chi.json");
     } else {
-        fill_content("resource/info_chi.json");
+        fill_content("resource/info_eng.json");
     }
     fill_bibliography("resource/publications.bib");
 }
@@ -64,54 +64,63 @@ function read_file(fpath, callback) {
 function fill_content(fname) {
     read_file(fname, function (content) {
         let info = JSON.parse(content);
+        intro_section(info);
+        experiences_section(info);
+        skills_section(info);
+        activities_section(info);
+    });
+}
 
+// intro section
+function intro_section(info) {
+        // profile
+        let profile = create_element("div", "profile", _, [create_element("img", _, _, _, _, info.profile)]);
         // my name
-        let header = document.querySelector("#header"),
-            main_name = header.querySelector(".name .main"),
-            alt_name = header.querySelector(".name .alt");
-
-        main_name.innerHTML = info.name;
-        alt_name.innerHTML = info.alt_name;
-
+        let main_name = create_element("span", "main", info.name + "<br>"),
+            alt_name = create_element("span", "alt", info.alt_name);
+        let name = create_element("span", "name", _, [main_name, alt_name]);
         // links
-        let linkedin_url = document.querySelector("#linkedin"),
-            googlescholar_url = document.querySelector("#googlescholar"),
-            cv_url = document.querySelector("#cv"),
-            github_url = document.querySelector("#github"),
-            facebook_url = document.querySelector("#facebook");
+        let urls = create_element("div", "info");
+        info.urls.forEach(item => {
+            let url =  create_element("i", item.icon, _, _, ["a"]);
+            url.href = item.url;
+            urls.appendChild(url);
+        })
+        // name & links
+        let title_box = create_element("div", "title-box", _, [name, urls]);
+        let name_info = create_element("div", "basic-info", _, [title_box]);
+        // profile & name & links
+        let intro_header = create_element("div", "header", _, [profile, name_info]);
 
-        linkedin_url.href = info.url.linkedin;
-        googlescholar_url.href = info.url.googlescholar;
-        cv_url.href = info.url.cv;
-        github_url.href = info.url.github;
-        facebook_url.href = info.url.facebook;
 
-        // bio info
-        let residence = document.querySelector("#residence"),
-            hometown = document.querySelector("#hometown"),
-            birthplace = document.querySelector("#birthplace"),
-            email = document.querySelector("#email"),
-            email_url = document.querySelector("#email_url"),
-            introduction = document.querySelector("#introduction");
+        let intro = document.querySelector("#intro");
+        intro.innerHTML = "" // Clear
+        intro.appendChild(intro_header);
 
-        residence.innerHTML = info.residence;
-        hometown.innerHTML = info.hometown;
-        birthplace.innerHTML = info.birthplace;
-        email.innerHTML = info.email;
-        email_url.href = "mailto:" + info.email;
-        introduction.innerHTML = info.introduction;
 
-        // create education-timeline blocks
-        let edu_timeline = document.querySelector("#edu-timeline");
+        // bio
+        let bio_info = create_element("div", "info");
+        info.bio.forEach(item => {
+            let icon = create_element("i", item.icon),
+                item_info = create_element("span", _, " " + item.content);
+            let info_block = create_element("div", "info-block", _, [icon, item_info]);
+            bio_info.appendChild(info_block);
+        });
+        let introduction = create_element("div", "paragraph", info.introduction);
+        let bio = create_element("div", "bio", _, [bio_info, introduction]);
+
+        // education timeline
+        let edu_timeline = create_element("div", "edu-timeline");
+        let timeline_container = create_element("div", "timeline-container", _, [edu_timeline]);
+
         info.education.forEach((item, idx) => {
-            let edu_container = document.createElement("div");
+            let edu_container = create_element("div");
             if (idx == 0) {
                 edu_container.classList = "container current";
             } else {
                 edu_container.classList = "container before";
             }
-            let content = document.createElement("div");
-            content.classList = "content";
+            let content = create_element("div", "content");
             edu_container.appendChild(content);
 
             let school = document.createElement("div");
@@ -139,10 +148,23 @@ function fill_content(fname) {
             edu_timeline.appendChild(edu_container);
         });
 
-        experiences_section(info);
-        skills_section(info);
-        activities_section(info);
-    });
+        let intro_content = create_element("div", "content", _, [timeline_container, bio]);
+        intro.appendChild(intro_content);
+
+        // bio info
+        // let residence = document.querySelector("#residence"),
+        //     hometown = document.querySelector("#hometown"),
+        //     birthplace = document.querySelector("#birthplace"),
+        //     email = document.querySelector("#email"),
+        //     email_url = document.querySelector("#email_url"),
+        //     introduction = document.querySelector("#introduction");
+
+        // residence.innerHTML = info.residence;
+        // hometown.innerHTML = info.hometown;
+        // birthplace.innerHTML = info.birthplace;
+        // email.innerHTML = info.email;
+        // email_url.href = "mailto:" + info.email;
+        // introduction.innerHTML = info.introduction;
 }
 
 // experiences section
@@ -150,10 +172,12 @@ function experiences_section(info) {
     let exp_header = create_element("h2", "header", "Experiences"),
         exp_content = create_element("div", "content");
 
+    // detail information of expererience
     let exp_period = create_element("div", "period"),
         exp_description = create_element("ul", "description");
     let exp_info = create_element("div", "info", _, [exp_period, exp_description]);
 
+    // list of expereriences
     let exp_titles = create_element("div", "title-list")
     info.experiences.forEach((experience) => {
         // logo
@@ -210,9 +234,11 @@ function skills_section(info) {
     let skills_details = create_element("div", "details");    
     for(key in info.skills) {
         if(key != "level") {
-            let header = key.replace('_', ' ');
-            let skills_details_content = create_element("h3", _, header, _, ["div"]),
-                myskills = create_element("div", _, info.skills[key]);
+            let icon = create_element("i", info.skills[key].icon),
+                header_text = create_element("span", _, " " + key.replace('_', ' '))
+                header = create_element("h3", _, _, [icon, header_text]);
+            let skills_details_content = create_element("div", _, _, [header]),
+                myskills = create_element("div", _, info.skills[key].content);
             skills_details_content.appendChild(myskills);
 
             skills_details.appendChild(skills_details_content);

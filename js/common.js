@@ -45,7 +45,7 @@ function get_file(fpath, callback) {
 function main() {
     sidenav();
     toolbar();
-    language();
+    new language();
 }
 
 function sidenav() {
@@ -86,12 +86,29 @@ function toolbar() {
     });
 }
 
-function language() {
+function language(){
+    let lang = window.navigator.languages ? window.navigator.languages : null;
+    lang = lang || window.navigator.language || window.navigator.browserLanguage || window.navigator.userLanguage;
+    let shortLang = lang;
+    // if (shortLang.indexOf('-') !== -1)
+    //     shortLang = shortLang.split('-')[0];
+
+    // if (shortLang.indexOf('_') !== -1)
+    //     shortLang = shortLang.split('_')[0];
+
+    console.log(lang, shortLang);
+
     let language_btn = document.querySelector("#language-btn");
     language_btn.addEventListener("click", function() {
         if (typeof fill_content === "function") {
             // window.location.replace('?lang=en');
-            fill_content("resource/info_eng.json");
+            if(this.state == "eng") {
+                fill_content("resource/info_eng.json");
+                this.state = "chi";
+            } else {
+                fill_content("resource/info_chi.json");
+                this.state = "eng";
+            }
         } else if (typeof fill_content === "undefined") {
             console.log("*function: fill_content() has not loaded yet.");
         }
