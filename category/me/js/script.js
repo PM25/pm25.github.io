@@ -246,6 +246,12 @@ function skills_section(info) {
     }
     skills_content.appendChild(skills_details);
 
+    // FIXME: simplebar loaded twice in /js/master.js and here
+    // scroller
+    require(["https://unpkg.com/simplebar@latest/dist/simplebar"], function(SimpleBar) {
+        new SimpleBar(skills_details);
+    });
+
     // skills level progress bar
     let progress_bar = create_element("ul");
     info.skills.level.forEach(item => {

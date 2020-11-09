@@ -249,7 +249,6 @@ body {
 #skills > .content .details {
     background: white;
     box-sizing: border-box;
-    overflow: auto;
 
     height: 15em;
     width: 50vw;

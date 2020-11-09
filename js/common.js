@@ -96,7 +96,7 @@ function language(){
     // if (shortLang.indexOf('_') !== -1)
     //     shortLang = shortLang.split('_')[0];
 
-    console.log(lang, shortLang);
+    // console.log(lang, shortLang);
 
     let language_btn = document.querySelector("#language-btn");
     language_btn.addEventListener("click", function() {
