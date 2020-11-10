@@ -78,39 +78,61 @@ function sidenav() {
     });
 }
 
+// toolbar button: show or hide toolbar
 function toolbar() {
-    let toolbar_btn = document.querySelector("#toolbar-btn");
+    let toolbar_btn = document.querySelector("#toolbar-btn"),
+        toolbar_btn_icon = toolbar_btn.querySelector(".icons");
     let toolbar = document.querySelector(".toolbar");
     toolbar_btn.addEventListener("click", function() {
         toolbar.classList.toggle("toolbar");
+        toolbar_btn_icon.classList.toggle("fa-caret-right");
+        toolbar_btn_icon.classList.toggle("fa-caret-left");
     });
 }
 
-function language(){
-    let lang = window.navigator.languages ? window.navigator.languages : null;
-    lang = lang || window.navigator.language || window.navigator.browserLanguage || window.navigator.userLanguage;
-    let shortLang = lang;
-    // if (shortLang.indexOf('-') !== -1)
-    //     shortLang = shortLang.split('-')[0];
-
-    // if (shortLang.indexOf('_') !== -1)
-    //     shortLang = shortLang.split('_')[0];
-
-    // console.log(lang, shortLang);
+// language button
+function language() {
+    if (typeof fill_content === "function") {
+        let prefer_lang = default_language();
+        if(prefer_lang.indexOf('zh') < prefer_lang.indexOf('en')) {
+            fill_content("resource/info_chi.json");
+        } else {
+            fill_content("resource/info_eng.json");
+        }
+    }
 
     let language_btn = document.querySelector("#language-btn");
     language_btn.addEventListener("click", function() {
         if (typeof fill_content === "function") {
             // window.location.replace('?lang=en');
-            if(this.state == "eng") {
+            if(language_btn.classList.contains("active")) {
                 fill_content("resource/info_eng.json");
-                this.state = "chi";
             } else {
                 fill_content("resource/info_chi.json");
-                this.state = "eng";
             }
+            language_btn.classList.toggle("active");
         } else if (typeof fill_content === "undefined") {
             console.log("*function: fill_content() has not loaded yet.");
         }
     });
+}
+
+// get browser default preference language
+function default_language() {
+    let lang = window.navigator.languages ? window.navigator.languages : null;
+    lang = lang || window.navigator.language || window.navigator.browserLanguage || window.navigator.userLanguage;
+
+    let prefer_lang = [];
+    lang.forEach((short_lang)=>{
+        if (short_lang.indexOf('-') !== -1)
+        short_lang = short_lang.split('-')[0];
+        if (short_lang.indexOf('_') !== -1)
+            short_lang = short_lang.split('_')[0];
+
+        if(prefer_lang.indexOf(short_lang) === -1) {
+            prefer_lang.push(short_lang);
+        }
+    });
+    
+    return prefer_lang;
 }

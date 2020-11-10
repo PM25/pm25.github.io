@@ -217,8 +217,8 @@ body {
 }
 
 #exp > .content .item > img {
-    height: 2.5em;
-    width: auto;
+    height: auto;
+    width: 2.5em;
     margin-right: 0.6em;
 }
 

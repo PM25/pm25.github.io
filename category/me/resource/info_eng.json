@@ -15,7 +15,7 @@
         {"icon": "fas fa-map-marked-alt icons", "content": "Birthplace: Auckland, New Zealand"},
         {"icon": "far fa-envelope icons", "content": "<a href='mailto:pyhuang97@gmail.com'>pyhuang97@gmail.com</a>"}
     ],
-    "introduction": "Hi! I am Pin-Yen, you can also call me Jason.<br>I love coding, making robots and doing research.<br>Currently I'm a M.S. student in Computer Science and Engineering at the National Taiwan University (NTU), advised by Prof. <a href='https://www.csie.ntu.edu.tw/~htlin/'>Hsuan-Tien Lin</a>. My research focuses on <b>machine learning</b> and <b>cybersecurity</b>.",
+    "introduction": "Hi! I am Pin-Yen, you can also call me Jason.<br>I love coding, making robots and doing research.<br>Currently I'm a M.S. student in Computer Science and Engineering at the National Taiwan University (NTU), advised by Prof. <a href='https://www.csie.ntu.edu.tw/~htlin/'>Hsuan-Tien Lin</a>. My research focuses on <b>artificial intelligence</b> and <b>machine learning</b>.",
     "education": [
         {
             "school": "National Taiwan University",

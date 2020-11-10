@@ -49,11 +49,11 @@ a:link {
 }
 
 #home-nav a:hover {
-    border-style: hidden solid;
+    /* border-style: hidden solid; */
     color: lightseagreen;
 
-    border-width: 1px;
-    transition: 0.3s;
+    /* border-width: 1px; */
+    transition: 0.2s;
 }
 
 #home-nav ul {
@@ -72,6 +72,10 @@ a:link {
 
 #home-nav .toolbar {
     display: none;
+}
+
+#home-nav .active {
+    background: #ddda;
 }
 
 /* Side-nav */
@@ -211,9 +215,8 @@ a:link {
 }
 
 .btn:hover {
-    color: #89c9c9;
-    /* box-shadow: 0 0 28px rgba(0, 0, 0, 0.25), 0 0 10px rgba(0, 0, 0, 0.22); */
-    transition: 0.1s;
+    color: lightseagreen;
+    transition: 0.2s;
 }
 
 .ripple {
