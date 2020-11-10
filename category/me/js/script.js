@@ -174,8 +174,9 @@ function experiences_section(info) {
 
     // detail information of expererience
     let exp_period = create_element("div", "period"),
+        exp_supervisor = create_element("div", "supervisor"),
         exp_description = create_element("ul", "description");
-    let exp_info = create_element("div", "info", _, [exp_period, exp_description]);
+    let exp_info = create_element("div", "info", _, [exp_period, exp_supervisor, exp_description]);
 
     // list of expereriences
     let exp_titles = create_element("div", "title-list")
@@ -206,7 +207,8 @@ function experiences_section(info) {
     exp.appendChild(exp_header);
     exp.appendChild(exp_content);
     
-
+    
+    // show experience detail information
     function show_exp_info(idx) {
         // show hover background
         exp_items.forEach((item) => { 
@@ -217,6 +219,7 @@ function experiences_section(info) {
         // show information
         let experience = info.experiences[idx];
         exp_period.innerHTML = "<i>" + experience.period + "</i>";
+        exp_supervisor.innerHTML = experience.supervisor;
         exp_description.innerHTML = '';
         experience.description.forEach((item)=>{
             let li = document.createElement("li");

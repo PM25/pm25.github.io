@@ -40,19 +40,15 @@ a:link {
 }
 
 #home-nav a {
-    color: black;
     text-decoration: none;
     display: block;
 
-    padding: 0 13px;
     margin: 0;
 }
 
 #home-nav a:hover {
-    /* border-style: hidden solid; */
     color: lightseagreen;
 
-    /* border-width: 1px; */
     transition: 0.2s;
 }
 
@@ -61,17 +57,22 @@ a:link {
 
     margin: 0;
     padding: 0;
+    height: inherit;
 }
 
 #home-nav li {
     float: left;
     text-align: center;
+    overflow: hidden;
 
-    min-width: 50px;
+    width: 50px;
+    height: inherit;
+    transition: 0.5s;
 }
 
 #home-nav .toolbar {
-    display: none;
+    width: 0;
+    transition: 0.3s;
 }
 
 #home-nav .active {
