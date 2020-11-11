@@ -50,7 +50,8 @@
         {
             "title": "暑期研究",
             "organization": "University of Illinois Urbana-Champaign (UIUC)",
-            "period": "2019年7月 - 2019年9月",
+            "supervisor": "指導: Prof. Douglas L. Jones",
+            "period": "2019年 7月 - 2019年 9月",
             "logo": "imgs/uiuc_logo.webp",
             "description": [
                 "處理聲音類型的資料",
@@ -61,7 +62,8 @@
         {
             "title": "科技部大專生計畫",
             "organization": "國立政治大學",
-            "period": "2019年7月 - 2020年2月",
+            "supervisor": "指導: 劉昭麟 教授",
+            "period": "2019年 7月 - 2020年 2月",
             "logo": "imgs/nccu_logo.webp",
             "description": [
                 "針對文言文開發一套基礎資料識別(N.E.R) 系統",
@@ -71,7 +73,8 @@
         {
             "title": "研究助理",
             "organization": "臺北市立大學",
-            "period": "2017年9月 - 現今",
+            "supervisor": "指導: 楊政穎 教授",
+            "period": "2017年 9月 - 現今",
             "logo": "imgs/ut_logo.webp",
             "description": [
                 "實作 Greedy Algorithm",

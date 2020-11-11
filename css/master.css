@@ -67,12 +67,12 @@ a:link {
 
     width: 50px;
     height: inherit;
-    transition: 0.5s;
+    transition: 0.35s;
 }
 
 #home-nav .toolbar {
     width: 0;
-    transition: 0.3s;
+    transition: 0.25s;
 }
 
 #home-nav .active {

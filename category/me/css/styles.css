@@ -207,7 +207,7 @@ body {
     box-sizing: border-box;
 }
 
-#exp > .content .item {
+#exp .item {
     display: flex;
     user-select: none;
     align-items: center;
@@ -216,21 +216,22 @@ body {
     border-radius: 0.8em;
 }
 
-#exp > .content .item > img {
+#exp .item > img {
     height: auto;
     width: 2.5em;
     margin-right: 0.6em;
 }
 
-#exp > .content .title-list {
+#exp .title-list {
     width: 45vw;
     margin-right: 1em;
 }
 
-#exp > .content .title span:nth-child(1) {
-    font-size: 1.35em;
+#exp .title span:nth-child(1) {
+    font-size: 1.3em;
 }
-#exp > .content .info {
+
+#exp .info {
     box-sizing: border-box;
     background: white;
 
@@ -239,6 +240,19 @@ body {
     height: inherit;
     border-radius: 0.8em;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px, rgba(0, 0, 0, 0.2) 0px 1px 2px;
+}
+
+#exp .period {
+    font-size: 1.05em;
+}
+
+#exp .supervisor {
+    font-size: 0.9em;
+    margin: 0.1em 0;
+}
+
+#exp .description {
+    margin: 0.5em 0;
 }
 
 /* My Skills */

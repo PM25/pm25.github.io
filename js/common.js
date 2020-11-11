@@ -82,9 +82,9 @@ function sidenav() {
 function toolbar() {
     let toolbar_btn = document.querySelector("#toolbar-btn"),
         toolbar_btn_icon = toolbar_btn.querySelector(".icons");
-    let toolbar = document.querySelector(".toolbar");
+    let toolbar = document.querySelectorAll(".toolbar");
     toolbar_btn.addEventListener("click", function() {
-        toolbar.classList.toggle("toolbar");
+        toolbar.forEach(btn => {btn.classList.toggle("toolbar")});
         toolbar_btn_icon.classList.toggle("fa-caret-right");
         toolbar_btn_icon.classList.toggle("fa-caret-left");
     });
