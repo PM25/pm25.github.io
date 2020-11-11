@@ -22,28 +22,28 @@
             "degree": "Master of Science",
             "department": "Computer Science and Information Engineering",
             "period": "2020.9 - Present",
-            "logo": "imgs/ntu_logo.webp"
+            "logo": "/img/ntu_logo.webp"
         },
         {
             "school": "National Chengchi University",
             "degree": "Bachelor of Science",
             "department": "Computer Science",
             "period": "2018.9 - 2020.6",
-            "logo": "imgs/nccu_logo.webp"
+            "logo": "/img/nccu_logo.webp"
         },
         {
             "school": "National Chi Nan University",
             "degree": "Bachelor of Science",
             "department": "Computer Science and Information Engineering",
             "period": "2016.9 - 2018.6",
-            "logo": "imgs/ncnu_logo.webp"
+            "logo": "/img/ncnu_logo.webp"
         },
         {
             "school": "Taichung Second Senior High School",
             "degree": "Senior High School",
             "department": "Regular",
             "period": "2013.9 - 2016.6",
-            "logo": "imgs/tcssh_logo.webp"
+            "logo": "/img/tcssh_logo.webp"
         }
     ],
     "experiences": [
@@ -52,7 +52,7 @@
             "organization": "University of Illinois Urbana-Champaign (UIUC)",
             "supervisor": "Advisor: Prof. Douglas L. Jones",
             "period": "July 2019 - Sep 2019",
-            "logo": "imgs/uiuc_logo.webp",
+            "logo": "/img/uiuc_logo.webp",
             "description": [
                 "Developed onset & offset detection algorithms for specific type of audio signals by python.",
                 "Built a system to automate the process of trim and labeling audio data."
@@ -63,7 +63,7 @@
             "organization": "National Chengchi University",
             "supervisor": "Advisor: Prof. Chao-Lin Liu",
             "period": "July 2019 - Feb 2020",
-            "logo": "imgs/nccu_logo.webp",
+            "logo": "/img/nccu_logo.webp",
             "description": [
                 "Developed a named-entity recognition (NER) system for Literary Chinese.",
                 "Improve the F1 score by 9% by applying machine learning technique(LSTM-CRF).",
@@ -76,7 +76,7 @@
             "organization": "University of Taipei",
             "supervisor": "Advisor: Prof. Cheng-Ying Yang",
             "period": "Sep 2017 - Present",
-            "logo": "imgs/ut_logo.webp",
+            "logo": "/img/ut_logo.webp",
             "description": [
                 "Improved the performance of encryption algorithm in IoT devices.",
                 "Used greedy algorithm to get secured encryption even with poor computing resources.",
@@ -89,11 +89,11 @@
         "tools": {"icon": "fas fa-wrench", "content": "VSCode, Vim, Emacs, Git, Github, Google Cloud"}, 
         "others": {"icon": "fas fa-server", "content": "Linux/Unix, Arduino, Raspberry Pi, PyTorch, Keras, HTML/CSS, Markdown, LaTeX"},
         "level": [
-            {"name": "Python", "percentage": 92, "image": "imgs/python_logo.webp"}, 
-            {"name": "C/C++", "percentage": 93, "image": "imgs/cpp_logo.webp"},
-            {"name": "Javascript", "percentage": 90, "image": "imgs/javascript_logo.webp"},
-            {"name": "Lisp", "percentage": 88, "image": "imgs/lisp_logo.webp"},
-            {"name": "PyTorch", "percentage": 91, "image": "imgs/pytorch_logo.webp"}
+            {"name": "Python", "percentage": 92, "image": "/img/python_logo.webp"}, 
+            {"name": "C/C++", "percentage": 93, "image": "/img/cpp_logo.webp"},
+            {"name": "Javascript", "percentage": 90, "image": "/img/javascript_logo.webp"},
+            {"name": "Lisp", "percentage": 88, "image": "/img/lisp_logo.webp"},
+            {"name": "PyTorch", "percentage": 91, "image": "/img/pytorch_logo.webp"}
         ]
     },
     "activities": [
@@ -102,7 +102,7 @@
             "location": "University of Illinois Urbana-Champaign (UIUC), Illinois, USA",
             "time": "Sep 4, 2019",
             "description": "",
-            "image": "imgs/2019-9-4-workshop.jpg"
+            "image": "/img/2019-9-4-workshop.jpg"
         }
     ]
 }

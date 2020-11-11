@@ -15,19 +15,6 @@ function doc_ready(fn) {
 
 const _ = undefined;
 
-// require.config({
-//     paths: {
-//         // simplebar: "https://unpkg.com/simplebar@latest/dist/simplebar",
-//         // gtm: "https://www.googletagmanager.com/gtag/js?id=UA-129342449-2",
-//         // common: "/js/common",
-//         master: "/js/master",
-//         // ga: "/js/ga"
-//     },
-// });
-
-// require(["master"], function (data) {
-//     // main();
-// });
 
 // start from here
 function main() { 

@@ -22,28 +22,28 @@
             "degree": "碩士",
             "department": "資訊工程所(人工智慧組)",
             "period": "2020.9 - 現今",
-            "logo": "imgs/ntu_logo.webp"
+            "logo": "/img/ntu_logo.webp"
         },
         {
             "school": "國立政治大學",
             "degree": "學士",
             "department": "資訊科學系",
             "period": "2018.9 - 2020.6",
-            "logo": "imgs/nccu_logo.webp"
+            "logo": "/img/nccu_logo.webp"
         },
         {
             "school": "國立暨南國際大學",
             "degree": "學士",
             "department": "資訊工程系",
             "period": "2016.9 - 2018.6",
-            "logo": "imgs/ncnu_logo.webp"
+            "logo": "/img/ncnu_logo.webp"
         },
         {
             "school": "國立台中二中",
             "degree": "高中",
             "department": "普通班",
             "period": "2013.9 - 2016.6",
-            "logo": "imgs/tcssh_logo.webp"
+            "logo": "/img/tcssh_logo.webp"
         }
     ],
     "experiences": [
@@ -52,7 +52,7 @@
             "organization": "University of Illinois Urbana-Champaign (UIUC)",
             "supervisor": "指導: Prof. Douglas L. Jones",
             "period": "2019年 7月 - 2019年 9月",
-            "logo": "imgs/uiuc_logo.webp",
+            "logo": "/img/uiuc_logo.webp",
             "description": [
                 "處理聲音類型的資料",
                 "寫演算法實作 Onset & Offset Detection",
@@ -64,7 +64,7 @@
             "organization": "國立政治大學",
             "supervisor": "指導: 劉昭麟 教授",
             "period": "2019年 7月 - 2020年 2月",
-            "logo": "imgs/nccu_logo.webp",
+            "logo": "/img/nccu_logo.webp",
             "description": [
                 "針對文言文開發一套基礎資料識別(N.E.R) 系統",
                 "使用深度學習來提升準確率"
@@ -75,7 +75,7 @@
             "organization": "臺北市立大學",
             "supervisor": "指導: 楊政穎 教授",
             "period": "2017年 9月 - 現今",
-            "logo": "imgs/ut_logo.webp",
+            "logo": "/img/ut_logo.webp",
             "description": [
                 "實作 Greedy Algorithm",
                 "協助以 C++ 開發程式 & 評估模型的成效"
@@ -87,11 +87,11 @@
         "tools": {"icon": "fas fa-wrench", "content": "VSCode, Vim, Emacs, Git, Github, Google Cloud"}, 
         "others": {"icon": "fas fa-server", "content": "Linux/Unix, Arduino, Raspberry Pi, PyTorch, Keras, HTML/CSS, Markdown, LaTeX"},
         "level": [
-            {"name": "Python", "percentage": 92, "image": "imgs/python_logo.webp"}, 
-            {"name": "C/C++", "percentage": 93, "image": "imgs/cpp_logo.webp"},
-            {"name": "Javascript", "percentage": 90, "image": "imgs/javascript_logo.webp"},
-            {"name": "Lisp", "percentage": 88, "image": "imgs/lisp_logo.webp"},
-            {"name": "PyTorch", "percentage": 91, "image": "imgs/pytorch_logo.webp"}
+            {"name": "Python", "percentage": 92, "image": "/img/python_logo.webp"}, 
+            {"name": "C/C++", "percentage": 93, "image": "/img/cpp_logo.webp"},
+            {"name": "Javascript", "percentage": 90, "image": "/img/javascript_logo.webp"},
+            {"name": "Lisp", "percentage": 88, "image": "/img/lisp_logo.webp"},
+            {"name": "PyTorch", "percentage": 91, "image": "/img/pytorch_logo.webp"}
         ]
     },
     "activities": [
@@ -100,7 +100,7 @@
             "location": "University of Illinois Urbana-Champaign (UIUC), Illinois, USA",
             "time": "2019年9月4日",
             "description": "",
-            "image": "imgs/2019-9-4-workshop.jpg"
+            "image": "/img/2019-9-4-workshop.jpg"
         }
     ]
 }
