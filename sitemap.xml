@@ -8,12 +8,6 @@
           <priority> 1.0 </priority>
      </url>
      <url>
-          <loc> https://pm25.github.io/category/me </loc>
-          <lastmod> 2019-02-03 </lastmod>
-          <changefreq> monthly </changefreq>
-          <priority> 0.8 </priority>
-     </url>
-     <url>
           <loc> https://pm25.github.io/category/articles </loc>
           <lastmod> 2019-02-03 </lastmod>
           <changefreq> monthly </changefreq>
@@ -21,6 +15,12 @@
      </url>
      <url>
           <loc> https://pm25.github.io/category/comment </loc>
+          <lastmod> 2019-02-03 </lastmod>
+          <changefreq> monthly </changefreq>
+          <priority> 0.3 </priority>
+     </url>
+     <url>
+          <loc> https://pm25.github.io/category/homepage </loc>
           <lastmod> 2019-02-03 </lastmod>
           <changefreq> monthly </changefreq>
           <priority> 0.3 </priority>
