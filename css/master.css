@@ -246,7 +246,7 @@ a:link {
 
 @media only screen and (max-width: 700px) {
     #home-nav a,
-    li {
+    #home-nav li {
         display: none;
     }
 

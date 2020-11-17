@@ -93,11 +93,20 @@ function toolbar() {
 // language button
 function language() {
     if (typeof fill_content === "function") {
-        let prefer_lang = default_language();
-        if(prefer_lang.indexOf('zh') < prefer_lang.indexOf('en')) {
+        let url = new URL(window.location.href),
+            lang = url.searchParams.get("lang");
+
+        if(lang == "ch") {
             fill_content("resource/info_chi.json");
-        } else {
+        } else if (lang == "en") {
             fill_content("resource/info_eng.json");
+        } else {
+            let prefer_lang = default_language();
+            if(prefer_lang.indexOf('zh') < prefer_lang.indexOf('en')) {
+                fill_content("resource/info_chi.json");
+            } else {
+                fill_content("resource/info_eng.json");
+            }
         }
     }
 
