@@ -13,49 +13,52 @@ body {
 }
 
 /* Header */
-#intro > .header {
-    display: flex;
-
-    margin-top: 50px;
+#profile {
+    background: #eeee;
 }
 
-#intro > .header .profile {
+#profile > .header {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
-    width: 50vw;
+    margin: 1.5em 0;
 }
 
-#intro > .header img {
+#profile .profile-img {
+    display: flex;
+}
+
+#profile img {
     width: 17em;
     height: 17em;
     border-radius: 50%;
 }
 
-#intro > .header .basic-info {
+#profile .basic-info {
     display: flex;
+    justify-content: center;
 
-    width: 50vw;
+    width: 40vw;
 }
 
-#intro > .header .title-box {
+#profile .title-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
 }
 
-#intro > .header .name {
+#profile .name {
     padding: 0.3em;
     font-size: 1.8em;
 }
 
-#intro > .header .name :nth-child(1) {
+#profile .name :nth-child(1) {
     font-size: 1.7em;
 }
 
-#intro > .header .info a {
+#profile .info a {
     display: inline-block;
     text-decoration: none;
 
@@ -64,36 +67,44 @@ body {
     transition: 0.2s ease;
 }
 
-#intro > .header .info a:hover {
+#profile .info a:hover {
     transform: scale(1.7);
 }
 
 /* Introduction */
-#intro > .content {
+#intro {
     display: flex;
 }
 
-#intro > .content .bio {
-    width: 50vw;
+#intro .bio {
+    width: 60vw;
+    margin-left: 1.5em;
+    padding-left: 1.5em;
+    border-left: solid #cccc;
 }
 
-#intro > .content .bio > .info {
+#intro .bio .info {
     display: flex;
     flex-direction: column;
 
-    font-size: 1.1em;
+    font-size: 0.9em;
 }
 
-#intro > .content .bio a {
+#intro .bio a {
     text-decoration: none;
 }
 
-#intro > .content .bio a:hover {
+#intro .bio a:hover {
     color: #3fc1c9;
 }
 
-#intro > .content .bio > .paragraph {
+#intro .bio .paragraph {
     padding: 1em 0;
+}
+
+/* Education */
+#intro .education {
+    width: 40vw;
 }
 
 #intro .timeline-container {
@@ -102,15 +113,13 @@ body {
     box-sizing: border-box;
     justify-content: center;
 
-    width: 50vw;
-    padding: 1.5em;
-    min-height: 17em;
+    min-height: 15em;
 }
 
 #intro .edu-timeline {
     position: absolute;
 
-    width: 30vw;
+    width: 22em;
 }
 
 #intro .edu-timeline::after {
@@ -168,7 +177,7 @@ body {
     justify-content: center;
 
     color: #1b262c;
-    font-size: 1.4em;
+    font-size: 1.2em;
     transition: 0.1s;
 }
 
@@ -183,7 +192,7 @@ body {
     color: gray;
     display: none;
 
-    font-size: 1em;
+    font-size: 0.9em;
 }
 
 #intro .edu-timeline .school:hover + .major {
@@ -193,12 +202,12 @@ body {
 #intro .edu-timeline .school:hover {
     color: black !important;
 
-    font-size: 2em;
+    font-size: 1.3em;
     cursor: default;
 }
 
 #intro .edu-timeline .school:hover img {
-    height: 1.2em;
+    height: 1.25em;
 }
 
 /* Experiences */
@@ -228,7 +237,11 @@ body {
 }
 
 #exp .title span:nth-child(1) {
-    font-size: 1.3em;
+    font-size: 1.2em;
+}
+
+#exp .title span:nth-child(2) {
+    font-size: 0.9em;
 }
 
 #exp .info {
@@ -293,7 +306,7 @@ body {
     display: flex;
     align-items: center;
 
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 #skills > .content li .logo-wrapper {
@@ -347,7 +360,7 @@ body {
 }
 
 #activities > .content .title {
-    font-size: 1.35em;
+    font-size: 1.2em;
 }
 
 #activities > .content img {
@@ -383,32 +396,38 @@ body {
 }
 
 @media only screen and (max-width: 900px) {
-    /* Header */
-    #intro > .header {
+    /* header */
+    h2.header {
+        text-align: center;
+    }
+
+    /* profile */
+    #profile > .header {
         flex-wrap: wrap;
     }
-    #intro > .header .profile {
+    #profile .profile-img {
         width: 100vw;
+        justify-content: center;
     }
-    #intro > .header .basic-info {
+    #profile .basic-info {
         width: 100vw;
         justify-content: center;
     }
 
     /* Introduction */
-    #intro > .content {
+    #intro {
         flex-wrap: wrap;
     }
 
-    #intro .timeline-container {
+    #intro .education {
         width: 100vw;
     }
 
     #intro .timeline-container .edu-timeline {
-        width: 60vw;
+        width: 70vw;
     }
 
-    #intro > .content .bio {
+    #intro .bio {
         width: 100vw;
         text-align: center;
     }

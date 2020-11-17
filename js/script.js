@@ -51,7 +51,8 @@ function read_file(fpath, callback) {
 function fill_content(fname) {
     read_file(fname, function (content) {
         let info = JSON.parse(content);
-        intro_section(info);
+        profile_section(info);
+        education_intro_section(info);
         experiences_section(info);
         skills_section(info);
         activities_section(info);
@@ -59,9 +60,9 @@ function fill_content(fname) {
 }
 
 // intro section
-function intro_section(info) {
+function profile_section(info) {
         // profile
-        let profile = create_element("div", "profile", _, [create_element("img", _, _, _, _, info.profile)]);
+        let profile_img = create_element("div", "profile-img", _, [create_element("img", _, _, _, _, info.profile)]);
         // my name
         let main_name = create_element("span", "main", info.name + "<br>"),
             alt_name = create_element("span", "alt", info.alt_name);
@@ -77,81 +78,90 @@ function intro_section(info) {
         let title_box = create_element("div", "title-box", _, [name, urls]);
         let name_info = create_element("div", "basic-info", _, [title_box]);
         // profile & name & links
-        let intro_header = create_element("div", "header", _, [profile, name_info]);
+        let intro_header = create_element("div", "header", _, [profile_img, name_info]);
 
+        let profile = document.querySelector("#profile");
+        profile.innerHTML = "" // Clear
+        profile.appendChild(intro_header);
+}
 
-        let intro = document.querySelector("#intro");
-        intro.innerHTML = "" // Clear
-        intro.appendChild(intro_header);
+// education & bio introduction
+function education_intro_section(info) {
+    let education = education_section(info);
+    let bio  = bio_section(info);
+    
+    // insert HTML
+    let intro = document.querySelector("#intro");
+    intro.innerHTML = "" // Clear
+    intro.appendChild(education);
+    intro.appendChild(bio);
+}
 
+// education timeline
+function education_section(info) {
+    let edu_timeline = create_element("div", "edu-timeline");
+    let timeline_container = create_element("div", "timeline-container", _, [edu_timeline]);
 
-        // bio
-        let bio_info = create_element("div", "info");
-        info.bio.forEach(item => {
-            let icon = create_element("i", item.icon),
-                item_info = create_element("span", _, " " + item.content);
-            let info_block = create_element("div", "info-block", _, [icon, item_info]);
-            bio_info.appendChild(info_block);
-        });
-        let introduction = create_element("div", "paragraph", info.introduction);
-        let bio = create_element("div", "bio", _, [bio_info, introduction]);
+    info.education.forEach((item, idx) => {
+        let edu_container = create_element("div");
+        if (idx == 0) {
+            edu_container.classList = "container current";
+        } else {
+            edu_container.classList = "container before";
+        }
+        let content = create_element("div", "content");
+        edu_container.appendChild(content);
 
-        // education timeline
-        let edu_timeline = create_element("div", "edu-timeline");
-        let timeline_container = create_element("div", "timeline-container", _, [edu_timeline]);
+        let school = document.createElement("div");
+        school.classList = "school";
+        let logo = document.createElement("img");
+        logo.src = item.logo;
+        let school_name = document.createElement("span");
+        school_name.innerHTML = item.school;
+        school.appendChild(logo);
+        school.appendChild(school_name);
 
-        info.education.forEach((item, idx) => {
-            let edu_container = create_element("div");
-            if (idx == 0) {
-                edu_container.classList = "container current";
-            } else {
-                edu_container.classList = "container before";
-            }
-            let content = create_element("div", "content");
-            edu_container.appendChild(content);
+        content.appendChild(school);
 
-            let school = document.createElement("div");
-            school.classList = "school";
-            let logo = document.createElement("img");
-            logo.src = item.logo;
-            let school_name = document.createElement("span");
-            school_name.innerHTML = item.school;
-            school.appendChild(logo);
-            school.appendChild(school_name);
+        let major = document.createElement("div");
+        major.classList = "major";
+        let department = document.createElement("span");
+        department.innerHTML = item.degree + ", " + item.department;
+        let period = document.createElement("span");
+        period.innerHTML = "<br>" + item.period;
+        major.appendChild(department);
+        major.appendChild(period);
 
-            content.appendChild(school);
+        content.appendChild(major);
 
-            let major = document.createElement("div");
-            major.classList = "major";
-            let department = document.createElement("span");
-            department.innerHTML = item.degree + ", " + item.department;
-            let period = document.createElement("span");
-            period.innerHTML = "<br>" + item.period;
-            major.appendChild(department);
-            major.appendChild(period);
+        edu_timeline.appendChild(edu_container);
+    });
 
-            content.appendChild(major);
+    let education_header = create_element("h2", "header", "Education"),
+        education_content = create_element("div", "content", _, [timeline_container]);
 
-            edu_timeline.appendChild(edu_container);
-        });
+    // insert HTML
+    let education = create_element("div", "education", _, [education_header, education_content]);
+    return education;
+}
 
-        let intro_content = create_element("div", "content", _, [timeline_container, bio]);
-        intro.appendChild(intro_content);
+// bio
+function bio_section(info) {
+    let bio_info = create_element("div", "info");
+    info.bio.forEach(item => {
+        let icon = create_element("i", item.icon),
+            item_info = create_element("span", _, " " + item.content);
+        let info_block = create_element("div", "info-block", _, [icon, item_info]);
+        bio_info.appendChild(info_block);
+    });
+    let introduction = create_element("div", "paragraph", info.introduction);
 
-        // bio info
-        // let residence = document.querySelector("#residence"),
-        //     hometown = document.querySelector("#hometown"),
-        //     birthplace = document.querySelector("#birthplace"),
-        //     email = document.querySelector("#email"),
-        //     email_url = document.querySelector("#email_url"),
-        //     introduction = document.querySelector("#introduction");
+    let bio_header = create_element("h2", "header", "Introduction"),
+        bio_content = create_element("div", "content", _, [bio_info, introduction]);
 
-        // residence.innerHTML = info.residence;
-        // hometown.innerHTML = info.hometown;
-        // birthplace.innerHTML = info.birthplace;
-        // email.innerHTML = info.email;
-        // email_url.href = "mailto:" + info.email;
-        // introduction.innerHTML = info.introduction;
+    // insert HTML
+    let bio = create_element("div", "bio", _, [bio_header, bio_content]);
+    return bio;
 }
 
 // experiences section
