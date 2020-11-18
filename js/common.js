@@ -90,6 +90,7 @@ function toolbar() {
     });
 }
 
+// TODO: store current language status and toggle to different language when button is clicked.
 // language button
 function language() {
     if (typeof fill_content === "function") {
@@ -98,12 +99,14 @@ function language() {
 
         if(lang == "ch") {
             fill_content("resource/info_chi.json");
+            document.querySelector("#language-btn").classList.add("active");
         } else if (lang == "en") {
             fill_content("resource/info_eng.json");
         } else {
             let prefer_lang = default_language();
             if(prefer_lang.indexOf('zh') < prefer_lang.indexOf('en')) {
                 fill_content("resource/info_chi.json");
+                document.querySelector("#language-btn").classList.add("active");
             } else {
                 fill_content("resource/info_eng.json");
             }

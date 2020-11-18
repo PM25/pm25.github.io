@@ -4,6 +4,10 @@ body {
     background-color: #fafafa;
 }
 
+main a {
+    text-decoration: none;
+}
+
 .section {
     padding: 0.6em 2.5em;
 }
@@ -35,6 +39,15 @@ body {
     border-radius: 50%;
 }
 
+#profile .title {
+    color: #333;
+    font-size: 0.8em;
+}
+
+#profile .title a:hover {
+    color: #3fc1c9;
+}
+
 #profile .basic-info {
     display: flex;
     justify-content: center;
@@ -62,9 +75,9 @@ body {
     display: inline-block;
     text-decoration: none;
 
-    padding: 0.2em 0.3em;
+    margin: 0.3em;
     font-size: 2.2em;
-    transition: 0.2s ease;
+    transition: 0.15s ease;
 }
 
 #profile .info a:hover {

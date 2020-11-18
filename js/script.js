@@ -67,6 +67,8 @@ function profile_section(info) {
         let main_name = create_element("span", "main", info.name + "<br>"),
             alt_name = create_element("span", "alt", info.alt_name);
         let name = create_element("span", "name", _, [main_name, alt_name]);
+        // current title
+        let title = create_element("span", "title", info.title);
         // links
         let urls = create_element("div", "info");
         info.urls.forEach(item => {
@@ -75,7 +77,7 @@ function profile_section(info) {
             urls.appendChild(url);
         })
         // name & links
-        let title_box = create_element("div", "title-box", _, [name, urls]);
+        let title_box = create_element("div", "title-box", _, [name, title, urls]);
         let name_info = create_element("div", "basic-info", _, [title_box]);
         // profile & name & links
         let intro_header = create_element("div", "header", _, [profile_img, name_info]);
