@@ -248,7 +248,9 @@ function skills_section(info) {
     }
     skills_content.appendChild(skills_details);
 
-    // FIXME: simplebar loaded twice in /js/master.js and here
+    // console.log(requirejs.s.contexts._.config);
+    // console.log(requirejs.s.contexts._.config.paths.simplebar);
+    
     // scroller
     require(["https://unpkg.com/simplebar@latest/dist/simplebar"], function(SimpleBar) {
         new SimpleBar(skills_details);

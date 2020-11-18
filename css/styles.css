@@ -41,7 +41,8 @@ main a {
 
 #profile .title {
     color: #333;
-    font-size: 0.8em;
+    font-size: 0.85em;
+    margin-bottom: 0.15em;
 }
 
 #profile .title a:hover {
@@ -81,7 +82,7 @@ main a {
 }
 
 #profile .info a:hover {
-    transform: scale(1.7);
+    transform: scale(1.5);
 }
 
 /* Introduction */
