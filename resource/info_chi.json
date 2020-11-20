@@ -4,11 +4,11 @@
     "profile": "/img/pm2.jpeg",
     "title": "<a href='https://learner.csie.ntu.edu.tw'>CLLab</a>•臺灣大學",
     "urls": [
-        {"icon": "fab fa-linkedin", "url": "https://www.linkedin.com/in/PM-Huang"},
-        {"icon": "fas fa-graduation-cap", "url": "https://scholar.google.com.tw/citations?user=nQdpH2MAAAAJ"},
-        {"icon": "far fa-id-badge", "url": "resource/cv_v2.pdf"},
-        {"icon": "fab fa-github", "url": "https://github.com/PM25"},
-        {"icon": "fab fa-facebook-square", "url": "https://www.facebook.com/pyhuang97"}
+        {"name": "LinkedIn", "icon": "fab fa-linkedin", "url": "https://www.linkedin.com/in/PM-Huang"},
+        {"name": "Google Scholar", "icon": "fas fa-graduation-cap", "url": "https://scholar.google.com.tw/citations?user=nQdpH2MAAAAJ"},
+        {"name": "Résumé", "icon": "far fa-id-badge", "url": "resource/cv_v2.pdf"},
+        {"name": "Github", "icon": "fab fa-github", "url": "https://github.com/PM25"},
+        {"name": "Facebook", "icon": "fab fa-facebook-square", "url": "https://www.facebook.com/pyhuang97"}
     ],
     "bio": [
         {"icon": "fas fa-thumbtack icons", "content": "現居: 台北, 台灣"},

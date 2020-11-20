@@ -74,6 +74,8 @@ function profile_section(info) {
         info.urls.forEach(item => {
             let url =  create_element("i", item.icon, _, _, ["a"]);
             url.href = item.url;
+            url.setAttribute("data-tootik", item.name);
+            url.setAttribute("data-tootik-conf", "bottom");
             urls.appendChild(url);
         })
         // name & links
