@@ -141,20 +141,21 @@ main a {
 #intro .edu-timeline::after {
     content: "";
     position: absolute;
+    box-sizing: border-box;
     background-color: white;
 
     top: 0;
     bottom: 0;
-    width: 5px;
-    margin-left: -5px;
+    width: 0.6em;
+    margin-left: -0.55em;
     border: solid 1px #cccc;
-    border-radius: 2px;
+    border-radius: 0.2em;
 }
 
 #intro .edu-timeline .container {
     position: relative;
 
-    padding: 0 0 1em 1.7em;
+    padding: 0 0 1em 1.5em;
 }
 
 #intro .edu-timeline .container::after {
@@ -162,8 +163,8 @@ main a {
     position: absolute;
     background-color: white;
 
-    width: 1.7em;
-    height: 1.7em;
+    width: 1.6em;
+    height: 1.6em;
     z-index: 1;
     border-radius: 50%;
     top: 0;
@@ -171,12 +172,14 @@ main a {
 }
 
 #intro .edu-timeline .before::after {
-    left: -15px;
+    /* 1.1 = circle_radius(1.6 / 2) + line_width_half(0.6 / 2)  */
+    left: -1.1em;
 }
 
 #intro .edu-timeline .current::after {
-    left: -19px;
-    border: 4px solid #ff5e5f;
+    /* 1.3 = circle_radius(1.6 / 2) + border_size(0.2) + line_width_half(0.6 / 2)  */
+    left: -1.3em;
+    border: 0.2em solid #ff5e5f;
 }
 
 #intro .edu-timeline .content {
@@ -191,6 +194,7 @@ main a {
 
 #intro .edu-timeline .school {
     display: flex;
+    user-select: none;
     align-items: center;
     justify-content: center;
 
@@ -291,7 +295,7 @@ main a {
     display: flex;
 }
 
-#skills > .content .details {
+#skills .details {
     background: white;
     box-sizing: border-box;
 
@@ -305,11 +309,11 @@ main a {
     transition: 0.1s;
 }
 
-#skills > .content .details:hover {
+#skills .details:hover {
     border-color: #ccc;
 }
 
-#skills > .content ul {
+#skills ul {
     display: flex;
     list-style: none;
     flex-direction: column;
@@ -320,14 +324,15 @@ main a {
     width: 50vw;
 }
 
-#skills > .content li {
+#skills li {
     display: flex;
     align-items: center;
 
     font-size: 1.1em;
+    margin: 0.1em 0;
 }
 
-#skills > .content li .logo-wrapper {
+#skills li .logo-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -336,17 +341,17 @@ main a {
     margin-right: 0.2em;
 }
 
-#skills > .content li img {
+#skills li img {
     height: 1em;
     width: auto;
 }
 
-#skills > .content li span {
+#skills li span {
     font-weight: 500;
-    width: 8em;
+    width: 10em;
 }
 
-#skills > .content .progress-bar {
+#skills .progress-bar {
     width: 100%;
     height: 1em;
     margin: 0 1em;
@@ -354,7 +359,7 @@ main a {
     border-radius: 0.5em;
 }
 
-#skills > .content .progress-bar-fill {
+#skills .progress-bar-fill {
     display: block;
     background-color: #3fc1c9dd;
 
@@ -455,7 +460,7 @@ main a {
     }
 
     /* Skills */
-    #skills {
+    #skills > .content {
         flex-wrap: wrap-reverse;
     }
 
@@ -472,5 +477,11 @@ main a {
         height: auto;
         max-width: 90%;
         max-height: 20em;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    #intro .edu-timeline {
+        font-size: 0.85em;
     }
 }
