@@ -188,7 +188,7 @@ main a {
     background-color: white;
 
     padding: 0.1em;
-    border-radius: 8px;
+    border-radius: 0.5em;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
@@ -244,7 +244,7 @@ main a {
     align-items: center;
 
     padding: 0.3em 1.5em;
-    border-radius: 0.8em;
+    border-radius: 0.5em;
 }
 
 #exp .item > img {
@@ -273,7 +273,7 @@ main a {
     width: 55vw;
     padding: 1em;
     height: inherit;
-    border-radius: 0.8em;
+    border-radius: 0.5em;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px, rgba(0, 0, 0, 0.2) 0px 1px 2px;
 }
 
@@ -303,7 +303,7 @@ main a {
     width: 50vw;
     padding: 1em 1.5em;
     margin-right: 1em;
-    border-radius: 0.8em;
+    border-radius: 0.5em;
     border: 1px solid;
     border-color: transparent;
     transition: 0.1s;
@@ -356,7 +356,7 @@ main a {
     height: 1em;
     margin: 0 1em;
     border: 1px solid #ccc;
-    border-radius: 0.5em;
+    border-radius: 0.3em;
 }
 
 #skills .progress-bar-fill {
@@ -370,12 +370,62 @@ main a {
     transition: 1.5s ease-in-out;
 }
 
+/* Projects */
+#projects .content {
+    background: white;
+    border: solid 0.06em #555;
+    border-radius: 0.3em;
+}
+
+#projects .filter-bar ul {
+    list-style-type: none;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+    border-bottom: solid 0.06em #555;
+}
+
+#projects .filter-bar li {
+    float: left;
+    cursor: pointer;
+    text-align: center;
+
+    width: 5em;
+    padding: 0.3em;
+}
+
+#projects .filter-bar li:hover {
+    background: #555;
+    color: white;
+}
+
+#projects .list ul {
+    list-style-type: none;
+
+    margin: 0;
+    padding: 0.5em;
+}
+
+#projects .list li {
+    cursor: pointer;
+
+    padding: 0.3em;
+    margin: 0.1em;
+    border-radius: 0.2em;
+}
+
+#projects .list li:hover {
+    background: #555;
+    color: white;
+}
+
 /* My Activities */
 #activities > .content .item {
     cursor: pointer;
 
     padding: 0.6em;
-    border-radius: 0.6em;
+    border-radius: 0.5em;
 }
 
 #activities > .content .item:hover {
@@ -392,7 +442,7 @@ main a {
     width: auto;
     height: 20em;
     margin-top: 1em;
-    border-radius: 0.5em;
+    border-radius: 0.3em;
 }
 
 #activities > .content .info {

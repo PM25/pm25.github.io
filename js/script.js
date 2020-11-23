@@ -55,6 +55,7 @@ function fill_content(fname) {
         education_intro_section(info);
         experiences_section(info);
         skills_section(info);
+        projects_section(info);
         activities_section(info);
     });
 }
@@ -298,6 +299,10 @@ function skills_section(info) {
                 });
         }
     });
+}
+
+function projects_section(info) {
+
 }
 
 // activities section
