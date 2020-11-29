@@ -300,8 +300,77 @@ function skills_section(info) {
     });
 }
 
-function projects_section(info) {
+function projects_section(info) {    
+    // filter bar
+    let filter_bar_ul = create_element("ul");
+    info.projects.filter.forEach(category => {
+        let item = create_element("li", _, category);
+        filter_bar_ul.appendChild(item);
+    })
+    let filter_bar = create_element("div", "filter-bar", _, [filter_bar_ul]);
 
+    // projects list & info
+    let list_ul = create_element("ul");
+    info.projects.list.forEach(project => {
+        // create project item
+        let project_item = create_element("li", _, project.name);
+        list_ul.appendChild(project_item);
+        // show info when hover
+        project_item.addEventListener("mouseenter", function () {
+            show_project_info(getIndex(this));
+        });
+    })
+    let list = create_element("div", "list", _, [list_ul]);
+    let project_info = create_element("div", "info");
+    show_project_info(0);
+    let projects_list = create_element("div", "projects-list", _, [list, project_info]);
+
+    // header & content
+    let projects_header = create_element("h2", "header", "Projects"),
+    projects_content = create_element("div", "content", _, [filter_bar, projects_list]);
+    
+    // insert header & content
+    let projects = document.querySelector("#projects");
+    projects.innerHTML = "" // Clear
+    projects.appendChild(projects_header);
+    projects.appendChild(projects_content);
+
+    // show project information by index
+    function show_project_info(idx) {
+        let project = info.projects.list[idx];
+        
+        let project_header = create_element("h3", _, project.name);
+        
+        // links
+        let github_link = create_element("a", _, "<i class='fas fa-external-link-alt'></i> GitHub");
+        github_link.href = project.github;
+        github_link.target = "_blank";
+        let project_link = create_element("a", _, "<i class='fas fa-external-link-alt'></i> Link");
+        project_link.href = project.url;
+        project_link.target = "_blank";
+        // tags
+        let project_tags = create_element("span", "tags");
+        project.tags.forEach(tag => {
+            project_tags.appendChild(create_element("span", _, tag));
+        });
+        let links = create_element("div", "links", _, [github_link, project_link, project_tags]);
+
+        // img
+        let img = create_element("img");
+        if(project.preview != "") {
+            img.src = project.preview;
+        } else {
+            img.style.display = "none";
+        }
+        // description
+        let description = create_element("div", _, project.description);
+        
+        // combine all block above
+        let info_block = create_element("div", "info-block", _, [project_header, links, img, description]);
+        
+        project_info.innerHTML = "";
+        project_info.appendChild(info_block);
+    }
 }
 
 // activities section

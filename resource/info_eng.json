@@ -104,17 +104,25 @@
                 "name": "Realtime Optimal YouBike Recommendation Search Systems", 
                 "github": "https://github.com/PM25/DataVisualization-YouBike",
                 "url": "https://pm25.github.io/DataVisualization-YouBike",
+                "preview": "https://raw.githubusercontent.com/PM25/DataVisualization-YouBike/master/img/snapshot.jpg",
+                "tags": ["web", "javascript", "d3js", "data visualization", "optimal route"],
+                "description": "A website that helps users to find the optimal YouBike station closest to the user with sufficient bicycles to borrow or sufficient slots to return the bicycle."
+            },
+            {
+                "name": "PlusMore", 
+                "github": "https://github.com/PM25/pm25.github.io",
+                "url": "https://pm25.github.io",
                 "preview": "",
-                "tags": ["javascript", "d3js", "data visualization", "web", "optimization"],
-                "description": ""
+                "tags": ["web", "javascript", "html", "css"],
+                "description": "This is my website and it has been continuously developed since Feb 2018."
             },
             {
                 "name": "Flappy Bird", 
                 "github": "https://github.com/PM25/Flappy-Bird",
                 "url": "https://pm25.github.io/Flappy-Bird",
-                "preview": "",
-                "tags": ["javascript", "web"],
-                "description": ""
+                "preview": "https://raw.githubusercontent.com/PM25/Flappy-Bird/master/img/preview.jpg",
+                "tags": ["web", "javascript"],
+                "description": "My javascript version of the game flappy bird."
             }
         ]
     },

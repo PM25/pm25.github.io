@@ -102,15 +102,25 @@
                 "name": "Realtime Optimal YouBike Recommendation Search Systems", 
                 "github": "https://github.com/PM25/DataVisualization-YouBike",
                 "url": "https://pm25.github.io/DataVisualization-YouBike",
+                "preview": "https://raw.githubusercontent.com/PM25/DataVisualization-YouBike/master/img/snapshot.jpg",
+                "tags": ["web", "javascript", "d3js", "data visualization", "optimal route"],
+                "description": "顯示台北市 Youbike 的即時資訊，並推薦使用者最佳的借/還車站點。"
+            },
+            {
+                "name": "PlusMore", 
+                "github": "https://github.com/PM25/pm25.github.io",
+                "url": "https://pm25.github.io",
                 "preview": "",
-                "tags": ["javascript", "d3js", "data visualization", "web", "optimization"]
+                "tags": ["web", "javascript", "html", "css"],
+                "description": "我的個人網頁，從 2018年 2月持續開發至今。"
             },
             {
                 "name": "Flappy Bird", 
                 "github": "https://github.com/PM25/Flappy-Bird",
                 "url": "https://pm25.github.io/Flappy-Bird",
-                "preview": "",
-                "tags": ["javascript", "web"]
+                "preview": "https://raw.githubusercontent.com/PM25/Flappy-Bird/master/img/preview.jpg",
+                "tags": ["web", "javascript"],
+                "description": "Javascript 版本的 Flppy Bird。"
             }
         ]
     },

@@ -32,8 +32,8 @@ a:link {
 
     top: 0;
     left: 0.7em;
-    height: 50px;
-    line-height: 50px;
+    height: 2.4em;
+    line-height: 2.4em;
     font-size: 1.3em;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     z-index: 5;
@@ -65,7 +65,7 @@ a:link {
     text-align: center;
     overflow: hidden;
 
-    width: 50px;
+    width: 2.4em;
     height: inherit;
     transition: 0.35s;
 }
