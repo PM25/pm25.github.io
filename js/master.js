@@ -5,6 +5,6 @@ require.config({
     },
 });
 
-require(["https://unpkg.com/simplebar@latest/dist/simplebar", "common", "gtm", "ga"], function () {
+require(["https://unpkg.com/simplebar@5.3.0/dist/simplebar.min.js", "common", "gtm", "ga"], function () {
     console.log("all js files loaded!");
 });

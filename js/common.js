@@ -25,7 +25,7 @@ function load_html() {
             include.innerHTML = data;
 
             if (--count == 0) {
-                main();
+                setTimeout(main, 1);
             }
         });
     });

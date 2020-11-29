@@ -97,6 +97,27 @@
             {"name": "PyTorch", "percentage": 91, "image": "/img/pytorch_logo.webp"}
         ]
     },
+    "projects": {
+        "filter": ["All", "ML", "Web", "Others"],
+        "list": [
+            {
+                "name": "Realtime Optimal YouBike Recommendation Search Systems", 
+                "github": "https://github.com/PM25/DataVisualization-YouBike",
+                "url": "https://pm25.github.io/DataVisualization-YouBike",
+                "preview": "",
+                "tags": ["javascript", "d3js", "data visualization", "web", "optimization"],
+                "description": ""
+            },
+            {
+                "name": "Flappy Bird", 
+                "github": "https://github.com/PM25/Flappy-Bird",
+                "url": "https://pm25.github.io/Flappy-Bird",
+                "preview": "",
+                "tags": ["javascript", "web"],
+                "description": ""
+            }
+        ]
+    },
     "activities": [
         {
             "title": "[Workshop/Presentation] Deep Learning with Keras",

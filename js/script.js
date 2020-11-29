@@ -18,7 +18,6 @@ const _ = undefined;
 
 // start from here
 function main() { 
-    
     console.log("*executing script.js: main()");
     // english page or chinese page
     let url = new URL(window.location.href),
@@ -255,7 +254,7 @@ function skills_section(info) {
     // console.log(requirejs.s.contexts._.config.paths.simplebar);
     
     // scroller
-    require(["https://unpkg.com/simplebar@latest/dist/simplebar"], function(SimpleBar) {
+    require(["https://unpkg.com/simplebar@5.3.0/dist/simplebar.min.js"], function(SimpleBar) {
         new SimpleBar(skills_details);
     });
 

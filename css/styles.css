@@ -259,7 +259,7 @@ main a {
 }
 
 #exp .title span:nth-child(1) {
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 #exp .title span:nth-child(2) {
@@ -373,17 +373,18 @@ main a {
 /* Projects */
 #projects .content {
     background: white;
-    border: solid 0.06em #555;
     border-radius: 0.3em;
 }
 
 #projects .filter-bar ul {
     list-style-type: none;
     overflow: hidden;
+    background: #eee;
 
     margin: 0;
     padding: 0;
-    border-bottom: solid 0.06em #555;
+    width: 100%;
+    border-radius: 0.2em;
 }
 
 #projects .filter-bar li {
@@ -400,11 +401,24 @@ main a {
     color: white;
 }
 
+#projects .projects-list {
+    display: flex;
+    flex-direction: row;
+}
+
+#projects .list {
+    overflow: auto;
+
+    min-width: 50%;
+    box-sizing: border-box;
+}
+
 #projects .list ul {
     list-style-type: none;
 
     margin: 0;
     padding: 0.5em;
+    max-height: 50vh;
 }
 
 #projects .list li {
@@ -420,6 +434,52 @@ main a {
     color: white;
 }
 
+#projects .info {
+    background: white;
+
+    padding: 1em;
+}
+
+#projects .info h3 {
+    margin: 0;
+}
+
+#projects .links {
+    color: #333;
+    font-size: 0.9em;
+    margin-bottom: 0.5em;
+}
+
+#projects .links a {
+    margin-right: 0.3em;
+}
+
+#projects .links a:hover {
+    color: #3fc1c9;
+}
+
+#projects .tags {
+    border-left: 0.1em solid #aaa;
+}
+
+#projects .tags span {
+    cursor: pointer;
+
+    border-radius: 0.2em;
+    padding: 0.1em 0.2em;
+    margin-left: 0.25em;
+}
+
+#projects .tags span:hover {
+    background: #eee;
+}
+
+#projects .info img {
+    max-width: 100%;
+    max-height: 30vh;
+    margin: 0.1em 0;
+}
+
 /* My Activities */
 #activities > .content .item {
     cursor: pointer;
@@ -433,7 +493,7 @@ main a {
 }
 
 #activities > .content .title {
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 #activities > .content img {
@@ -449,6 +509,8 @@ main a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    font-size: 0.9em;
 }
 
 /* My Publications */
