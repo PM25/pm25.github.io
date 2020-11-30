@@ -98,7 +98,7 @@
         ]
     },
     "projects": {
-        "filter": ["All", "ML", "Web", "Others"],
+        "filter": ["All", "ML", "Web"],
         "list": [
             {
                 "name": "Realtime Optimal YouBike Recommendation Search Systems", 
@@ -112,7 +112,7 @@
                 "name": "PlusMore", 
                 "github": "https://github.com/PM25/pm25.github.io",
                 "url": "https://pm25.github.io",
-                "preview": "",
+                "preview": "/img/preview.webp",
                 "tags": ["web", "javascript", "html", "css"],
                 "description": "This is my website and it has been continuously developed since Feb 2018."
             },

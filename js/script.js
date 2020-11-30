@@ -300,30 +300,26 @@ function skills_section(info) {
     });
 }
 
+// projects section
 function projects_section(info) {    
     // filter bar
     let filter_bar_ul = create_element("ul");
     info.projects.filter.forEach(category => {
-        let item = create_element("li", _, category);
-        filter_bar_ul.appendChild(item);
+        let project_category = create_element("li", _, category);
+        filter_bar_ul.appendChild(project_category);
+        // show project with specific category when clicked
+        project_category.addEventListener("click", function () {
+            show_projects_list(category.toLowerCase());
+        });
     })
     let filter_bar = create_element("div", "filter-bar", _, [filter_bar_ul]);
 
     // projects list & info
     let list_ul = create_element("ul");
-    info.projects.list.forEach(project => {
-        // create project item
-        let project_item = create_element("li", _, project.name);
-        list_ul.appendChild(project_item);
-        // show info when hover
-        project_item.addEventListener("mouseenter", function () {
-            show_project_info(getIndex(this));
-        });
-    })
     let list = create_element("div", "list", _, [list_ul]);
     let project_info = create_element("div", "info");
-    show_project_info(0);
     let projects_list = create_element("div", "projects-list", _, [list, project_info]);
+    show_projects_list("all");
 
     // header & content
     let projects_header = create_element("h2", "header", "Projects"),
@@ -370,6 +366,24 @@ function projects_section(info) {
         
         project_info.innerHTML = "";
         project_info.appendChild(info_block);
+    }
+
+    // show project list based on given tag
+    function show_projects_list(tag) {
+        list_ul.innerHTML = ""; // clear previous content
+        info.projects.list.forEach(project => {
+            if(project.tags.includes(tag) || tag == "all") {
+                // create project item
+                let project_item = create_element("li", _, project.name);
+                list_ul.appendChild(project_item);
+                // show info when hover
+                project_item.addEventListener("mouseenter", function () {
+                    show_project_info(getIndex(this));
+                });
+            }
+        })
+        // show first project's information
+        show_project_info(0);
     }
 }
 
