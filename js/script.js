@@ -304,14 +304,6 @@ function skills_section(info) {
 function projects_section(info) {    
     // filter bar
     let filter_bar_ul = create_element("ul");
-    info.projects.filter.forEach(category => {
-        let project_category = create_element("li", _, category);
-        filter_bar_ul.appendChild(project_category);
-        // show project with specific category when clicked
-        project_category.addEventListener("click", function () {
-            show_projects_list(category.toLowerCase());
-        });
-    })
     let filter_bar = create_element("div", "filter-bar", _, [filter_bar_ul]);
 
     // projects list & info
@@ -319,7 +311,6 @@ function projects_section(info) {
     let list = create_element("div", "list", _, [list_ul]);
     let project_info = create_element("div", "info");
     let projects_list = create_element("div", "projects-list", _, [list, project_info]);
-    show_projects_list("all");
 
     // header & content
     let projects_header = create_element("h2", "header", "Projects"),
@@ -330,6 +321,18 @@ function projects_section(info) {
     projects.innerHTML = "" // Clear
     projects.appendChild(projects_header);
     projects.appendChild(projects_content);
+
+    // append filter list
+    info.projects.filter.forEach(category => {
+        let project_category = create_element("li", _, category);
+        filter_bar_ul.appendChild(project_category);
+        // show project with specific category when clicked
+        project_category.addEventListener("click", function () {
+            show_projects_list(category.toLowerCase());
+        });
+    })
+
+    show_projects_list("all");
 
     // show project information by index
     function show_project_info(idx) {
@@ -372,7 +375,7 @@ function projects_section(info) {
     function show_projects_list(tag) {
         list_ul.innerHTML = ""; // clear previous content
         info.projects.list.forEach(project => {
-            if(project.tags.includes(tag) || tag == "all") {
+            if(tag == "all" || project.tags.includes(tag)) {
                 // create project item
                 let project_item = create_element("li", _, project.name);
                 list_ul.appendChild(project_item);
@@ -381,7 +384,16 @@ function projects_section(info) {
                     show_project_info(getIndex(this));
                 });
             }
-        })
+        });
+
+        // clear previous selcted filter
+        document.querySelectorAll("#projects .filter-bar .active").forEach(active_category => {
+            active_category.classList.remove("active");
+        }); 
+
+        let idx = info.projects.filter.indexOf(tag);
+        document.querySelectorAll("#projects .filter-bar li")[idx].classList.add("active");
+        
         // show first project's information
         show_project_info(0);
     }

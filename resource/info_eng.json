@@ -98,7 +98,7 @@
         ]
     },
     "projects": {
-        "filter": ["All", "ML", "Web"],
+        "filter": ["all", "ml", "web"],
         "list": [
             {
                 "name": "Realtime Optimal YouBike Recommendation Search Systems", 
