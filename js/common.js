@@ -46,6 +46,7 @@ function main() {
     sidenav();
     toolbar();
     new language();
+    new create_music_player_btn();
 }
 
 function sidenav() {
@@ -87,6 +88,13 @@ function toolbar() {
         toolbar.forEach(btn => {btn.classList.toggle("toolbar")});
         toolbar_btn_icon.classList.toggle("fa-caret-right");
         toolbar_btn_icon.classList.toggle("fa-caret-left");
+    });
+
+    // collapse all elements when click somewhere else
+    document.querySelector("main").addEventListener("click", function () {
+        toolbar.forEach(btn => {btn.classList.add("toolbar")});
+        toolbar_btn_icon.classList.add("fa-caret-right");
+        toolbar_btn_icon.classList.remove("fa-caret-left");
     });
 }
 
@@ -147,4 +155,21 @@ function default_language() {
     });
     
     return prefer_lang;
+}
+
+// music player button
+function create_music_player_btn() {
+    let music_btn = document.querySelector("#music-btn"),
+        music_player = document.querySelector("#music-player");
+
+    music_btn.addEventListener("click", function() {
+        music_player.classList.toggle("show");
+        music_btn.classList.toggle("active");
+    });
+
+    // collapse music player if click on somewhere else
+    document.querySelector("main").addEventListener("click", function () {
+        music_player.classList.remove("show");
+        music_btn.classList.remove("active");
+    });
 }

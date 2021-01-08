@@ -406,6 +406,11 @@ main a {
     color: white;
 }
 
+#projects .filter-bar .active {
+    background: #555;
+    color: white;
+}
+
 #projects .projects-list {
     display: flex;
     flex-direction: row;

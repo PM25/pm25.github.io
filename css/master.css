@@ -71,12 +71,36 @@ a:link {
 }
 
 #home-nav .toolbar {
+    visibility: hidden;
+
     width: 0;
     transition: 0.25s;
 }
 
 #home-nav .active {
     background: #ddda;
+}
+
+#music-player {
+    position: absolute;
+    visibility: hidden;
+    transform: translateX(-350px);
+
+    z-index: 3;
+    opacity: 0.5;
+    margin-top: 0.1em;
+    height: 80px;
+    transition: 0.35s;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+#music-player:hover {
+    opacity: 1;
+}
+
+#music-player.show {
+    visibility: visible;
+    transform: translateX(0px);
 }
 
 /* Side-nav */
