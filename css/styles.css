@@ -448,7 +448,9 @@ main a {
 #projects .info {
     background: white;
 
+    width: 100%;
     padding: 1em;
+    height: 20em;
     border-left: 0.08em solid #ccc;
 }
 

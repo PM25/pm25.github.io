@@ -309,8 +309,9 @@ function projects_section(info) {
     // projects list & info
     let list_ul = create_element("ul");
     let list = create_element("div", "list", _, [list_ul]);
-    let project_info = create_element("div", "info");
-    let projects_list = create_element("div", "projects-list", _, [list, project_info]);
+    let project_info = create_element("div");
+    let project_info_wrapper = create_element("div", "info", _, [project_info]);
+    let projects_list = create_element("div", "projects-list", _, [list, project_info_wrapper]);
 
     // header & content
     let projects_header = create_element("h2", "header", "Projects"),
@@ -333,6 +334,11 @@ function projects_section(info) {
     })
 
     show_projects_list("all");
+
+    // scroller
+    require(["https://unpkg.com/simplebar@5.3.0/dist/simplebar.min.js"], function(SimpleBar) {
+        new SimpleBar(project_info_wrapper, { autoHide: false });
+    });
 
     // show project information by index
     function show_project_info(idx) {
