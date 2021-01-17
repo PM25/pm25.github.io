@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 // images
-import profileImg from "../img/pm2.jpeg";
+import profileImg from "../img/profile.jpeg";
 
 export default class ProfileSection extends Component {
     constructor(props) {

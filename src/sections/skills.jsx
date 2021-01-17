@@ -31,7 +31,7 @@ export default class SkillSection extends Component {
                     name: "others",
                     icon: "fas fa-server",
                     content:
-                        "Linux/Unix, Arduino, Raspberry Pi, PyTorch, Keras, HTML/CSS, Markdown, LaTeX",
+                        "Linux/Unix, Arduino, Raspberry Pi, PyTorch, Keras, HTML/CSS, React, Markdown, LaTeX",
                 },
             ],
             skillsLevel: [
@@ -118,16 +118,12 @@ export default class SkillSection extends Component {
     }
 
     renderSkillsLevelBlock(state) {
-        let level = state.level;
-        // if (this.state.activeSkillsLevel === false) {
-        //     level = 0;
-        // }
         return (
             <SkillsLevelBlock
                 name={state.name}
                 logo={state.logo}
-                level={level}
-                active={true}
+                level={state.level}
+                active={this.state.activeSkillsLevel}
             ></SkillsLevelBlock>
         );
     }
@@ -147,8 +143,8 @@ function SkillsTextBlock(props) {
 
 function SkillsLevelBlock(props) {
     const progessBarProps = useSpring({
-        from: { percent: 0 },
-        to: { percent: props.level },
+        config: { duration: Math.floor(Math.random() * 500) + 750 },
+        width: props.active ? props.level + "%" : "0%",
     });
 
     return (
@@ -157,16 +153,12 @@ function SkillsLevelBlock(props) {
                 <img src={props.logo} alt="logo"></img>
             </div>
             <span>{props.name}</span>
-            <animated.div style={progessBarProps} className="progress-bar">
-                {({ percent }) => (
-                    <div
-                        className="progress-bar-fill"
-                        style={{
-                            width: `${percent}%`,
-                        }}
-                    ></div>
-                )}
-            </animated.div>
+            <div className="progress-bar">
+                <animated.div
+                    className="progress-bar-fill"
+                    style={progessBarProps}
+                ></animated.div>
+            </div>
         </li>
     );
 }
