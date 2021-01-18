@@ -371,6 +371,7 @@
     background-color: #3fc1c9dd;
 
     height: 100%;
+    width: 0%;
     border-radius: inherit;
     transform-origin: 0;
 }
@@ -503,7 +504,7 @@
 #activities > .content .item {
     cursor: pointer;
 
-    padding: 0.6em;
+    padding: 0.5em 1em;
     border-radius: 0.5em;
 }
 
@@ -511,16 +512,22 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
 }
 
+#activities .showing {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
 #activities > .content .title {
     font-size: 1.1em;
 }
 
-#activities > .content img {
-    display: none;
+#activities .img-container {
+    overflow: hidden;
+}
 
+#activities > .content img {
     width: auto;
     height: 20em;
-    margin-top: 1em;
+    padding-top: 0.5em;
     border-radius: 0.3em;
 }
 

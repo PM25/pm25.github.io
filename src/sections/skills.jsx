@@ -70,9 +70,11 @@ export default class SkillSection extends Component {
 
     handleScroll() {
         let node = this.contentRef.current;
-        let top_offset = node.getBoundingClientRect().top;
+        let BoundingRect = node.getBoundingClientRect();
+        let top_offset = BoundingRect.top,
+            height = BoundingRect.height;
         // if is visible on the screen
-        if (top_offset >= 0 && top_offset < window.innerHeight) {
+        if (top_offset >= -height && top_offset < window.innerHeight) {
             this.setState({ activeSkillsLevel: true });
         } else {
             this.setState({ activeSkillsLevel: false });
@@ -143,8 +145,9 @@ function SkillsTextBlock(props) {
 
 function SkillsLevelBlock(props) {
     const progessBarProps = useSpring({
-        config: { duration: Math.floor(Math.random() * 500) + 750 },
+        config: { friction: 128, tension: 240 },
         width: props.active ? props.level + "%" : "0%",
+        delay: props.active ? Math.random() * 250 : 0,
     });
 
     return (

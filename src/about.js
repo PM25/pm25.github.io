@@ -3,6 +3,7 @@ import "./about.css";
 import IntroSection from "./sections/intro.jsx";
 import SkillSection from "./sections/skills.jsx";
 import ProfileSection from "./sections/profile.jsx";
+import ActivitiesSection from "./sections/activities.jsx";
 import ExperienceSection from "./sections/experiences.jsx";
 
 export default class About extends Component {
@@ -13,6 +14,7 @@ export default class About extends Component {
                 <IntroSection></IntroSection>
                 <ExperienceSection></ExperienceSection>
                 <SkillSection></SkillSection>
+                <ActivitiesSection></ActivitiesSection>
             </div>
         );
     }
