@@ -1,10 +1,10 @@
-import React, { Component, PureComponent, useState } from "react";
+import React, { PureComponent, useState } from "react";
 import { useSpring, animated } from "react-spring";
 
 // images
 import img1 from "../img/2019-9-4-workshop.jpg";
 
-export default class ActivitiesSection extends Component {
+export default class ActivitiesSection extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {

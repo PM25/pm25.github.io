@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
 // images
 import profileImg from "../img/profile.jpeg";
 
-export default class ProfileSection extends Component {
+export default class ProfileSection extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {};

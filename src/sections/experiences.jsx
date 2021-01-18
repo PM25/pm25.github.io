@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import SimpleBar from "simplebar-react";
 import "simplebar/dist/simplebar.min.css";
 
@@ -7,7 +7,7 @@ import uiucLogo from "../img/uiuc_logo.webp";
 import nccuLogo from "../img/nccu_logo.webp";
 import utLogo from "../img/ut_logo.webp";
 
-export default class ExperienceSection extends Component {
+export default class ExperienceSection extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {

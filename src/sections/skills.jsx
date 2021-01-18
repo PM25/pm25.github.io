@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { useSpring, animated } from "react-spring";
 import ReactHtmlParser from "react-html-parser";
 import SimpleBar from "simplebar-react";
@@ -11,7 +11,7 @@ import javascriptLogo from "../img/javascript_logo.webp";
 import lispLogo from "../img/lisp_logo.webp";
 import pytorchLogo from "../img/pytorch_logo.webp";
 
-export default class SkillSection extends Component {
+export default class SkillSection extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {

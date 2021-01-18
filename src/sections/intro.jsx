@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import BioSection from "./bio";
 import EducationSection from "./education";
 
-export default class IntroSection extends Component {
+export default class IntroSection extends PureComponent {
     render() {
         return (
             <div id="intro" className="section">

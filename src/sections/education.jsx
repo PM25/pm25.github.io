@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
 // images
 import ntuLogo from "../img/ntu_logo.webp";
@@ -6,7 +6,7 @@ import nccuLogo from "../img/nccu_logo.webp";
 import ncnuLogo from "../img/ncnu_logo.webp";
 import tcsshLogo from "../img/tcssh_logo.webp";
 
-export default class EducationSection extends Component {
+export default class EducationSection extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {

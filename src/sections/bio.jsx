@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import ReactHtmlParser from "react-html-parser";
 
-export default class BioSection extends Component {
+export default class BioSection extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
