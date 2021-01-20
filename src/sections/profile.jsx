@@ -1,7 +1,8 @@
 import React, { PureComponent } from "react";
 
-// images
+// images & other files
 import profileImg from "../img/profile.jpeg";
+import cvPDF from "../source/cv_v3.pdf";
 
 export default class ProfileSection extends PureComponent {
     constructor(props) {
@@ -44,7 +45,7 @@ export default class ProfileSection extends PureComponent {
                                     <i className="fas fa-graduation-cap"></i>
                                 </a>
                                 <a
-                                    href="resource/cv_v3.pdf"
+                                    href={cvPDF}
                                     data-tootik="Résumé"
                                     data-tootik-conf="bottom"
                                 >

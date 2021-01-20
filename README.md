@@ -8,8 +8,6 @@
 
 https://pm25.github.io
 
-![preview](img/preview.webp)
-
 ### Projects
 
 https://pm25.github.io/c/projects

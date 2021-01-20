@@ -5,6 +5,7 @@ import SkillSection from "./sections/skills.jsx";
 import ProfileSection from "./sections/profile.jsx";
 import ActivitiesSection from "./sections/activities.jsx";
 import ExperienceSection from "./sections/experiences.jsx";
+import PublicationsSection from "./sections/publications.jsx";
 
 export default class About extends Component {
     render() {
@@ -15,6 +16,7 @@ export default class About extends Component {
                 <ExperienceSection></ExperienceSection>
                 <SkillSection></SkillSection>
                 <ActivitiesSection></ActivitiesSection>
+                <PublicationsSection></PublicationsSection>
             </div>
         );
     }
