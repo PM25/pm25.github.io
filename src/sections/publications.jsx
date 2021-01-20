@@ -132,7 +132,7 @@ export default class PublicationsSection extends PureComponent {
 
 function InproceedingsBlock(props) {
     return (
-        <a href={props.url}>
+        <a href={props.url} target="_blank" rel="noreferrer">
             [{props.index}] {ReactHtmlParser(props.author)}, "{props.title}"
             {props.booktitle ? ", " : ""}
             {props.booktitle ? <i>{props.booktitle}</i> : ""}
@@ -146,7 +146,7 @@ function InproceedingsBlock(props) {
 
 function ArticleBlock(props) {
     return (
-        <a href={props.url}>
+        <a href={props.url} target="_blank" rel="noreferrer">
             [{props.index}] {ReactHtmlParser(props.author)}, "{props.title}"
             {props.journal ? ", " : ""}
             {props.journal ? <i>{props.journal}</i> : ""}

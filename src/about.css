@@ -17,6 +17,10 @@
     color: white;
 }
 
+.subtitle {
+    font-weight: 300;
+}
+
 /* Header */
 #profile {
     background: #eeee;
@@ -215,7 +219,6 @@
     display: none;
 
     font-size: 0.9em;
-    font-weight: 395;
 }
 
 #intro .edu-timeline .school:hover + .major {
@@ -270,7 +273,6 @@
 
 #exp .title div:nth-child(2) {
     font-size: 0.9em;
-    font-weight: 395;
 }
 
 #exp .info {
@@ -543,12 +545,14 @@
 #publications > .content {
     display: flex;
     flex-direction: column;
+
+    margin-bottom: 1em;
 }
 
 #publications > .content a {
     text-decoration: none;
 
-    padding: 0.1em 0.6em;
+    padding: 0.25em 0.5em;
 }
 
 #publications > .content a:hover {

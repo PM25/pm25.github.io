@@ -62,7 +62,7 @@ function ActivitiesBlock(props) {
         >
             <div className="title">{props.title}</div>
             <div className="info">
-                <div>
+                <div className="subtitle">
                     <i className="fa fa-map-marker-alt icon"></i>
                     {props.location}
                 </div>

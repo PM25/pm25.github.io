@@ -127,7 +127,7 @@ function ExperienceBlock(props) {
             <img src={props.logo} alt="logo"></img>
             <div className="title">
                 <div>{props.title}</div>
-                <div>{props.organization}</div>
+                <div className="subtitle">{props.organization}</div>
             </div>
         </div>
     );

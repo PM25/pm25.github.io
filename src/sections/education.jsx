@@ -85,7 +85,7 @@ function EducationBlock(props) {
                     <img src={props.logo} alt="logo"></img>
                     <span>{props.name}</span>
                 </div>
-                <div className="major">
+                <div className="major subtitle">
                     <div>
                         {props.degree}, {props.department}
                     </div>
