@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono");
+
+body {
+    background: #292b36;
+}
+
+/* Header */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 50vh;
+}
+
+#header .title-box {
+    position: fixed;
+    z-index: -1;
+}
+
+#header .title {
+    display: flex;
+    font-family: "Ubuntu Mono", monospace;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: auto;
+
+    width: 0;
+    font-size: 4.5em;
+    border-right: 0.1em solid #e7e8eb;
+
+    animation: typing 2s steps(22, end) 0.5s forwards,
+        blinking-cursor 0.5s step-end infinite;
+}
+
+/* content */
+.content {
+    min-height: 70vh;
+    background: #fff;
+    border-radius: 0.3em;
+    margin: 0 2em 2em 2em;
+    padding: 0.5em;
+}
+
+.article-block {
+    padding: 0.5em;
+    margin-top: 0.3em;
+    border-radius: 0.3em;
+}
+
+.article-block:hover {
+    background: #ccc;
+}
+
+.article-block .name {
+    font-size: 1.5em;
+}
+
+.article-block .preview {
+    color: #666;
+    font-weight: 300;
+}
+
+.article-block .date {
+}
+
+/* Animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blinking-cursor {
+    0% {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #e7e8eb;
+    }
+}
