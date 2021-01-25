@@ -24,10 +24,9 @@ body {
     display: flex;
     font-family: "Ubuntu Mono", monospace;
     margin: auto;
-    padding: 0.25em;
+    padding-bottom: 0.25em;
 
     font-size: 4.5em;
-    border-right: 0.1em solid #e7e8eb;
 }
 
 .typing-animation {
@@ -35,6 +34,7 @@ body {
     white-space: nowrap;
 
     width: 0;
+    border-right: 0.1em solid #e7e8eb;
     animation: typing 2s steps(22, end) 0.5s forwards,
         blinking-cursor 0.5s step-end infinite;
 }
