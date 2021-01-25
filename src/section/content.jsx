@@ -40,8 +40,9 @@ export default class Content extends PureComponent {
                         return (
                             <ArticleBlock
                                 id={key}
-                                date={state.date}
                                 name={state.name}
+                                date={state.date}
+                                url={state.path}
                                 preview={state.preview}
                             />
                         );
@@ -57,11 +58,13 @@ export default class Content extends PureComponent {
 function ArticleBlock(props) {
     return (
         <div key={props.id} className="article-block">
-            <div>
-                <span className="name"> {props.name} </span>
-                <span className="date">{props.date}</span>
-            </div>
-            <div className="preview"> {props.preview} </div>
+            <a href={props.url}>
+                <div className="title-date">
+                    <span className="title"> {props.name} </span>
+                    <span className="date">{props.date}</span>
+                </div>
+                <div className="preview"> {props.preview} </div>
+            </a>
         </div>
     );
 }

@@ -42,26 +42,54 @@ body {
     padding: 0.5em;
 }
 
+.article {
+    font-size: 1.2em;
+}
+
 .article-block {
-    padding: 0.5em;
-    margin-top: 0.3em;
+    padding: 0.5em 1em;
+    margin-top: 0.1em;
     border-radius: 0.3em;
 }
 
 .article-block:hover {
-    background: #ccc;
+    background: #292b3633;
 }
 
-.article-block .name {
+.article-block .title-date {
+    display: flex;
+    align-items: center;
+}
+
+.article-block .title {
     font-size: 1.5em;
-}
-
-.article-block .preview {
-    color: #666;
-    font-weight: 300;
+    margin-bottom: 0.2em;
 }
 
 .article-block .date {
+    font-size: 0.8em;
+    margin-left: auto;
+}
+
+.article-block .preview {
+    color: #555;
+    font-weight: 300;
+}
+
+/* google slides */
+.google-slides {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Ratio */
+    height: 0;
+    overflow: hidden;
+}
+.google-slides iframe {
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 /* Animation */

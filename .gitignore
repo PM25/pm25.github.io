@@ -24,3 +24,4 @@ yarn-error.log*
 
 .eslintcache
 robots.txt
+debug.log
