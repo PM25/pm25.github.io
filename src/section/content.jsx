@@ -1,11 +1,11 @@
 import React, { PureComponent } from "react";
+import { Link } from "react-router-dom";
 
 export default class Content extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
             source: "https://pm25.github.io/my-articles/list.json",
-            base_url: null,
             articles: null,
             error: null,
             isLoaded: false,
@@ -19,8 +19,7 @@ export default class Content extends PureComponent {
                 (result) => {
                     this.setState({
                         isLoaded: true,
-                        articles: result.articles,
-                        base_url: result.base_url,
+                        articles: result,
                     });
                 },
                 (error) => {
@@ -42,7 +41,7 @@ export default class Content extends PureComponent {
                                 id={key}
                                 name={state.name}
                                 date={state.date}
-                                url={state.path}
+                                url={state.name.replaceAll(" ", "-")}
                                 preview={state.preview}
                             />
                         );
@@ -58,13 +57,13 @@ export default class Content extends PureComponent {
 function ArticleBlock(props) {
     return (
         <div key={props.id} className="article-block">
-            <a href={props.url}>
+            <Link to={props.url}>
                 <div className="title-date">
                     <span className="title"> {props.name} </span>
                     <span className="date">{props.date}</span>
                 </div>
                 <div className="preview"> {props.preview} </div>
-            </a>
+            </Link>
         </div>
     );
 }

@@ -22,7 +22,7 @@ export default class Header extends PureComponent {
         return (
             <div id="header">
                 <div className="title-box">
-                    <div className="title">
+                    <div className="title typing-animation">
                         {this.state.title.map((value, key) => {
                             let color = this.state.color[value[0]];
                             return (

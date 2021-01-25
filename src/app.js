@@ -4,31 +4,35 @@ import Header from "./section/header.jsx";
 import Content from "./section/content.jsx";
 import Article from "./section/article.jsx";
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Switch,
     Route,
-    useRouteMatch,
+    useParams,
 } from "react-router-dom";
 
 export default class App extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            header: null,
+            title: null,
             date: null,
         };
     }
+
+    setHeader = (title, date) => {
+        this.setState({ title: title, date: date });
+    };
 
     render() {
         return (
             <Router>
                 <div>
-                    <Header />
                     <Switch>
                         <Route exact path="/">
-                            <Content />
+                            <Header />
+                            <Content setHeader={this.setHeader} />
                         </Route>
-                        <Route path="/:id/:id">
+                        <Route path="/:id">
                             <Child />
                         </Route>
                     </Switch>
@@ -39,6 +43,6 @@ export default class App extends PureComponent {
 }
 
 function Child() {
-    let { url } = useRouteMatch();
-    return <Article path={url} />;
+    let { id } = useParams();
+    return <Article name={id} />;
 }

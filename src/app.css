@@ -11,24 +11,30 @@ body {
     justify-content: center;
 
     height: 50vh;
+    color: white;
 }
 
 #header .title-box {
     position: fixed;
     z-index: -1;
+    text-align: center;
 }
 
 #header .title {
     display: flex;
     font-family: "Ubuntu Mono", monospace;
-    overflow: hidden;
-    white-space: nowrap;
     margin: auto;
+    padding: 0.25em;
 
-    width: 0;
     font-size: 4.5em;
     border-right: 0.1em solid #e7e8eb;
+}
 
+.typing-animation {
+    overflow: hidden;
+    white-space: nowrap;
+
+    width: 0;
     animation: typing 2s steps(22, end) 0.5s forwards,
         blinking-cursor 0.5s step-end infinite;
 }
@@ -39,7 +45,7 @@ body {
     background: #fff;
     border-radius: 0.3em;
     margin: 0 2em 2em 2em;
-    padding: 0.5em;
+    padding: 0.5em 1em;
 }
 
 .article {
@@ -77,19 +83,13 @@ body {
 }
 
 /* google slides */
-.google-slides {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 Ratio */
-    height: 0;
-    overflow: hidden;
-}
 .google-slides iframe {
     border: 0;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
-    width: 100% !important;
-    height: 100% !important;
+    width: calc(70vh * 16 / 9) !important;
+    height: 75vh !important;
 }
 
 /* Animation */
