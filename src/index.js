@@ -1,8 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import Navigator from "./components/src/navigator";
+import Footer from "./components/src/footer";
+import App from "./app";
 
 ReactDOM.render(
-    <React.StrictMode></React.StrictMode>,
+    <React.StrictMode>
+        <Navigator />
+        <App />
+        <Footer />
+    </React.StrictMode>,
     document.getElementById("root")
 );

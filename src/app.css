@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css?family=Monoton");
+
+body {
+    background: repeating-linear-gradient(
+            45deg,
+            #2b2b2b2b,
+            #2b2b2b2b 1px,
+            transparent 1px,
+            transparent 7px
+        ),
+        linear-gradient(to bottom, #355c7d 50%, #6c5b7b, #c06c84);
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#main {
+    min-height: 100vh;
+}
+
+/* Header */
+#header {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    font-family: "Monoton", cursive;
+    color: white;
+
+    height: 12em;
+    width: 100%;
+}
+
+#header a {
+    color: white;
+    text-decoration: none;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177,
+        0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 75px #ff1177;
+
+    font-size: calc(100vw / 10);
+    transition-duration: 0.05s;
+}
+
+#header a:hover {
+    color: #ff1177;
+    text-shadow: none;
+}
+
+/* Project Articles */
+.projects-list {
+    padding: 1em;
+}
+
+.projects-list a,
+.projects-list a:visited {
+    display: flex;
+    margin: 0.3em auto;
+    text-decoration: none;
+    background: #2b2b2b88;
+    color: white;
+    align-items: center;
+
+    border-radius: 0.3em;
+    width: 60vw;
+    font-size: 1.3em;
+    padding: 10px;
+    border: solid 1px #2b2b2b88;
+}
+
+.projects-list a:hover {
+    background: #2b2b2b;
+
+    transition: 0.2s;
+    border: solid 1px white;
+}
+
+.projects-list .project-date {
+    text-align: center;
+    border-right: 0.1em solid;
+
+    font-size: 0.8em;
+    line-height: 1em;
+    width: 4em;
+    opacity: 0.8;
+}
+
+.project-date .year {
+    color: gray;
+
+    font-size: 0.7em;
+}
+
+.project-date .month-day {
+    font-size: 1em;
+}
+
+.projects-list .project-title {
+    margin: 0 10px;
+}
+
+/* Resposive Web Design */
+@media screen and (max-width: 500px) {
+    .projects-list a {
+        width: 80vw;
+    }
+}
