@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
 import "./app.css";
-import Header from "./section/header.jsx";
 import Content from "./section/content.jsx";
 import Article from "./section/article.jsx";
 import {
@@ -29,7 +28,6 @@ export default class App extends PureComponent {
                 <div>
                     <Switch>
                         <Route exact path="/">
-                            <Header />
                             <Content setHeader={this.setHeader} />
                         </Route>
                         <Route path="/:id">

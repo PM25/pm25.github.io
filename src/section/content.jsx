@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import { Link } from "react-router-dom";
+import Header from "./header.jsx";
 
 export default class Content extends PureComponent {
     constructor(props) {
@@ -33,7 +34,8 @@ export default class Content extends PureComponent {
 
     render() {
         if (this.state.isLoaded) {
-            return (
+            return [
+                <Header />,
                 <div className="content">
                     {this.state.articles.map((state, key) => {
                         return (
@@ -46,8 +48,8 @@ export default class Content extends PureComponent {
                             />
                         );
                     })}
-                </div>
-            );
+                </div>,
+            ];
         } else {
             return <div className="content"></div>;
         }

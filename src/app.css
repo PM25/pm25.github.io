@@ -7,8 +7,10 @@ body {
 /* Header */
 #header {
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
+    font-family: "Ubuntu Mono", monospace;
 
     height: 50vh;
     color: white;
@@ -16,17 +18,22 @@ body {
 
 #header .title-box {
     position: fixed;
-    z-index: -1;
     text-align: center;
+
+    padding: 1em;
+    margin-top: 1em;
 }
 
 #header .title {
     display: flex;
-    font-family: "Ubuntu Mono", monospace;
     margin: auto;
-    padding-bottom: 0.25em;
 
     font-size: 4.5em;
+}
+
+#header .date {
+    font-weight: 300;
+    padding-top: 1em;
 }
 
 .typing-animation {
@@ -41,15 +48,14 @@ body {
 
 /* content */
 .content {
+    position: relative;
+
     min-height: 70vh;
     background: #fff;
     border-radius: 0.3em;
     margin: 0 2em 2em 2em;
     padding: 0.5em 1em;
-}
-
-.article {
-    font-size: 1.2em;
+    z-index: 1;
 }
 
 .article-block {
@@ -80,6 +86,16 @@ body {
 .article-block .preview {
     color: #555;
     font-weight: 300;
+}
+
+/* article content */
+.article {
+    font-size: 1.2em;
+}
+
+.article a:hover {
+    color: lightseagreen;
+    transition: 0.2s;
 }
 
 /* google slides */

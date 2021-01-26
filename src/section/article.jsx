@@ -6,6 +6,7 @@ export default class Article extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
+            base: "https://pm25.github.io/my-articles/",
             source: "https://pm25.github.io/my-articles/dict.json",
             sourceData: null,
             error: null,
@@ -35,12 +36,10 @@ export default class Article extends PureComponent {
 
     render() {
         if (this.state.isLoaded && this.state.error == null)
-            return (
-                <div>
-                    {this.renderHeader(this.state.sourceData)}
-                    {this.renderArticleContent(this.state.sourceData)}
-                </div>
-            );
+            return [
+                this.renderHeader(this.state.sourceData),
+                this.renderArticleContent(this.state.sourceData),
+            ];
         else return <div></div>;
     }
 
@@ -49,11 +48,7 @@ export default class Article extends PureComponent {
     }
 
     renderArticleContent(state) {
-        return (
-            <ArticleContent
-                url={"https://pm25.github.io/my-articles/" + state.path}
-            />
-        );
+        return <ArticleContent url={this.state.base + state.path} />;
     }
 }
 
