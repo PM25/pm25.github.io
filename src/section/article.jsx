@@ -15,14 +15,15 @@ export default class Article extends PureComponent {
     }
 
     componentDidMount() {
+        let title = this.props.name.replaceAll("-", " ");
+        document.title = title;
         fetch(this.state.source)
             .then((res) => res.json())
             .then(
                 (result) => {
-                    let key = this.props.name.replaceAll("-", " ");
                     this.setState({
                         isLoaded: true,
-                        sourceData: result[key],
+                        sourceData: result[title],
                     });
                 },
                 (error) => {

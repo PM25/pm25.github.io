@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import "./app.css";
-import Content from "./section/content.jsx";
+import Home from "./section/home.jsx";
 import Article from "./section/article.jsx";
 import {
     HashRouter as Router,
@@ -28,7 +28,7 @@ export default class App extends PureComponent {
                 <div>
                     <Switch>
                         <Route exact path="/">
-                            <Content setHeader={this.setHeader} />
+                            <Home setHeader={this.setHeader} />
                         </Route>
                         <Route path="/:id">
                             <Child />

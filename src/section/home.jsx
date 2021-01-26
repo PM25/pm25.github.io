@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import { Link } from "react-router-dom";
 import Header from "./header.jsx";
 
-export default class Content extends PureComponent {
+export default class Home extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
