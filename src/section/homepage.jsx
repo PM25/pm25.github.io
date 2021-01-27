@@ -59,7 +59,7 @@ export default class HomePage extends PureComponent {
 function ArticleBlock(props) {
     return (
         <div key={props.id} className="article-block">
-            <Link to={props.url}>
+            <Link to={"/article/" + props.url}>
                 <div className="title-date">
                     <span className="title"> {props.name} </span>
                     <span className="date">{props.date}</span>

@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-// import "./article.css";
+import "./article.css";
 import HomePage from "./section/homepage.jsx";
 import ArticlePage from "./section/articlepage.jsx";
 import {
@@ -25,10 +25,10 @@ function ArticleMain() {
     return (
         <div id="article" className="main">
             <Switch>
-                <Route exact path={`${url}`}>
+                <Route exact path={"/article"}>
                     <HomePage />
                 </Route>
-                <Route path={`${url}:id`}>
+                <Route path={"/article/:id"}>
                     <Child />
                 </Route>
             </Switch>
