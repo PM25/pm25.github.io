@@ -20,7 +20,7 @@ export default class Header extends PureComponent {
 
     render() {
         return (
-            <div id="header">
+            <div className="header">
                 <div className="title-box">
                     <div className="title typing-animation">
                         {this.state.title.map((value, key) => {

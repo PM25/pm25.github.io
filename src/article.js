@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import "./article.css";
+// import "./article.css";
 import HomePage from "./section/homepage.jsx";
 import ArticlePage from "./section/articlepage.jsx";
 import {
@@ -7,37 +7,33 @@ import {
     Switch,
     Route,
     useParams,
+    useRouteMatch,
 } from "react-router-dom";
 
 export default class Article extends PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = {
-            title: null,
-            date: null,
-        };
-    }
-
-    setHeader = (title, date) => {
-        this.setState({ title: title, date: date });
-    };
-
     render() {
         return (
             <Router>
-                <div id="main">
-                    <Switch>
-                        <Route exact path="/">
-                            <HomePage setHeader={this.setHeader} />
-                        </Route>
-                        <Route path="/:id">
-                            <Child />
-                        </Route>
-                    </Switch>
-                </div>
+                <ArticleMain />
             </Router>
         );
     }
+}
+
+function ArticleMain() {
+    let { url } = useRouteMatch();
+    return (
+        <div id="article" className="main">
+            <Switch>
+                <Route exact path={`${url}`}>
+                    <HomePage />
+                </Route>
+                <Route path={`${url}:id`}>
+                    <Child />
+                </Route>
+            </Switch>
+        </div>
+    );
 }
 
 function Child() {
