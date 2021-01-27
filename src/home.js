@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
-import "./app.css";
+import "./home.css";
 
-export default class App extends PureComponent {
+export default class Home extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
