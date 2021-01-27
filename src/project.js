@@ -1,8 +1,8 @@
 import React, { PureComponent } from "react";
-import "./app.css";
+import "./project.css";
 import sourceData from "./source/list.json";
 
-export default class App extends PureComponent {
+export default class Project extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
@@ -18,7 +18,6 @@ export default class App extends PureComponent {
                 </div>
                 <div class="projects-list">
                     {this.state.sourceData.map((state, key) => {
-                        console.log(state);
                         return (
                             <ProjectBlock
                                 id={key}
