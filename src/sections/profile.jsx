@@ -20,7 +20,7 @@ export default class ProfileSection extends PureComponent {
                     <div className="basic-info">
                         <div className="title-box">
                             <span className="name">
-                                <div className="main">黃品硯</div>
+                                <div>黃品硯</div>
                                 <div className="alt">Pin-Yen (Jason) Huang</div>
                             </span>
                             <span className="title">
