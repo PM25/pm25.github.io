@@ -12,8 +12,8 @@ export default class Project extends PureComponent {
 
     render() {
         return (
-            <div id="main">
-                <div id="header">
+            <div id="project" class="main">
+                <div class="header">
                     <a href=".">Project</a>
                 </div>
                 <div class="projects-list">

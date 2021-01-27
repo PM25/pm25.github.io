@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Monoton");
 
-body {
+#project {
     background: repeating-linear-gradient(
             45deg,
             #2b2b2b2b,
@@ -14,12 +14,8 @@ body {
     background-attachment: fixed;
 }
 
-#main {
-    min-height: 100vh;
-}
-
 /* Header */
-#header {
+#project .header {
     display: flex;
     position: relative;
     align-items: center;
@@ -31,7 +27,7 @@ body {
     width: 100%;
 }
 
-#header a {
+#project .header a {
     color: white;
     text-decoration: none;
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177,
@@ -41,18 +37,18 @@ body {
     transition-duration: 0.05s;
 }
 
-#header a:hover {
+#project .header a:hover {
     color: #ff1177;
     text-shadow: none;
 }
 
 /* Project Articles */
-.projects-list {
+#project .projects-list {
     padding: 1em;
 }
 
-.projects-list a,
-.projects-list a:visited {
+#project .projects-list a,
+#project .projects-list a:visited {
     display: flex;
     margin: 0.3em auto;
     text-decoration: none;
@@ -67,14 +63,12 @@ body {
     border: solid 1px #2b2b2b88;
 }
 
-.projects-list a:hover {
+#project .projects-list a:hover {
     background: #2b2b2b;
-
-    transition: 0.2s;
     border: solid 1px white;
 }
 
-.projects-list .project-date {
+#project .projects-list .project-date {
     text-align: center;
     border-right: 0.1em solid;
 
@@ -84,23 +78,23 @@ body {
     opacity: 0.8;
 }
 
-.project-date .year {
+#project .project-date .year {
     color: gray;
 
     font-size: 0.7em;
 }
 
-.project-date .month-day {
+#project .project-date .month-day {
     font-size: 1em;
 }
 
-.projects-list .project-title {
+#project .projects-list .project-title {
     margin: 0 10px;
 }
 
 /* Resposive Web Design */
 @media screen and (max-width: 500px) {
-    .projects-list a {
+    #project .projects-list a {
         width: 80vw;
     }
 }
