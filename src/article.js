@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
-import "./app.css";
-import Home from "./section/home.jsx";
-import Article from "./section/article.jsx";
+import "./article.css";
+import HomePage from "./section/homepage.jsx";
+import ArticlePage from "./section/articlepage.jsx";
 import {
     HashRouter as Router,
     Switch,
@@ -9,7 +9,7 @@ import {
     useParams,
 } from "react-router-dom";
 
-export default class App extends PureComponent {
+export default class Article extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
@@ -25,10 +25,10 @@ export default class App extends PureComponent {
     render() {
         return (
             <Router>
-                <div>
+                <div id="main">
                     <Switch>
                         <Route exact path="/">
-                            <Home setHeader={this.setHeader} />
+                            <HomePage setHeader={this.setHeader} />
                         </Route>
                         <Route path="/:id">
                             <Child />
@@ -42,5 +42,5 @@ export default class App extends PureComponent {
 
 function Child() {
     let { id } = useParams();
-    return <Article name={id} />;
+    return <ArticlePage name={id} />;
 }

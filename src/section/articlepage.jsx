@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import ReactMarkdown from "react-markdown";
 import SimpleHeader from "./simpleheader.jsx";
 
-export default class Article extends PureComponent {
+export default class ArticlePage extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {

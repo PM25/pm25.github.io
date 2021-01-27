@@ -7,7 +7,9 @@ export default function SimpleHeader(props) {
                 <div className="title" style={{ fontSize: "3em" }}>
                     {props.title}
                 </div>
-                <div className="date">Pin-Yen・{props.date}</div>
+                <div className="date">
+                    <a href="https://pm25.github.io">Pin-Yen</a>・{props.date}
+                </div>
             </div>
         </div>
     );
