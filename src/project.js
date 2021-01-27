@@ -12,11 +12,11 @@ export default class Project extends PureComponent {
 
     render() {
         return (
-            <div id="project" class="main">
-                <div class="header">
+            <div id="project" className="main">
+                <div className="header">
                     <a href=".">Project</a>
                 </div>
-                <div class="projects-list">
+                <div className="projects-list">
                     {this.state.sourceData.map((state, key) => {
                         return (
                             <ProjectBlock
