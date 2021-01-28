@@ -1,6 +1,9 @@
 import React, { PureComponent } from "react";
 import { Link } from "react-router-dom";
+import ReactGA from "react-ga";
 import Header from "./header.jsx";
+
+ReactGA.initialize("UA-129342449-2");
 
 export default class HomePage extends PureComponent {
     constructor(props) {
@@ -30,6 +33,7 @@ export default class HomePage extends PureComponent {
                     });
                 }
             );
+        ReactGA.pageview(window.location.pathname + window.location.search);
     }
 
     render() {

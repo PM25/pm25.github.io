@@ -1,6 +1,9 @@
 import React, { PureComponent } from "react";
 import ReactMarkdown from "react-markdown";
+import ReactGA from "react-ga";
 import SimpleHeader from "./simpleheader.jsx";
+
+ReactGA.initialize("UA-129342449-2");
 
 export default class ArticlePage extends PureComponent {
     constructor(props) {
@@ -33,6 +36,7 @@ export default class ArticlePage extends PureComponent {
                     });
                 }
             );
+        ReactGA.pageview(window.location.pathname + window.location.search);
     }
 
     render() {
