@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
+
 import "./index.css";
 import Navigator from "./components/src/navigator";
 import Footer from "./components/src/footer";
@@ -7,7 +9,7 @@ import About from "./about";
 import Home from "./home/src/home";
 import Project from "./project/src/project";
 import Article from "./article/src/article";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { useRouterGA } from "./components/src/google-analytics";
 
 ReactDOM.render(
     <React.StrictMode>
@@ -15,16 +17,16 @@ ReactDOM.render(
             <Navigator></Navigator>
             <Switch>
                 <Route exact path="/">
-                    <About />
+                    <AboutPage />
                 </Route>
                 <Route path="/home">
-                    <Home />
+                    <HomePage />
                 </Route>
                 <Route path="/project">
-                    <Project />
+                    <ProjectPage />
                 </Route>
                 <Route path="/article">
-                    <Article />
+                    <ArticlePage />
                 </Route>
             </Switch>
             <Footer></Footer>
@@ -32,3 +34,23 @@ ReactDOM.render(
     </React.StrictMode>,
     document.getElementById("root")
 );
+
+function AboutPage(props) {
+    useRouterGA();
+    return <About />;
+}
+
+function HomePage(props) {
+    useRouterGA();
+    return <Home />;
+}
+
+function ProjectPage(props) {
+    useRouterGA();
+    return <Project />;
+}
+
+function ArticlePage(props) {
+    useRouterGA();
+    return <Article />;
+}
