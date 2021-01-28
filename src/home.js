@@ -1,58 +1,25 @@
 import React, { PureComponent } from "react";
 import "./home.css";
+import { useGA } from "./components/src/google-analytics";
 
-export default class Home extends PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = {
-            flipList: [
-                "Knowledge",
-                "Happiness",
-                "Motivation",
-                "Prospective",
-                "Idea",
-            ],
-            quickNav: [
-                { name: "news", url: "#news" },
-                { name: "about", url: "/" },
-                { name: "article", url: "/article" },
-                { name: "project", url: "/project" },
-            ],
-        };
-    }
-
-    render() {
-        return (
-            <div id="main">
-                <div id="header">
-                    <BubbleBackground />
-                    <div id="title-box">
-                        <div className="title">
-                            <span> Plus </span>
-                            <span> a little </span>
-                            <span> More </span>
-                        </div>
-                        <div className="flip-list">
-                            <ul>
-                                {this.state.flipList.map((text, key) => {
-                                    return <li key={key}>{text}</li>;
-                                })}
-                            </ul>
-                        </div>
+export default function Home() {
+    useGA();
+    return (
+        <div id="main">
+            <div id="header">
+                <BubbleBackground />
+                <div id="title-box">
+                    <div className="title">
+                        <span> Plus </span>
+                        <span> a little </span>
+                        <span> More </span>
                     </div>
-                </div>
-                <div id="quick-nav">
-                    {this.state.quickNav.map((state, key) => {
-                        return (
-                            <a key={key} href={state.url}>
-                                {state.name}
-                            </a>
-                        );
-                    })}
+                    <FlipList />
                 </div>
             </div>
-        );
-    }
+            <QuickNav />
+        </div>
+    );
 }
 
 function BubbleBackground(props) {
@@ -83,6 +50,61 @@ function Bubble(props) {
             }}
         ></li>
     );
+}
+
+class FlipList extends PureComponent {
+    constructor(props) {
+        super(props);
+        this.state = {
+            flipList: [
+                "Knowledge",
+                "Happiness",
+                "Motivation",
+                "Prospective",
+                "Idea",
+            ],
+        };
+    }
+
+    render() {
+        return (
+            <div className="flip-list">
+                <ul>
+                    {this.state.flipList.map((text, key) => {
+                        return <li key={key}>{text}</li>;
+                    })}
+                </ul>
+            </div>
+        );
+    }
+}
+
+class QuickNav extends PureComponent {
+    constructor(props) {
+        super(props);
+        this.state = {
+            quickNav: [
+                { name: "news", url: "#news" },
+                { name: "about", url: "/" },
+                { name: "article", url: "/article" },
+                { name: "project", url: "/project" },
+            ],
+        };
+    }
+
+    render() {
+        return (
+            <div id="quick-nav">
+                {this.state.quickNav.map((state, key) => {
+                    return (
+                        <a key={key} href={state.url}>
+                            {state.name}
+                        </a>
+                    );
+                })}
+            </div>
+        );
+    }
 }
 
 function random(min, max) {
