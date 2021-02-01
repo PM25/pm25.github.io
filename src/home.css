@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:900");
 
 /* header */
-#header {
+#home .header {
     position: relative;
     display: flex;
     overflow: hidden;
@@ -17,7 +17,7 @@
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
-.bg-bubbles {
+#home .bg-bubbles {
     position: absolute;
 
     top: 0;
@@ -28,7 +28,7 @@
     height: 100%;
 }
 
-.bg-bubbles li {
+#home .bg-bubbles li {
     position: absolute;
     list-style: none;
     display: flex;
@@ -42,7 +42,7 @@
 }
 
 /* title-box */
-#title-box {
+#home .title-box {
     display: flex;
     flex-direction: column;
     font-family: "Roboto", sans-serif;
@@ -53,42 +53,43 @@
     z-index: 1;
 }
 
-#title-box .title {
+#home .title-box .title {
     display: flex;
     flex-direction: column;
     background: #fffc;
     transform-origin: top left;
 
-    padding: 0 0.2em;
+    padding: 0.05em 0.25em;
     margin: 0.2em;
     border-radius: 0.1em;
 }
 
-#title-box span:nth-child(1) {
-    animation: zoom 1.5s ease-out;
+#home .title-box span:nth-child(1) {
+    animation: zoom 1s ease-out;
 }
 
-#title-box span:nth-child(2) {
+#home .title-box span:nth-child(2) {
     font-size: 0.5em;
     line-height: 0.5em;
     transform: scale(0);
 
-    animation: zoom 1.5s 1s ease-out forwards;
+    animation: zoom 1s 0.5s ease-out forwards;
 }
 
-#title-box span:nth-child(3) {
+#home .title-box span:nth-child(3) {
     transform: scale(0);
 
-    animation: zoom 1.5s 1s ease-out forwards;
+    animation: zoom 1s 1s ease-out forwards;
 }
 
-.flip-list {
+#home .flip-list {
     overflow: hidden;
 
     height: 1em;
+    padding: 0.1em;
 }
 
-.flip-list ul {
+#home .flip-list ul {
     list-style: none;
     text-align: center;
 
@@ -97,11 +98,11 @@
     padding: 0;
     transform: translateY(0.5em);
 
-    animation: swipe-up 50s linear 2s infinite;
+    animation: swipe-up 25s linear 1.5s infinite;
 }
 
 /* quick-nav */
-#quick-nav {
+#home .quick-nav {
     display: flex;
     flex-direction: row;
     color: #eee;
@@ -110,7 +111,7 @@
     height: 2.5em;
 }
 
-#quick-nav > a {
+#home .quick-nav > a {
     display: flex;
     text-decoration: none;
     justify-content: center;
@@ -124,29 +125,9 @@
     transition: 0.15s;
 }
 
-#quick-nav > a:hover {
+#home .quick-nav > a:hover {
     padding: 0 1em;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
-
-#quick-nav > a:hover {
-    opacity: 1;
-}
-
-#quick-nav > a:nth-child(1) {
-    background: #65c6c4;
-}
-
-#quick-nav > a:nth-child(2) {
-    background: #408ab4;
-}
-
-#quick-nav > a:nth-child(3) {
-    background: #34699a;
-}
-
-#quick-nav > a:nth-child(4) {
-    background: #113f67;
 }
 
 /* Animation */
@@ -210,11 +191,11 @@
 
 /* Resposive Web Design */
 @media screen and (max-width: 800px) {
-    #title-box {
+    #home .title-box {
         font-size: 3.5em;
     }
 
-    #quick-nav > a:first-child {
+    #home .quick-nav > a:first-child {
         display: none;
     }
 }
