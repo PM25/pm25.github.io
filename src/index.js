@@ -3,12 +3,13 @@ import ReactDOM from "react-dom";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./index.css";
-import Navigator from "./components/src/navigator";
-import Footer from "./components/src/footer";
+
 import About from "./about";
 import Home from "./home/src/home";
 import Project from "./project/src/project";
 import Article from "./article/src/article";
+import Footer from "./components/src/footer";
+import Navigator from "./components/src/navigator";
 import { useRouterGA } from "./components/src/google-analytics";
 
 ReactDOM.render(
@@ -26,7 +27,7 @@ ReactDOM.render(
                     <ProjectPage />
                 </Route>
                 <Route path="/article">
-                    <ArticlePage />
+                    <Article />
                 </Route>
             </Switch>
             <Footer></Footer>
@@ -48,9 +49,4 @@ function HomePage(props) {
 function ProjectPage(props) {
     useRouterGA();
     return <Project />;
-}
-
-function ArticlePage(props) {
-    useRouterGA();
-    return <Article />;
 }

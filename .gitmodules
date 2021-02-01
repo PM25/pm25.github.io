@@ -1,6 +1,6 @@
 [submodule "src/components"]
 	path = src/components
-	url = https://github.com/PM25/react-components.git
+	url = https://github.com/pm25/react-components
 [submodule "src/home"]
 	path = src/home
 	url = https://github.com/pm25/home
