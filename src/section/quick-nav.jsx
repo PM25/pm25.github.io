@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import { HashRouter as Router, Link } from "react-router-dom";
 
 export default class QuickNav extends PureComponent {
     constructor(props) {
@@ -15,19 +16,21 @@ export default class QuickNav extends PureComponent {
 
     render() {
         return (
-            <div className="quick-nav">
-                {this.state.quickNav.map((state, key) => {
-                    return (
-                        <a
-                            key={key}
-                            href={state.url}
-                            style={{ backgroundColor: state.color }}
-                        >
-                            {state.name}
-                        </a>
-                    );
-                })}
-            </div>
+            <Router>
+                <div className="quick-nav">
+                    {this.state.quickNav.map((state, key) => {
+                        return (
+                            <Link
+                                key={key}
+                                to={state.url}
+                                style={{ backgroundColor: state.color }}
+                            >
+                                {state.name}
+                            </Link>
+                        );
+                    })}
+                </div>
+            </Router>
         );
     }
 }

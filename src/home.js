@@ -1,4 +1,5 @@
-import React, { PureComponent } from "react";
+import React from "react";
+
 import "./home.css";
 import Header from "./section/header.jsx";
 import QuickNav from "./section/quick-nav.jsx";
