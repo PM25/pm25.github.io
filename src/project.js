@@ -1,42 +1,15 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import "./project.css";
-import sourceData from "./source/list.json";
-import { useGA } from "./components/src/google-analytics";
+import Header from "./section/header.jsx";
+import ProjectBlocks from "./section/projectblocks.jsx";
 
 export default function Project() {
-    useGA();
     return (
         <div id="project" className="main">
-            <div className="header">
-                <a href=".">Project</a>
-            </div>
+            <Header />
             <div className="projects-list">
                 <ProjectBlocks />
             </div>
         </div>
-    );
-}
-
-class ProjectBlocks extends PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = {
-            sourceData: sourceData,
-        };
-    }
-
-    render() {
-        return this.state.sourceData.map((state, key) => {
-            return <ProjectBlock id={key} name={state.name} url={state.url} />;
-        });
-    }
-}
-
-function ProjectBlock(props) {
-    useGA();
-    return (
-        <a href={props.url} target="_blank" rel="noreferrer">
-            {props.name}
-        </a>
     );
 }
