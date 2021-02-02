@@ -6,7 +6,7 @@ export default (
         <Route path="/home" />
         <Route path="/project" />
         <Route path="/article" />
-        <Route path="/article/:id" />
+        <Route path="/#/article/:id" />
         <Route path="/:path" />
     </Route>
 );

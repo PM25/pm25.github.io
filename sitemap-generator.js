@@ -13,7 +13,7 @@ async function generateSitemap() {
         .then(
             (articleList) => {
                 let articleIdMap = articleList.map((article, key) => {
-                    return { id: article.name.replace(/ /g, " ") };
+                    return { id: article.name.replace(/ /g, "-") };
                 });
 
                 let projectIdMap = projectList
@@ -33,7 +33,7 @@ async function generateSitemap() {
                     });
 
                 const paramsConfig = {
-                    "/article/:id": articleIdMap,
+                    "/#/article/:id": articleIdMap,
                     "/:path": projectIdMap,
                 };
 
