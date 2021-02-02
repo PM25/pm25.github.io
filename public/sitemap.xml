@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://pm25.github.io/</loc> </url>
+<url> <loc>https://pm25.github.io/home</loc> </url>
+<url> <loc>https://pm25.github.io/project</loc> </url>
+<url> <loc>https://pm25.github.io/article</loc> </url>
+<url> <loc>https://pm25.github.io/article/Survey of Fact Verification in FEVER Dataset</loc> </url>
+<url> <loc>https://pm25.github.io/article/Deep Learning with Keras</loc> </url>
+<url> <loc>https://pm25.github.io/Realtime-YouBike-Status-System</loc> </url>
+<url> <loc>https://pm25.github.io/DataVisualization-Affect-of-Coronavirus-on-Air-Transportation</loc> </url>
+<url> <loc>https://pm25.github.io/Flappy-Bird</loc> </url>
+<url> <loc>https://pm25.github.io/8Queens-Genetic-Algorithm</loc> </url>
+</urlset>
