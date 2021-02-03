@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono");
+
+#article {
+    padding: 2em;
+    background: #292b36;
+}
+
+/* Header */
+#article .header {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    font-family: "Ubuntu Mono", monospace;
+
+    height: 50vh;
+    color: white;
+}
+
+#article .header .title-box {
+    position: fixed;
+    text-align: center;
+
+    padding: 1em;
+    margin-top: 1em;
+}
+
+#article .header .title {
+    display: flex;
+    margin: auto;
+
+    font-size: calc(100vw / 15);
+}
+
+#article .header .date {
+    font-weight: 300;
+    padding-top: 1em;
+}
+
+#article .typing-animation {
+    overflow: hidden;
+    white-space: nowrap;
+
+    width: 0;
+    border-right: 0.1em solid #e7e8eb;
+    animation: typing 2s steps(22, end) 0.5s forwards,
+        blinking-cursor 0.5s step-end infinite;
+}
+
+/* content */
+#article .content {
+    min-height: 50vh;
+    position: relative;
+
+    background: #fafafa;
+    border-radius: 0.3em;
+    padding: 0.5em 1em;
+    z-index: 1;
+}
+
+#article .article-block {
+    padding: 0.5em 1em;
+    margin-top: 0.1em;
+    border-radius: 0.3em;
+}
+
+#article .article-block:hover {
+    background: #292b3633;
+}
+
+#article .article-block .title-date {
+    display: flex;
+    align-items: center;
+}
+
+#article .article-block .title {
+    font-size: 1.5em;
+    margin-bottom: 0.2em;
+}
+
+#article .article-block .date {
+    font-size: 0.8em;
+    margin-left: auto;
+}
+
+#article .article-block .preview {
+    color: #555;
+    font-weight: 300;
+}
+
+/* article content */
+#article .article {
+    font-size: 1.2em;
+}
+
+#article .article a:hover {
+    color: lightseagreen;
+    transition: 0.2s;
+}
+
+/* google slides */
+#article .google-slides iframe {
+    border: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: calc(70vh * 16 / 9) !important;
+    height: 75vh !important;
+}
+
+/* Animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blinking-cursor {
+    0% {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #e7e8eb;
+    }
+}

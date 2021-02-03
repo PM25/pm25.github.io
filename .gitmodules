@@ -4,9 +4,6 @@
 [submodule "src/home"]
 	path = src/home
 	url = https://github.com/pm25/home
-[submodule "src/article"]
-	path = src/article
-	url = https://github.com/pm25/article
 [submodule "src/project"]
 	path = src/project
 	url = https://github.com/pm25/project
