@@ -1,6 +1,3 @@
 [submodule "src/components"]
 	path = src/components
 	url = https://github.com/pm25/react-components
-[submodule "src/project"]
-	path = src/project
-	url = https://github.com/pm25/project
