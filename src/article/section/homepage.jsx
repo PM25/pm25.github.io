@@ -1,5 +1,7 @@
 import React, { PureComponent } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
+
 import Header from "./header.jsx";
 
 export default class HomePage extends PureComponent {
@@ -35,6 +37,9 @@ export default class HomePage extends PureComponent {
     render() {
         if (this.state.isLoaded) {
             return [
+                <Helmet>
+                    <title>Article | PlusMore</title>
+                </Helmet>,
                 <Header />,
                 <div className="content">
                     {this.state.articles.map((state, key) => {

@@ -1,4 +1,6 @@
 import React from "react";
+import { Helmet } from "react-helmet";
+
 import "./about.css";
 import IntroSection from "./sections/intro.jsx";
 import SkillSection from "./sections/skills.jsx";
@@ -10,6 +12,10 @@ import PublicationsSection from "./sections/publications.jsx";
 export default function About() {
     return (
         <div className="about">
+            <Helmet>
+                <title>About | PlusMore</title>
+                <meta name="description" content="information about me" />
+            </Helmet>
             <ProfileSection></ProfileSection>
             <IntroSection></IntroSection>
             <ExperienceSection></ExperienceSection>

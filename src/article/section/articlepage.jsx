@@ -1,6 +1,8 @@
 import React, { PureComponent } from "react";
 import ReactMarkdown from "react-markdown";
+import { Helmet } from "react-helmet";
 import ReactGA from "react-ga";
+
 import SimpleHeader from "./simpleheader.jsx";
 
 ReactGA.initialize("UA-129342449-2");
@@ -14,12 +16,13 @@ export default class ArticlePage extends PureComponent {
             sourceData: null,
             error: null,
             isLoaded: false,
+            title: null,
         };
     }
 
     componentDidMount() {
         let title = this.props.name.replaceAll("-", " ");
-        document.title = title;
+        this.setState({ title: title });
         fetch(this.state.source)
             .then((res) => res.json())
             .then(
@@ -42,6 +45,9 @@ export default class ArticlePage extends PureComponent {
     render() {
         if (this.state.isLoaded && this.state.error == null)
             return [
+                <Helmet>
+                    <title> {this.state.title} | PlusMore</title>
+                </Helmet>,
                 this.renderHeader(this.state.sourceData),
                 this.renderArticleContent(this.state.sourceData),
             ];

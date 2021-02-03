@@ -4,8 +4,8 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./index.css";
 
-import About from "./about";
 import Home from "./home/home";
+import About from "./about/about";
 import Project from "./project/project";
 import Article from "./article/article";
 import Footer from "./components/src/footer";
