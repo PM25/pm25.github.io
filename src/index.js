@@ -5,9 +5,9 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import "./index.css";
 
 import About from "./about";
-import Home from "./home/src/home";
-import Project from "./project/src/project";
-import Article from "./article/src/article";
+import Home from "./home/home";
+import Project from "./project/project";
+import Article from "./article/article";
 import Footer from "./components/src/footer";
 import Navigator from "./components/src/navigator";
 import { useRouterGA } from "./components/src/google-analytics";
