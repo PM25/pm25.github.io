@@ -5,7 +5,7 @@ require("babel-register")({
 const fetch = require("node-fetch").default;
 const router = require("./sitemap-routes").default;
 const Sitemap = require("react-router-sitemap").default;
-const projectList = require("./src/project/src/source/list.json");
+const projectList = require("./src/project/source/list.json");
 
 async function generateSitemap() {
     fetch("https://pm25.github.io/my-articles/list.json")
