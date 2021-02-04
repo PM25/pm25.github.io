@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:900");
-
 /* header */
 #home .header {
     position: relative;
@@ -45,12 +43,13 @@
 #home .title-box {
     display: flex;
     flex-direction: column;
-    font-family: "Roboto", sans-serif;
+    font-family: sans-serif;
     align-items: center;
     color: #333b;
 
-    font-size: 4.5em;
     z-index: 1;
+    font-size: 4.5em;
+    font-weight: bold;
 }
 
 #home .title-box .title {
@@ -106,7 +105,6 @@
     display: flex;
     flex-direction: row;
     color: #eee;
-    font-weight: bold;
 
     height: 2.5em;
 }

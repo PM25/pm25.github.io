@@ -38,7 +38,7 @@ export default class HomePage extends PureComponent {
         if (this.state.isLoaded) {
             return [
                 <Helmet>
-                    <title>Article | PlusMore</title>
+                    <title>Article - PlusMore</title>
                 </Helmet>,
                 <Header />,
                 <div className="content">

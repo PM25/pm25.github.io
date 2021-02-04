@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-import "./project.css";
+import "./index.css";
 import Header from "./section/header.jsx";
 import ProjectBlocks from "./section/projectblocks.jsx";
 
@@ -9,7 +9,7 @@ export default function Project() {
     return (
         <div id="project" className="main">
             <Helmet>
-                <title>Project | PlusMore</title>
+                <title>Project - PlusMore</title>
                 <meta name="description" content="my side projects" />
             </Helmet>
             <Header />

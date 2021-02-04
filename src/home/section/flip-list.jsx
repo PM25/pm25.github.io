@@ -5,11 +5,11 @@ export default class FlipList extends PureComponent {
         super(props);
         this.state = {
             flipList: [
-                "Knowledge",
-                "Happiness",
-                "Motivation",
-                "Prospective",
-                "Idea",
+                "knowledge",
+                "happiness",
+                "motivation",
+                "prospective",
+                "idea",
             ],
         };
     }

@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import ReactGA from "react-ga";
 
-import "./article.css";
+import "./index.css";
 import HomePage from "./section/homepage.jsx";
 import ArticlePage from "./section/articlepage.jsx";
 

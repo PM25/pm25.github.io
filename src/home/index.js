@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-import "./home.css";
+import "./index.css";
 import Header from "./section/header.jsx";
 import QuickNav from "./section/quick-nav.jsx";
 import FlipList from "./section/flip-list.jsx";
@@ -11,7 +11,7 @@ export default function Home() {
     return (
         <div id="home">
             <Helmet>
-                <title>Home | PlusMore</title>
+                <title>Home - PlusMore</title>
                 <meta name="description" content="homepage of PlusMore" />
             </Helmet>
             <div className="header">

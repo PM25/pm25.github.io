@@ -46,7 +46,7 @@ export default class ArticlePage extends PureComponent {
         if (this.state.isLoaded && this.state.error == null)
             return [
                 <Helmet>
-                    <title> {this.state.title} | PlusMore</title>
+                    <title> {this.state.title} - PlusMore</title>
                 </Helmet>,
                 this.renderHeader(this.state.sourceData),
                 this.renderArticleContent(this.state.sourceData),
