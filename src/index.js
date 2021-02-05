@@ -5,11 +5,8 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import "./index.css";
 import Footer from "./components/src/footer";
 import Navigator from "./components/src/navigator";
+import Loader from "./components/src/loader";
 import { useRouterGA } from "./components/src/google-analytics";
-
-function Loader() {
-    return <div>Loading...</div>;
-}
 
 const load = (Component) => (props) => (
     <Suspense fallback={<Loader />}>

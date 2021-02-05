@@ -85,17 +85,17 @@
     overflow: hidden;
 
     height: 1em;
-    padding: 0.1em;
+    padding: 0.2em; /* avoid text cropping (e.g. q, p, g) */
 }
 
 #home .flip-list ul {
     list-style: none;
     text-align: center;
 
-    line-height: 200%;
+    line-height: 2em;
     margin: 0;
     padding: 0;
-    transform: translateY(0.5em);
+    transform: translateY(1em);
 
     animation: swipe-up 25s linear 1.5s infinite;
 }
