@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
-import "./index.css";
+// import "./index.css";
 import Footer from "./components/src/footer";
 import Navigator from "./components/src/navigator";
 import Loader from "./components/src/loader";
