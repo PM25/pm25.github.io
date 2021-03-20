@@ -2,6 +2,7 @@ import React, { PureComponent } from "react";
 import { useSpring, animated } from "react-spring";
 import ReactHtmlParser from "react-html-parser";
 import SimpleBar from "simplebar-react";
+import LazyLoad from "react-lazyload";
 import "simplebar/dist/simplebar.min.css";
 
 // images
@@ -153,7 +154,9 @@ function SkillsLevelBlock(props) {
     return (
         <li>
             <div className="logo-wrapper">
-                <img src={props.logo} alt="logo"></img>
+                <LazyLoad offset={50}>
+                    <img src={props.logo} alt="logo"></img>
+                </LazyLoad>
             </div>
             <span>{props.name}</span>
             <div className="progress-bar">

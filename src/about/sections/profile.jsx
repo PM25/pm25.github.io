@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 
 // images & other files
-import profileImg from "../img/profile2.jpg";
+import profileImg from "../img/profile2.webp";
 import cvPDF from "../source/cv_v3.pdf";
 
 export default class ProfileSection extends PureComponent {

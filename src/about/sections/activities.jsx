@@ -1,8 +1,9 @@
 import React, { PureComponent, useState } from "react";
 import { useSpring, animated } from "react-spring";
+import LazyLoad from "react-lazyload";
 
 // images
-import img1 from "../img/2019-9-4-workshop.jpg";
+import img1 from "../img/2019-9-4-workshop.webp";
 
 export default class ActivitiesSection extends PureComponent {
     constructor(props) {
@@ -70,7 +71,13 @@ function ActivitiesBlock(props) {
             </div>
 
             <animated.div style={showImgProps} className="img-container">
-                <img src={props.image} alt="" style={{ height: "20em" }}></img>
+                <LazyLoad offset={100}>
+                    <img
+                        src={props.image}
+                        alt=""
+                        style={{ height: "20em" }}
+                    ></img>
+                </LazyLoad>
             </animated.div>
         </div>
     );
