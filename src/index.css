@@ -1,15 +1,28 @@
 @import url("https://use.fontawesome.com/releases/v5.5.0/css/all.css");
+@import url("https://unpkg.com/simplebar@latest/dist/simplebar.css");
 @import url("https://fonts.googleapis.com/earlyaccess/notosanstc.css");
 
+html,
 body {
-    margin: 0;
+    position: absolute;
     font-family: "Noto Sans TC", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%; /* don't use 100vw */
+    background-color: #fafafa;
 }
 
-body {
-    background-color: #fafafa;
+.main {
+    min-height: 100vh;
+}
+
+a:visited,
+a:link {
+    color: inherit;
 }
 
 a {

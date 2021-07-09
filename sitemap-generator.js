@@ -8,13 +8,14 @@ const Sitemap = require("react-router-sitemap").default;
 const projectList = require("./src/project/source/list.json");
 
 async function generateSitemap() {
-    fetch("https://pm25.github.io/my-articles/list.json")
+    fetch("https://pm25.github.io/my-articles/index.json")
         .then((res) => res.json())
         .then(
             (articleList) => {
-                let articleIdMap = articleList.map((article, key) => {
-                    return { id: article.name.replace(/ /g, "-") };
-                });
+                let articleIdMap = [];
+                for (let article_title in articleList) {
+                    articleIdMap.push({ id: article_title.replace(/ /g, "-") });
+                } // console.log(articleIdMap)
 
                 let projectIdMap = projectList
                     .filter((project) => {

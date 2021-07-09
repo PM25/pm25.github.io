@@ -35,35 +35,55 @@ export default class ProfileSection extends PureComponent {
                                     data-tootik="LinkedIn"
                                     data-tootik-conf="bottom"
                                 >
-                                    <i className="fab fa-linkedin"></i>
+                                    <i
+                                        className="fab fa-linkedin"
+                                        aria-hidden="true"
+                                        title="LinkedIn"
+                                    ></i>
                                 </a>
                                 <a
                                     href="https://scholar.google.com.tw/citations?user=nQdpH2MAAAAJ"
                                     data-tootik="Google Scholar"
                                     data-tootik-conf="bottom"
                                 >
-                                    <i className="fas fa-graduation-cap"></i>
+                                    <i
+                                        className="fas fa-graduation-cap"
+                                        aria-hidden="true"
+                                        title="Google Scholar"
+                                    ></i>
                                 </a>
                                 <a
                                     href={cvPDF}
                                     data-tootik="Résumé"
                                     data-tootik-conf="bottom"
                                 >
-                                    <i className="far fa-id-badge"></i>
+                                    <i
+                                        className="far fa-id-badge"
+                                        aria-hidden="true"
+                                        title="Résumé"
+                                    ></i>
                                 </a>
                                 <a
                                     href="https://github.com/PM25"
                                     data-tootik="Github"
                                     data-tootik-conf="bottom"
                                 >
-                                    <i className="fab fa-github"></i>
+                                    <i
+                                        className="fab fa-github"
+                                        aria-hidden="true"
+                                        title="Github"
+                                    ></i>
                                 </a>
                                 <a
                                     href="https://www.facebook.com/pyhuang97"
                                     data-tootik="Facebook"
                                     data-tootik-conf="bottom"
                                 >
-                                    <i className="fab fa-facebook-square"></i>
+                                    <i
+                                        className="fab fa-facebook-square"
+                                        aria-hidden="true"
+                                        title="Facebook"
+                                    ></i>
                                 </a>
                             </div>
                         </div>
