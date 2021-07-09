@@ -11,25 +11,23 @@ export default class ArticlePage extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            base: "https://pm25.github.io/my-articles/",
-            source: "https://pm25.github.io/my-articles/dict.json",
+            file_name: this.props.name + ".json",
+            base_url: "https://pm25.github.io/my-articles/",
+            meta_dir: "https://pm25.github.io/my-articles/index/meta/",
             sourceData: null,
             error: null,
             isLoaded: false,
-            title: null,
         };
     }
 
     componentDidMount() {
-        let title = this.props.name.replaceAll("-", " ");
-        this.setState({ title: title });
-        fetch(this.state.source)
+        fetch(this.state.meta_dir + this.state.file_name)
             .then((res) => res.json())
             .then(
                 (result) => {
                     this.setState({
                         isLoaded: true,
-                        sourceData: result[title],
+                        sourceData: result,
                     });
                 },
                 (error) => {
@@ -46,7 +44,7 @@ export default class ArticlePage extends PureComponent {
         if (this.state.isLoaded && this.state.error == null)
             return [
                 <Helmet>
-                    <title> {this.state.title} - PlusMore</title>
+                    <title> {this.state.sourceData.title} - PlusMore</title>
                 </Helmet>,
                 this.renderHeader(this.state.sourceData),
                 this.renderArticleContent(this.state.sourceData),
@@ -55,11 +53,11 @@ export default class ArticlePage extends PureComponent {
     }
 
     renderHeader(state) {
-        return <SimpleHeader title={state.name} date={state.date} />;
+        return <SimpleHeader title={state.title} date={state.created_date} />;
     }
 
     renderArticleContent(state) {
-        return <ArticleContent url={this.state.base + state.path} />;
+        return <ArticleContent url={this.state.base_url + state.path} />;
     }
 }
 
@@ -94,9 +92,10 @@ class ArticleContent extends PureComponent {
     }
 
     render() {
+        console.log(this.state.error);
         if (this.state.isLoaded && this.state.error == null)
             return (
-                <div className="content article">
+                <div className="content article-content">
                     <ReactMarkdown
                         allowDangerousHtml={true}
                         linkTarget="_blank"
@@ -104,6 +103,18 @@ class ArticleContent extends PureComponent {
                     />
                 </div>
             );
-        else return <div className="content article"></div>;
+        else if (this.state.error)
+            return (
+                <ShowMessage msg="[Error] please refresh your page or check your link." />
+            );
+        else return <ShowMessage msg="Loading..." />;
     }
+}
+
+function ShowMessage(props) {
+    return (
+        <div className="content article-content">
+            <h1>{props.msg}</h1>
+        </div>
+    );
 }

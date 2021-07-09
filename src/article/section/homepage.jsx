@@ -8,7 +8,11 @@ export default class HomePage extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            source: "https://pm25.github.io/my-articles/list.json",
+            file_name: "list_0.json",
+            list_dir:
+                "https://pm25.github.io/my-articles/index/" +
+                this.props.category +
+                "/",
             articles: null,
             error: null,
             isLoaded: false,
@@ -16,7 +20,7 @@ export default class HomePage extends PureComponent {
     }
 
     componentDidMount() {
-        fetch(this.state.source)
+        fetch(this.state.list_dir + this.state.file_name)
             .then((res) => res.json())
             .then(
                 (result) => {
@@ -35,19 +39,19 @@ export default class HomePage extends PureComponent {
     }
 
     render() {
-        if (this.state.isLoaded) {
+        if (this.state.isLoaded && this.state.error == null) {
             return [
                 <Helmet>
                     <title>Article - PlusMore</title>
                 </Helmet>,
                 <Header />,
-                <div className="content">
+                <div className="content home-content">
                     {this.state.articles.map((state, key) => {
                         return (
                             <ArticleBlock
                                 id={key}
                                 name={state.name}
-                                date={state.date}
+                                date={state.created_date}
                                 url={state.name.replaceAll(" ", "-")}
                                 preview={state.preview}
                             />
@@ -55,8 +59,12 @@ export default class HomePage extends PureComponent {
                     })}
                 </div>,
             ];
+        } else if (this.state.error) {
+            return (
+                <ShowMessage msg="[Error] please refresh your page or check your link." />
+            );
         } else {
-            return <div className="content"></div>;
+            return <ShowMessage msg="Loading..." />;
         }
     }
 }
@@ -64,13 +72,21 @@ export default class HomePage extends PureComponent {
 function ArticleBlock(props) {
     return (
         <div key={props.id} className="article-block">
-            <Link to={"/article/" + props.url}>
+            <Link to={"/article/content/" + props.url}>
                 <div className="title-date">
                     <span className="title"> {props.name} </span>
                     <span className="date">{props.date}</span>
                 </div>
                 <div className="preview"> {props.preview} </div>
             </Link>
+        </div>
+    );
+}
+
+function ShowMessage(props) {
+    return (
+        <div className="content article-content">
+            <h1>{props.msg}</h1>
         </div>
     );
 }

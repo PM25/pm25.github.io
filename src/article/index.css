@@ -54,7 +54,6 @@
 
     background: #fafafa;
     border-radius: 0.3em;
-    padding: 0.5em 1em;
     z-index: 1;
 }
 
@@ -88,12 +87,18 @@
     font-weight: 300;
 }
 
-/* article content */
-#article .article {
-    font-size: 1.2em;
+/* homepage content */
+#article .home-content {
+    padding: 0.5em;
 }
 
-#article .article a:hover {
+/* article content */
+#article .article-content {
+    font-size: 1.25em;
+    padding: 0.5em 2em;
+}
+
+#article .article-content a:hover {
     color: lightseagreen;
     transition: 0.2s;
 }

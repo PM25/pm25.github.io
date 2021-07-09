@@ -18,13 +18,16 @@ export default function Article() {
             <div id="article" className="main">
                 <Switch>
                     <Route exact path={"/"}>
-                        <Home />
+                        <ArticleHome />
                     </Route>
                     <Route exact path={"/article"}>
-                        <Home />
+                        <ArticleHome category={"computer-science"} />
                     </Route>
-                    <Route path={"/article/:id"}>
-                        <Child />
+                    <Route exact path={"/article/:id"}>
+                        <ArticleHome />
+                    </Route>
+                    <Route path={"/article/content/:id"}>
+                        <ArticleChild />
                     </Route>
                 </Switch>
             </div>
@@ -32,17 +35,25 @@ export default function Article() {
     );
 }
 
-function Home() {
+// main page of "article"
+function ArticleHome(props) {
     useRouterGA();
-    return <HomePage />;
+    let { id } = useParams();
+    // use props.category if it's given
+    if (props.category) {
+        id = props.category;
+    }
+    return <HomePage category={id} />;
 }
 
-function Child() {
+// article page
+function ArticleChild() {
     useRouterGA();
     let { id } = useParams();
     return <ArticlePage name={id} />;
 }
 
+// enable Google Analytics service
 const useRouterGA = () => {
     const location = useLocation();
     console.log(location);
