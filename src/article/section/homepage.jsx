@@ -61,7 +61,7 @@ export default class HomePage extends PureComponent {
             ];
         } else if (this.state.error) {
             return (
-                <ShowMessage msg="[Error] please refresh your page or check your link." />
+                <ShowMessage msg="[ something went wrong :( ] please refresh your page or check your link." />
             );
         } else {
             return <ShowMessage msg="Loading..." />;

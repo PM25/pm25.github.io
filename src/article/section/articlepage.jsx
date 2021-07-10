@@ -49,11 +49,16 @@ export default class ArticlePage extends PureComponent {
                 this.renderHeader(this.state.sourceData),
                 this.renderArticleContent(this.state.sourceData),
             ];
-        else return <div></div>;
+        else if (this.state.error)
+            return (
+                <ShowMessage msg="[ something went wrong :( ] please refresh your page or check your link." />
+            );
+        else return <ShowMessage msg="Loading..." />;
     }
 
     renderHeader(state) {
-        return <SimpleHeader title={state.title} date={state.created_date} />;
+        let created_date = state.created_date.split(" ");
+        return <SimpleHeader title={state.title} date={created_date[0]} />;
     }
 
     renderArticleContent(state) {
@@ -92,7 +97,6 @@ class ArticleContent extends PureComponent {
     }
 
     render() {
-        console.log(this.state.error);
         if (this.state.isLoaded && this.state.error == null)
             return (
                 <div className="content article-content">
@@ -105,7 +109,7 @@ class ArticleContent extends PureComponent {
             );
         else if (this.state.error)
             return (
-                <ShowMessage msg="[Error] please refresh your page or check your link." />
+                <ShowMessage msg="[ something went wrong :( ] please refresh your page or check your link." />
             );
         else return <ShowMessage msg="Loading..." />;
     }

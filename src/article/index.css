@@ -98,6 +98,10 @@
     padding: 0.5em 2em;
 }
 
+#article img {
+    max-width: 100%;
+}
+
 #article .article-content a:hover {
     color: lightseagreen;
     transition: 0.2s;
