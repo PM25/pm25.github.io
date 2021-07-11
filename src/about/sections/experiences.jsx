@@ -25,8 +25,7 @@ export default class ExperienceSection extends PureComponent {
                     ],
                 },
                 {
-                    title:
-                        "Research Scholarship from Ministry of Science and Technology",
+                    title: "Research Scholarship from Ministry of Science and Technology",
                     organization: "National Chengchi University",
                     supervisor: "Advisor: Prof. Chao-Lin Liu",
                     period: "July 2019 - Feb 2020",

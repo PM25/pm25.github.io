@@ -52,7 +52,7 @@ export default class HomePage extends PureComponent {
                                 id={key}
                                 name={state.name}
                                 date={state.created_date}
-                                url={state.name.replaceAll(" ", "-")}
+                                url={state.id}
                                 preview={state.preview}
                             />
                         );

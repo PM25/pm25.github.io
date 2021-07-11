@@ -97,37 +97,31 @@ export default class SkillSection extends PureComponent {
                 <div className="content" ref={this.contentRef}>
                     <SimpleBar className="details">
                         {this.state.skillsText.map((state, key) => {
-                            return this.renderSkillsTextBlock(state);
+                            return (
+                                <SkillsTextBlock
+                                    key={key}
+                                    name={state.name}
+                                    icon={state.icon}
+                                    content={state.content}
+                                />
+                            );
                         })}
                     </SimpleBar>
                     <ul>
                         {this.state.skillsLevel.map((state, key) => {
-                            return this.renderSkillsLevelBlock(state);
+                            return (
+                                <SkillsLevelBlock
+                                    key={key}
+                                    name={state.name}
+                                    logo={state.logo}
+                                    level={state.level}
+                                    active={this.state.activeSkillsLevel}
+                                />
+                            );
                         })}
                     </ul>
                 </div>
             </div>
-        );
-    }
-
-    renderSkillsTextBlock(state) {
-        return (
-            <SkillsTextBlock
-                name={state.name}
-                icon={state.icon}
-                content={state.content}
-            ></SkillsTextBlock>
-        );
-    }
-
-    renderSkillsLevelBlock(state) {
-        return (
-            <SkillsLevelBlock
-                name={state.name}
-                logo={state.logo}
-                level={state.level}
-                active={this.state.activeSkillsLevel}
-            ></SkillsLevelBlock>
         );
     }
 }
