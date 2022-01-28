@@ -8,7 +8,7 @@
         "@testing-library/react": "^11.2.3",
         "@testing-library/user-event": "^12.6.0",
         "braces": "^3.0.2",
-        "node-fetch": "^2.6.1",
+        "node-fetch": "^3.1.1",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
         "react-ga": "^3.3.0",
