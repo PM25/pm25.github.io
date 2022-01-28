@@ -31,7 +31,7 @@ export default class ProfileSection extends PureComponent {
                             </span>
                             <div className="info">
                                 <a
-                                    href="https://www.linkedin.com/in/PM-Huang"
+                                    href="https://www.linkedin.com/in/py-huang"
                                     data-tootik="LinkedIn"
                                     data-tootik-conf="bottom"
                                 >
