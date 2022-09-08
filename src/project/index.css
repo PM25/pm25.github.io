@@ -53,12 +53,9 @@
     display: flex;
     margin: 0.3em auto;
     text-decoration: none;
+    align-items: center;
     background: #2b2b2b88;
     color: white;
-    /* align-items: center;
-    justify-content: space-between; */
-    /* cursor: pointer; */
-    /* user-select: none; */
 
     border-radius: 0.3em;
     width: 40em;
@@ -69,31 +66,23 @@
     border: solid 1px #2b2b2b88;
 }
 
-/* #project .projects-list .item:hover {
-    background: #2b2b2b;
-    border: solid 1px white;
-}
-*/
-
  #project .projects-list .item:hover {
     background: #2b2b2baa;
-    /* border: solid 1px white; */
 }
 
 #project .projects-list .preview {
-    max-height: 9em;
     width: 17em;
 }
 
-#project .projects-list .item .intro {
+#project .projects-list .item .info {
     position: relative;
     width: 100%;
+    min-height: 9em;
     margin-left: 1em;
 }
 
 #project .projects-list .linkbar {
     display: flex;
-    
     margin: .3em 0;
 }
 
@@ -102,11 +91,15 @@
     align-items: center;
 }
 
+#project .projects-list .link-icon {
+    margin-right: .15em;
+}
+
 #project .projects-list .link {
     cursor: pointer;
     user-select: none;
     
-    padding: .2em .3em;
+    padding: .2em .6em;
     margin-right: .5em;
     font-size: .7em;
     border-radius: .25em;
@@ -115,6 +108,15 @@
 
 #project .projects-list .link:hover {
     color: #ccc;
+}
+
+#project .projects-list .item .intro {
+    font-size: .7em;
+    color: #fff9;
+}
+
+#project .projects-list .item .intro a:hover {
+    color: #fff;
 }
 
 #project .projects-list .item .date {

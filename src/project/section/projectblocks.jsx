@@ -1,4 +1,5 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent, useState, useEffect } from "react";
+import ReactMarkdown from "react-markdown";
 import LazyLoad from "react-lazyload";
 import GitHubButton from "react-github-btn";
 
@@ -18,10 +19,10 @@ export default class ProjectBlocks extends PureComponent {
                 <ProjectBlock
                     name={state.name}
                     date={state.date}
+                    idx={this.state.sourceData.length - key}
                     img={state.img}
                     url={state.url}
                     github={state.github}
-                    // description={state.description}
                 ></ProjectBlock>
             );
         });
@@ -35,8 +36,8 @@ function ProjectBlock(props) {
                 <img src={props.img} alt="Preview" className="preview"></img>
             </LazyLoad>
 
-            <div className="intro">
-                <div className="name">{props.name}</div>
+            <div className="info">
+                <div className="name">{props.idx + ". " + props.name}</div>
                 <div className="linkbar">
                     <LinkButton
                         url={props.url}
@@ -45,13 +46,13 @@ function ProjectBlock(props) {
                         color="#277BC077"
                     />
                     <LinkButton
-                        url={props.github}
+                        url={"https://github.com/" + props.github}
                         icon="fab fa-github"
                         name="Github"
                         color="#7D9D9C77"
                     />
                     <GitHubButton
-                        href={props.github}
+                        href={"https://github.com/" + props.github}
                         data-icon="octicon-star"
                         data-show-count="true"
                         data-size="large"
@@ -60,6 +61,9 @@ function ProjectBlock(props) {
                         Star
                     </GitHubButton>
                 </div>
+                <LazyLoad offset={100}>
+                    <IntroParagraph github={props.github} />
+                </LazyLoad>
                 <div className="date">{props.date}</div>
             </div>
         </div>
@@ -77,11 +81,59 @@ function LinkButton(props) {
                     className="link"
                     style={{ background: props.color }}
                 >
-                    <i className={props.icon}></i> {props.name}
+                    <i className={props.icon + " link-icon"}></i> {props.name}
                 </a>
             ) : (
                 ""
             )}
         </span>
+    );
+}
+
+function IntroParagraph(props) {
+    const [data, setData] = useState({ intro: "", max_len: 255 });
+
+    // fetch and process the introduction from github README.md
+    useEffect(() => {
+        if (data.intro === "") {
+            fetch(
+                "https://raw.githubusercontent.com/" +
+                    props.github +
+                    "/master/README.md"
+            ).then((r) => {
+                r.text().then((d) => {
+                    // remove the first line
+                    let lines = d.trim().split("\n");
+                    lines.splice(0, 1);
+                    d = lines.join(" ");
+                    // change all "<br>" to " "
+                    lines = d.trim().split("<br>");
+                    d = lines.join(" ");
+                    // remove non-introduction part
+                    d = d.split("#")[0];
+                    // get first n characters only
+                    d = d.slice(0, data.max_len);
+                    // remove the last word (in case it's not completed)
+                    lines = d.split(" ");
+                    lines.pop();
+                    d = lines.join(" ");
+                    // add a message if there's no word
+                    if (d === "") d = "There is no description yet";
+                    d = d + "...";
+                    console.log(d);
+                    // save the result
+                    setData({ intro: d });
+                });
+            });
+        }
+    });
+
+    return (
+        <ReactMarkdown
+            allowDangerousHtml={true}
+            linkTarget="_blank"
+            children={data.intro}
+            className="intro"
+        />
     );
 }

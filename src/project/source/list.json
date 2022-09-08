@@ -2,42 +2,42 @@
     {
         "name": "SimplePlus Beamer Theme",
         "img": "https://raw.githubusercontent.com/PM25/SimplePlus-BeamerTheme/master/img/1.webp",
-        "github": "https://github.com/PM25/SimplePlus-BeamerTheme",
+        "github": "PM25/SimplePlus-BeamerTheme",
         "url": "",
         "date": "2021-12-14"
     },
     {
         "name": "SimpleDarkBlue Beamer Theme",
         "img": "https://raw.githubusercontent.com/PM25/SimpleDarkBlue-BeamerTheme/master/img/0001.webp",
-        "github": "https://github.com/PM25/SimpleDarkBlue-BeamerTheme",
+        "github": "PM25/SimpleDarkBlue-BeamerTheme",
         "url": "",
         "date": "2021-01-19"
     },
     {
         "name": "Realtime YouBike Status System",
         "img": "https://raw.githubusercontent.com/PM25/Realtime-YouBike-Status-System/master/img/snapshot.jpg",
-        "github": "https://github.com/PM25/Realtime-YouBike-Status-System",
+        "github": "PM25/Realtime-YouBike-Status-System",
         "url": "https://pm25.github.io/Realtime-YouBike-Status-System",
         "date": "2020-06-14"
     },
     {
         "name": "Visualization the Affect of Coronavirus on Air Transportation",
         "img": "",
-        "github": "https://github.com/PM25/DataVisualization-Affect-of-Coronavirus-on-Air-Transportation",
+        "github": "PM25/DataVisualization-Affect-of-Coronavirus-on-Air-Transportation",
         "url": "https://pm25.github.io/DataVisualization-Affect-of-Coronavirus-on-Air-Transportation",
         "date": "2020-05-18"
     },
     {
         "name": "Flappy Bird",
-        "img": "",
-        "github": "https://github.com/PM25/Flappy-Bird",
+        "img": "https://raw.githubusercontent.com/PM25/Flappy-Bird/master/img/preview.jpg",
+        "github": "/PM25/Flappy-Bird",
         "url": "https://pm25.github.io/Flappy-Bird",
         "date": "2019-02-13"
     },
     {
         "name": "8Queens Problem",
         "img": "",
-        "github": "https://github.com/PM25/8Queens-Genetic-Algorithm",
+        "github": "/PM25/8Queens-Genetic-Algorithm",
         "url": "https://pm25.github.io/8Queens-Genetic-Algorithm",
         "date": "2018-11-14"
     }
