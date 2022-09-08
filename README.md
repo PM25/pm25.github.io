@@ -5,13 +5,10 @@
 ---
 
 ### About
-
 https://pm25.github.io
 
 ### Projects
-
-https://pm25.github.io/c/projects
+https://pm25.github.io/#/project
 
 ### Homepage
-
-https://pm25.github.io/c/homepage
+https://pm25.github.io/#/home
