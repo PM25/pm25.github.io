@@ -29,6 +29,7 @@
 
 #project .header a {
     color: white;
+    user-select: none;
     text-decoration: none;
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177,
         0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 75px #ff1177;
@@ -47,49 +48,84 @@
     padding: 1em;
 }
 
-#project .projects-list a,
-#project .projects-list a:visited {
+#project .projects-list .item,
+#project .projects-list .item:visited {
     display: flex;
     margin: 0.3em auto;
     text-decoration: none;
+    align-items: center;
     background: #2b2b2b88;
     color: white;
-    align-items: center;
 
     border-radius: 0.3em;
-    width: 60vw;
+    width: 40em;
+    min-width: 55vw;
+    max-width: 90vw;
     font-size: 1.3em;
-    padding: 10px;
+    padding: 0.5em;
     border: solid 1px #2b2b2b88;
 }
 
-#project .projects-list a:hover {
-    background: #2b2b2b;
-    border: solid 1px white;
+ #project .projects-list .item:hover {
+    background: #2b2b2baa;
 }
 
-#project .projects-list .project-date {
-    text-align: center;
-    border-right: 0.1em solid;
-
-    font-size: 0.8em;
-    line-height: 1em;
-    width: 4em;
-    opacity: 0.8;
+#project .projects-list .preview {
+    width: 17em;
 }
 
-#project .project-date .year {
-    color: gray;
-
-    font-size: 0.7em;
+#project .projects-list .item .info {
+    position: relative;
+    width: 100%;
+    min-height: 9em;
+    margin-left: 1em;
 }
 
-#project .project-date .month-day {
-    font-size: 1em;
+#project .projects-list .linkbar {
+    display: flex;
+    margin: .3em 0;
 }
 
-#project .projects-list .project-title {
-    margin: 0 10px;
+#project .projects-list .linkbar span {
+    display: flex;
+    align-items: center;
+}
+
+#project .projects-list .link-icon {
+    margin-right: .15em;
+}
+
+#project .projects-list .link {
+    cursor: pointer;
+    user-select: none;
+    
+    padding: .2em .6em;
+    margin-right: .5em;
+    font-size: .7em;
+    border-radius: .25em;
+    border: solid 1px transparent;
+}
+
+#project .projects-list .link:hover {
+    color: #ccc;
+}
+
+#project .projects-list .item .intro {
+    font-size: .7em;
+    color: #fff9;
+}
+
+#project .projects-list .item .intro a:hover {
+    color: #fff;
+}
+
+#project .projects-list .item .date {
+    position: absolute;
+    text-align: right;
+    
+    right: 0;
+    bottom: 0;
+    font-size: .75em;
 }
 
 /* Resposive Web Design */
