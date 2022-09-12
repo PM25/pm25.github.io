@@ -120,7 +120,6 @@ function IntroParagraph(props) {
                     // add a message if there's no word
                     if (d === "") d = "There is no description yet";
                     d = d + "...";
-                    console.log(d);
                     // save the result
                     setData({ intro: d });
                 });

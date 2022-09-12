@@ -23,8 +23,8 @@
     font-family: "Monoton", cursive;
     color: white;
 
-    height: 12em;
     width: 100%;
+    padding: 3em 0;
 }
 
 #project .header a {
@@ -34,7 +34,7 @@
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177,
         0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 75px #ff1177;
 
-    font-size: calc(100vw / 10);
+    font-size: 7em;
     transition-duration: 0.05s;
 }
 
