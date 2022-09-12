@@ -20,25 +20,23 @@
     position: relative;
     align-items: center;
     justify-content: center;
-    font-family: "Monoton", cursive;
-    color: white;
 
     width: 100%;
     padding: 3em 0;
 }
 
-#project .header a {
-    color: white;
+#project .header .button {
+    cursor: pointer;
     user-select: none;
     text-decoration: none;
+    font-family: "Monoton", cursive;
+    color: white;
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177,
         0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 75px #ff1177;
-
     font-size: 7em;
-    transition-duration: 0.05s;
 }
 
-#project .header a:hover {
+#project .header .button:hover {
     color: #ff1177;
     text-shadow: none;
 }
