@@ -5,29 +5,30 @@ export default class BioSection extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            residence: {
-                name: "Residence",
-                icon: "fas fa-thumbtack",
-                content: "Taipei, Taiwan",
-            },
-            hometown: {
-                name: "Hometown",
-                icon: "fas fa-search-location",
-                content: "Taichung, Taiwan",
-            },
-            birthplace: {
-                name: "Birthplace",
-                icon: "fas fa-map-marked-alt",
-                content: "Auckland, New Zealand",
-            },
-            email: {
-                icon: "far fa-envelope",
-                content: "pyhuang97@gmail.com",
-                url: "mailto:pyhuang97@gmail.com",
-            },
+            info: [
+                // {
+                //     name: "Residence",
+                //     icon: "fas fa-thumbtack",
+                //     content: "Taipei, Taiwan",
+                // },
+                {
+                    name: "Hometown",
+                    icon: "fas fa-search-location",
+                    content: "Taichung, Taiwan",
+                },
+                // {
+                //     name: "Birthplace",
+                //     icon: "fas fa-map-marked-alt",
+                //     content: "Auckland, New Zealand",
+                // },
+                {
+                    icon: "far fa-envelope",
+                    content: "pyhuang97@gmail.com",
+                    // url: "mailto:pyhuang97@gmail.com",
+                },
+            ],
             bio: [
-                "Hi! I am Pin-Yen, you can also call me Jason.",
-                "I'm a M.S. student in Computer Science and Information Engineering at the National Taiwan University (NTU), advised by Prof. <a href='https://www.csie.ntu.edu.tw/~htlin/'>Hsuan-Tien Lin</a>. My research focuses on <b>artificial intelligence</b> and <b>machine learning</b>.",
+                "I am a Computer Science M.S. student at National Taiwan University (NTU), advised by <a href='http://www.digital.ntu.edu.tw/hsiang/english.html' target='_blank'>Prof. Jieh Hsiang</a>. My research focuses on machine learning with limited labeled data, particularly on understanding their trustworthiness. Prior to joining NTU, I obtained my B.S. degree in Computer Science at National Chengchi University (NCCU).",
             ],
         };
     }
@@ -38,10 +39,9 @@ export default class BioSection extends PureComponent {
                 <h2 className="header">Introduction</h2>
                 <div className="content">
                     <div className="info">
-                        {this.renderInfoBlock(this.state.residence)}
-                        {this.renderInfoBlock(this.state.hometown)}
-                        {this.renderInfoBlock(this.state.birthplace)}
-                        {this.renderInfoBlock(this.state.email)}
+                        {this.state.info.map((value, key) => {
+                            return this.renderInfoBlock(value);
+                        })}
                     </div>
                     <div className="paragraph">
                         {/* add linebreak(div) at the end of each of sentence */}

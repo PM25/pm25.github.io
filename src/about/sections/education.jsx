@@ -4,44 +4,47 @@ import React, { PureComponent } from "react";
 import ntuLogo from "../img/ntu_logo.webp";
 import nccuLogo from "../img/nccu_logo.webp";
 import ncnuLogo from "../img/ncnu_logo.webp";
-import tcsshLogo from "../img/tcssh_logo.webp";
+// import tcsshLogo from "../img/tcssh_logo.webp";
 
 export default class EducationSection extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            ntu: {
-                name: "National Taiwan University",
-                degree: "Master of Science",
-                department: "Computer Science and Information Engineering",
-                period: "2020.9 - Present",
-                logo: ntuLogo,
-                status: "current",
-            },
-            nccu: {
-                name: "National Chengchi University",
-                degree: "Bachelor of Science",
-                department: "Computer Science",
-                period: "2018.9 - 2020.6",
-                logo: nccuLogo,
-                status: "before",
-            },
-            ncnu: {
-                name: "National Chi Nan University",
-                degree: "Bachelor of Science",
-                department: "Computer Science and Information Engineering",
-                period: "2016.9 - 2018.6",
-                logo: ncnuLogo,
-                status: "before",
-            },
-            tcssh: {
-                name: "Taichung Second Senior High School",
-                degree: "Senior High School",
-                department: "Regular",
-                period: "2013.9 - 2016.6",
-                logo: tcsshLogo,
-                status: "before",
-            },
+            educations: [
+                {
+                    name: "National Taiwan University",
+                    degree: "MS",
+                    department:
+                        "Computer Science and Information Engineering (Artificial Intelligence Program)",
+                    period: "2020.9 - Present",
+                    logo: ntuLogo,
+                    status: "current",
+                },
+                {
+                    name: "National Chengchi University",
+                    degree: "BS",
+                    department: "Computer Science",
+                    period: "2018.9 - 2020.6",
+                    logo: nccuLogo,
+                    status: "before",
+                },
+                {
+                    name: "National Chi Nan University",
+                    degree: "BS",
+                    department: "Computer Science and Information Engineering",
+                    period: "2016.9 - 2018.6",
+                    logo: ncnuLogo,
+                    status: "before",
+                },
+                // {
+                //     name: "Taichung Second Senior High School",
+                //     degree: "Senior High School",
+                //     department: "",
+                //     period: "2013.9 - 2016.6",
+                //     logo: tcsshLogo,
+                //     status: "before",
+                // },
+            ],
         };
     }
 
@@ -49,14 +52,16 @@ export default class EducationSection extends PureComponent {
         return (
             <div className="education">
                 <h2 className="header">Education</h2>
-                <div className="content">
-                    <div className="timeline-container">
-                        <div className="edu-timeline">
-                            {this.renderEdu(this.state.ntu)}
-                            {this.renderEdu(this.state.nccu)}
-                            {this.renderEdu(this.state.ncnu)}
-                            {this.renderEdu(this.state.tcssh)}
-                        </div>
+                <div
+                    className="timeline-container"
+                    style={{
+                        height: this.state.educations.length * 3.5 + "em",
+                    }}
+                >
+                    <div className="edu-timeline">
+                        {this.state.educations.map((value, key) => {
+                            return this.renderEdu(value);
+                        })}
                     </div>
                 </div>
             </div>

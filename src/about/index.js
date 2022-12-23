@@ -13,7 +13,7 @@ export default function About() {
     return (
         <div className="about">
             <Helmet>
-                <title>About - PlusMore</title>
+                <title>About Me - PlusMore</title>
                 <meta name="description" content="information about me" />
             </Helmet>
             <ProfileSection></ProfileSection>

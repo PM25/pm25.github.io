@@ -26,7 +26,6 @@
 }
 
 #project .header .button {
-    cursor: pointer;
     user-select: none;
     text-decoration: none;
     font-family: "Monoton", cursive;
