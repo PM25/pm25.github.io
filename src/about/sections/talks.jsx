@@ -5,13 +5,13 @@ import LazyLoad from "react-lazyload";
 // images
 import img1 from "../img/2019-9-4-workshop.webp";
 
-export default class ActivitiesSection extends PureComponent {
+export default class TalksSection extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
             activities: [
                 {
-                    title: "[Workshop/Presentation] Deep Learning with Keras",
+                    title: "Deep Learning with Keras",
                     location:
                         "University of Illinois Urbana-Champaign (UIUC), Illinois, USA",
                     time: "Sep 4, 2019",
@@ -25,12 +25,14 @@ export default class ActivitiesSection extends PureComponent {
 
     render() {
         return (
-            <div id="activities" className="section">
-                <h2 className="header">Activities</h2>
-                <div className="content">
-                    {this.state.activities.map((state, key) => {
-                        return this.renderActivitiesBlock(state);
-                    })}
+            <div id="talks" className="section">
+                <div className="container">
+                    <h2 className="header">Presentations / Talks</h2>
+                    <div className="content">
+                        {this.state.activities.map((state, key) => {
+                            return this.renderActivitiesBlock(state);
+                        })}
+                    </div>
                 </div>
             </div>
         );
@@ -38,18 +40,18 @@ export default class ActivitiesSection extends PureComponent {
 
     renderActivitiesBlock(state) {
         return (
-            <ActivitiesBlock
+            <TalkBlock
                 title={state.title}
                 time={state.time}
                 location={state.location}
                 description={state.description}
                 image={state.image}
-            ></ActivitiesBlock>
+            ></TalkBlock>
         );
     }
 }
 
-function ActivitiesBlock(props) {
+function TalkBlock(props) {
     const [showing, setShowing] = useState(false);
     const showImgProps = useSpring({
         config: { friction: 32, tension: 320 },

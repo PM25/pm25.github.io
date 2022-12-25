@@ -28,7 +28,7 @@ export default class BioSection extends PureComponent {
                 },
             ],
             bio: [
-                "I am a Computer Science M.S. student at National Taiwan University (NTU), advised by <a href='http://www.digital.ntu.edu.tw/hsiang/english.html' target='_blank'>Prof. Jieh Hsiang</a>. My research focuses on machine learning with limited labeled data, particularly on understanding their trustworthiness. Prior to joining NTU, I obtained my B.S. degree in Computer Science at National Chengchi University (NCCU).",
+                "I am a Computer Science M.S. student at National Taiwan University (NTU), advised by <a href='http://www.digital.ntu.edu.tw/hsiang/english.html' target='_blank' rel='noreferrer' class='link'>Prof. Jieh Hsiang</a>. My research focuses on machine learning with limited labeled data, particularly on understanding their trustworthiness. Prior to joining NTU, I obtained my B.S. degree in Computer Science at National Chengchi University (NCCU).",
             ],
         };
     }

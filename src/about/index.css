@@ -1,6 +1,7 @@
 @import url("https://npmcdn.com/tootik@1.0.2/css/tootik.min.css");
 
 .section {
+    display: flex;
     align-items: center;
     justify-content: center;
     
@@ -9,6 +10,16 @@
 
 .section > h2 {
     margin: 0.5em 0;
+}
+
+.section .link {
+    color: #00726E;
+    text-decoration: none;
+}
+
+.section .link:hover {
+    color: #3fc1c9;
+    text-decoration: underline;
 }
 
 .focus-light {
@@ -81,6 +92,7 @@
 }
 
 #profile .info a {
+    user-select: none;
     display: inline-block;
     text-decoration: none;
 
@@ -94,15 +106,10 @@
 }
 
 /* Introduction */
-#intro {
-    display: flex;
-}
-
 #intro .bio {
     width: 35em;
     margin-left: 1.5em;
     padding-left: 1.5em;
-    border-left: solid #cccc;
 }
 
 #intro .bio .info {
@@ -110,16 +117,6 @@
     flex-direction: column;
 
     font-size: 0.9em;
-}
-
-#intro .bio a {
-    color: #22A39F;
-    text-decoration: none;
-}
-
-#intro .bio a:hover {
-    color: #3fc1c9;
-    text-decoration: underline;
 }
 
 #intro .bio .paragraph {
@@ -136,6 +133,8 @@
     overflow: hidden;
     box-sizing: border-box;
     justify-content: center;
+    
+    padding-left: 1.3em;
 }
 
 #intro .edu-timeline {
@@ -239,9 +238,10 @@
 }
 
 /* Experiences */
-#exp > .content {
+#exp .content {
     display: flex;
     box-sizing: border-box;
+    justify-content: center;
 }
 
 #exp .item {
@@ -262,9 +262,11 @@
 #exp .title-list {
     overflow: hidden;
 
-    width: 45vw;
-    height: 17em;
-    margin: 0.5em;
+    width: 37.5em;
+    max-width: 40vw;
+    height: 19.5em;
+    margin-right: 0.5em;
+    border-radius: 1em;
 }
 
 #exp .title div:nth-child(1) {
@@ -279,29 +281,42 @@
     box-sizing: border-box;
     background: white;
 
-    width: 55vw;
-    padding: 1em;
-    height: 17em;
+    width: 40em;
+    max-width: 50vw;
+    padding: 1em 1.5em;
+    height: 19.5em;
     border-radius: 0.5em;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px, rgba(0, 0, 0, 0.2) 0px 1px 2px;
 }
 
-#exp .period {
-    font-size: 1.05em;
+#exp .infobar {
+    display: flex;
+    justify-content: space-between;
 }
 
-#exp .supervisor {
+#exp .period {
     font-size: 0.9em;
-    margin: 0.1em 0;
+    font-weight: 300;
+}
+
+#exp .info-title {
+    font-size: 0.95em;
+    font-weight: 500;
 }
 
 #exp .description {
-    margin: 0.5em 0;
+    margin: 0.75em 0 0 0;
+    padding-left: 1.1em;
+}
+
+#exp .description > li:not(:last-child) {
+    margin-bottom: 0.25em;
 }
 
 /* My Skills */
-#skills > .content {
+#skills .content {
     display: flex;
+    justify-content: center;
 }
 
 #skills .details {
@@ -309,7 +324,8 @@
     box-sizing: border-box;
 
     height: 15em;
-    width: 50vw;
+    width: 40em;
+    max-width: 50vw;
     padding: 1em 1.5em;
     margin-right: 1em;
     border-radius: 0.5em;
@@ -329,8 +345,9 @@
     justify-content: space-between;
 
     margin: 0;
-    padding: 1em;
-    width: 50vw;
+    padding: 1em 0 1em 1em;
+    width: 35em;
+    max-width: 40vw;
 }
 
 #skills li {
@@ -503,37 +520,39 @@
 }
 
 /* My Activities */
-#activities > .content .item {
+#talks .content .item {
     cursor: pointer;
 
     padding: 0.5em 1em;
     border-radius: 0.5em;
+    width: 75em;
+    max-width: 90vw;
 }
 
-#activities > .content .item:hover {
+#talks .content .item:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
 }
 
-#activities .showing {
+#talks .showing {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
 }
 
-#activities > .content .title {
+#talks .content .title {
     font-size: 1.1em;
 }
 
-#activities .img-container {
+#talks .img-container {
     overflow: hidden;
 }
 
-#activities > .content img {
+#talks .content img {
     width: auto;
     height: 20em;
     padding-top: 0.5em;
     border-radius: 0.3em;
 }
 
-#activities > .content .info {
+#talks .content .info {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -542,20 +561,22 @@
 }
 
 /* My Publications */
-#publications > .content {
+#publications .content {
     display: flex;
     flex-direction: column;
 
     margin-bottom: 1em;
 }
 
-#publications > .content a {
+#publications .content a {
     text-decoration: none;
 
+    width: 76em;
+    max-width: 90vw;
     padding: 0.25em 0.5em;
 }
 
-#publications > .content a:hover {
+#publications .content a:hover {
     background: #0001;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px, rgba(0, 0, 0, 0.2) 0px 1px 2px;
 }
@@ -602,37 +623,39 @@
         margin: 0;
         padding: 0;
         border: none;
-        width: 100vw;
     }
 
     /* experiences */
-    #exp > .content {
+    #exp .content {
         flex-wrap: wrap;
     }
 
     #exp .title-list {
-        width: 100%;
+        max-width: 90vw;
+        margin-right: 0;
+        margin-bottom: 1em;
     }
 
     #exp .info {
-        width: 100%;
+        max-width: 90vw;
     }
 
     /* Skills */
-    #skills > .content {
+    #skills .content {
         flex-wrap: wrap-reverse;
     }
 
     #skills .details {
-        width: 100%;
+        max-width: 90vw;
     }
 
     #skills ul {
-        width: 100vw;
+        max-width: 90vw;
+        padding: 0 0 1em 0;
     }
 
     /* Activities */
-    #activities img {
+    #talks img {
         height: auto;
         max-width: 90%;
         max-height: 20em;
