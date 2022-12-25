@@ -3,7 +3,8 @@ import { useSpring, animated } from "react-spring";
 import LazyLoad from "react-lazyload";
 
 // images
-import img1 from "../img/2019-9-4-workshop.webp";
+import uiuc2019_workshop from "../img/2019-9-4-workshop.webp";
+import taai2020_talk from "../img/TAAI2020-talk.webp";
 
 export default class TalksSection extends PureComponent {
     constructor(props) {
@@ -11,12 +12,20 @@ export default class TalksSection extends PureComponent {
         this.state = {
             activities: [
                 {
+                    title: "Cost Learning Network for Imbalanced Classification",
+                    location:
+                        "Taiwanese Association for Artificial Intelligence",
+                    time: "Dec 4, 2020",
+                    description: "",
+                    image: taai2020_talk,
+                },
+                {
                     title: "Deep Learning with Keras",
                     location:
-                        "University of Illinois Urbana-Champaign (UIUC), Illinois, USA",
+                        "University of Illinois Urbana-Champaign, Prof. Stephen Boppart's Group",
                     time: "Sep 4, 2019",
                     description: "",
-                    image: img1,
+                    image: uiuc2019_workshop,
                 },
             ],
             activeIdx: null,
@@ -77,7 +86,7 @@ function TalkBlock(props) {
                     <img
                         src={props.image}
                         alt=""
-                        style={{ height: "20em" }}
+                        // style={{ height: "20em" }}
                     ></img>
                 </LazyLoad>
             </animated.div>

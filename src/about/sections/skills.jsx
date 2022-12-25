@@ -18,21 +18,36 @@ export default class SkillSection extends PureComponent {
         this.state = {
             skillsText: [
                 {
-                    name: "programming languages",
+                    name: "programming",
                     icon: "fas fa-code",
                     content:
                         "<b>(proficient):</b> Python, C/C++, JavaScript, Lisp, Shell Script <br><b>(familiar):</b> R, Matlab",
                 },
                 {
-                    name: "tools",
-                    icon: "fas fa-wrench",
-                    content: "VSCode, Vim, Emacs, Git, Github, Google Cloud",
+                    name: "machine learning",
+                    icon: "fas fa-robot",
+                    content: "PyTorch, Scikit-Learn, Keras",
                 },
                 {
-                    name: "others",
+                    name: "robotics",
+                    icon: "fas fa-wrench",
+                    content: "Arduino, Raspberry Pi, Jetson Nano",
+                },
+                {
+                    name: "web",
+                    icon: "far fa-window-restore",
+                    content: "HTML, CSS, JavaScript, React",
+                },
+                {
+                    name: "IDE",
+                    icon: "fas fa-laptop-code",
+                    content: "VSCode, Vim",
+                },
+                {
+                    name: "miscellaneous",
                     icon: "fas fa-server",
                     content:
-                        "Linux/Unix, Arduino, Raspberry Pi, PyTorch, Keras, HTML/CSS, React, Markdown, LaTeX",
+                        "Linux/Unix, Git, Qt, Markdown, LaTeX, Google Cloud",
                 },
             ],
             skillsLevel: [

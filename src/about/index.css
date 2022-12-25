@@ -249,6 +249,7 @@
     user-select: none;
     align-items: center;
 
+    margin-right: 0.75em;
     padding: 0.5em 0.5em;
     border-radius: 0.5em;
 }
@@ -266,7 +267,6 @@
     max-width: 40vw;
     height: 19.5em;
     margin-right: 0.5em;
-    border-radius: 1em;
 }
 
 #exp .title div:nth-child(1) {
@@ -543,12 +543,13 @@
 
 #talks .img-container {
     overflow: hidden;
+    padding-bottom: 0.5em;
 }
 
 #talks .content img {
     width: auto;
     height: 20em;
-    padding-top: 0.5em;
+    margin-top: 0.5em;
     border-radius: 0.3em;
 }
 
@@ -655,7 +656,7 @@
     }
 
     /* Activities */
-    #talks img {
+    #talks .content img {
         height: auto;
         max-width: 90%;
         max-height: 20em;
