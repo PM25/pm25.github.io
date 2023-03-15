@@ -1,14 +1,8 @@
-## 🔎 [ About ]
+# 🏡 Pin-Yen's Personal Website
+Welcome to my personal website! This website is a place for me to share information about myself, my skills and interests, and any projects I'm working on. Link: [https://pm25.github.io](https://pm25.github.io)
 
-> This is the source code of my blog ([PlusMore](https://pm25.github.io/)), welcome to take a look ;)
+* [About](https://pm25.github.io): page with more detailed information about my background, skills, and interests
+* [Projects](https://pm25.github.io/#/project): page with descriptions and links to some of my past projects
 
----
-
-### About
-https://pm25.github.io
-
-### Projects
-https://pm25.github.io/#/project
-
-### Homepage
-https://pm25.github.io/#/home
+## License
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for more details.
