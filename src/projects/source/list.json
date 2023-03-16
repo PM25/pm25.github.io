@@ -1,23 +1,23 @@
 [
     {
         "name": "SimplePlus Beamer Theme",
-        "img": "https://raw.githubusercontent.com/PM25/SimplePlus-BeamerTheme/master/img/1.webp",
+        "img": "https://raw.githubusercontent.com/PM25/SimplePlus-BeamerTheme/master/preview/1.webp",
         "github": "PM25/SimplePlus-BeamerTheme",
         "url": "",
         "date": "2021-12-14"
     },
     {
         "name": "SimpleDarkBlue Beamer Theme",
-        "img": "https://raw.githubusercontent.com/PM25/SimpleDarkBlue-BeamerTheme/master/img/0001.webp",
+        "img": "https://raw.githubusercontent.com/PM25/SimpleDarkBlue-BeamerTheme/master/preview/0001.webp",
         "github": "PM25/SimpleDarkBlue-BeamerTheme",
         "url": "",
         "date": "2021-01-19"
     },
     {
-        "name": "Realtime YouBike Status System",
-        "img": "https://raw.githubusercontent.com/PM25/Realtime-YouBike-Status-System/master/img/snapshot.jpg",
-        "github": "PM25/Realtime-YouBike-Status-System",
-        "url": "https://pm25.github.io/Realtime-YouBike-Status-System",
+        "name": "YouBike-Station-Finder",
+        "img": "https://raw.githubusercontent.com/PM25/YouBike-Station-Finder/master/img/snapshot.jpg",
+        "github": "PM25/YouBike-Station-Finder",
+        "url": "https://pm25.github.io/YouBike-Station-Finder",
         "date": "2020-06-14"
     },
     {

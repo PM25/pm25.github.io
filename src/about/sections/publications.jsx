@@ -82,17 +82,22 @@ export default class PublicationsSection extends PureComponent {
     render() {
         return (
             <div className="section" id="publications">
-                <h2 className="header">Publications</h2>
-                <div className="content">
-                    {this.state.publications.map((state, key) => {
-                        if (state.article) {
-                            return this.renderArticleBlock(state, ++key);
-                        } else if (state.inproceedings) {
-                            return this.renderInproceedingsBlock(state, ++key);
-                        } else {
-                            return null;
-                        }
-                    })}
+                <div className="container">
+                    <h2 className="header">Publications</h2>
+                    <div className="content">
+                        {this.state.publications.map((state, key) => {
+                            if (state.article) {
+                                return this.renderArticleBlock(state, ++key);
+                            } else if (state.inproceedings) {
+                                return this.renderInproceedingsBlock(
+                                    state,
+                                    ++key
+                                );
+                            } else {
+                                return null;
+                            }
+                        })}
+                    </div>
                 </div>
             </div>
         );

@@ -18,21 +18,36 @@ export default class SkillSection extends PureComponent {
         this.state = {
             skillsText: [
                 {
-                    name: "programming languages",
+                    name: "programming",
                     icon: "fas fa-code",
                     content:
                         "<b>(proficient):</b> Python, C/C++, JavaScript, Lisp, Shell Script <br><b>(familiar):</b> R, Matlab",
                 },
                 {
-                    name: "tools",
-                    icon: "fas fa-wrench",
-                    content: "VSCode, Vim, Emacs, Git, Github, Google Cloud",
+                    name: "machine learning",
+                    icon: "fas fa-robot",
+                    content: "PyTorch, Scikit-Learn, Keras",
                 },
                 {
-                    name: "others",
+                    name: "robotics",
+                    icon: "fas fa-wrench",
+                    content: "Arduino, Raspberry Pi, Jetson Nano",
+                },
+                {
+                    name: "web",
+                    icon: "far fa-window-restore",
+                    content: "HTML, CSS, JavaScript, React",
+                },
+                {
+                    name: "IDE",
+                    icon: "fas fa-laptop-code",
+                    content: "VSCode, Vim",
+                },
+                {
+                    name: "miscellaneous",
                     icon: "fas fa-server",
                     content:
-                        "Linux/Unix, Arduino, Raspberry Pi, PyTorch, Keras, HTML/CSS, React, Markdown, LaTeX",
+                        "Linux/Unix, Git, Qt, Markdown, LaTeX, Google Cloud",
                 },
             ],
             skillsLevel: [
@@ -93,33 +108,35 @@ export default class SkillSection extends PureComponent {
     render() {
         return (
             <div className="section" id="skills">
-                <h2 className="header">Skills</h2>
-                <div className="content" ref={this.contentRef}>
-                    <SimpleBar className="details">
-                        {this.state.skillsText.map((state, key) => {
-                            return (
-                                <SkillsTextBlock
-                                    key={key}
-                                    name={state.name}
-                                    icon={state.icon}
-                                    content={state.content}
-                                />
-                            );
-                        })}
-                    </SimpleBar>
-                    <ul>
-                        {this.state.skillsLevel.map((state, key) => {
-                            return (
-                                <SkillsLevelBlock
-                                    key={key}
-                                    name={state.name}
-                                    logo={state.logo}
-                                    level={state.level}
-                                    active={this.state.activeSkillsLevel}
-                                />
-                            );
-                        })}
-                    </ul>
+                <div className="container">
+                    <h2 className="header">Skills</h2>
+                    <div className="content" ref={this.contentRef}>
+                        <SimpleBar className="details">
+                            {this.state.skillsText.map((state, key) => {
+                                return (
+                                    <SkillsTextBlock
+                                        key={key}
+                                        name={state.name}
+                                        icon={state.icon}
+                                        content={state.content}
+                                    />
+                                );
+                            })}
+                        </SimpleBar>
+                        <ul>
+                            {this.state.skillsLevel.map((state, key) => {
+                                return (
+                                    <SkillsLevelBlock
+                                        key={key}
+                                        name={state.name}
+                                        logo={state.logo}
+                                        level={state.level}
+                                        active={this.state.activeSkillsLevel}
+                                    />
+                                );
+                            })}
+                        </ul>
+                    </div>
                 </div>
             </div>
         );

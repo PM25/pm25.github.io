@@ -3,20 +3,29 @@ import { useSpring, animated } from "react-spring";
 import LazyLoad from "react-lazyload";
 
 // images
-import img1 from "../img/2019-9-4-workshop.webp";
+import uiuc2019_workshop from "../img/2019-9-4-workshop.webp";
+import taai2020_talk from "../img/TAAI2020-talk.webp";
 
-export default class ActivitiesSection extends PureComponent {
+export default class TalksSection extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
             activities: [
                 {
-                    title: "[Workshop/Presentation] Deep Learning with Keras",
+                    title: "Cost Learning Network for Imbalanced Classification",
                     location:
-                        "University of Illinois Urbana-Champaign (UIUC), Illinois, USA",
+                        "Taiwanese Association for Artificial Intelligence",
+                    time: "Dec 4, 2020",
+                    description: "",
+                    image: taai2020_talk,
+                },
+                {
+                    title: "Deep Learning with Keras",
+                    location:
+                        "University of Illinois Urbana-Champaign, Prof. Stephen Boppart's Group",
                     time: "Sep 4, 2019",
                     description: "",
-                    image: img1,
+                    image: uiuc2019_workshop,
                 },
             ],
             activeIdx: null,
@@ -25,12 +34,14 @@ export default class ActivitiesSection extends PureComponent {
 
     render() {
         return (
-            <div id="activities" className="section">
-                <h2 className="header">Activities</h2>
-                <div className="content">
-                    {this.state.activities.map((state, key) => {
-                        return this.renderActivitiesBlock(state);
-                    })}
+            <div id="talks" className="section">
+                <div className="container">
+                    <h2 className="header">Presentations / Talks</h2>
+                    <div className="content">
+                        {this.state.activities.map((state, key) => {
+                            return this.renderActivitiesBlock(state);
+                        })}
+                    </div>
                 </div>
             </div>
         );
@@ -38,18 +49,18 @@ export default class ActivitiesSection extends PureComponent {
 
     renderActivitiesBlock(state) {
         return (
-            <ActivitiesBlock
+            <TalkBlock
                 title={state.title}
                 time={state.time}
                 location={state.location}
                 description={state.description}
                 image={state.image}
-            ></ActivitiesBlock>
+            ></TalkBlock>
         );
     }
 }
 
-function ActivitiesBlock(props) {
+function TalkBlock(props) {
     const [showing, setShowing] = useState(false);
     const showImgProps = useSpring({
         config: { friction: 32, tension: 320 },
@@ -75,7 +86,7 @@ function ActivitiesBlock(props) {
                     <img
                         src={props.image}
                         alt=""
-                        style={{ height: "20em" }}
+                        // style={{ height: "20em" }}
                     ></img>
                 </LazyLoad>
             </animated.div>
