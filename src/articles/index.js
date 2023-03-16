@@ -20,13 +20,13 @@ export default function Article() {
                     <Route exact path={"/"}>
                         <ArticleHome />
                     </Route>
-                    <Route exact path={"/article"}>
+                    <Route exact path={"/articles"}>
                         <ArticleHome category={"computer-science"} />
                     </Route>
-                    <Route exact path={"/article/:id"}>
+                    <Route exact path={"/articles/:id"}>
                         <ArticleHome />
                     </Route>
-                    <Route path={"/article/content/:id"}>
+                    <Route path={"/articles/content/:id"}>
                         <ArticleChild />
                     </Route>
                 </Switch>

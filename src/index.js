@@ -8,16 +8,17 @@ import Navigator from "./components/src/navigator";
 import Loader from "./components/src/loader";
 import { useRouterGA } from "./components/src/google-analytics";
 
-const load = (Component) => (props) => (
-    <Suspense fallback={<Loader />}>
-        <Component {...props} />
-    </Suspense>
-);
+const load = (Component) => (props) =>
+    (
+        <Suspense fallback={<Loader />}>
+            <Component {...props} />
+        </Suspense>
+    );
 
 const Home = load(lazy(() => import("./home")));
 const About = load(lazy(() => import("./about")));
-const Project = load(lazy(() => import("./project")));
-const Article = load(lazy(() => import("./article")));
+const Project = load(lazy(() => import("./projects")));
+const Article = load(lazy(() => import("./articles")));
 
 ReactDOM.render(
     <React.StrictMode>
@@ -30,10 +31,10 @@ ReactDOM.render(
                 <Route path="/home">
                     <HomePage />
                 </Route>
-                <Route path="/project">
+                <Route path="/projects">
                     <ProjectPage />
                 </Route>
-                <Route path="/article">
+                <Route path="/articles">
                     <Article />
                 </Route>
             </Switch>

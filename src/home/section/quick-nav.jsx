@@ -6,10 +6,10 @@ export default class QuickNav extends PureComponent {
         super(props);
         this.state = {
             quickNav: [
-                { name: "news", url: "#news", color: "#65c6c4" },
-                { name: "about", url: "/", color: "#408ab4" },
-                { name: "article", url: "/article", color: "#34699a" },
-                { name: "project", url: "/project", color: "#113f67" },
+                { name: "News", url: "#news", color: "#65c6c4" },
+                { name: "About", url: "/", color: "#408ab4" },
+                { name: "Articles", url: "/articles", color: "#34699a" },
+                { name: "Projects", url: "/projects", color: "#113f67" },
             ],
         };
     }
